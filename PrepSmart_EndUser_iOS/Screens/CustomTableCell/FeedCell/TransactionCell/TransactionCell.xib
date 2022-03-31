@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="98" id="KGk-i7-Jjw" customClass="TransactionCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="97.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGr-n8-YNx" customClass="CardView" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                        <rect key="frame" x="20" y="10" width="280" height="77.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="256" verticalCompressionResistancePriority="751" text="Transaction ID: 8798385632" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whD-II-bAX">
+                                <rect key="frame" x="5" y="5" width="270" height="13.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Date : 25 April 2018 10:20 am" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnt-YY-rQs">
+                                <rect key="frame" x="5" y="23.5" width="270" height="12"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="256" verticalCompressionResistancePriority="751" text="$12" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quP-ij-evG">
+                                <rect key="frame" x="5" y="40.5" width="270" height="13.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="256" verticalCompressionResistancePriority="751" text="Mexican Beef Supreme" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBl-Qe-qe1">
+                                <rect key="frame" x="5" y="59" width="270" height="13.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="whD-II-bAX" secondAttribute="trailing" constant="5" id="1Ng-c9-UJR"/>
+                            <constraint firstItem="whD-II-bAX" firstAttribute="leading" secondItem="tGr-n8-YNx" secondAttribute="leading" constant="5" id="5Oj-WI-Cyb"/>
+                            <constraint firstItem="nBl-Qe-qe1" firstAttribute="leading" secondItem="tGr-n8-YNx" secondAttribute="leading" constant="5" id="CHs-1U-cxL"/>
+                            <constraint firstItem="whD-II-bAX" firstAttribute="top" secondItem="tGr-n8-YNx" secondAttribute="top" constant="5" id="QoN-pO-ISB"/>
+                            <constraint firstItem="quP-ij-evG" firstAttribute="leading" secondItem="tGr-n8-YNx" secondAttribute="leading" constant="5" id="SI8-kr-7xt"/>
+                            <constraint firstItem="wnt-YY-rQs" firstAttribute="leading" secondItem="tGr-n8-YNx" secondAttribute="leading" constant="5" id="XUx-4c-LFL"/>
+                            <constraint firstAttribute="bottom" secondItem="nBl-Qe-qe1" secondAttribute="bottom" constant="5" id="Zko-8f-PoD"/>
+                            <constraint firstAttribute="trailing" secondItem="wnt-YY-rQs" secondAttribute="trailing" constant="5" id="hGz-g0-Ugh"/>
+                            <constraint firstItem="wnt-YY-rQs" firstAttribute="top" secondItem="whD-II-bAX" secondAttribute="bottom" constant="5" id="lcj-OP-8xm"/>
+                            <constraint firstAttribute="trailing" secondItem="quP-ij-evG" secondAttribute="trailing" constant="5" id="nM8-Rj-vpB"/>
+                            <constraint firstItem="nBl-Qe-qe1" firstAttribute="top" secondItem="quP-ij-evG" secondAttribute="bottom" constant="5" id="pAy-yJ-7v8"/>
+                            <constraint firstAttribute="trailing" secondItem="nBl-Qe-qe1" secondAttribute="trailing" constant="5" id="qYK-l9-eVw"/>
+                            <constraint firstItem="quP-ij-evG" firstAttribute="top" secondItem="wnt-YY-rQs" secondAttribute="bottom" constant="5" id="sow-Xl-NgD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="tGr-n8-YNx" secondAttribute="bottom" constant="10" id="Qhw-ee-gIK"/>
+                    <constraint firstItem="tGr-n8-YNx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Zis-Fy-JGx"/>
+                    <constraint firstAttribute="trailing" secondItem="tGr-n8-YNx" secondAttribute="trailing" constant="20" id="x6Q-JM-1ky"/>
+                    <constraint firstItem="tGr-n8-YNx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="zKH-vI-dT6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLbl" destination="wnt-YY-rQs" id="qOV-lg-7v8"/>
+                <outlet property="priceLbl" destination="quP-ij-evG" id="VlE-pD-8Ar"/>
+                <outlet property="recipeNameLbl" destination="nBl-Qe-qe1" id="nNE-9v-OgF"/>
+                <outlet property="transactionIdLbl" destination="whD-II-bAX" id="gPz-FB-IN3"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="147.99107142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

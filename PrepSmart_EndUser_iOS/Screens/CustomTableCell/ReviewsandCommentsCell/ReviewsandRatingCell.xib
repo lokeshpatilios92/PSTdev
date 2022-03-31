@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="-88" id="KGk-i7-Jjw" customClass="ReviewsandRatingCell" customModule="PrepSmart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="305" height="40"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yzS-k2-93V">
+                        <rect key="frame" x="10" y="0.0" width="285" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="5 Star" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NyO-1E-ZXU">
+                                <rect key="frame" x="16" y="13" width="40" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Qhj-JQ-qNp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqg-H3-RCU" customClass="GTProgressBar" customModule="GTProgressBar">
+                                <rect key="frame" x="64" y="13" width="173" height="14"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="ugE-v9-CVA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progressLabelInsetLeft">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="barBorderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="barBackgroundColor">
+                                        <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="barFillColor">
+                                        <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barBorderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="directionInt">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="labelTextColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="displayLabel" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barFillInset">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerTypeInt">
+                                        <integer key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="orientationInt">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWj-Rw-4vn">
+                                <rect key="frame" x="245" y="13" width="32" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="O1y-sZ-5ff"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KWj-Rw-4vn" secondAttribute="trailing" constant="8" id="1o8-If-ZoH"/>
+                            <constraint firstItem="KWj-Rw-4vn" firstAttribute="leading" secondItem="yqg-H3-RCU" secondAttribute="trailing" constant="8" id="5oE-6z-ZKC"/>
+                            <constraint firstItem="yqg-H3-RCU" firstAttribute="leading" secondItem="NyO-1E-ZXU" secondAttribute="trailing" constant="8" id="kyU-mM-qYM"/>
+                            <constraint firstItem="NyO-1E-ZXU" firstAttribute="centerY" secondItem="yzS-k2-93V" secondAttribute="centerY" id="lDD-r0-7b1"/>
+                            <constraint firstItem="KWj-Rw-4vn" firstAttribute="centerY" secondItem="yqg-H3-RCU" secondAttribute="centerY" id="n9j-KO-txW"/>
+                            <constraint firstItem="yqg-H3-RCU" firstAttribute="centerY" secondItem="NyO-1E-ZXU" secondAttribute="centerY" id="t0b-6k-bfX"/>
+                            <constraint firstItem="NyO-1E-ZXU" firstAttribute="leading" secondItem="yzS-k2-93V" secondAttribute="leading" constant="16" id="uK0-UW-Knc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="yzS-k2-93V" secondAttribute="trailing" constant="10" id="9gR-Jj-wrc"/>
+                    <constraint firstItem="yzS-k2-93V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="XDp-gZ-edC"/>
+                    <constraint firstAttribute="bottom" secondItem="yzS-k2-93V" secondAttribute="bottom" id="gsn-zj-RGw"/>
+                    <constraint firstItem="yzS-k2-93V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="pQ2-Oa-jDJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="progressView" destination="yqg-H3-RCU" id="GT8-F7-pvW"/>
+                <outlet property="starPercentageLabel" destination="KWj-Rw-4vn" id="trB-Ow-caj"/>
+                <outlet property="startLabel" destination="NyO-1E-ZXU" id="yDg-u0-8L2"/>
+            </connections>
+            <point key="canvasLocation" x="87.681159420289859" y="171.42857142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

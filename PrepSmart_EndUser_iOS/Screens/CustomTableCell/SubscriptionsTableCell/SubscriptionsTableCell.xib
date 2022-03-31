@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="274" id="KGk-i7-Jjw" customClass="SubscriptionsTableCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="161"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="405" height="161"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vj-Db-b2K" customClass="CardView" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                        <rect key="frame" x="20" y="5" width="365" height="151"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEX-OU-NFT">
+                        <rect key="frame" x="20" y="5" width="365" height="151"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chef-profile" translatesAutoresizingMaskIntoConstraints="NO" id="IES-nf-T1s">
+                                <rect key="frame" x="8" y="40.5" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="9fJ-2T-8U0"/>
+                                    <constraint firstAttribute="width" constant="70" id="eoN-LH-Cbl"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0n-I3-MPz">
+                                <rect key="frame" x="260" y="50.5" width="95" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Cost : $15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hY-Sg-zaq">
+                                        <rect key="frame" x="15" y="8" width="65" height="34"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                        <color key="textColor" name="App_Orange_Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="Background_Dark_Gray_Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YL6-Jq-dJ8"/>
+                                    <constraint firstItem="3hY-Sg-zaq" firstAttribute="leading" secondItem="d0n-I3-MPz" secondAttribute="leading" constant="15" id="bgy-8B-mtl"/>
+                                    <constraint firstAttribute="trailing" secondItem="3hY-Sg-zaq" secondAttribute="trailing" constant="15" id="tUI-6l-WDl"/>
+                                    <constraint firstItem="3hY-Sg-zaq" firstAttribute="top" secondItem="d0n-I3-MPz" secondAttribute="top" constant="8" id="unD-CF-qhy"/>
+                                    <constraint firstAttribute="bottom" secondItem="3hY-Sg-zaq" secondAttribute="bottom" constant="8" id="xuk-uU-JUM"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="PrepSmart Subscriptions" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWY-Aw-VjC">
+                                <rect key="frame" x="88" y="10" width="162" height="37.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 Recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIp-Iv-Gki">
+                                <rect key="frame" x="88" y="55.5" width="162" height="40.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFk-XS-KdW">
+                                <rect key="frame" x="88" y="106" width="100" height="35"/>
+                                <color key="backgroundColor" name="App_Orange_Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1Pe-Um-oie"/>
+                                    <constraint firstAttribute="height" constant="35" id="jpk-R5-FCe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <state key="normal" title="Plan Info">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IES-nf-T1s" firstAttribute="centerY" secondItem="UEX-OU-NFT" secondAttribute="centerY" id="3bj-0G-U07"/>
+                            <constraint firstItem="oIp-Iv-Gki" firstAttribute="leading" secondItem="IES-nf-T1s" secondAttribute="trailing" constant="10" id="EwX-To-I8c"/>
+                            <constraint firstItem="oIp-Iv-Gki" firstAttribute="top" secondItem="CWY-Aw-VjC" secondAttribute="bottom" constant="8" id="Gg3-G3-fvF"/>
+                            <constraint firstAttribute="bottom" secondItem="iFk-XS-KdW" secondAttribute="bottom" constant="10" id="LeL-rC-fYy"/>
+                            <constraint firstItem="CWY-Aw-VjC" firstAttribute="leading" secondItem="IES-nf-T1s" secondAttribute="trailing" constant="10" id="OaN-Vg-njU"/>
+                            <constraint firstItem="d0n-I3-MPz" firstAttribute="leading" secondItem="oIp-Iv-Gki" secondAttribute="trailing" constant="10" id="Ryk-dD-uS4"/>
+                            <constraint firstItem="IES-nf-T1s" firstAttribute="leading" secondItem="UEX-OU-NFT" secondAttribute="leading" constant="8" id="S37-L6-Q8f"/>
+                            <constraint firstItem="iFk-XS-KdW" firstAttribute="top" secondItem="oIp-Iv-Gki" secondAttribute="bottom" constant="10" id="g8O-JN-plV"/>
+                            <constraint firstAttribute="trailing" secondItem="d0n-I3-MPz" secondAttribute="trailing" constant="10" id="lMz-dP-CUF"/>
+                            <constraint firstItem="iFk-XS-KdW" firstAttribute="leading" secondItem="IES-nf-T1s" secondAttribute="trailing" constant="10" id="lTI-hQ-bQk"/>
+                            <constraint firstItem="d0n-I3-MPz" firstAttribute="leading" secondItem="CWY-Aw-VjC" secondAttribute="trailing" constant="10" id="mTF-DA-hMf"/>
+                            <constraint firstItem="CWY-Aw-VjC" firstAttribute="top" secondItem="UEX-OU-NFT" secondAttribute="top" constant="10" id="oPs-DE-l8e"/>
+                            <constraint firstItem="d0n-I3-MPz" firstAttribute="centerY" secondItem="UEX-OU-NFT" secondAttribute="centerY" id="u9Z-GM-O5a"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="UEX-OU-NFT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="2bO-c4-e7I"/>
+                    <constraint firstAttribute="bottom" secondItem="UEX-OU-NFT" secondAttribute="bottom" constant="5" id="En8-ir-uGe"/>
+                    <constraint firstItem="7vj-Db-b2K" firstAttribute="leading" secondItem="UEX-OU-NFT" secondAttribute="leading" id="PG3-50-Bey"/>
+                    <constraint firstItem="7vj-Db-b2K" firstAttribute="top" secondItem="UEX-OU-NFT" secondAttribute="top" id="hcn-ID-2mR"/>
+                    <constraint firstItem="7vj-Db-b2K" firstAttribute="bottom" secondItem="UEX-OU-NFT" secondAttribute="bottom" id="k5Y-SG-ITd"/>
+                    <constraint firstAttribute="trailing" secondItem="UEX-OU-NFT" secondAttribute="trailing" constant="20" id="lXc-b4-Vs8"/>
+                    <constraint firstItem="7vj-Db-b2K" firstAttribute="trailing" secondItem="UEX-OU-NFT" secondAttribute="trailing" id="mo1-Qr-zhC"/>
+                    <constraint firstItem="UEX-OU-NFT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="nce-FG-8j2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btn_PlanInfo" destination="iFk-XS-KdW" id="FmO-8t-4Y9"/>
+                <outlet property="img_Profile" destination="IES-nf-T1s" id="H0t-Qz-PXS"/>
+                <outlet property="lbl_Cost" destination="3hY-Sg-zaq" id="P01-oZ-Og5"/>
+                <outlet property="lbl_SubTitle" destination="oIp-Iv-Gki" id="5Ck-LD-Ddt"/>
+                <outlet property="lbl_Title" destination="CWY-Aw-VjC" id="ThV-4k-o1R"/>
+                <outlet property="view_Bg" destination="UEX-OU-NFT" id="YGQ-oW-cqw"/>
+                <outlet property="view_Cost" destination="d0n-I3-MPz" id="nAP-In-OjP"/>
+            </connections>
+            <point key="canvasLocation" x="70.28985507246378" y="94.084821428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chef-profile" width="278" height="278"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Background_Dark_Gray_Color">
+            <color red="0.91764705882352937" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="AbousUsCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWE-0k-ubf">
+                        <rect key="frame" x="20" y="0.0" width="280" height="93"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="tWz-nT-sao">
+                                <rect key="frame" x="0.0" y="13" width="247" height="62"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02P-sj-2ty">
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                        <color key="textColor" name="Dark_Text_Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCQ-WT-9av">
+                                        <rect key="frame" x="0.0" y="16.5" width="247" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                        <color key="textColor" name="Dark_Text_Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="2gc-M5-l8y">
+                                <rect key="frame" x="257" y="36.5" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Dch-gT-xNG"/>
+                                    <constraint firstAttribute="width" constant="15" id="yaR-hs-Ip7"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rh6-2m-dk4">
+                                <rect key="frame" x="0.0" y="90" width="280" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="SVB-tu-Djk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tWz-nT-sao" firstAttribute="top" secondItem="cWE-0k-ubf" secondAttribute="top" constant="13" id="3Im-tI-Fzu"/>
+                            <constraint firstAttribute="trailing" secondItem="2gc-M5-l8y" secondAttribute="trailing" constant="8" id="AAg-4Y-v4p"/>
+                            <constraint firstItem="Rh6-2m-dk4" firstAttribute="top" secondItem="tWz-nT-sao" secondAttribute="bottom" constant="15" id="INU-j7-Ngn"/>
+                            <constraint firstAttribute="trailing" secondItem="Rh6-2m-dk4" secondAttribute="trailing" id="NbV-M1-JOV"/>
+                            <constraint firstItem="tWz-nT-sao" firstAttribute="leading" secondItem="cWE-0k-ubf" secondAttribute="leading" id="Q4T-0t-YdL"/>
+                            <constraint firstItem="Rh6-2m-dk4" firstAttribute="leading" secondItem="cWE-0k-ubf" secondAttribute="leading" id="Zqb-Qr-aRd"/>
+                            <constraint firstItem="2gc-M5-l8y" firstAttribute="centerY" secondItem="tWz-nT-sao" secondAttribute="centerY" id="aNZ-5c-8LI"/>
+                            <constraint firstAttribute="bottom" secondItem="Rh6-2m-dk4" secondAttribute="bottom" constant="2" id="gRF-Jv-fvR"/>
+                            <constraint firstItem="2gc-M5-l8y" firstAttribute="leading" secondItem="tWz-nT-sao" secondAttribute="trailing" constant="10" id="h4r-rK-X4I"/>
+                            <constraint firstAttribute="trailing" secondItem="Rh6-2m-dk4" secondAttribute="trailing" id="i2H-91-r2L"/>
+                            <constraint firstItem="Rh6-2m-dk4" firstAttribute="leading" secondItem="cWE-0k-ubf" secondAttribute="leading" id="qKh-Bg-XDR"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cWE-0k-ubf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VU6-65-htC"/>
+                    <constraint firstItem="cWE-0k-ubf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="aFM-3t-QuL"/>
+                    <constraint firstAttribute="bottom" secondItem="cWE-0k-ubf" secondAttribute="bottom" id="dHW-0m-PGZ"/>
+                    <constraint firstAttribute="trailing" secondItem="cWE-0k-ubf" secondAttribute="trailing" constant="20" id="mBr-f4-Dfy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descLbl" destination="UCQ-WT-9av" id="EOD-WL-I3D"/>
+                <outlet property="titleLbl" destination="02P-sj-2ty" id="s3B-zQ-onT"/>
+                <outlet property="underlineView" destination="Rh6-2m-dk4" id="1dc-cT-wnT"/>
+            </connections>
+            <point key="canvasLocation" x="240.57971014492756" y="106.80803571428571"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="forward_arrow" width="28" height="28"/>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

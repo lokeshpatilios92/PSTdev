@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="ReplyOnCommentsTableViewCell" customModule="PrepSmart_ETPL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8SX-jO-jYL">
+                        <rect key="frame" x="40" y="0.0" width="260" height="49.5"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iuw-ya-UK3" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
+                                <rect key="frame" x="40" y="5" width="165" height="39.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
+                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Write your reply.."/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAT-WY-Ldw">
+                                <rect key="frame" x="215" y="7.5" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="jRg-dq-g3L"/>
+                                    <constraint firstAttribute="height" constant="35" id="xtM-y3-KFz"/>
+                                </constraints>
+                                <state key="normal" image="send_reply"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iuw-ya-UK3" firstAttribute="leading" secondItem="8SX-jO-jYL" secondAttribute="leading" constant="40" id="5b6-GP-W6E"/>
+                            <constraint firstItem="QAT-WY-Ldw" firstAttribute="centerY" secondItem="iuw-ya-UK3" secondAttribute="centerY" id="TFC-9f-X54"/>
+                            <constraint firstItem="QAT-WY-Ldw" firstAttribute="leading" secondItem="iuw-ya-UK3" secondAttribute="trailing" constant="10" id="aKc-HY-It7"/>
+                            <constraint firstAttribute="trailing" secondItem="QAT-WY-Ldw" secondAttribute="trailing" constant="10" id="eF7-5B-oGN"/>
+                            <constraint firstItem="iuw-ya-UK3" firstAttribute="top" secondItem="8SX-jO-jYL" secondAttribute="top" constant="5" id="hv0-tY-3Wt"/>
+                            <constraint firstAttribute="bottom" secondItem="iuw-ya-UK3" secondAttribute="bottom" constant="5" id="mFi-wb-A5O"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6C-bV-PTZ">
+                        <rect key="frame" x="20" y="48.5" width="280" height="1"/>
+                        <color key="backgroundColor" name="Light_Gray_Text_Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="3K7-xb-EMj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="8SX-jO-jYL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="40" id="73Q-Q6-mgZ"/>
+                    <constraint firstAttribute="trailing" secondItem="8SX-jO-jYL" secondAttribute="trailing" constant="20" id="8LI-Qt-514"/>
+                    <constraint firstAttribute="trailing" secondItem="n6C-bV-PTZ" secondAttribute="trailing" constant="20" id="ROe-ju-lNu"/>
+                    <constraint firstAttribute="bottom" secondItem="8SX-jO-jYL" secondAttribute="bottom" id="YLJ-De-eJb"/>
+                    <constraint firstItem="8SX-jO-jYL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="d7u-me-Frf"/>
+                    <constraint firstAttribute="bottom" secondItem="n6C-bV-PTZ" secondAttribute="bottom" id="lY1-M2-nb3"/>
+                    <constraint firstItem="n6C-bV-PTZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vlh-DA-Cvy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="commentTextView" destination="iuw-ya-UK3" id="8jj-LD-eEq"/>
+                <outlet property="sendButton" destination="QAT-WY-Ldw" id="kW7-26-PFc"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="send_reply" width="28" height="28"/>
+        <namedColor name="Light_Gray_Text_Color">
+            <color red="0.64313725490196083" green="0.64313725490196083" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

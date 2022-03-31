@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="196" id="KGk-i7-Jjw" customClass="YourItemsNotAvailableTableViewCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="196"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCe-2V-eJl" customClass="CardView" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                        <rect key="frame" x="15" y="7.5" width="290" height="181"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Smart Reordering" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qX-5D-EvE">
+                                <rect key="frame" x="90" y="35" width="110.5" height="16.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Items that you order will show up here so you can quickly find the items you use most" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9md-Sd-uK7">
+                                <rect key="frame" x="15" y="66.5" width="260" height="79.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="omh-gx-ojZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9md-Sd-uK7" secondAttribute="bottom" constant="35" id="4E9-Jc-y3k"/>
+                            <constraint firstItem="9md-Sd-uK7" firstAttribute="leading" secondItem="NCe-2V-eJl" secondAttribute="leading" constant="15" id="FVo-Ir-vq0"/>
+                            <constraint firstItem="3qX-5D-EvE" firstAttribute="centerX" secondItem="NCe-2V-eJl" secondAttribute="centerX" id="OW1-KC-KnT"/>
+                            <constraint firstAttribute="trailing" secondItem="9md-Sd-uK7" secondAttribute="trailing" constant="15" id="Zlw-ui-TeH"/>
+                            <constraint firstItem="3qX-5D-EvE" firstAttribute="top" secondItem="NCe-2V-eJl" secondAttribute="top" constant="35" id="idU-ze-cZh"/>
+                            <constraint firstItem="9md-Sd-uK7" firstAttribute="top" secondItem="3qX-5D-EvE" secondAttribute="bottom" constant="15" id="n1m-Zv-Dgn"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NCe-2V-eJl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7.5" id="C1H-tR-Fy7"/>
+                    <constraint firstAttribute="bottom" secondItem="NCe-2V-eJl" secondAttribute="bottom" constant="7.5" id="FJU-y6-yyz"/>
+                    <constraint firstItem="NCe-2V-eJl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="OQ8-t2-MT0"/>
+                    <constraint firstAttribute="trailing" secondItem="NCe-2V-eJl" secondAttribute="trailing" constant="15" id="yA0-Y9-IG9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="63.768115942028992" y="137.94642857142856"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddToPopUpVC" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="356" id="KGk-i7-Jjw" customClass="WeeklyPlanTableCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="372" height="356"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="372" height="356"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ah7-kR-7Vz">
+                        <rect key="frame" x="10" y="10" width="352" height="326"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SHM-ij-S5c">
+                                <rect key="frame" x="0.0" y="0.0" width="352" height="326"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y89-pz-tL3">
+                                        <rect key="frame" x="0.0" y="0.0" width="352" height="74"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Select Week" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46b-vT-QUi">
+                                                <rect key="frame" x="5" y="5" width="78" height="19"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="19" id="WdS-y9-Mf4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <color key="textColor" name="App_Orange_Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UIl-Ym-AHc" customClass="KKNEWTextFiled" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="yKK-CR-vzg"/>
+                                                </constraints>
+                                                <color key="textColor" name="Dark_Text_Color"/>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kla-Cs-B8C">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weekly_plan_1" translatesAutoresizingMaskIntoConstraints="NO" id="sxD-eL-RSv">
+                                                <rect key="frame" x="317" y="41.5" width="25" height="15"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="5EQ-1w-x6E"/>
+                                                    <constraint firstAttribute="width" constant="25" id="PKb-68-xQd"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sxD-eL-RSv" firstAttribute="centerY" secondItem="UIl-Ym-AHc" secondAttribute="centerY" id="8m3-gE-f6e"/>
+                                            <constraint firstAttribute="bottom" secondItem="UIl-Ym-AHc" secondAttribute="bottom" constant="5" id="BZK-5K-yGN"/>
+                                            <constraint firstItem="Kla-Cs-B8C" firstAttribute="bottom" secondItem="UIl-Ym-AHc" secondAttribute="bottom" id="Bul-c2-LmG"/>
+                                            <constraint firstAttribute="trailing" secondItem="UIl-Ym-AHc" secondAttribute="trailing" constant="5" id="CNi-bW-PGv"/>
+                                            <constraint firstAttribute="trailing" secondItem="sxD-eL-RSv" secondAttribute="trailing" constant="10" id="RbE-lb-ZIC"/>
+                                            <constraint firstItem="UIl-Ym-AHc" firstAttribute="top" secondItem="46b-vT-QUi" secondAttribute="bottom" constant="5" id="jra-UG-SNm"/>
+                                            <constraint firstItem="46b-vT-QUi" firstAttribute="top" secondItem="Y89-pz-tL3" secondAttribute="top" constant="5" id="m5H-u0-mvg"/>
+                                            <constraint firstItem="UIl-Ym-AHc" firstAttribute="leading" secondItem="Y89-pz-tL3" secondAttribute="leading" constant="5" id="o87-SU-mx9"/>
+                                            <constraint firstItem="Kla-Cs-B8C" firstAttribute="trailing" secondItem="UIl-Ym-AHc" secondAttribute="trailing" id="s2Y-hH-oTC"/>
+                                            <constraint firstItem="Kla-Cs-B8C" firstAttribute="leading" secondItem="UIl-Ym-AHc" secondAttribute="leading" id="sPU-Wv-S3h"/>
+                                            <constraint firstItem="Kla-Cs-B8C" firstAttribute="top" secondItem="UIl-Ym-AHc" secondAttribute="top" id="xwh-xU-TID"/>
+                                            <constraint firstItem="46b-vT-QUi" firstAttribute="leading" secondItem="Y89-pz-tL3" secondAttribute="leading" constant="5" id="y7E-qu-bos"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihO-UQ-TTQ">
+                                        <rect key="frame" x="0.0" y="84" width="352" height="74"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Select Day" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jg1-wc-rqS">
+                                                <rect key="frame" x="5" y="5" width="67.5" height="19"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="19" id="5ox-GB-tt3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <color key="textColor" name="App_Orange_Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tv6-pN-8Ns" customClass="KKNEWTextFiled" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Ojr-9Z-aAd"/>
+                                                </constraints>
+                                                <color key="textColor" name="Dark_Text_Color"/>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMa-bd-97N">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="f1M-R5-rOA">
+                                                <rect key="frame" x="317" y="41.5" width="25" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="fEt-Pb-XJ4"/>
+                                                    <constraint firstAttribute="width" constant="25" id="n5H-Sn-cdm"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="tv6-pN-8Ns" firstAttribute="leading" secondItem="ihO-UQ-TTQ" secondAttribute="leading" constant="5" id="4Y9-3v-6uu"/>
+                                            <constraint firstItem="tv6-pN-8Ns" firstAttribute="top" secondItem="Jg1-wc-rqS" secondAttribute="bottom" constant="5" id="6he-vE-Uwp"/>
+                                            <constraint firstItem="f1M-R5-rOA" firstAttribute="centerY" secondItem="tv6-pN-8Ns" secondAttribute="centerY" id="Q6l-wY-lIW"/>
+                                            <constraint firstItem="WMa-bd-97N" firstAttribute="leading" secondItem="tv6-pN-8Ns" secondAttribute="leading" id="SLM-gK-qQE"/>
+                                            <constraint firstItem="WMa-bd-97N" firstAttribute="trailing" secondItem="tv6-pN-8Ns" secondAttribute="trailing" id="T2h-mA-bzB"/>
+                                            <constraint firstItem="Jg1-wc-rqS" firstAttribute="top" secondItem="ihO-UQ-TTQ" secondAttribute="top" constant="5" id="VV6-4S-uep"/>
+                                            <constraint firstItem="Jg1-wc-rqS" firstAttribute="leading" secondItem="ihO-UQ-TTQ" secondAttribute="leading" constant="5" id="Yje-7J-30X"/>
+                                            <constraint firstAttribute="trailing" secondItem="f1M-R5-rOA" secondAttribute="trailing" constant="10" id="YuH-KY-W2q"/>
+                                            <constraint firstAttribute="trailing" secondItem="tv6-pN-8Ns" secondAttribute="trailing" constant="5" id="cIH-82-sAn"/>
+                                            <constraint firstAttribute="bottom" secondItem="tv6-pN-8Ns" secondAttribute="bottom" constant="5" id="otb-FO-JeH"/>
+                                            <constraint firstItem="WMa-bd-97N" firstAttribute="top" secondItem="tv6-pN-8Ns" secondAttribute="top" id="vZm-mF-qI7"/>
+                                            <constraint firstItem="WMa-bd-97N" firstAttribute="bottom" secondItem="tv6-pN-8Ns" secondAttribute="bottom" id="yDN-i2-shR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jof-zv-OcR">
+                                        <rect key="frame" x="0.0" y="168" width="352" height="74"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Select Meal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xQ-IR-F1q">
+                                                <rect key="frame" x="5" y="5" width="73.5" height="19"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="19" id="Kw7-pF-UiJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <color key="textColor" name="App_Orange_Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9a-3D-Xnd" customClass="KKNEWTextFiled" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="cAo-5F-rd6"/>
+                                                </constraints>
+                                                <color key="textColor" name="Dark_Text_Color"/>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y91-9A-Zgx">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="kLB-ls-Fbs">
+                                                <rect key="frame" x="317" y="41.5" width="25" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="7qH-Kd-Xsc"/>
+                                                    <constraint firstAttribute="width" constant="25" id="cJK-of-bXS"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="y91-9A-Zgx" firstAttribute="leading" secondItem="M9a-3D-Xnd" secondAttribute="leading" id="0GT-GM-DaG"/>
+                                            <constraint firstItem="7xQ-IR-F1q" firstAttribute="leading" secondItem="Jof-zv-OcR" secondAttribute="leading" constant="5" id="H0O-dg-Kh2"/>
+                                            <constraint firstAttribute="trailing" secondItem="kLB-ls-Fbs" secondAttribute="trailing" constant="10" id="IZY-9B-JQM"/>
+                                            <constraint firstItem="y91-9A-Zgx" firstAttribute="trailing" secondItem="M9a-3D-Xnd" secondAttribute="trailing" id="QI9-a5-KPg"/>
+                                            <constraint firstItem="7xQ-IR-F1q" firstAttribute="top" secondItem="Jof-zv-OcR" secondAttribute="top" constant="5" id="SCo-vw-5OE"/>
+                                            <constraint firstItem="y91-9A-Zgx" firstAttribute="top" secondItem="M9a-3D-Xnd" secondAttribute="top" id="STH-y8-6CV"/>
+                                            <constraint firstItem="M9a-3D-Xnd" firstAttribute="leading" secondItem="Jof-zv-OcR" secondAttribute="leading" constant="5" id="WtZ-dd-nND"/>
+                                            <constraint firstItem="kLB-ls-Fbs" firstAttribute="centerY" secondItem="M9a-3D-Xnd" secondAttribute="centerY" id="YAH-EF-3ig"/>
+                                            <constraint firstAttribute="trailing" secondItem="M9a-3D-Xnd" secondAttribute="trailing" constant="5" id="Ywa-Vc-8C3"/>
+                                            <constraint firstAttribute="bottom" secondItem="M9a-3D-Xnd" secondAttribute="bottom" constant="5" id="aTQ-nj-uF2"/>
+                                            <constraint firstItem="M9a-3D-Xnd" firstAttribute="top" secondItem="7xQ-IR-F1q" secondAttribute="bottom" constant="5" id="jcY-hd-l6O"/>
+                                            <constraint firstItem="y91-9A-Zgx" firstAttribute="bottom" secondItem="M9a-3D-Xnd" secondAttribute="bottom" id="v5i-P4-gSU"/>
+                                        </constraints>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUN-nh-9wO">
+                                        <rect key="frame" x="0.0" y="252" width="352" height="74"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Serving Size" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTl-Qh-ED0">
+                                                <rect key="frame" x="5" y="5" width="77.5" height="19"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="19" id="bjd-dj-mkO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <color key="textColor" name="App_Orange_Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="za5-y7-Pa7" customClass="KKNEWTextFiled" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Zoa-HX-l9G"/>
+                                                </constraints>
+                                                <color key="textColor" name="Dark_Text_Color"/>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedLineColor">
+                                                        <color key="value" name="Light_Gray_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedPlaceHolderColor">
+                                                        <color key="value" name="Dark_Text_Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="disableFloatingLabel" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ft2-wm-LUa">
+                                                <rect key="frame" x="5" y="29" width="342" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="B7a-jf-e7g">
+                                                <rect key="frame" x="317" y="41.5" width="25" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="Sw0-E7-1fg"/>
+                                                    <constraint firstAttribute="width" constant="25" id="j7h-PL-CVi"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="za5-y7-Pa7" secondAttribute="trailing" constant="5" id="S81-9R-Ix4"/>
+                                            <constraint firstItem="ft2-wm-LUa" firstAttribute="leading" secondItem="za5-y7-Pa7" secondAttribute="leading" id="SVn-w7-MQT"/>
+                                            <constraint firstItem="ft2-wm-LUa" firstAttribute="trailing" secondItem="za5-y7-Pa7" secondAttribute="trailing" id="XAR-nD-wQS"/>
+                                            <constraint firstItem="ft2-wm-LUa" firstAttribute="bottom" secondItem="za5-y7-Pa7" secondAttribute="bottom" id="YIz-UG-IB7"/>
+                                            <constraint firstAttribute="bottom" secondItem="za5-y7-Pa7" secondAttribute="bottom" constant="5" id="YjE-J0-DLG"/>
+                                            <constraint firstItem="za5-y7-Pa7" firstAttribute="leading" secondItem="WUN-nh-9wO" secondAttribute="leading" constant="5" id="Yrp-Tf-bz5"/>
+                                            <constraint firstItem="ft2-wm-LUa" firstAttribute="top" secondItem="za5-y7-Pa7" secondAttribute="top" id="Zlv-zy-q5w"/>
+                                            <constraint firstItem="NTl-Qh-ED0" firstAttribute="leading" secondItem="WUN-nh-9wO" secondAttribute="leading" constant="5" id="afp-bZ-EEx"/>
+                                            <constraint firstAttribute="trailing" secondItem="B7a-jf-e7g" secondAttribute="trailing" constant="10" id="cbk-z4-P5D"/>
+                                            <constraint firstItem="B7a-jf-e7g" firstAttribute="centerY" secondItem="za5-y7-Pa7" secondAttribute="centerY" id="ebn-Qw-jGZ"/>
+                                            <constraint firstItem="za5-y7-Pa7" firstAttribute="top" secondItem="NTl-Qh-ED0" secondAttribute="bottom" constant="5" id="f7c-f2-cnR"/>
+                                            <constraint firstItem="NTl-Qh-ED0" firstAttribute="top" secondItem="WUN-nh-9wO" secondAttribute="top" constant="5" id="yJh-6n-2Mu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SHM-ij-S5c" firstAttribute="top" secondItem="ah7-kR-7Vz" secondAttribute="top" id="LZC-nJ-VoB"/>
+                            <constraint firstItem="SHM-ij-S5c" firstAttribute="leading" secondItem="ah7-kR-7Vz" secondAttribute="leading" id="Q8F-ZS-P0s"/>
+                            <constraint firstAttribute="trailing" secondItem="SHM-ij-S5c" secondAttribute="trailing" id="ln6-Ll-jjT"/>
+                            <constraint firstAttribute="bottom" secondItem="SHM-ij-S5c" secondAttribute="bottom" id="vaD-hl-Qok"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ah7-kR-7Vz" secondAttribute="bottom" constant="10" id="eK3-jE-ps8"/>
+                    <constraint firstAttribute="trailing" secondItem="ah7-kR-7Vz" secondAttribute="trailing" constant="10" id="g1W-uY-Eqr"/>
+                    <constraint firstItem="ah7-kR-7Vz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="w8i-dW-AoP"/>
+                    <constraint firstItem="ah7-kR-7Vz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="wmY-tR-lme"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="selectDayButton" destination="WMa-bd-97N" id="iLh-4i-oWY"/>
+                <outlet property="selectDayImageView" destination="f1M-R5-rOA" id="dsC-7y-eGN"/>
+                <outlet property="selectDayLabel" destination="Jg1-wc-rqS" id="m7k-ID-88f"/>
+                <outlet property="selectDayTextField" destination="tv6-pN-8Ns" id="fSx-bn-x0S"/>
+                <outlet property="selectDayView" destination="ihO-UQ-TTQ" id="rFy-s7-WXZ"/>
+                <outlet property="selectMealButton" destination="y91-9A-Zgx" id="k8g-Vj-JA9"/>
+                <outlet property="selectMealImageView" destination="kLB-ls-Fbs" id="AT8-hI-LqS"/>
+                <outlet property="selectMealLabel" destination="7xQ-IR-F1q" id="hmN-0p-qKb"/>
+                <outlet property="selectMealTextField" destination="M9a-3D-Xnd" id="baf-er-0L3"/>
+                <outlet property="selectMealView" destination="Jof-zv-OcR" id="ehL-ym-Un8"/>
+                <outlet property="selectWeekButton" destination="Kla-Cs-B8C" id="s13-Y2-Rac"/>
+                <outlet property="selectWeekImageView" destination="sxD-eL-RSv" id="F54-s4-gzn"/>
+                <outlet property="selectWeekLabel" destination="46b-vT-QUi" id="2ND-ks-MFm"/>
+                <outlet property="selectWeekTextField" destination="UIl-Ym-AHc" id="pt0-2c-gAN"/>
+                <outlet property="selectWeekView" destination="Y89-pz-tL3" id="14X-qZ-Q5u"/>
+                <outlet property="servingSize" destination="WUN-nh-9wO" id="Quh-bh-S7W"/>
+                <outlet property="servingSizeButton" destination="ft2-wm-LUa" id="UTu-cc-OAz"/>
+                <outlet property="servingSizeImageView" destination="B7a-jf-e7g" id="7lo-Dp-uym"/>
+                <outlet property="servingSizeLabel" destination="NTl-Qh-ED0" id="ifr-RZ-U7m"/>
+                <outlet property="servingSizeTextField" destination="za5-y7-Pa7" id="ta0-C7-QEO"/>
+                <outlet property="stackView" destination="SHM-ij-S5c" id="p32-TI-yba"/>
+                <outlet property="view_main" destination="ah7-kR-7Vz" id="pu9-uF-6sv"/>
+            </connections>
+            <point key="canvasLocation" x="-157.97101449275362" y="108.48214285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="downarrow" width="28" height="28"/>
+        <image name="weekly_plan_1" width="28" height="28"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Light_Gray_Text_Color">
+            <color red="0.64313725490196083" green="0.64313725490196083" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="97" id="KGk-i7-Jjw" customClass="ExploreCell" customModule="PrepSmart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiM-dr-ZCV">
+                        <rect key="frame" x="20" y="10" width="280" height="77"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC6-JR-zIw">
+                                <rect key="frame" x="8" y="15" width="46" height="47"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow_black" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-vZ-6yU">
+                                <rect key="frame" x="262" y="33.5" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="rob-Fz-PpO"/>
+                                    <constraint firstAttribute="width" constant="10" id="v86-xh-wez"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSe-TO-hR7">
+                                <rect key="frame" x="54" y="28.5" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Nzz-hA-OUf"/>
+                                    <constraint firstAttribute="height" constant="20" id="kpc-f1-7iY"/>
+                                </constraints>
+                                <color key="tintColor" name="App_Orange_Color"/>
+                                <inset key="imageEdgeInsets" minX="1" minY="1" maxX="1" maxY="1"/>
+                                <state key="normal" image="info"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WC6-JR-zIw" firstAttribute="top" secondItem="KiM-dr-ZCV" secondAttribute="top" constant="15" id="6DW-h8-tLQ"/>
+                            <constraint firstAttribute="trailing" secondItem="K7c-vZ-6yU" secondAttribute="trailing" constant="8" id="Cfk-5c-AET"/>
+                            <constraint firstItem="K7c-vZ-6yU" firstAttribute="leading" relation="lessThanOrEqual" secondItem="OSe-TO-hR7" secondAttribute="trailing" constant="190" id="HhB-Oh-ItU"/>
+                            <constraint firstItem="OSe-TO-hR7" firstAttribute="centerY" secondItem="WC6-JR-zIw" secondAttribute="centerY" id="Hyt-bv-Vb4"/>
+                            <constraint firstItem="K7c-vZ-6yU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OSe-TO-hR7" secondAttribute="trailing" constant="20" id="Jhv-uY-S3e"/>
+                            <constraint firstItem="OSe-TO-hR7" firstAttribute="leading" secondItem="WC6-JR-zIw" secondAttribute="trailing" id="drd-KL-BCR"/>
+                            <constraint firstItem="K7c-vZ-6yU" firstAttribute="centerY" secondItem="KiM-dr-ZCV" secondAttribute="centerY" id="e6e-hc-fR1"/>
+                            <constraint firstItem="WC6-JR-zIw" firstAttribute="leading" secondItem="KiM-dr-ZCV" secondAttribute="leading" constant="8" id="fwp-Ce-Mri"/>
+                            <constraint firstAttribute="bottom" secondItem="WC6-JR-zIw" secondAttribute="bottom" constant="15" id="s22-AT-hzA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="KiM-dr-ZCV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b9q-WU-LE3"/>
+                    <constraint firstAttribute="bottom" secondItem="KiM-dr-ZCV" secondAttribute="bottom" constant="10" id="bcO-wg-VyE"/>
+                    <constraint firstAttribute="trailing" secondItem="KiM-dr-ZCV" secondAttribute="trailing" constant="20" id="jOV-aJ-cLV"/>
+                    <constraint firstItem="KiM-dr-ZCV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="z8d-tz-qoS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="KiM-dr-ZCV" id="8P8-yg-7rx"/>
+                <outlet property="popOverBtn" destination="OSe-TO-hR7" id="jHm-gC-G26"/>
+                <outlet property="titleLbl" destination="WC6-JR-zIw" id="CRo-dp-eAu"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="150"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="forward_arrow_black" width="28" height="28"/>
+        <image name="info" width="28" height="28"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

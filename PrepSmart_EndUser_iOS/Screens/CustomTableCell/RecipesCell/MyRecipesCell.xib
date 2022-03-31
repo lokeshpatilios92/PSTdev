@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="124" id="KGk-i7-Jjw" customClass="MyRecipesCell" customModule="PrepSmart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="WLf-Q0-C5m" customClass="CardView" customModule="PrepSmart" customModuleProvider="target">
+                        <rect key="frame" x="20" y="10" width="280" height="104"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prodile" id="rrg-Jf-PS2">
+                                <rect key="frame" x="10" y="22" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3fB-hk-5T4"/>
+                                    <constraint firstAttribute="width" constant="60" id="iqy-Qy-5N0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Laura C. Robinson" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9kc-Xb-3Pm">
+                                <rect key="frame" x="80" y="16" width="165" height="16.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 matching recipes of 50 total" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Iku-gT-S7i">
+                                <rect key="frame" x="80" y="42.5" width="165" height="45.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow" id="aJe-Qq-TjI">
+                                <rect key="frame" x="255" y="44.5" width="15" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="0QJ-ch-cLS"/>
+                                    <constraint firstAttribute="width" constant="15" id="7cO-Ef-HcX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rrg-Jf-PS2" firstAttribute="leading" secondItem="WLf-Q0-C5m" secondAttribute="leading" constant="10" id="6hI-C2-SKf"/>
+                            <constraint firstItem="Iku-gT-S7i" firstAttribute="top" secondItem="9kc-Xb-3Pm" secondAttribute="bottom" constant="10" id="FvD-Cn-tkA"/>
+                            <constraint firstItem="9kc-Xb-3Pm" firstAttribute="leading" secondItem="rrg-Jf-PS2" secondAttribute="trailing" constant="10" id="Hyn-wU-UOP"/>
+                            <constraint firstItem="aJe-Qq-TjI" firstAttribute="leading" secondItem="9kc-Xb-3Pm" secondAttribute="trailing" constant="10" id="NBH-ot-fVK"/>
+                            <constraint firstItem="Iku-gT-S7i" firstAttribute="leading" secondItem="rrg-Jf-PS2" secondAttribute="trailing" constant="10" id="NPo-tJ-4hi"/>
+                            <constraint firstItem="aJe-Qq-TjI" firstAttribute="centerY" secondItem="WLf-Q0-C5m" secondAttribute="centerY" id="PR2-xx-PB2"/>
+                            <constraint firstItem="9kc-Xb-3Pm" firstAttribute="top" secondItem="WLf-Q0-C5m" secondAttribute="top" constant="16" id="Ueu-Jk-9Sh"/>
+                            <constraint firstAttribute="bottom" secondItem="Iku-gT-S7i" secondAttribute="bottom" constant="16" id="c1L-Wf-hHc"/>
+                            <constraint firstItem="Iku-gT-S7i" firstAttribute="trailing" secondItem="9kc-Xb-3Pm" secondAttribute="trailing" id="fEZ-pb-MmG"/>
+                            <constraint firstItem="rrg-Jf-PS2" firstAttribute="centerY" secondItem="WLf-Q0-C5m" secondAttribute="centerY" id="hpQ-Si-TSy"/>
+                            <constraint firstAttribute="trailing" secondItem="aJe-Qq-TjI" secondAttribute="trailing" constant="10" id="tPf-Yq-8na"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="WLf-Q0-C5m" secondAttribute="trailing" constant="20" id="IBp-cW-Tx6"/>
+                    <constraint firstItem="WLf-Q0-C5m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="TIU-Ye-uoO"/>
+                    <constraint firstItem="WLf-Q0-C5m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="eci-Da-cEm"/>
+                    <constraint firstAttribute="bottom" secondItem="WLf-Q0-C5m" secondAttribute="bottom" constant="10" id="zkI-2C-UqA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="WLf-Q0-C5m" id="r6X-vd-9H9"/>
+                <outlet property="imgView_ProfilePic" destination="rrg-Jf-PS2" id="CwY-km-LEs"/>
+                <outlet property="lbl_count" destination="Iku-gT-S7i" id="SCH-Vq-gZc"/>
+                <outlet property="lbl_name" destination="9kc-Xb-3Pm" id="xz9-qz-aPw"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="150.66964285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="forward_arrow" width="28" height="28"/>
+        <image name="prodile" width="134" height="134"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

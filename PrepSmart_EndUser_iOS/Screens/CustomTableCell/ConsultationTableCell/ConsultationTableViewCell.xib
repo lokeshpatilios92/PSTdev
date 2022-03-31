@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConsultationTableViewCell" rowHeight="100" id="KGk-i7-Jjw" customClass="ConsultationTableViewCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="364" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="364" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" id="pvK-b7-3tb" userLabel="MainView" customClass="ConsultationTableViewCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                        <rect key="frame" x="15" y="15" width="334" height="84.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chef-profile" id="j3l-hp-cT6">
+                                <rect key="frame" x="8" y="17.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6Yx-zt-zKj"/>
+                                    <constraint firstAttribute="width" constant="50" id="GvE-lq-Sis"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Nick R. Bocker" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO"  id="fyy-9J-nns">
+                                <rect key="frame" x="73" y="8" width="233" height="19"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="12/12/2019    Today 10:10am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO"  id="ClB-hb-PRe">
+                                <rect key="frame" x="73" y="27" width="233" height="13.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b1j-AB-UyP">
+                                <rect key="frame" x="73" y="40.5" width="233" height="36"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="UJ9-bc-3Hd" userLabel="IndicatorView">
+                                <rect key="frame" x="48" y="54.5" width="8" height="8"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="Vxo-jy-255"/>
+                                    <constraint firstAttribute="width" constant="8" id="dtA-4H-CDA"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow_black" id="q9a-Gv-CVK">
+                                <rect key="frame" x="311" y="35" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="T5e-sI-bWd"/>
+                                    <constraint firstAttribute="height" constant="15" id="oiT-uw-s89"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ClB-hb-PRe" firstAttribute="top" secondItem="fyy-9J-nns" secondAttribute="bottom" id="OpC-gU-2dE"/>
+                            <constraint firstItem="UJ9-bc-3Hd" firstAttribute="top" secondItem="j3l-hp-cT6" secondAttribute="bottom" constant="-13" id="R3a-4G-UZC"/>
+                            <constraint firstAttribute="trailing" secondItem="q9a-Gv-CVK" secondAttribute="trailing" constant="8" id="Tqt-dE-xa4"/>
+                            <constraint firstItem="q9a-Gv-CVK" firstAttribute="leading" secondItem="fyy-9J-nns" secondAttribute="trailing" constant="5" id="Way-4e-fmd"/>
+                            <constraint firstItem="q9a-Gv-CVK" firstAttribute="centerY" secondItem="pvK-b7-3tb" secondAttribute="centerY" id="cYd-qI-09g"/>
+                            <constraint firstItem="UJ9-bc-3Hd" firstAttribute="leading" secondItem="j3l-hp-cT6" secondAttribute="trailing" constant="-10" id="iw1-bf-hu6"/>
+                            <constraint firstItem="fyy-9J-nns" firstAttribute="leading" secondItem="j3l-hp-cT6" secondAttribute="trailing" constant="15" id="jrm-sS-eu7"/>
+                            <constraint firstItem="fyy-9J-nns" firstAttribute="top" secondItem="pvK-b7-3tb" secondAttribute="top" constant="8" id="mrI-4d-7Zx"/>
+                            <constraint firstItem="j3l-hp-cT6" firstAttribute="centerY" secondItem="pvK-b7-3tb" secondAttribute="centerY" id="rTH-1Q-0qj"/>
+                            <constraint firstAttribute="bottom" secondItem="b1j-AB-UyP" secondAttribute="bottom" constant="8" id="rg4-1n-DCE"/>
+                            <constraint firstItem="q9a-Gv-CVK" firstAttribute="leading" secondItem="b1j-AB-UyP" secondAttribute="trailing" constant="5" id="t14-D9-xTo"/>
+                            <constraint firstItem="ClB-hb-PRe" firstAttribute="leading" secondItem="fyy-9J-nns" secondAttribute="leading" id="uTV-cA-F5f"/>
+                            <constraint firstItem="b1j-AB-UyP" firstAttribute="top" secondItem="ClB-hb-PRe" secondAttribute="bottom" id="v4l-Kl-jk6"/>
+                            <constraint firstItem="q9a-Gv-CVK" firstAttribute="leading" secondItem="ClB-hb-PRe" secondAttribute="trailing" constant="5" id="xPu-9K-kx2"/>
+                            <constraint firstItem="b1j-AB-UyP" firstAttribute="leading" secondItem="ClB-hb-PRe" secondAttribute="leading" id="xQv-fr-B4f"/>
+                            <constraint firstItem="j3l-hp-cT6" firstAttribute="leading" secondItem="pvK-b7-3tb" secondAttribute="leading" constant="8" id="zQI-rm-9s3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="pvK-b7-3tb" secondAttribute="bottom" id="8dB-4V-jJX"/>
+                    <constraint firstItem="pvK-b7-3tb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="QsO-ky-VdQ"/>
+                    <constraint firstAttribute="trailing" secondItem="pvK-b7-3tb" secondAttribute="trailing" constant="15" id="Xhn-CC-7XM"/>
+                    <constraint firstItem="pvK-b7-3tb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="kpI-SW-KdW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgView_profile" destination="j3l-hp-cT6" id="4gd-4D-Nlu"/>
+                <outlet property="lbl_date" destination="ClB-hb-PRe" id="aTj-I2-dgh"/>
+                <outlet property="lbl_name" destination="fyy-9J-nns" id="WgI-cE-dNw"/>
+                <outlet property="lbl_status" destination="b1j-AB-UyP" id="mDj-D3-ji4"/>
+                <outlet property="rightImage" destination="q9a-Gv-CVK" id="hoz-n6-MXA"/>
+                <outlet property="view_border" destination="pvK-b7-3tb" id="SoE-8n-xIl"/>
+                <outlet property="view_indicator" destination="UJ9-bc-3Hd" id="V16-Ro-TEZ"/>
+            </connections>
+            <point key="canvasLocation" x="101.44927536231884" y="125.22321428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="chef-profile" width="278" height="278"/>
+        <image name="forward_arrow_black" width="28" height="28"/>
+    </resources>
+</document>

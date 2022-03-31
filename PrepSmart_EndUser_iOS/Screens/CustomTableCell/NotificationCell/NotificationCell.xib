@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="NotificationCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeB-UN-r7k">
+                        <rect key="frame" x="20" y="10" width="280" height="79.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Luke Skywalker has new blog." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqL-Uo-CeH">
+                                <rect key="frame" x="10" y="32" width="242" height="37.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow_black" translatesAutoresizingMaskIntoConstraints="NO" id="AYC-lo-2lo">
+                                <rect key="frame" x="262" y="46" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="b7l-N7-U6v"/>
+                                    <constraint firstAttribute="width" constant="10" id="brd-ya-qZi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Today 10:30 AM" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmF-Vn-2EP">
+                                <rect key="frame" x="209" y="5" width="66" height="11"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="8"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AYC-lo-2lo" firstAttribute="leading" secondItem="HqL-Uo-CeH" secondAttribute="trailing" constant="10" id="4eC-wY-013"/>
+                            <constraint firstItem="AYC-lo-2lo" firstAttribute="centerY" secondItem="HqL-Uo-CeH" secondAttribute="centerY" id="MMK-4V-vkS"/>
+                            <constraint firstAttribute="trailing" secondItem="AYC-lo-2lo" secondAttribute="trailing" constant="8" id="XBG-hf-HSX"/>
+                            <constraint firstItem="HqL-Uo-CeH" firstAttribute="leading" secondItem="jeB-UN-r7k" secondAttribute="leading" constant="10" id="caM-6u-RgM"/>
+                            <constraint firstAttribute="bottom" secondItem="HqL-Uo-CeH" secondAttribute="bottom" constant="10" id="chL-6S-kaW"/>
+                            <constraint firstAttribute="trailing" secondItem="OmF-Vn-2EP" secondAttribute="trailing" constant="5" id="exc-hq-lm9"/>
+                            <constraint firstItem="HqL-Uo-CeH" firstAttribute="top" secondItem="OmF-Vn-2EP" secondAttribute="bottom" constant="16" id="qdp-Am-yLq"/>
+                            <constraint firstItem="OmF-Vn-2EP" firstAttribute="top" secondItem="jeB-UN-r7k" secondAttribute="top" constant="5" id="ztZ-hy-sOf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="jeB-UN-r7k" secondAttribute="trailing" constant="20" id="BPR-9P-2yf"/>
+                    <constraint firstAttribute="bottom" secondItem="jeB-UN-r7k" secondAttribute="bottom" constant="10" id="LTY-U7-jpt"/>
+                    <constraint firstItem="jeB-UN-r7k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gQL-Jr-gTB"/>
+                    <constraint firstItem="jeB-UN-r7k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="ygk-SC-ZRW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="jeB-UN-r7k" id="PmR-1Q-aID"/>
+                <outlet property="dateAndTimeLbl" destination="OmF-Vn-2EP" id="qyF-S0-Tlv"/>
+                <outlet property="titleLbl" destination="HqL-Uo-CeH" id="4KO-h7-y9W"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="145.98214285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="forward_arrow_black" width="28" height="28"/>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

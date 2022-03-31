@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="PreviewBlogCollectionCell" customModule="PrepSmart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iws-8u-QYM">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe-img-17" translatesAutoresizingMaskIntoConstraints="NO" id="D4e-08-wZL">
+                                <rect key="frame" x="0.0" y="0.0" width="350" height="270"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="D4e-08-wZL" firstAttribute="top" secondItem="Iws-8u-QYM" secondAttribute="top" id="9jc-z1-h90"/>
+                            <constraint firstAttribute="bottom" secondItem="D4e-08-wZL" secondAttribute="bottom" id="Mue-9v-s2J"/>
+                            <constraint firstItem="D4e-08-wZL" firstAttribute="leading" secondItem="Iws-8u-QYM" secondAttribute="leading" id="dle-hu-9eb"/>
+                            <constraint firstAttribute="trailing" secondItem="D4e-08-wZL" secondAttribute="trailing" id="f0D-uw-Oi0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Iws-8u-QYM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3IQ-wH-SWo"/>
+                <constraint firstAttribute="trailing" secondItem="Iws-8u-QYM" secondAttribute="trailing" id="3qC-SS-fda"/>
+                <constraint firstAttribute="bottom" secondItem="Iws-8u-QYM" secondAttribute="bottom" id="Cc5-yX-tL5"/>
+                <constraint firstItem="Iws-8u-QYM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oir-e1-2nK"/>
+            </constraints>
+            <connections>
+                <outlet property="bgView" destination="Iws-8u-QYM" id="vi7-DU-C9w"/>
+                <outlet property="itemImageView" destination="D4e-08-wZL" id="3gj-0a-UIA"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="122.54464285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="recipe-img-17" width="1080" height="683"/>
+    </resources>
+</document>

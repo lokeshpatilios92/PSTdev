@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KGk-i7-Jjw" customClass="RatingCustomHeaderCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="276" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="276" height="70"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yp1-HD-23B">
+                        <rect key="frame" x="10" y="10" width="256" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cd-WR-uMc">
+                                <rect key="frame" x="8" y="15.5" width="60" height="19.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19.5" id="SZ5-y0-lWc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="kYC-H2-2H4">
+                                <rect key="frame" x="231" y="15" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="5Hf-Vf-Gkl"/>
+                                    <constraint firstAttribute="width" constant="20" id="HzJ-E1-B63"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LHw-FP-ceo" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="89" y="17.5" width="95" height="15"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="rate_star_emty"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="rate_star"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" ambiguous="YES" text="297" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-od-y9h">
+                                <rect key="frame" x="189" y="19.5" width="24" height="14"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdQ-y0-m1G">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="50"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6cd-WR-uMc" firstAttribute="centerY" secondItem="Yp1-HD-23B" secondAttribute="centerY" id="9Z4-GR-T3G"/>
+                            <constraint firstItem="a1m-od-y9h" firstAttribute="baseline" secondItem="6cd-WR-uMc" secondAttribute="baseline" id="LlS-an-vA8"/>
+                            <constraint firstItem="QdQ-y0-m1G" firstAttribute="leading" secondItem="Yp1-HD-23B" secondAttribute="leading" id="VWg-pR-Fmb"/>
+                            <constraint firstAttribute="bottom" secondItem="QdQ-y0-m1G" secondAttribute="bottom" id="WLe-4T-tpf"/>
+                            <constraint firstItem="a1m-od-y9h" firstAttribute="leading" secondItem="LHw-FP-ceo" secondAttribute="trailing" constant="5" id="atA-DY-sKy"/>
+                            <constraint firstItem="LHw-FP-ceo" firstAttribute="leading" secondItem="6cd-WR-uMc" secondAttribute="trailing" constant="15" id="cJS-ij-Ndz"/>
+                            <constraint firstItem="kYC-H2-2H4" firstAttribute="centerY" secondItem="Yp1-HD-23B" secondAttribute="centerY" id="d8R-RZ-nEx"/>
+                            <constraint firstAttribute="trailing" secondItem="QdQ-y0-m1G" secondAttribute="trailing" id="hqR-km-7m6"/>
+                            <constraint firstItem="6cd-WR-uMc" firstAttribute="leading" secondItem="Yp1-HD-23B" secondAttribute="leading" constant="8" id="lyi-h1-HSd"/>
+                            <constraint firstItem="LHw-FP-ceo" firstAttribute="centerY" secondItem="6cd-WR-uMc" secondAttribute="centerY" id="riC-rV-gQs"/>
+                            <constraint firstItem="QdQ-y0-m1G" firstAttribute="top" secondItem="Yp1-HD-23B" secondAttribute="top" id="vUr-H2-SYx"/>
+                            <constraint firstAttribute="trailing" secondItem="kYC-H2-2H4" secondAttribute="trailing" constant="5" id="vjM-x5-iW6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Yp1-HD-23B" secondAttribute="bottom" constant="10" id="i5V-Db-MVq"/>
+                    <constraint firstItem="Yp1-HD-23B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qCB-4K-BXb"/>
+                    <constraint firstAttribute="trailing" secondItem="Yp1-HD-23B" secondAttribute="trailing" constant="10" id="sbd-6o-7Je"/>
+                    <constraint firstItem="Yp1-HD-23B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="xgp-eL-MHW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dropDownImgView" destination="kYC-H2-2H4" id="zlk-9e-7Lz"/>
+                <outlet property="ratingcountLbl" destination="a1m-od-y9h" id="ChY-Tw-Ahe"/>
+                <outlet property="sectionButton" destination="QdQ-y0-m1G" id="vw8-py-WJB"/>
+                <outlet property="starRatingView" destination="LHw-FP-ceo" id="NMW-io-HMt"/>
+            </connections>
+            <point key="canvasLocation" x="112.5" y="146.83098591549296"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="drop_arrow" width="28" height="28"/>
+        <image name="rate_star" width="28" height="28"/>
+        <image name="rate_star_emty" width="28" height="28"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

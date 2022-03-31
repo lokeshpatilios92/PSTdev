@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="DietTableCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SR7-XA-ZYO">
+                        <rect key="frame" x="10" y="0.0" width="300" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Everything Goes" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-hd-3yD">
+                                <rect key="frame" x="10" y="10" width="235" height="38"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="18"/>
+                                <color key="textColor" name="App_Orange_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_orange" translatesAutoresizingMaskIntoConstraints="NO" id="QSA-iN-YcG">
+                                <rect key="frame" x="255" y="16.5" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="prZ-5d-wuX"/>
+                                    <constraint firstAttribute="width" constant="25" id="pum-Dm-rv7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="No Restriction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lr-zd-SsW">
+                                <rect key="frame" x="10" y="56" width="235" height="14"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Lr-zd-SsW" firstAttribute="leading" secondItem="SR7-XA-ZYO" secondAttribute="leading" constant="10" id="20Y-sH-3r4"/>
+                            <constraint firstItem="QSA-iN-YcG" firstAttribute="leading" secondItem="0Lr-zd-SsW" secondAttribute="trailing" constant="10" id="4HJ-hE-QHs"/>
+                            <constraint firstAttribute="trailing" secondItem="QSA-iN-YcG" secondAttribute="trailing" constant="20" id="Awv-ue-PKu"/>
+                            <constraint firstAttribute="bottom" secondItem="0Lr-zd-SsW" secondAttribute="bottom" constant="10" id="PpR-ZT-OZx"/>
+                            <constraint firstItem="0Lr-zd-SsW" firstAttribute="top" secondItem="wLP-hd-3yD" secondAttribute="bottom" constant="8" id="dxo-Kr-DdZ"/>
+                            <constraint firstItem="QSA-iN-YcG" firstAttribute="centerY" secondItem="wLP-hd-3yD" secondAttribute="centerY" id="hfC-YE-2dE"/>
+                            <constraint firstItem="QSA-iN-YcG" firstAttribute="leading" secondItem="wLP-hd-3yD" secondAttribute="trailing" constant="10" id="iHN-8w-CFB"/>
+                            <constraint firstItem="wLP-hd-3yD" firstAttribute="leading" secondItem="SR7-XA-ZYO" secondAttribute="leading" constant="10" id="wKI-5p-aH9"/>
+                            <constraint firstItem="wLP-hd-3yD" firstAttribute="top" secondItem="SR7-XA-ZYO" secondAttribute="top" constant="10" id="zuF-AI-NnI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SR7-XA-ZYO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="DbC-p3-xuH"/>
+                    <constraint firstAttribute="trailing" secondItem="SR7-XA-ZYO" secondAttribute="trailing" constant="10" id="Zbf-Lw-H0G"/>
+                    <constraint firstItem="SR7-XA-ZYO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nZo-m4-Dk0"/>
+                    <constraint firstAttribute="bottom" secondItem="SR7-XA-ZYO" secondAttribute="bottom" id="yR2-er-xZR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="SR7-XA-ZYO" id="Vd6-tw-eUU"/>
+                <outlet property="bottomLabel" destination="0Lr-zd-SsW" id="hdo-2j-5k7"/>
+                <outlet property="rightImage" destination="QSA-iN-YcG" id="Awv-gT-vnP"/>
+                <outlet property="titleLabel" destination="wLP-hd-3yD" id="2Rh-B0-WtI"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="129"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check_mark_orange" width="28" height="28"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

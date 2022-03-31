@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0Of-gL-Com" customClass="ExploreWeeklyPlanTemplatesCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="248" height="268"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="248" height="268"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4K-Gq-5FI">
+                        <rect key="frame" x="0.0" y="0.0" width="248" height="268"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe-img-13" translatesAutoresizingMaskIntoConstraints="NO" id="laf-sC-kDC">
+                                <rect key="frame" x="5" y="5" width="238" height="191.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="l17-Db-l8f">
+                                <rect key="frame" x="5" y="10" width="85" height="20"/>
+                                <subviews>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="free" translatesAutoresizingMaskIntoConstraints="NO" id="K0D-h0-feg">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="f2j-DA-qcg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" insetsLayoutMarginsFromSafeArea="NO" image="premium" translatesAutoresizingMaskIntoConstraints="NO" id="zfE-3q-dVE">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="fC5-l0-4pZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="prepsmarts-choice" translatesAutoresizingMaskIntoConstraints="NO" id="keK-ex-TOo">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="gUR-9X-8bq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="weekly-plan" translatesAutoresizingMaskIntoConstraints="NO" id="wBI-R6-q8C">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="GUG-Ze-n7O"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="recipe-pack" translatesAutoresizingMaskIntoConstraints="NO" id="8cs-gl-14i">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="BaF-wb-hxA"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="bRC-Z2-MkF"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGh-Xg-1xR">
+                                <rect key="frame" x="5" y="201.5" width="238" height="61.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Stew You Never Knew You Loved" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkn-ha-FBo">
+                                        <rect key="frame" x="0.0" y="0.0" width="238" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="qrY-SB-wes" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="8" y="35" width="60" height="8"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="rate_star_emty"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="rate_star"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="(450)" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBE-Oy-yyg">
+                                        <rect key="frame" x="76" y="32.5" width="24.5" height="13.5"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjf-47-xsd">
+                                        <rect key="frame" x="120.5" y="26.5" width="117.5" height="25"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weekly_plan" translatesAutoresizingMaskIntoConstraints="NO" id="pji-jo-HYx">
+                                                <rect key="frame" x="5" y="7.5" width="10" height="10"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="10" id="2Xb-rr-r0T"/>
+                                                    <constraint firstAttribute="height" constant="10" id="FyL-hd-gKK"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly  Plan" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysK-dx-75F">
+                                                <rect key="frame" x="20" y="0.0" width="92.5" height="25"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="8"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.25882352939999997" green="0.64705882349999999" blue="0.12941176469999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="ysK-dx-75F" firstAttribute="top" secondItem="fjf-47-xsd" secondAttribute="top" id="2fQ-kI-mb9"/>
+                                            <constraint firstAttribute="height" constant="25" id="Ket-d9-bcy"/>
+                                            <constraint firstAttribute="trailing" secondItem="ysK-dx-75F" secondAttribute="trailing" constant="5" id="Qk7-cK-isp"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="SZv-zK-XEz"/>
+                                            <constraint firstItem="pji-jo-HYx" firstAttribute="centerY" secondItem="fjf-47-xsd" secondAttribute="centerY" id="eXR-Qp-gPk"/>
+                                            <constraint firstItem="pji-jo-HYx" firstAttribute="leading" secondItem="fjf-47-xsd" secondAttribute="leading" constant="5" id="i6q-3l-afy"/>
+                                            <constraint firstAttribute="bottom" secondItem="ysK-dx-75F" secondAttribute="bottom" id="u2O-UT-He8"/>
+                                            <constraint firstItem="ysK-dx-75F" firstAttribute="leading" secondItem="pji-jo-HYx" secondAttribute="trailing" constant="5" id="vmP-N5-agw"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fjf-47-xsd" secondAttribute="trailing" id="3bj-3s-6Ne"/>
+                                    <constraint firstAttribute="trailing" secondItem="hkn-ha-FBo" secondAttribute="trailing" id="4GJ-hO-unv"/>
+                                    <constraint firstItem="hkn-ha-FBo" firstAttribute="leading" secondItem="KGh-Xg-1xR" secondAttribute="leading" id="8EK-3a-ivR"/>
+                                    <constraint firstItem="uBE-Oy-yyg" firstAttribute="centerY" secondItem="fjf-47-xsd" secondAttribute="centerY" id="8tB-K7-vQu"/>
+                                    <constraint firstItem="qrY-SB-wes" firstAttribute="centerY" secondItem="uBE-Oy-yyg" secondAttribute="centerY" id="HjN-h1-WAy"/>
+                                    <constraint firstItem="fjf-47-xsd" firstAttribute="leading" secondItem="uBE-Oy-yyg" secondAttribute="trailing" constant="20" id="IHz-FY-5CB"/>
+                                    <constraint firstItem="hkn-ha-FBo" firstAttribute="top" secondItem="KGh-Xg-1xR" secondAttribute="top" id="ITy-g0-K1K"/>
+                                    <constraint firstAttribute="bottom" secondItem="fjf-47-xsd" secondAttribute="bottom" constant="10" id="Mrb-3s-XIN"/>
+                                    <constraint firstItem="qrY-SB-wes" firstAttribute="leading" secondItem="KGh-Xg-1xR" secondAttribute="leading" constant="8" id="aow-6a-xaW"/>
+                                    <constraint firstItem="uBE-Oy-yyg" firstAttribute="leading" secondItem="qrY-SB-wes" secondAttribute="trailing" constant="8" id="bvW-XU-AwX"/>
+                                    <constraint firstItem="fjf-47-xsd" firstAttribute="top" secondItem="hkn-ha-FBo" secondAttribute="bottom" constant="10" id="zp4-ik-f2h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KGh-Xg-1xR" secondAttribute="trailing" constant="5" id="C7g-RZ-qn3"/>
+                            <constraint firstItem="l17-Db-l8f" firstAttribute="top" secondItem="G4K-Gq-5FI" secondAttribute="top" constant="10" id="Qdl-AI-kX2"/>
+                            <constraint firstAttribute="trailing" secondItem="laf-sC-kDC" secondAttribute="trailing" constant="5" id="RSv-zj-D8a"/>
+                            <constraint firstItem="l17-Db-l8f" firstAttribute="leading" secondItem="G4K-Gq-5FI" secondAttribute="leading" constant="5" id="V5p-oA-Yvb"/>
+                            <constraint firstItem="KGh-Xg-1xR" firstAttribute="leading" secondItem="G4K-Gq-5FI" secondAttribute="leading" constant="5" id="gDV-Kc-dcz"/>
+                            <constraint firstAttribute="bottom" secondItem="KGh-Xg-1xR" secondAttribute="bottom" constant="5" id="ian-cA-DPT"/>
+                            <constraint firstItem="laf-sC-kDC" firstAttribute="top" secondItem="G4K-Gq-5FI" secondAttribute="top" constant="5" id="mnS-S2-25z"/>
+                            <constraint firstItem="KGh-Xg-1xR" firstAttribute="top" secondItem="laf-sC-kDC" secondAttribute="bottom" constant="5" id="oFj-Ib-oiw"/>
+                            <constraint firstItem="laf-sC-kDC" firstAttribute="leading" secondItem="G4K-Gq-5FI" secondAttribute="leading" constant="5" id="orY-0V-unf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="G4K-Gq-5FI" firstAttribute="top" secondItem="0Of-gL-Com" secondAttribute="top" id="C6C-li-wwe"/>
+                <constraint firstItem="G4K-Gq-5FI" firstAttribute="leading" secondItem="0Of-gL-Com" secondAttribute="leading" id="Huu-4N-Nkv"/>
+                <constraint firstAttribute="trailing" secondItem="G4K-Gq-5FI" secondAttribute="trailing" id="L7R-qI-Ra3"/>
+                <constraint firstAttribute="bottom" secondItem="G4K-Gq-5FI" secondAttribute="bottom" id="qo5-Yc-qmU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="whm-5L-DqR"/>
+            <size key="customSize" width="248" height="268"/>
+            <connections>
+                <outlet property="bgView" destination="G4K-Gq-5FI" id="iuT-G5-Vop"/>
+                <outlet property="cosmosStarView" destination="qrY-SB-wes" id="dlJ-oB-cAy"/>
+                <outlet property="itemImageView" destination="laf-sC-kDC" id="e78-Un-gZG"/>
+                <outlet property="itemTitleLabel" destination="hkn-ha-FBo" id="W8p-NJ-0GF"/>
+                <outlet property="labelImageView0" destination="K0D-h0-feg" id="pLv-3l-FBC"/>
+                <outlet property="labelImageView1" destination="zfE-3q-dVE" id="Mhv-NU-Oj2"/>
+                <outlet property="labelImageView2" destination="keK-ex-TOo" id="fly-yk-xfr"/>
+                <outlet property="labelImageView3" destination="wBI-R6-q8C" id="5I8-IO-yB6"/>
+                <outlet property="labelImageView4" destination="8cs-gl-14i" id="yb3-48-dkr"/>
+                <outlet property="ratingLabel" destination="uBE-Oy-yyg" id="nzL-MS-8iL"/>
+                <outlet property="weeklyPlanView" destination="fjf-47-xsd" id="SlO-Kh-rQS"/>
+            </connections>
+            <point key="canvasLocation" x="133.33333333333334" y="133.92857142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="free" width="100" height="46"/>
+        <image name="premium" width="110" height="46"/>
+        <image name="prepsmarts-choice" width="200" height="46"/>
+        <image name="rate_star" width="28" height="28"/>
+        <image name="rate_star_emty" width="28" height="28"/>
+        <image name="recipe-img-13" width="448" height="333"/>
+        <image name="recipe-pack" width="180" height="46"/>
+        <image name="weekly-plan" width="170" height="46"/>
+        <image name="weekly_plan" width="28" height="28"/>
+    </resources>
+</document>

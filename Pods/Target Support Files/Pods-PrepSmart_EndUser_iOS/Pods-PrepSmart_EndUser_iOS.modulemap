@@ -1,0 +1,6 @@
+framework module Pods_PrepSmart_EndUser_iOS {
+  umbrella header "Pods-PrepSmart_EndUser_iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

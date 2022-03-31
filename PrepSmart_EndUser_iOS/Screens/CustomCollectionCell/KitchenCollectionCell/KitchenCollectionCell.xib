@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="KitchenCollectionCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWH-Za-FrJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sp9-tM-oaa" customClass="CardView" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="30" width="374" height="390"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPb-4c-fKY">
+                                        <rect key="frame" x="174" y="40" width="26.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="18"/>
+                                        <color key="textColor" name="App_Orange_Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTY-GD-qAr">
+                                        <rect key="frame" x="10" y="76" width="354" height="70"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                        <color key="textColor" name="Dark_Text_Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e9R-nb-Mib">
+                                        <rect key="frame" x="10" y="166" width="354" height="138"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="9Xl-No-aij"/>
+                                        </constraints>
+                                        <color key="separatorColor" name="Dark_Text_Color"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="gTV-IL-0wX" id="nQd-11-L2g"/>
+                                            <outlet property="delegate" destination="gTV-IL-0wX" id="C4z-sK-jPX"/>
+                                        </connections>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xE-ng-Poq">
+                                        <rect key="frame" x="144" y="324" width="86" height="26"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                        <state key="normal" title="Step completed">
+                                            <color key="titleColor" name="App_Orange_Color"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WTY-GD-qAr" secondAttribute="trailing" constant="10" id="6y7-cn-g3G"/>
+                                    <constraint firstItem="6xE-ng-Poq" firstAttribute="top" secondItem="e9R-nb-Mib" secondAttribute="bottom" constant="20" id="B3K-u2-NOS"/>
+                                    <constraint firstItem="WTY-GD-qAr" firstAttribute="top" secondItem="qPb-4c-fKY" secondAttribute="bottom" constant="15" id="VRG-G2-C7x"/>
+                                    <constraint firstAttribute="trailing" secondItem="e9R-nb-Mib" secondAttribute="trailing" constant="10" id="Wpc-aZ-n1e"/>
+                                    <constraint firstItem="6xE-ng-Poq" firstAttribute="centerX" secondItem="sp9-tM-oaa" secondAttribute="centerX" id="Zth-B9-rFN"/>
+                                    <constraint firstItem="e9R-nb-Mib" firstAttribute="top" secondItem="WTY-GD-qAr" secondAttribute="bottom" constant="20" id="bxq-3m-Lyy"/>
+                                    <constraint firstItem="WTY-GD-qAr" firstAttribute="leading" secondItem="sp9-tM-oaa" secondAttribute="leading" constant="10" id="deL-sU-sUh"/>
+                                    <constraint firstItem="qPb-4c-fKY" firstAttribute="top" secondItem="sp9-tM-oaa" secondAttribute="top" constant="40" id="egS-ws-pBa"/>
+                                    <constraint firstAttribute="bottom" secondItem="6xE-ng-Poq" secondAttribute="bottom" constant="40" id="enO-E9-3lo"/>
+                                    <constraint firstItem="qPb-4c-fKY" firstAttribute="centerX" secondItem="sp9-tM-oaa" secondAttribute="centerX" id="iwL-rL-T4O"/>
+                                    <constraint firstItem="e9R-nb-Mib" firstAttribute="leading" secondItem="sp9-tM-oaa" secondAttribute="leading" constant="10" id="pJp-ZR-J4e"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVu-CZ-mr4">
+                                <rect key="frame" x="182" y="5" width="50" height="50"/>
+                                <color key="backgroundColor" name="App_Orange_Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="S1z-fW-mbo"/>
+                                    <constraint firstAttribute="height" constant="50" id="tiZ-hm-WhT"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="up_Arrow_fill"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UR-AJ-5Bb">
+                                <rect key="frame" x="182" y="395" width="50" height="50"/>
+                                <color key="backgroundColor" name="App_Orange_Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DgA-Se-yvi"/>
+                                    <constraint firstAttribute="width" constant="50" id="UhZ-mj-bL4"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="down_Arrow_fill"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sp9-tM-oaa" firstAttribute="top" secondItem="CWH-Za-FrJ" secondAttribute="top" constant="30" id="74e-MK-6m7"/>
+                            <constraint firstItem="SVu-CZ-mr4" firstAttribute="centerX" secondItem="CWH-Za-FrJ" secondAttribute="centerX" id="GMx-V7-haK"/>
+                            <constraint firstItem="9UR-AJ-5Bb" firstAttribute="centerX" secondItem="CWH-Za-FrJ" secondAttribute="centerX" id="akd-vX-RBU"/>
+                            <constraint firstItem="9UR-AJ-5Bb" firstAttribute="top" secondItem="sp9-tM-oaa" secondAttribute="bottom" constant="-25" id="hxn-un-cNe"/>
+                            <constraint firstAttribute="bottom" secondItem="sp9-tM-oaa" secondAttribute="bottom" constant="30" id="iTy-Bl-3ah"/>
+                            <constraint firstItem="sp9-tM-oaa" firstAttribute="top" secondItem="SVu-CZ-mr4" secondAttribute="bottom" constant="-25" id="oHx-jo-hDH"/>
+                            <constraint firstAttribute="trailing" secondItem="sp9-tM-oaa" secondAttribute="trailing" constant="20" id="spl-dM-KL6"/>
+                            <constraint firstItem="sp9-tM-oaa" firstAttribute="leading" secondItem="CWH-Za-FrJ" secondAttribute="leading" constant="20" id="viM-ue-Lnj"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="CWH-Za-FrJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bnZ-JR-6PM"/>
+                <constraint firstAttribute="trailing" secondItem="CWH-Za-FrJ" secondAttribute="trailing" id="gt0-Ht-nr4"/>
+                <constraint firstItem="CWH-Za-FrJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="n2R-aR-jaU"/>
+                <constraint firstAttribute="bottom" secondItem="CWH-Za-FrJ" secondAttribute="bottom" id="utW-Ad-hia"/>
+            </constraints>
+            <connections>
+                <outlet property="bgView" destination="sp9-tM-oaa" id="RO2-8i-hyj"/>
+                <outlet property="bottomButton" destination="9UR-AJ-5Bb" id="Kh1-yw-TTC"/>
+                <outlet property="cellContentView" destination="CWH-Za-FrJ" id="GRh-w4-lS0"/>
+                <outlet property="stepCompleteButton" destination="6xE-ng-Poq" id="6xY-RR-MIm"/>
+                <outlet property="stepCountLabel" destination="qPb-4c-fKY" id="UHj-r5-g2R"/>
+                <outlet property="stepDescriptionLabel" destination="WTY-GD-qAr" id="AaH-MU-Pt1"/>
+                <outlet property="tableView" destination="e9R-nb-Mib" id="1f1-OW-hav"/>
+                <outlet property="topButton" destination="SVu-CZ-mr4" id="ymD-qQ-X2V"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="126.5625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="down_Arrow_fill" width="28" height="28"/>
+        <image name="up_Arrow_fill" width="28" height="28"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeeklyPlanInfoTableViewCell" rowHeight="74"  id="KGk-i7-Jjw" customClass="WeeklyPlanInfoTableViewCell" customModule="PrepSmart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="336" height="74"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="336" height="74"/>
+                
+                <subviews>
+                    <view contentMode="scaleToFill"  id="nFL-wn-rje" userLabel="MainView" customClass="ConsultationTableViewCell" customModule="PrepSmart" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="336" height="74"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" id="UeZ-XC-287">
+                                <rect key="frame" x="10" y="10" width="316" height="53.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO"  id="9Ir-bZ-cxL">
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="53.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paleo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO"  id="uyC-eZ-scb">
+                                        <rect key="frame" x="158" y="0.0" width="158" height="53.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO"  id="aTl-fw-d7s" userLabel="BottomSeparator">
+                                <rect key="frame" x="0.0" y="73.5" width="336" height="0.5"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="2JX-JZ-Af2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Background_Dark_Gray_Color"/>
+                        <constraints>
+                            <constraint firstItem="aTl-fw-d7s" firstAttribute="top" secondItem="UeZ-XC-287" secondAttribute="bottom" constant="10" id="5dw-ug-cJj"/>
+                            <constraint firstItem="UeZ-XC-287" firstAttribute="top" secondItem="nFL-wn-rje" secondAttribute="top" constant="10" id="CPg-tC-shx"/>
+                            <constraint firstItem="aTl-fw-d7s" firstAttribute="leading" secondItem="nFL-wn-rje" secondAttribute="leading" id="Iez-bU-fSS"/>
+                            <constraint firstAttribute="trailing" secondItem="UeZ-XC-287" secondAttribute="trailing" constant="10" id="QGP-IF-GyL"/>
+                            <constraint firstAttribute="bottom" secondItem="aTl-fw-d7s" secondAttribute="bottom" id="QNk-nT-6zI"/>
+                            <constraint firstItem="UeZ-XC-287" firstAttribute="leading" secondItem="nFL-wn-rje" secondAttribute="leading" constant="10" id="hfp-Wb-2CO"/>
+                            <constraint firstAttribute="trailing" secondItem="aTl-fw-d7s" secondAttribute="trailing" id="tQ8-o3-cOU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nFL-wn-rje" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Tn8-Hf-mWl"/>
+                    <constraint firstAttribute="trailing" secondItem="nFL-wn-rje" secondAttribute="trailing" id="c4n-SD-mQx"/>
+                    <constraint firstAttribute="bottom" secondItem="nFL-wn-rje" secondAttribute="bottom" id="e8i-u9-J6i"/>
+                    <constraint firstItem="nFL-wn-rje" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mON-Sm-dng"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lbl_separator" destination="aTl-fw-d7s" id="W6Q-5R-Z10"/>
+                <outlet property="lbl_subTitle" destination="uyC-eZ-scb" id="5y0-hj-tk4"/>
+                <outlet property="lbl_title" destination="9Ir-bZ-cxL" id="Nbn-4R-Qwt"/>
+            </connections>
+            <point key="canvasLocation" x="49.275362318840585" y="49.553571428571423"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Background_Dark_Gray_Color">
+            <color red="0.91764705882352937" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

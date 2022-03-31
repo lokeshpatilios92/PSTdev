@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="61" id="KGk-i7-Jjw" customClass="CookListIngredientsTableCell" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="388" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="388" height="60.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-dq-otC">
+                        <rect key="frame" x="10" y="0.0" width="368" height="60.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_mark_orange_normal" translatesAutoresizingMaskIntoConstraints="NO" id="hMV-3e-HXJ">
+                                <rect key="frame" x="20" y="18" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="SM9-ep-jNB"/>
+                                    <constraint firstAttribute="height" constant="25" id="cRY-9G-33v"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpk-qi-oXi">
+                                <rect key="frame" x="60" y="15" width="263" height="30.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KKu-bx-2yr">
+                                <rect key="frame" x="328" y="18" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="dsK-2H-cmp"/>
+                                    <constraint firstAttribute="width" constant="25" id="xYP-iu-Onm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHE-sk-puX">
+                                <rect key="frame" x="0.0" y="59.5" width="368" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hMC-zJ-8XN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KKu-bx-2yr" firstAttribute="centerY" secondItem="Lpk-qi-oXi" secondAttribute="centerY" id="2a2-ZS-Uic"/>
+                            <constraint firstItem="aHE-sk-puX" firstAttribute="leading" secondItem="PhD-dq-otC" secondAttribute="leading" id="9Ui-gP-UwH"/>
+                            <constraint firstItem="hMV-3e-HXJ" firstAttribute="leading" secondItem="PhD-dq-otC" secondAttribute="leading" constant="20" id="ACn-Ee-Ook"/>
+                            <constraint firstItem="KKu-bx-2yr" firstAttribute="leading" secondItem="Lpk-qi-oXi" secondAttribute="trailing" constant="5" id="Skm-Eh-lbG"/>
+                            <constraint firstItem="Lpk-qi-oXi" firstAttribute="leading" secondItem="hMV-3e-HXJ" secondAttribute="trailing" constant="15" id="UaF-ti-qFR"/>
+                            <constraint firstAttribute="trailing" secondItem="aHE-sk-puX" secondAttribute="trailing" id="dJk-zV-tX4"/>
+                            <constraint firstAttribute="trailing" secondItem="KKu-bx-2yr" secondAttribute="trailing" constant="15" id="f81-vK-5Re"/>
+                            <constraint firstItem="aHE-sk-puX" firstAttribute="top" secondItem="Lpk-qi-oXi" secondAttribute="bottom" constant="14" id="ijw-I3-IFB"/>
+                            <constraint firstItem="Lpk-qi-oXi" firstAttribute="top" secondItem="PhD-dq-otC" secondAttribute="top" constant="15" id="lxZ-uM-TEG"/>
+                            <constraint firstItem="hMV-3e-HXJ" firstAttribute="centerY" secondItem="Lpk-qi-oXi" secondAttribute="centerY" id="mT9-at-QeX"/>
+                            <constraint firstAttribute="bottom" secondItem="aHE-sk-puX" secondAttribute="bottom" id="ofW-Kc-zjp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="PhD-dq-otC" secondAttribute="trailing" constant="10" id="6dx-1A-W3A"/>
+                    <constraint firstAttribute="bottom" secondItem="PhD-dq-otC" secondAttribute="bottom" id="XQO-3Q-G38"/>
+                    <constraint firstItem="PhD-dq-otC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kkY-O1-CUe"/>
+                    <constraint firstItem="PhD-dq-otC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="lF3-2D-XCF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="backView" destination="PhD-dq-otC" id="Kda-5e-L5c"/>
+                <outlet property="leftCheckImage" destination="hMV-3e-HXJ" id="Yln-YW-cET"/>
+                <outlet property="rightCartImage" destination="KKu-bx-2yr" id="OgM-tv-otq"/>
+                <outlet property="titleLabel" destination="Lpk-qi-oXi" id="w3c-2o-Hmz"/>
+            </connections>
+            <point key="canvasLocation" x="42.028985507246382" y="69.308035714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="check_mark_orange_normal" width="28" height="28"/>
+    </resources>
+</document>

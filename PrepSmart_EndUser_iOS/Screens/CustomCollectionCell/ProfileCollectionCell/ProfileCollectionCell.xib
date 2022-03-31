@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="ProfileCollectionCell" customModule="PrepSmart_ETPL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dwS-Dk-VDh">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe-img-12" translatesAutoresizingMaskIntoConstraints="NO" id="0St-jO-JNH">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y47-hi-C34">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsumlor sit amet elit  ipsumlor ipsumlor" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4J-VI-eS7">
+                                        <rect key="frame" x="10" y="57.5" width="80" height="32.5"/>
+                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="0.39924015410958902" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="F4J-VI-eS7" secondAttribute="bottom" constant="10" id="Dbe-6O-eR2"/>
+                                    <constraint firstAttribute="trailing" secondItem="F4J-VI-eS7" secondAttribute="trailing" constant="10" id="dA1-Ui-hvi"/>
+                                    <constraint firstItem="F4J-VI-eS7" firstAttribute="leading" secondItem="y47-hi-C34" secondAttribute="leading" constant="10" id="sHl-cK-Csw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="y47-hi-C34" secondAttribute="bottom" id="Otx-sc-tRJ"/>
+                            <constraint firstAttribute="trailing" secondItem="0St-jO-JNH" secondAttribute="trailing" id="Q77-F0-Mrc"/>
+                            <constraint firstItem="y47-hi-C34" firstAttribute="top" secondItem="dwS-Dk-VDh" secondAttribute="top" id="SOj-eC-2MD"/>
+                            <constraint firstAttribute="bottom" secondItem="0St-jO-JNH" secondAttribute="bottom" id="TMI-Y3-SC3"/>
+                            <constraint firstItem="0St-jO-JNH" firstAttribute="top" secondItem="dwS-Dk-VDh" secondAttribute="top" id="aZj-GU-dTO"/>
+                            <constraint firstItem="0St-jO-JNH" firstAttribute="leading" secondItem="dwS-Dk-VDh" secondAttribute="leading" id="gT8-Tn-8s5"/>
+                            <constraint firstAttribute="trailing" secondItem="y47-hi-C34" secondAttribute="trailing" id="krS-Gw-AOE"/>
+                            <constraint firstItem="y47-hi-C34" firstAttribute="leading" secondItem="dwS-Dk-VDh" secondAttribute="leading" id="xyU-dB-Qh4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="dwS-Dk-VDh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YFs-Ih-A0p"/>
+                <constraint firstAttribute="bottom" secondItem="dwS-Dk-VDh" secondAttribute="bottom" id="l81-et-MnC"/>
+                <constraint firstAttribute="trailing" secondItem="dwS-Dk-VDh" secondAttribute="trailing" id="wfD-gc-p2d"/>
+                <constraint firstItem="dwS-Dk-VDh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xwH-nA-f1F"/>
+            </constraints>
+            <connections>
+                <outlet property="itemImageView" destination="0St-jO-JNH" id="VJn-d8-COQ"/>
+                <outlet property="itemTitle" destination="F4J-VI-eS7" id="7Ax-NZ-796"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="recipe-img-12" width="448" height="333"/>
+    </resources>
+</document>

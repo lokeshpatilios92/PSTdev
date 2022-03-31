@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomPage" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wyg-xx-Bbf">
+                    <rect key="frame" x="170" y="100" width="35" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="RGj-OB-BKe"/>
+                        <constraint firstAttribute="height" constant="40" id="hho-wO-Ic3"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3e-DW-9vK">
+                    <rect key="frame" x="20" y="155" width="335" height="24.5"/>
+                    <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSM-8Y-Kj1">
+                    <rect key="frame" x="20" y="204.5" width="335" height="16.5"/>
+                    <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sC8-fn-gYY">
+                    <rect key="frame" x="230" y="100" width="35" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="P1e-3e-ZzS"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Sys-MB-Ib1"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="dDH-yQ-72u"/>
+                        <constraint firstAttribute="width" constant="35" id="mUn-gR-ODX"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nCX-pP-iSp">
+                    <rect key="frame" x="110" y="100" width="35" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="3hq-Ry-htY"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="NKg-OO-xMg"/>
+                        <constraint firstAttribute="width" constant="35" id="YHT-WA-twU"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="mAq-ov-2Ka"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QSM-8Y-Kj1" secondAttribute="trailing" constant="20" id="7tS-bL-Qnn"/>
+                <constraint firstItem="j3e-DW-9vK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="MrY-Lw-c0v"/>
+                <constraint firstItem="QSM-8Y-Kj1" firstAttribute="top" secondItem="j3e-DW-9vK" secondAttribute="bottom" constant="25" id="PK7-Kf-SY1"/>
+                <constraint firstItem="Wyg-xx-Bbf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RRH-pP-fhV"/>
+                <constraint firstItem="Wyg-xx-Bbf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="RbL-nj-lsS"/>
+                <constraint firstItem="nCX-pP-iSp" firstAttribute="centerY" secondItem="Wyg-xx-Bbf" secondAttribute="centerY" id="TbR-W6-OZy"/>
+                <constraint firstItem="QSM-8Y-Kj1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="aj8-io-hOX"/>
+                <constraint firstAttribute="trailing" secondItem="j3e-DW-9vK" secondAttribute="trailing" constant="20" id="idg-tL-r4s"/>
+                <constraint firstItem="sC8-fn-gYY" firstAttribute="leading" secondItem="Wyg-xx-Bbf" secondAttribute="trailing" constant="25" id="iij-vI-nV1"/>
+                <constraint firstItem="j3e-DW-9vK" firstAttribute="top" secondItem="Wyg-xx-Bbf" secondAttribute="bottom" constant="15" id="mgk-cb-Wpf"/>
+                <constraint firstItem="sC8-fn-gYY" firstAttribute="centerY" secondItem="Wyg-xx-Bbf" secondAttribute="centerY" id="mla-gm-Dhh"/>
+                <constraint firstItem="Wyg-xx-Bbf" firstAttribute="leading" secondItem="nCX-pP-iSp" secondAttribute="trailing" constant="25" id="n2k-eP-qrB"/>
+            </constraints>
+            <connections>
+                <outlet property="image" destination="Wyg-xx-Bbf" id="38c-EZ-7hR"/>
+                <outlet property="leftImgView" destination="nCX-pP-iSp" id="zJq-XL-kom"/>
+                <outlet property="rightImageView" destination="sC8-fn-gYY" id="66s-Yy-fzP"/>
+                <outlet property="subTitleLabel" destination="QSM-8Y-Kj1" id="Msf-54-Xrn"/>
+                <outlet property="titleLabel" destination="j3e-DW-9vK" id="RNN-es-gil"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="141.67916041979012"/>
+        </view>
+    </objects>
+</document>

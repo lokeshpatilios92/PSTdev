@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="CookingListTableCell" customModule="PrepSmart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vx5-Ju-HFM">
+                        <rect key="frame" x="10" y="10" width="300" height="110"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gat-t2-5Bk" customClass="BEMCheckBox">
+                                <rect key="frame" x="76" y="15" width="15" height="15"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="8tx-ZF-8Zi"/>
+                                    <constraint firstAttribute="width" constant="15" id="ped-cf-1IU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="onTintColor">
+                                        <color key="value" name="App_Orange_Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="offFillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                        <color key="value" name="App_Orange_Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                        <color key="value" name="App_Orange_Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="hideBox" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Kitchen View" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icx-NA-Kq9">
+                                <rect key="frame" x="76" y="10" width="194" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="c8R-HZ-JYy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wI7-wW-tyU">
+                                <rect key="frame" x="275" y="15" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="V4I-qk-MBi"/>
+                                    <constraint firstAttribute="height" constant="15" id="bdS-sw-KHf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6Y-O2-AXu">
+                                <rect key="frame" x="76" y="37" width="224" height="1"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="IGf-fA-McK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Serving Size : 45 people" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0i-Jp-5a1">
+                                <rect key="frame" x="76" y="48" width="214" height="16.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Cooking Time : 30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zd4-Ro-37q">
+                                <rect key="frame" x="76" y="74.5" width="214" height="25.5"/>
+                                <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                <color key="textColor" name="Dark_Text_Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-hT-L30">
+                                <rect key="frame" x="8" y="15" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fHg-OC-Sgd"/>
+                                    <constraint firstAttribute="width" constant="60" id="kJp-Ws-TSj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O0i-Jp-5a1" secondAttribute="trailing" constant="10" id="0I3-QD-l4A"/>
+                            <constraint firstItem="wI7-wW-tyU" firstAttribute="centerY" secondItem="icx-NA-Kq9" secondAttribute="centerY" id="8gl-Pg-aVI"/>
+                            <constraint firstItem="Zd4-Ro-37q" firstAttribute="top" secondItem="O0i-Jp-5a1" secondAttribute="bottom" constant="10" id="Bwz-3Y-KS8"/>
+                            <constraint firstItem="O0i-Jp-5a1" firstAttribute="top" secondItem="q6Y-O2-AXu" secondAttribute="bottom" constant="10" id="Iuu-5E-sKp"/>
+                            <constraint firstItem="icx-NA-Kq9" firstAttribute="leading" secondItem="O0i-Jp-5a1" secondAttribute="leading" id="JSO-lF-BW3"/>
+                            <constraint firstItem="gat-t2-5Bk" firstAttribute="centerY" secondItem="icx-NA-Kq9" secondAttribute="centerY" id="Kyc-fF-gKQ"/>
+                            <constraint firstAttribute="trailing" secondItem="wI7-wW-tyU" secondAttribute="trailing" constant="10" id="OWR-hM-hZz"/>
+                            <constraint firstItem="wI7-wW-tyU" firstAttribute="leading" secondItem="icx-NA-Kq9" secondAttribute="trailing" constant="5" id="RAJ-sG-KmP"/>
+                            <constraint firstItem="O0i-Jp-5a1" firstAttribute="leading" secondItem="gat-t2-5Bk" secondAttribute="leading" id="T9p-Ln-awR"/>
+                            <constraint firstAttribute="trailing" secondItem="Zd4-Ro-37q" secondAttribute="trailing" constant="10" id="TKX-ce-WNx"/>
+                            <constraint firstItem="Zd4-Ro-37q" firstAttribute="leading" secondItem="O0i-Jp-5a1" secondAttribute="leading" id="U2o-df-zko"/>
+                            <constraint firstItem="q6Y-O2-AXu" firstAttribute="leading" secondItem="gat-t2-5Bk" secondAttribute="leading" id="Zra-NY-4Hw"/>
+                            <constraint firstItem="SWH-hT-L30" firstAttribute="top" secondItem="gat-t2-5Bk" secondAttribute="top" id="aeo-mL-JNU"/>
+                            <constraint firstAttribute="trailing" secondItem="q6Y-O2-AXu" secondAttribute="trailing" id="fOa-oH-c8S"/>
+                            <constraint firstItem="q6Y-O2-AXu" firstAttribute="top" secondItem="icx-NA-Kq9" secondAttribute="bottom" constant="2" id="gMq-JS-dU8"/>
+                            <constraint firstItem="icx-NA-Kq9" firstAttribute="top" secondItem="vx5-Ju-HFM" secondAttribute="top" constant="10" id="qMC-j1-1GX"/>
+                            <constraint firstItem="SWH-hT-L30" firstAttribute="leading" secondItem="vx5-Ju-HFM" secondAttribute="leading" constant="8" id="sZC-zU-8nK"/>
+                            <constraint firstAttribute="bottom" secondItem="Zd4-Ro-37q" secondAttribute="bottom" constant="10" id="tRZ-HN-qXf"/>
+                            <constraint firstItem="gat-t2-5Bk" firstAttribute="leading" secondItem="SWH-hT-L30" secondAttribute="trailing" constant="8" id="w0I-5c-o0C"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="vx5-Ju-HFM" secondAttribute="trailing" constant="10" id="18i-Km-njt"/>
+                    <constraint firstItem="vx5-Ju-HFM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VbF-hs-tdS"/>
+                    <constraint firstAttribute="bottom" secondItem="vx5-Ju-HFM" secondAttribute="bottom" id="naR-6T-FDa"/>
+                    <constraint firstItem="vx5-Ju-HFM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="pZU-sg-Nsf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+            <connections>
+                <outlet property="checkBox" destination="gat-t2-5Bk" id="mDf-K1-Mqc"/>
+                <outlet property="cookingTimeLabel" destination="Zd4-Ro-37q" id="eL5-4J-GJJ"/>
+                <outlet property="recipeImage" destination="SWH-hT-L30" id="xTt-Vm-teR"/>
+                <outlet property="servingSizeLabel" destination="O0i-Jp-5a1" id="Rut-3f-eNu"/>
+                <outlet property="titleLabel" destination="icx-NA-Kq9" id="SaP-sL-cgz"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="97.767857142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="forward_arrow" width="28" height="28"/>
+        <namedColor name="App_Orange_Color">
+            <color red="0.93725490196078431" green="0.30980392156862746" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="engcarnation_demo.otf">
+            <string>ENGCARNATION</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GetHelpViewController" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HelpHeaderView" id="iN0-l3-epB" customClass="HelpHeaderView" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXW-Ri-zaE">
+                    <rect key="frame" x="0.0" y="0.0" width="358" height="60"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mka-Xa-UhL">
+                            <rect key="frame" x="20" y="19" width="303" height="21"/>
+                            <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
+                            <color key="textColor" name="Dark_Text_Color"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="9TT-e8-kUy">
+                            <rect key="frame" x="318" y="20" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="N1B-wo-vjW"/>
+                                <constraint firstAttribute="height" constant="20" id="Vjd-II-ztC"/>
+                            </constraints>
+                        </imageView>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2U-kT-mVy">
+                            <rect key="frame" x="0.0" y="59" width="358" height="1"/>
+                            <color key="backgroundColor" name="Background_Dark_Gray_Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="V9D-ct-LWD"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9o-px-4Cv">
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="60"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onClickBtnHeader:" destination="-1" eventType="touchUpInside" id="ycM-Ko-f5j"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="d9o-px-4Cv" firstAttribute="leading" secondItem="NXW-Ri-zaE" secondAttribute="leading" id="5hu-zc-U7g"/>
+                        <constraint firstAttribute="trailing" secondItem="Mka-Xa-UhL" secondAttribute="trailing" constant="35" id="7i3-VH-fIl"/>
+                        <constraint firstAttribute="trailing" secondItem="d9o-px-4Cv" secondAttribute="trailing" id="KeP-jH-o8G"/>
+                        <constraint firstItem="J2U-kT-mVy" firstAttribute="leading" secondItem="NXW-Ri-zaE" secondAttribute="leading" id="LFj-zK-1jn"/>
+                        <constraint firstAttribute="trailing" secondItem="9TT-e8-kUy" secondAttribute="trailing" constant="20" id="MsL-9P-lsI"/>
+                        <constraint firstAttribute="bottom" secondItem="Mka-Xa-UhL" secondAttribute="bottom" constant="20" id="NZc-ks-PoG"/>
+                        <constraint firstItem="Mka-Xa-UhL" firstAttribute="leading" secondItem="NXW-Ri-zaE" secondAttribute="leading" constant="20" id="SM2-7U-t3l"/>
+                        <constraint firstAttribute="trailing" secondItem="J2U-kT-mVy" secondAttribute="trailing" id="TZ6-cP-MLt"/>
+                        <constraint firstItem="d9o-px-4Cv" firstAttribute="top" secondItem="NXW-Ri-zaE" secondAttribute="top" id="U97-ir-yMj"/>
+                        <constraint firstAttribute="bottom" secondItem="J2U-kT-mVy" secondAttribute="bottom" id="e1d-t0-ZkR"/>
+                        <constraint firstItem="Mka-Xa-UhL" firstAttribute="top" secondItem="NXW-Ri-zaE" secondAttribute="top" constant="19" id="nkL-RU-W6g"/>
+                        <constraint firstAttribute="bottom" secondItem="d9o-px-4Cv" secondAttribute="bottom" id="qbJ-0O-fBW"/>
+                        <constraint firstItem="9TT-e8-kUy" firstAttribute="centerY" secondItem="NXW-Ri-zaE" secondAttribute="centerY" id="rmX-G8-bZO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="NXW-Ri-zaE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7jA-yk-iBS"/>
+                <constraint firstAttribute="bottom" secondItem="NXW-Ri-zaE" secondAttribute="bottom" id="DGM-cG-lLg"/>
+                <constraint firstItem="NXW-Ri-zaE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gEP-jD-HCP"/>
+                <constraint firstItem="NXW-Ri-zaE" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="lwN-y9-wsG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btn_header" destination="d9o-px-4Cv" id="SPA-Ob-XQc"/>
+                <outlet property="imgView_arrow" destination="9TT-e8-kUy" id="0U6-Kh-j7L"/>
+                <outlet property="lbl_title" destination="Mka-Xa-UhL" id="hlk-LU-AbA"/>
+            </connections>
+            <point key="canvasLocation" x="95.652173913043484" y="-201.5625"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="forward_arrow" width="28" height="28"/>
+        <namedColor name="Background_Dark_Gray_Color">
+            <color red="0.91764705882352937" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Dark_Text_Color">
+            <color red="0.28999999165534973" green="0.28999999165534973" blue="0.28999999165534973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
