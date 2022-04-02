@@ -309,7 +309,7 @@ enum MealName: String, Codable {
 // MARK: - RecipeList
 struct RecipeListWeeklyPlan: Codable {
     var weeklyRecipeID, recipeID: Int?
-    var recipeName: RecipeName?
+    var recipeName: String?
     var totalServings: String?
     var recipeImg: String?
     var calorificValue: String?
