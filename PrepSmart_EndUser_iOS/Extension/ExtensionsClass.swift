@@ -388,10 +388,7 @@ extension UIViewController
     
     func showSpecifyDaysVC(customDelegate : CustomSpecifyDaysVCDelegate?) {
         let vc = UIStoryboard.AuxiliaryStoryboard.instantiateViewController(withIdentifier: "SpecificDaysVC") as! SpecificDaysVC
-        
         vc.customDelegate = customDelegate
-        
-
         vc.view.frame = self.view.bounds;
         vc.willMove(toParent: self)
         self.view.addSubview(vc.view)

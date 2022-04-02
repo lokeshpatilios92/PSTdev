@@ -193,7 +193,6 @@ class BaseViewController: UIViewController {
     //    MARK: OnClick Navigation Func
     @objc func onClickNavigationBarButton(sender:UIBarButtonItem) {
         
-        
         if sender.tag == 0 {
             let shortFilter = self.instanceFromSearchFilterNib()
             shortFilter.frame = CGRect(x: 0, y: 0, width: 350, height: 450)

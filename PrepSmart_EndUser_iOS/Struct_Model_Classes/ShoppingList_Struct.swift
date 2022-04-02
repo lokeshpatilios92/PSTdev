@@ -59,3 +59,46 @@ struct Grocery_list : Codable {
     }
 }
 
+
+struct DownloadShopListStruct: Codable {
+    var headers: [String]?
+    var original: Original?
+    var exception: JSONNull?
+}
+
+// MARK: - Original
+struct Original: Codable {
+    var status: Bool?
+    var statusCode: Int?
+    var message: String?
+
+    enum CodingKeys: String, CodingKey {
+        case status
+        case statusCode = "status_code"
+        case message
+    }
+}
+class JSONNull: Codable, Hashable {
+
+    public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
+        return true
+    }
+
+    public var hashValue: Int {
+        return 0
+    }
+
+    public init() {}
+
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if !container.decodeNil() {
+            throw DecodingError.typeMismatch(JSONNull.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for JSONNull"))
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encodeNil()
+    }
+}

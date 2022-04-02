@@ -21,7 +21,9 @@ class ShoppingListToBuyViewController: BaseViewController {
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var expandColapsButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
-    @IBOutlet weak var bottomButtonBgView: UIView!
+    @IBOutlet weak var bottomSavetimeButtonView: UIView!
+    @IBOutlet weak var bottomDeleteButtonView: UIView!
+    @IBOutlet weak var ButtonDelete: UIButton!
     
     var sortByDropDown = DropDown()
     @IBOutlet weak var viewTopFilters: UIView!
@@ -32,7 +34,7 @@ class ShoppingListToBuyViewController: BaseViewController {
     var deleteItem : Int?
     var global_Var = GlobalClass.sharedManager
     var shoppingListObj: ShoppingList_Struct?
-    
+    var DownloadShopListObj: DownloadShopListStruct?
     let shoppingListToBuyTableCell = "ShoppingListToBuyTableCell"
     let shoppingListToBuyTableHeaderCell = "ShoppingListToBuyTableHeaderCell"
     
@@ -47,9 +49,12 @@ class ShoppingListToBuyViewController: BaseViewController {
     
     func initialize() {
         self.navigationItem.titleView = UtilityManager.getTitleLabel("Shopping List")
-        bottomButtonBgView.layer.cornerRadius = bottomButtonBgView.frame.height / 2
+        bottomButton.layer.cornerRadius = bottomButton.frame.height / 2
+        ButtonDelete.layer.cornerRadius = ButtonDelete.frame.height / 2
+        let addDownload = UIBarButtonItem(image: #imageLiteral(resourceName: "download_white_icon"), style: .done, target: self, action: #selector(didTapdownLoadButton(sender:)))
+        let shareButton = UIBarButtonItem(image: #imageLiteral(resourceName: "share_white_icon"), style: .done, target: self, action: #selector(didTapShareButton(sender:)))
         
-        self.navigationItem.rightBarButtonItems = [addDownloadNavButton(),addShareNavButton()]
+        self.navigationItem.rightBarButtonItems = [addDownload,shareButton]
         
         addButton.layer.cornerRadius = addButton.frame.height / 2
         topLeftButton.layer.cornerRadius = 5//topLeftButton.frame.height / 2
@@ -61,7 +66,7 @@ class ShoppingListToBuyViewController: BaseViewController {
         searchBar.placeholder = " Search"
         searchBar.sizeToFit()
         searchBar.setImage(#imageLiteral(resourceName: "scarch_orange"), for: .search, state: .normal)
-        searchBar.layer.cornerRadius = searchBar.frame.height / 2
+        searchBar.layer.cornerRadius = 24.0
         searchBar.backgroundImage = UIImage()
         searchBar.clipsToBounds = true
         searchBar.layer.borderColor = UIColor.black.cgColor
@@ -74,6 +79,9 @@ class ShoppingListToBuyViewController: BaseViewController {
         self.topLeftButton.addTarget(self, action: #selector(self.onClickTopButtons(_:)), for: .touchUpInside)
         self.filterButton.addTarget(self, action: #selector(self.onClickFilterButton(_:)), for: .touchUpInside)
         self.bottomButton.addTarget(self, action: #selector(self.onClickBottomButton(_:)), for: .touchUpInside)
+        self.ButtonDelete.addTarget(self, action: #selector(self.onClickDeleteAllAction(_:)), for: .touchUpInside)
+        self.addButton.addTarget(self, action: #selector(self.onClickAddAction(_:)), for: .touchUpInside)
+
         self.selectedButton = topLeftButton
         self.sortByDropDown.backgroundColor = UIColor.white
         
@@ -89,18 +97,31 @@ class ShoppingListToBuyViewController: BaseViewController {
         isExpanded[sender.tag] = !isExpanded[sender.tag]
         tableView.reloadSections(IndexSet.init(integer: sender.tag), with: .automatic)
     }
+    @objc func didTapdownLoadButton(sender: AnyObject){
+        print("Download")
+        downLoadShopListApi()
+    }
     
+    @objc func didTapShareButton(sender: AnyObject){
+        print("Share")
+    }
     @objc func onClickTopButtons(_ sender : UIButton) {
         if sender == self.topRightButton {
             self.topRightButton.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.3098039216, blue: 0.137254902, alpha: 1)
             self.topLeftButton.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 0.35)
             alreadyHaveShopListApi()
             selectedSectionButton = 1
+            viewTopFilters.isHidden = true
+            bottomSavetimeButtonView.isHidden = true
+            bottomDeleteButtonView.isHidden = false
         } else {
             self.topLeftButton.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.3098039216, blue: 0.137254902, alpha: 1)
             self.topRightButton.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 0.35)
             getShoppingListApi()
             selectedSectionButton = 0
+            viewTopFilters.isHidden = false
+            bottomSavetimeButtonView.isHidden = false
+            bottomDeleteButtonView.isHidden = true
         }
         selectedButton = sender
         tableView.reloadData()
@@ -133,6 +154,15 @@ class ShoppingListToBuyViewController: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    //Mark:- ButtonADeleteAllAction
+    @objc func onClickDeleteAllAction(_ sender : UIButton) {
+        print("Delete All Pressed")
+    }
+    //Mark:- ButtonAddAction
+    @objc func onClickAddAction(_ sender : UIButton) {
+        searchIngredientForShopApi()
+    }
+    
 }
 
 extension ShoppingListToBuyViewController : UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -142,17 +172,17 @@ extension ShoppingListToBuyViewController : UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       if selectedSectionButton == 0 {
-        if  self.shoppingListObj?.shopping_list?[section].grocery_list?.count != nil
-        {
-            return self.shoppingListObj?.shopping_list?[section].grocery_list?.count ?? 0
+        if selectedSectionButton == 0 {
+            if  self.shoppingListObj?.shopping_list?[section].grocery_list?.count != nil
+            {
+                return self.shoppingListObj?.shopping_list?[section].grocery_list?.count ?? 0
+            }
+        } else {
+            if  self.shoppingListObj?.alreadyHaveList?[section].grocery_list?.count != nil
+            {
+                return self.shoppingListObj?.alreadyHaveList?[section].grocery_list?.count ?? 0
+            }
         }
-       } else {
-           if  self.shoppingListObj?.alreadyHaveList?[section].grocery_list?.count != nil
-           {
-               return self.shoppingListObj?.alreadyHaveList?[section].grocery_list?.count ?? 0
-           }
-       }
         return 0
     }
     
@@ -234,7 +264,7 @@ extension ShoppingListToBuyViewController
                             self.shoppingListObj = try JSONDecoder().decode(ShoppingList_Struct.self, from: data)
                             let count = self.shoppingListObj?.shopping_list?.count ?? 0
                             for _ in 0..<count{
-                               self.isExpanded.append(false)
+                                self.isExpanded.append(false)
                             }
                             self.topLeftButton.setTitle("To Buy (\(count))", for: .normal)
                             self.tableView.reloadData()
@@ -287,6 +317,99 @@ extension ShoppingListToBuyViewController
                             let count = self.shoppingListObj?.alreadyHaveList?.count ?? 0
                             self.topRightButton.setTitle("Alread Have (\(count))", for: .normal)
                             self.tableView.reloadData()
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                            
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    func searchIngredientForShopApi()
+    {
+        let param:[String:String] = ["query": searchBar.text ?? ""]
+        
+        Loader.sharedInstance.showIndicator()
+        
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.searchIngredientForShop, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.shoppingListObj = try JSONDecoder().decode(ShoppingList_Struct.self, from: data)
+                            self.tableView.reloadData()
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                            
+                        }
+                    }
+                    else
+                    {
+                        Alert.showToast(message: self.global_Var.get_status.message, view_VC: self)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    func downLoadShopListApi()
+    {
+        let param:[String:String] = ["": ""]
+        
+        Loader.sharedInstance.showIndicator()
+        
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.downloadShopList, params: param , method: .get) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.DownloadShopListObj = try JSONDecoder().decode(DownloadShopListStruct.self, from: data)
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.DownloadShopListObj?.original?.message ?? "")
                         }
                         catch
                         {
