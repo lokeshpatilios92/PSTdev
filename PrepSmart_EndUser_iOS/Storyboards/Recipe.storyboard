@@ -5560,13 +5560,13 @@ Click here for more information.</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gss-4q-FjO" userLabel="MainView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKX-hf-PV9">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKX-hf-PV9">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="se0-Fd-z9G" userLabel="BorderView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="se0-Fd-z9G" userLabel="BorderView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="338.5"/>
                                                 <subviews>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-76-7Kr">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNk-76-7Kr">
                                                         <rect key="frame" x="10" y="10" width="355" height="318.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chef-profile" translatesAutoresizingMaskIntoConstraints="NO" id="7va-2F-YxL">
@@ -5582,13 +5582,13 @@ Click here for more information.</string>
                                                                 <color key="textColor" name="App_Orange_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Loved It..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-TP-51R">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loved It..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ouc-TP-51R">
                                                                 <rect key="frame" x="143.5" y="149.5" width="68.5" height="19"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="App_Orange_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xdz-ru-jcx" customClass="CosmosView" customModule="Cosmos">
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdz-ru-jcx" customClass="CosmosView" customModule="Cosmos">
                                                                 <rect key="frame" x="117.5" y="119.5" width="120" height="20"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -5603,7 +5603,7 @@ Click here for more information.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z30-YJ-ZSq">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z30-YJ-ZSq">
                                                                 <rect key="frame" x="10" y="178.5" width="335" height="80"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
@@ -5613,7 +5613,7 @@ Click here for more information.</string>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             </textView>
-                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBz-Py-zJs">
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBz-Py-zJs">
                                                                 <rect key="frame" x="224" y="268.5" width="120" height="40"/>
                                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                                 <constraints>
@@ -7337,6 +7337,9 @@ Click here for more information.</string>
         </scene>
     </scenes>
     <designables>
+        <designable name="C2C-ur-6uq">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
         <designable name="DdX-3p-jl5">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
         </designable>
@@ -7346,8 +7349,15 @@ Click here for more information.</string>
         <designable name="d7a-sv-hne">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
         </designable>
+        <designable name="i5F-9p-5bL"/>
         <designable name="so6-Wk-SDe">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
+        </designable>
+        <designable name="vML-wy-Y75">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+        <designable name="xdz-ru-jcx">
+            <size key="intrinsicContentSize" width="120" height="20"/>
         </designable>
     </designables>
     <resources>

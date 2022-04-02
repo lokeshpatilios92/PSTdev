@@ -32,9 +32,19 @@ class FilterVC: BaseViewController {
         
         self.navigationItem.titleView = UtilityManager.getTitleLabel("Filter")
         
-   
+        let lastMondayDate = DateToString(date: Date.today().previous(.monday, considerToday: true))
+        let nextSundayDate = DateToString(date: Date.today().next(.sunday, considerToday: true))
         
-        dataArray = ["Today","Tomorrow","Next 3 days","Next 5 days","Current Week (Mon 2/4 - Sun 2/10)","Next Week (Mon 2/11 - Sun )","Specific Date Range","Specific Days"]
+        let nextMondayDate = DateToString(date: Date.today().next(.monday, considerToday: true))
+        let nexttonextSundayDate = DateToString(date: Date.today().next(.monday, considerToday: false).next(.sunday, considerToday: false))
+        dataArray = ["Today",
+                     "Tomorrow",
+                     "Next 3 days",
+                     "Next 5 days",
+                     "Current Week (Mon \(lastMondayDate) - Sun \(nextSundayDate))",
+                     "Next Week (Mon \(nextMondayDate) - Sun \(nexttonextSundayDate)",
+                     "Specific Date Range",
+                     "Specific Days"]
         
         tableView.register(UINib.init(nibName: filterTableCell, bundle: nil), forCellReuseIdentifier: filterTableCell)
         
@@ -127,12 +137,8 @@ extension FilterVC : CustomSelectDateRangeVCDelegate, CustomSpecifyDaysVCDelegat
     func onClickSelectButtonAction(startDate: String?, endDate: String?, startDay: String?, endDay: String?) {
         
     }
-    
-    
-    
-    
     func onClickApplyButton() {
-       
+       print("Apply click")
     }
     
 }

@@ -238,6 +238,7 @@ you want to shop for?</string>
                                             <constraint firstAttribute="width" constant="20" id="A9k-5J-6Rm"/>
                                             <constraint firstAttribute="height" constant="20" id="Q1G-9f-Lm3"/>
                                         </constraints>
+                                        <color key="tintColor" name="App_Orange_Color"/>
                                         <state key="normal" image="info"/>
                                         <connections>
                                             <action selector="onClickInfoButton:" destination="fT6-gP-heX" eventType="touchUpInside" id="ri7-5i-kKi"/>
@@ -449,25 +450,25 @@ you want to shop for?</string>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select week" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23J-Pm-KAw">
-                                                        <rect key="frame" x="137.5" y="25" width="99.5" height="30"/>
+                                                        <rect key="frame" x="143.5" y="25" width="87" height="32.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-1p-Ez6">
-                                                        <rect key="frame" x="10" y="71" width="354" height="74"/>
+                                                        <rect key="frame" x="10" y="73.5" width="354" height="71.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NkC-QA-2Uh" userLabel="Start Date View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="177" height="74"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="177" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Start Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgW-Bv-psh">
-                                                                        <rect key="frame" x="5" y="0.0" width="167" height="29"/>
+                                                                        <rect key="frame" x="5" y="0.0" width="167" height="26.5"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                         <color key="textColor" name="App_Orange_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7b-bg-rFJ" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                                        <rect key="frame" x="5" y="29" width="167" height="40"/>
+                                                                        <rect key="frame" x="5" y="26.5" width="167" height="40"/>
                                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="TGc-K7-rpv"/>
@@ -492,7 +493,7 @@ you want to shop for?</string>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="yLR-2N-Yaf">
-                                                                        <rect key="frame" x="147" y="39" width="20" height="20"/>
+                                                                        <rect key="frame" x="147" y="36.5" width="20" height="20"/>
                                                                         <color key="tintColor" systemColor="darkTextColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="20" id="STa-2k-qBH"/>
@@ -514,16 +515,16 @@ you want to shop for?</string>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anU-Kh-lhG" userLabel="End Date View">
-                                                                <rect key="frame" x="177" y="0.0" width="177" height="74"/>
+                                                                <rect key="frame" x="177" y="0.0" width="177" height="71.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="End Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMU-O2-pAC">
-                                                                        <rect key="frame" x="5" y="5" width="167" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="167" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                         <color key="textColor" name="App_Orange_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pwC-HC-8dN" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                                        <rect key="frame" x="5" y="29" width="167" height="40"/>
+                                                                        <rect key="frame" x="5" y="26.5" width="167" height="40"/>
                                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="B88-5Q-gXz"/>
@@ -548,7 +549,7 @@ you want to shop for?</string>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="4tn-ib-BFv">
-                                                                        <rect key="frame" x="147" y="39" width="20" height="20"/>
+                                                                        <rect key="frame" x="147" y="36.5" width="20" height="20"/>
                                                                         <color key="tintColor" systemColor="darkTextColor"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="c0o-5H-CYu"/>
@@ -2974,11 +2975,11 @@ Subscribers</string>
     </scenes>
     <designables>
         <designable name="h7b-bg-rFJ">
-            <size key="intrinsicContentSize" width="5" height="18"/>
+            <size key="intrinsicContentSize" width="4" height="15.5"/>
         </designable>
         <designable name="hqL-hz-do1"/>
         <designable name="pwC-HC-8dN">
-            <size key="intrinsicContentSize" width="5" height="18"/>
+            <size key="intrinsicContentSize" width="4" height="15.5"/>
         </designable>
     </designables>
     <resources>

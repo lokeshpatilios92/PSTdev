@@ -73,15 +73,31 @@ class SpecificDaysVC: UIViewController {
         fridayCheckBoxView.boxType = .square
         saturdayCheckBoxView.boxType = .square
         sundayCheckBoxView.boxType = .square
-        
+        DaySetUp()
         applyButton.layer.cornerRadius = applyButton.frame.height/2
+    }
+    
+    func DaySetUp(){
+        let mondayDate = DateToString(date: Date.today().next(.monday, considerToday: true))
+        mondayLabel.text = "Monday \(mondayDate) "
+        let tuesDate = DateToString(date: Date.today().next(.tuesday, considerToday: true))
+        tuesdayLabel.text = "Tuesday \(tuesDate) "
+        let wednusDate = DateToString(date: Date.today().next(.wednesday, considerToday: true))
+        wednesdayLabel.text = "Wednesday \(wednusDate) "
+        let thrusDate = DateToString(date: Date.today().next(.thursday, considerToday: true))
+        thursdayLabel.text = "Thursday \(thrusDate) "
+        let fridayDate = DateToString(date: Date.today().next(.friday, considerToday: true))
+        fridayLabel.text = "Friday \(fridayDate) "
+        let suturdayDate = DateToString(date: Date.today().next(.saturday, considerToday: true))
+        saturdayLabel.text = "Saturday \(suturdayDate) "
+        let sundayDate = DateToString(date: Date.today().next(.sunday, considerToday: true))
+        sundayLabel.text = "Sunday \(sundayDate) "
     }
     
     
     @IBAction func onClickCloseButton(_ sender: UIButton) {
         
         self.removeAnimation()
-        
     }
     
     @IBAction func onClickWeekButton(_ sender: UIButton) {
