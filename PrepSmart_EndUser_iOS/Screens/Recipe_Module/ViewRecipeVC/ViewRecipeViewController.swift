@@ -62,10 +62,23 @@ class ViewRecipeViewController: BaseViewController {
         initialize()
         getRecipeDetailsApi()
         getRecipecommentsApi(CommentType: commentFillerType)
+        
+        // TODO: Manage Add Action
+        self.navigationItem.rightBarButtonItems = [ addWeeklyPlanNavButton(), addFavButton(with: UIImage(named: "heart")!), editRecipeNavButton()]
+        
     }
     
-    func initialize()
-    {
+    func addFavButton(with image: UIImage, isAdded: Bool = false) -> UIBarButtonItem {
+        let favNavButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(self.addTOFav(sender:)))
+        favNavButton.tintColor = isAdded ? .red : .white
+        return favNavButton
+    }
+    
+    @objc func addTOFav(sender: UIButton) {
+        self.addTOFavAPI()
+    }
+    
+    func initialize(){
         btn_reportThisRecipe.layer.borderWidth = 1.0
         btn_reportThisRecipe.layer.borderColor = UIColor.appOrangeColor().cgColor
         btn_reportThisRecipe.layer.cornerRadius = btn_reportThisRecipe.frame.size.height / 2
@@ -293,7 +306,7 @@ class ViewRecipeViewController: BaseViewController {
     }
 }
 
-extension ViewRecipeViewController : UICollectionViewDelegate,UICollectionViewDataSource
+extension ViewRecipeViewController : UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(collectionView.tag == 100)
@@ -337,6 +350,15 @@ extension ViewRecipeViewController : UICollectionViewDelegate,UICollectionViewDa
             cell.lblTitle.text = "asdads"
             cell.imgTitle.sd_setImage(with: URL(string: ""),placeholderImage: UIImage(named: "dinner"))
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        collectionView.layoutIfNeeded()
+        if collectionView.tag == 300 {
+            return CGSize(width: collectionView.frame.width / 4, height: 110)
+        } else {
+            return CGSize(width: collectionView.frame.width / 4, height: 110)
         }
     }
 }
@@ -522,15 +544,15 @@ extension ViewRecipeViewController : UITableViewDelegate,UITableViewDataSource
                 let cell = tableView.dequeueReusableCell(withIdentifier: "NutritionalInformationTableCell", for: indexPath) as! NutritionalInformationTableCell
                 isCellCreated = true
                 
-                let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-                layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                layout.itemSize = CGSize(width: cell.collection_recipe.frame.width, height: 110)
-                layout.scrollDirection = .horizontal
-                layout.minimumLineSpacing = 0
-                layout.minimumInteritemSpacing = 0
-                
+//                let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//                layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//                layout.itemSize = CGSize(width: cell.collection_recipe.frame.width, height: 110)
+//                layout.scrollDirection = .horizontal
+//                layout.minimumLineSpacing = 0
+//                layout.minimumInteritemSpacing = 0
+//
                 cell.collection_nutritionalInfo.isPagingEnabled = true
-                cell.collection_nutritionalInfo.collectionViewLayout = layout
+               // cell.collection_nutritionalInfo.collectionViewLayout = layout
                 cell.collection_nutritionalInfo.register(UINib(nibName: "NutritionProgressCollectionCell", bundle: nil), forCellWithReuseIdentifier: "NutritionProgressCollectionCell")
                 cell.collection_nutritionalInfo.showsVerticalScrollIndicator = false
                 cell.collection_nutritionalInfo.backgroundColor = .white
@@ -538,7 +560,7 @@ extension ViewRecipeViewController : UITableViewDelegate,UITableViewDataSource
                 cell.collection_nutritionalInfo.delegate = self
                 
                 cell.collection_recipe.isPagingEnabled = true
-                cell.collection_recipe.collectionViewLayout = layout
+                //cell.collection_recipe.collectionViewLayout = layout
                 cell.collection_recipe.register(UINib(nibName: "NutritionalInfoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "NutritionalInfoCollectionCell")
                 cell.collection_recipe.showsVerticalScrollIndicator = false
                 cell.collection_recipe.backgroundColor = .white
@@ -673,6 +695,48 @@ extension ViewRecipeViewController {
         }
     }
     
+    func addTOFavAPI(){
+        let param:[String:Any] = ["recipe_type": "1" ,"recipe_id": recipeId,
+                                  "chef_id": self.recipeDtails.recipeInfo?.chefID ?? 0, "flag": 1]
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.addToFav, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        self.navigationItem.rightBarButtonItems = nil
+                        self.navigationItem.rightBarButtonItems = [ self.addWeeklyPlanNavButton(), self.addFavButton(with: UIImage(named: "favorite")!, isAdded: true), self.editRecipeNavButton()]
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                }
+                // SVProgressHUD.dismiss()
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    
+    
+    
     func getRecipecommentsApi(CommentType:String)
     {
         let param:[String:Any] = ["recipe_id": recipeId,
@@ -690,6 +754,10 @@ extension ViewRecipeViewController {
                         Loader.sharedInstance.hideIndicator()
                         do {
                             self.recipeCommentList = try JSONDecoder().decode(RecipeCommentStruct.self, from: data)
+                            self.tbl_recipeDetails.reloadData()
+                            self.tbl_recipeDetails.layoutIfNeeded()
+                           self.height_tableView.constant = self.tbl_recipeDetails.contentSize.height
+                            
                             //  DispatchQueue.main.async {
                             //     self.tableView.reloadData()
                             //     self.dataParshing()

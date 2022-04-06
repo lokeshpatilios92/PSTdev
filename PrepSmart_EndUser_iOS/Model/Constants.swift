@@ -86,7 +86,7 @@ class Constants: NSObject
     static let getAppData = "getAppData"
     static let recipeRating = "recipeRating"
     static let getRecipeNutritionixDetails = "getRecipeNutritionixDetails"
-    
+    static let addToFav = "addToFavorite"
     static let marginConstant:CGFloat = UtilityManager.isIphone() ? 15:20
     static let labelHeightConstant:CGFloat = UtilityManager.isIphone() ? 35:45
     static let BUTTON_HEIGHT:CGFloat = UtilityManager.isIphone() ? 50:60
