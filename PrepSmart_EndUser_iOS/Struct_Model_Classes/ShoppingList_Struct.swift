@@ -14,6 +14,9 @@ struct ShoppingList_Struct : Codable {
     var weekly_plan_id : Int?
     var shopping_list : [Shopping_list]?
     var alreadyHaveList : [Shopping_list]?
+    var searchShoppingList : [Shopping_list]?
+    
+
     enum CodingKeys: String, CodingKey {
         
         case status = "status"
@@ -22,12 +25,14 @@ struct ShoppingList_Struct : Codable {
         case weekly_plan_id = "weekly_plan_id"
         case shopping_list = "shopping_list"
         case alreadyHaveList = "already_have_list"
+        case searchShoppingList =  "search_shopping_list"
     }
 }
 struct Shopping_list : Codable {
     var category_id : Int?
     var category_name : String?
     var grocery_list : [Grocery_list]?
+
     
     enum CodingKeys: String, CodingKey {
         
@@ -43,7 +48,7 @@ struct Grocery_list : Codable {
     var unit : String?
     var m_quantity : String?
     var m_unit : String?
-    var weekly_plan_id : Int?
+    var weekly_plan_id : WeeklyPlanID??
     var recipes_names : String?
     
     enum CodingKeys: String, CodingKey {
@@ -59,6 +64,33 @@ struct Grocery_list : Codable {
     }
 }
 
+enum WeeklyPlanID: Codable {
+    case integer(Int)
+    case string(String)
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let x = try? container.decode(Int.self) {
+            self = .integer(x)
+            return
+        }
+        if let x = try? container.decode(String.self) {
+            self = .string(x)
+            return
+        }
+        throw DecodingError.typeMismatch(WeeklyPlanID.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for WeeklyPlanID"))
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .integer(let x):
+            try container.encode(x)
+        case .string(let x):
+            try container.encode(x)
+        }
+    }
+}
 
 struct DownloadShopListStruct: Codable {
     var headers: [String]?

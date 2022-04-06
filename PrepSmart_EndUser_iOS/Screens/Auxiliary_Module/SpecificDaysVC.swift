@@ -9,7 +9,10 @@
 import UIKit
 
 protocol CustomSpecifyDaysVCDelegate {
-    func onClickApplyButton()
+    func onClickApplyButton(filterType:String,
+                            startdate :String,
+                            endDate:String,
+                            specificDays:String)
 }
 
 
@@ -51,6 +54,7 @@ class SpecificDaysVC: UIViewController {
     
     
     var selectedDays : [Int] = []
+    var filtertype:String = ""
     var customDelegate : CustomSpecifyDaysVCDelegate!
     
     override func viewDidLoad() {
@@ -169,10 +173,14 @@ class SpecificDaysVC: UIViewController {
     
     @IBAction func onClickApplyButton(_ sender: UIButton) {
         if customDelegate != nil {
-            self.customDelegate.onClickApplyButton()
+            let stringArray = selectedDays.map { String($0) }
+            let string = stringArray.joined(separator: ",")
+            self.customDelegate.onClickApplyButton(filterType: filtertype, startdate: "", endDate: "", specificDays: string)
             self.removeAnimation()
         }else{
             self.removeAnimation()
         }
     }
+    
 }
+    
