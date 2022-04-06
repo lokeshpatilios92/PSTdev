@@ -131,7 +131,7 @@ class ShoppingListToBuyViewController: BaseViewController {
     @objc func onClickFilterButton(_ sender : UIButton){
         
         let vc =  UIStoryboard.AuxiliaryStoryboard.instantiateViewController(withIdentifier: "FilterVC") as! FilterVC
-        
+        vc.FilterDelegate = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -157,6 +157,8 @@ class ShoppingListToBuyViewController: BaseViewController {
     //Mark:- ButtonADeleteAllAction
     @objc func onClickDeleteAllAction(_ sender : UIButton) {
         print("Delete All Pressed")
+            // self.TwoButtonAndNoteDelegate(title: "You can also uncheck items to move them back onto the To Buy list if they are still needed.", note: "Are you sure you want to remove all items from this shopping List?", customDelegate: self)
+        self.TwoButtonAndNoteDelegate(title: "Deleting this ingredient removes it from this shopping list all togather.Do you want to procceed?", note: "Note: Use the check box feature as you purchase ingredients which moves them to the Already Have list for later viewing ", customDelegate: self)
     }
     //Mark:- ButtonAddAction
     @objc func onClickAddAction(_ sender : UIButton) {
@@ -227,18 +229,16 @@ extension ShoppingListToBuyViewController : UITableViewDelegate, UITableViewData
         return view
     }
     
-    
-    
     @objc func onClickDeleteButton(_ sender : UIButton){
-        deleteItem = sender.tag
-        self.TwoButtonAndNoteDelegate(title: "You can also uncheck items to move them back onto the To Buy list if they are still needed.", note: "Are you sure you want to remove all items from this shopping List?", customDelegate: self)
+       deleteItem = sender.tag
+        self.TwoButtonAndNoteDelegate(title: "Deleting this ingredient removes it from this shopping list all togather.Do you want to procceed?", note: "Note: Use the check box feature as you purchase ingredients which moves them to the Already Have list for later viewing ", customDelegate: self)
     }
 }
 
-
 extension ShoppingListToBuyViewController : TwoButtonAndNotePopUpDelegate {
     func onClcikDeleteButton() {
-        //        self.removeAnimation()
+        //self.removeAnimation()
+        print("delete all pressed")
     }
 }
 
@@ -363,6 +363,7 @@ extension ShoppingListToBuyViewController
                         Loader.sharedInstance.hideIndicator()
                         do {
                             self.shoppingListObj = try JSONDecoder().decode(ShoppingList_Struct.self, from: data)
+                            self.shoppingListObj?.shopping_list? = self.shoppingListObj?.searchShoppingList ?? [Shopping_list]()
                             self.tableView.reloadData()
                         }
                         catch
@@ -437,6 +438,63 @@ extension ShoppingListToBuyViewController
             }
         }
     }
+    
+    func getFilterWiseShoppingListApi(filterflag:String, startDate:String, endDate:String, SpecificDays:String) {
+        
+        let param:[String:String] = ["filter_flag": filterflag,
+                                     "start_date": startDate,
+                                     "end_date" : endDate,
+                                     "specific_days": SpecificDays]
+        print("param \(param)")
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.getFilterWiseShoppingList, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.shoppingListObj = try JSONDecoder().decode(ShoppingList_Struct.self, from: data)
+                           self.tableView.reloadData()
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                            
+                        }
+                    }
+                    else
+                    {
+                        Alert.showToast(message: self.global_Var.get_status.message, view_VC: self)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+}
+
+extension ShoppingListToBuyViewController : CustomSpecifyDaysVCDelegate {
+    func onClickApplyButton(filterType: String, startdate: String, endDate: String, specificDays: String) {
+if filterType != ""{
+        getFilterWiseShoppingListApi(filterflag: filterType, startDate: startdate, endDate: endDate,SpecificDays: specificDays )
+        }
+    }
 }
 
 //MARK: TableView Cell
@@ -460,7 +518,6 @@ class ShoppingListToBuyTableCell : UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         checkBoxView.boxType = .square
     }
     

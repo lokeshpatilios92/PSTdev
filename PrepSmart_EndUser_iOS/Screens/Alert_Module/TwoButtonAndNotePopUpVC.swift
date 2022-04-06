@@ -35,8 +35,8 @@ class TwoButtonAndNotePopUpVC: UIViewController {
     
     func intialize() {
         self.bgView.layer.cornerRadius = 10
-        //self.titleLbl.text = titleText  //Uncomment this line when you are using this pop up
-        //self.noteLbl.text = mesgText      //Uncomment this line when you are using this pop up
+        self.titleLbl.text = titleText  //Uncomment this line when you are using this pop up
+        self.noteLbl.text = noteText      //Uncomment this line when you are using this pop up
         self.deleteAllBtn.layer.cornerRadius = self.deleteAllBtn.frame.height / 2
         self.cancelBtn.layer.cornerRadius = self.cancelBtn.frame.height / 2
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)

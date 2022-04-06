@@ -54,6 +54,7 @@ class Constants: NSObject
     static let alreadyHaveShopList = "alreadyHaveShopList"
     static let downloadShopList = "downloadShopList"
     static let searchIngredientForShop = "searchIngredientForShop"
+    static let getFilterWiseShoppingList = "getFilterWiseShoppingList"
     static let getNotifications = "getNotifications"
     static let getMySubscriptions = "getMySubscriptions"
     static let updateSubscription = "updateSubscription"
