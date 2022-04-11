@@ -238,6 +238,7 @@ you want to shop for?</string>
                                             <constraint firstAttribute="width" constant="20" id="A9k-5J-6Rm"/>
                                             <constraint firstAttribute="height" constant="20" id="Q1G-9f-Lm3"/>
                                         </constraints>
+                                        <color key="tintColor" name="App_Orange_Color"/>
                                         <state key="normal" image="info"/>
                                         <connections>
                                             <action selector="onClickInfoButton:" destination="fT6-gP-heX" eventType="touchUpInside" id="ri7-5i-kKi"/>
@@ -1606,21 +1607,21 @@ Subscribers</string>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwD-xK-FaE">
-                                                        <rect key="frame" x="20" y="152" width="374" height="210"/>
+                                                        <rect key="frame" x="20" y="152" width="374" height="168"/>
                                                         <string key="text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</string>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdC-LC-nZo">
-                                                        <rect key="frame" x="20" y="370" width="69" height="29"/>
+                                                        <rect key="frame" x="20" y="328" width="60" height="26"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <state key="normal" title="Read More">
                                                             <color key="titleColor" name="App_Orange_Color"/>
                                                         </state>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhJ-Hc-EQU">
-                                                        <rect key="frame" x="20" y="407" width="374" height="1"/>
+                                                        <rect key="frame" x="20" y="362" width="374" height="1"/>
                                                         <color key="backgroundColor" name="Dark_Text_Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="Jab-Cm-3N2"/>
@@ -1630,7 +1631,7 @@ Subscribers</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rFL-bk-1My">
-                                                        <rect key="frame" x="20" y="416" width="374" height="92"/>
+                                                        <rect key="frame" x="20" y="371" width="374" height="92"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvY-Rm-pAf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="45" height="92"/>
@@ -1810,7 +1811,7 @@ Subscribers</string>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVx-tn-uM3">
-                                                        <rect key="frame" x="20" y="545" width="374" height="1"/>
+                                                        <rect key="frame" x="20" y="497.5" width="374" height="1"/>
                                                         <color key="backgroundColor" name="Dark_Text_Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="172-Ia-7tD"/>
@@ -1820,13 +1821,13 @@ Subscribers</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpa-H2-Ifi">
-                                                        <rect key="frame" x="20" y="518" width="71" height="19"/>
+                                                        <rect key="frame" x="20" y="473" width="56" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hqL-hz-do1" customClass="TagsView" customModule="Tags">
-                                                        <rect key="frame" x="20" y="566" width="319" height="35"/>
+                                                        <rect key="frame" x="20" y="518.5" width="319" height="35"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="BJR-ch-DxP"/>
@@ -1872,7 +1873,7 @@ Subscribers</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W2K-Ts-Adj">
-                                                        <rect key="frame" x="349" y="559.5" width="45" height="48"/>
+                                                        <rect key="frame" x="349" y="512" width="45" height="48"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="view_all" translatesAutoresizingMaskIntoConstraints="NO" id="u1n-ZL-usy">
                                                                 <rect key="frame" x="10" y="10" width="25" height="28"/>
@@ -1905,14 +1906,14 @@ Subscribers</string>
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verified_icon" translatesAutoresizingMaskIntoConstraints="NO" id="z5F-n7-yU0">
-                                                        <rect key="frame" x="165.5" y="123" width="15" height="15"/>
+                                                        <rect key="frame" x="152.5" y="123" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="6hA-Ky-zX7"/>
                                                             <constraint firstAttribute="width" constant="15" id="N2I-dZ-ZWe"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sarah A. Thompson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvS-Qx-P5h">
-                                                        <rect key="frame" x="20" y="120" width="137.5" height="21"/>
+                                                        <rect key="frame" x="20" y="120" width="124.5" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="dxv-Ib-Cht"/>
                                                         </constraints>
@@ -1921,14 +1922,14 @@ Subscribers</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reviews_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kOJ-td-wgH">
-                                                        <rect key="frame" x="188.5" y="123" width="15" height="15"/>
+                                                        <rect key="frame" x="175.5" y="123" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="bS9-Wi-62E"/>
                                                             <constraint firstAttribute="height" constant="15" id="tLq-h5-4AF"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzs-ik-Ppd">
-                                                        <rect key="frame" x="211.5" y="122.5" width="8.5" height="16.5"/>
+                                                        <rect key="frame" x="198.5" y="123.5" width="7" height="14"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

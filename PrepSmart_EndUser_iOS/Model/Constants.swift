@@ -52,6 +52,10 @@ class Constants: NSObject
     static let updateOrCreateWeeklyPlanTemplate = "updateOrCreateWeeklyPlanTemplate"
     static let getShoppingList = "getShoppingList"
     static let alreadyHaveShopList = "alreadyHaveShopList"
+    static let downloadShopList = "downloadShopList"
+    static let searchIngredientForShop = "searchIngredientForShop"
+    static let getFilterWiseShoppingList = "getFilterWiseShoppingList"
+    static let deleteItemsFromalreadyHaveShopList = "deleteItemsFromalreadyHaveShopList"
     static let getNotifications = "getNotifications"
     static let getMySubscriptions = "getMySubscriptions"
     static let updateSubscription = "updateSubscription"
@@ -83,7 +87,7 @@ class Constants: NSObject
     static let getAppData = "getAppData"
     static let recipeRating = "recipeRating"
     static let getRecipeNutritionixDetails = "getRecipeNutritionixDetails"
-    
+    static let addToFav = "addToFavorite"
     static let marginConstant:CGFloat = UtilityManager.isIphone() ? 15:20
     static let labelHeightConstant:CGFloat = UtilityManager.isIphone() ? 35:45
     static let BUTTON_HEIGHT:CGFloat = UtilityManager.isIphone() ? 50:60

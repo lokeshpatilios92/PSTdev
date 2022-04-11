@@ -17,6 +17,9 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     var myStuffObj : MyStuff_Struct?
     var weeklyPlanArr = [""]
     
+    var filteredMealList: [(meal: MealListData?, isExpandable: Bool)]?
+
+    
     var isExpandable : [Bool] = [false,false,false,false,false]
     
     @IBOutlet var okBtn: UIButton!
@@ -25,9 +28,30 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     @IBOutlet var doneBtn: UIButton!
     @IBOutlet var loadWeeklyPlanTemplateBtn: UIButton!
     @IBOutlet weak var dateBackView: NSLayoutConstraint!
+    @IBOutlet weak var fromDateLabel: UILabel!
+    @IBOutlet weak var toDateLabel: UILabel!
+    
+    @IBOutlet weak var mondayDateLabel: UILabel!
+    @IBOutlet weak var tuesdayDateLabel: UILabel!
+    @IBOutlet weak var wednesdayDateLabel: UILabel!
+    @IBOutlet weak var thrusdayDateLabel: UILabel!
+    @IBOutlet weak var fridayDateLabel: UILabel!
+    @IBOutlet weak var saturdayDateLabel: UILabel!
+    @IBOutlet weak var sundayDateLabel: UILabel!
+    
+    @IBOutlet weak var mondayView: UIView!
+    @IBOutlet weak var tuesdayView: UIView!
+    @IBOutlet weak var wednesdayView: UIView!
+    @IBOutlet weak var thrusdayView: UIView!
+    @IBOutlet weak var fridayView: UIView!
+    @IBOutlet weak var saturdayView: UIView!
+    @IBOutlet weak var sundayView: UIView!
     
     var clearDoneTag = 0
     var useAddRecipeBtnCell = 0
+    
+    var fromDate = Date()
+    var toDate = Date()
     
     let loadWeeklyPlanCell = "LoadWeeklyPlanCell"
     let progressContainerCell = "ProgressContainerCell"
@@ -37,9 +61,15 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     
     var brakfastArr = ["Cheesy Amish Breakfast Casserole","Cheesy Amish Breakfast Casserole","Cheesy Amish Breakfast Casserole","Cheesy Amish Breakfast Casserole"]
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializer()
+        
+        self.showAlertWithOkButtonPopUpVC(setTitle: "PrepSmart Tip:", setMessage: "Try not to over scheduleyour week plan on making some leftovers or adding a new extra item to your shoping list to makeup the other meals.", setButtonTitle: "Ok", customDelegate: nil)
+        
     }
     
     func initializer(){
@@ -62,12 +92,31 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
         doneBtn.layer.cornerRadius = doneBtn.frame.height/2
         loadWeeklyPlanTemplateBtn.layer.cornerRadius = loadWeeklyPlanTemplateBtn.frame.height/2
         okBtn.layer.cornerRadius = okBtn.frame.height/2
-        
+       
         let longpress = UILongPressGestureRecognizer(target: self, action: #selector(LoadWeeklyPlanTemplateVC.longPressGestureRecognized(_:)))
         tableView.addGestureRecognizer(longpress)
         
         print(self.isExpandable)
+        
+        
+        
+        fromDate = Date.today().previous(.monday, considerToday: true)
+        toDate = Date.today().next(.sunday, considerToday: true)
+        
+        fromDateLabel.text = DateToString(date: fromDate, formate: "MMM d")
+        toDateLabel.text = DateToString(date: toDate, formate: "MMM d")
+        
         self.getDateWiseWeeklyPlanDetailsApi()
+    }
+    
+    func setupDaysData() {
+        self.mondayDateLabel.text = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Monday" })?.dayDate
+        self.tuesdayDateLabel.text = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Tuesday" })?.dayDate
+        self.wednesdayDateLabel.text = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Wednesday" })?.dayDate
+        self.thrusdayDateLabel.text = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Thursday" })?.dayDate
+        self.fridayDateLabel.text = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Friday" })?.dayDate
+        self.saturdayDateLabel.text = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Saturday" })?.dayDate
+        self.sundayDateLabel.text = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Sunday" })?.dayDate
     }
     
     
@@ -83,6 +132,9 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
         }
     }
     
+    @IBAction func onClickloadWeeklyPlanTemplate(_ sender: UIButton) {
+        self.showAlertLoadPlanTempletVC()
+    }
     
     func sendFlag(info: Int) {
         dateBackView.constant = 160
@@ -102,6 +154,113 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
         self.showLogOutPopUp(leftBtnTitle: "Don't Save", rightBtnTitle: "Save", lblText: "You may have changes that won't be saved. Are you sure you want to leave without saving?.", isLogOut: false, customDelegate: self)
     }
     
+    @IBAction func previousWeekButtonAction(_ sender: UIButton) {
+        fromDate = fromDate.previous(.monday, considerToday: false)
+        toDate = fromDate.next(.sunday, considerToday: false)
+        
+        fromDateLabel.text = DateToString(date: fromDate, formate: "MMM d")
+        toDateLabel.text = DateToString(date: toDate, formate: "MMM d")
+        getDateWiseWeeklyPlanDetailsApi()
+    }
+    
+    @IBAction func nextWeekButtonAction(_ sender: UIButton) {
+        fromDate = fromDate.next(.monday, considerToday: false)
+        toDate = fromDate.next(.sunday, considerToday: false)
+        
+        fromDateLabel.text = DateToString(date: fromDate, formate: "MMM d")
+        toDateLabel.text = DateToString(date: toDate, formate: "MMM d")
+        getDateWiseWeeklyPlanDetailsApi()
+    }
+    
+    @IBAction func btnMondayAction(_ sender: UIButton) {
+        mondayView.backgroundColor = .appOrangeColor()
+        tuesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        wednesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        thrusdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        fridayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        saturdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        sundayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        self.fiterDataAccordingToDay("Monday")
+    }
+    
+    @IBAction func btnTuesdayAction(_ sender: UIButton) {
+        mondayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        tuesdayView.backgroundColor = .appOrangeColor()
+        wednesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        thrusdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        fridayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        saturdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        sundayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        self.fiterDataAccordingToDay("Tuesday")
+    }
+    
+    @IBAction func btnWednesdayAction(_ sender: UIButton) {
+        mondayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        tuesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        wednesdayView.backgroundColor = .appOrangeColor()
+        thrusdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        fridayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        saturdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        sundayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        self.fiterDataAccordingToDay("Wednesday")
+    }
+    
+    @IBAction func btnThrusdayAction(_ sender: UIButton) {
+        mondayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        tuesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        wednesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        thrusdayView.backgroundColor = .appOrangeColor()
+        fridayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        saturdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        sundayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        self.fiterDataAccordingToDay("Thursday")
+    }
+    
+    @IBAction func btnFridayAction(_ sender: UIButton) {
+        mondayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        tuesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        wednesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        thrusdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        fridayView.backgroundColor = .appOrangeColor()
+        saturdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        sundayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        self.fiterDataAccordingToDay("Friday")
+    }
+    
+    @IBAction func btnSaturdayAction(_ sender: UIButton) {
+        mondayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        tuesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        wednesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        thrusdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        fridayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        saturdayView.backgroundColor = .appOrangeColor()
+        sundayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        self.fiterDataAccordingToDay("Saturday")
+    }
+    
+    @IBAction func btnSundayAction(_ sender: UIButton) {
+        mondayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        tuesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        wednesdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        thrusdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        fridayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        saturdayView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.15)
+        sundayView.backgroundColor = .appOrangeColor()
+        self.fiterDataAccordingToDay("Sunday")
+    }
+    
+    func fiterDataAccordingToDay(_ day: String) {
+        filteredMealList?.removeAll()
+        let mondayMealList = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })?.mealList
+        
+        self.filteredMealList = mondayMealList?.map({ (meal) -> (meal: MealListData?, isExpandable: Bool) in
+             (meal: meal, isExpandable: false)
+        })
+        
+        self.tableView.reloadData()
+    }
+    
+    
     @IBAction func okBtnTapped(_ sender: UIButton) {
         dateBackView.constant = 160
     }
@@ -110,11 +269,11 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     {
         let lastMondayDate = DateToStringYYMMDD(date: Date.today().previous(.monday, considerToday: true))
         let nextSundayDate = DateToStringYYMMDD(date: Date.today().next(.sunday, considerToday: true))
+        
         self.downloadWeeklyPlanApi(StartDate:lastMondayDate , EndDate: nextSundayDate)
     }
     
-    @objc func saveOptionsTapped()
-    {
+    @objc func saveOptionsTapped() {
         myStuffApi()
     }
     
@@ -140,6 +299,8 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     //MARK: OnClick Func
     
     @objc func onClickToggleButton(sender:UIButton) {
+        let isExpandableCell = filteredMealList?[sender.tag].isExpandable ??  false
+        filteredMealList?[sender.tag].isExpandable = !isExpandableCell
         isExpandable[sender.tag] = !isExpandable[sender.tag]
         tableView.reloadSections(IndexSet.init(integer: sender.tag), with: .automatic)
         
@@ -259,42 +420,45 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
 extension LoadWeeklyPlanTemplateVC : UITableViewDataSource,UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return isExpandable.count
+        filteredMealList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            if isExpandable[section]{
-                return self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?[section].mealList?[section].recipeList?.count ?? 0
-            }
-        case 1:
-            if isExpandable[section]{
-                return 2
-            }
-        case 2:
-            if isExpandable[section]{
-                return 4
-            }
-        case 3:
-            if isExpandable[section] {
-                return 3
-            }
-        case 4:
-            if isExpandable[section] {
-                return 1
-            }
-        default:
-            return 0
-        }
-        return 0
+        guard let filteredData = filteredMealList?[section], filteredData.isExpandable else { return 0 }
+        return filteredData.meal?.recipeList?.count ?? 0
+        
+//        switch section {
+//        case 0:
+//            if isExpandable[section]{
+//                return filteredMealList?[section].recipeList?.count ?? 0
+//            }
+//        case 1:
+//            if isExpandable[section]{
+//                return 2
+//            }
+//        case 2:
+//            if isExpandable[section]{
+//                return 4
+//            }
+//        case 3:
+//            if isExpandable[section] {
+//                return 3
+//            }
+//        case 4:
+//            if isExpandable[section] {
+//                return 1
+//            }
+//        default:
+//            return 0
+//        }
+//        return 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("indexpath = \(indexPath)")
         print("indexpath.section = \(indexPath.section)")
-        if indexPath.row == brakfastArr.count + 1{
+        if indexPath.row == brakfastArr.count + 1  {
             
             if useAddRecipeBtnCell == 0{
                 let cell = tableView.dequeueReusableCell(withIdentifier: addRecipeBtnCell, for: indexPath) as! AddRecipeBtnCell
@@ -315,12 +479,19 @@ extension LoadWeeklyPlanTemplateVC : UITableViewDataSource,UITableViewDelegate{
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: loadWeeklyPlanCell, for: indexPath) as! LoadWeeklyPlanCell
+            
+            let receipe = filteredMealList?[indexPath.section].meal?.recipeList?[indexPath.row]
+            
             cell.addBtn.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
             cell.subtractBtn.addTarget(self, action: #selector(subtractTapped), for: .touchUpInside)
             cell.deleteBtn.addTarget(self, action: #selector(deleteTapped), for: .touchUpInside)
             cell.addBtn.tag = indexPath.row
             cell.subtractBtn.tag = indexPath.row
             cell.deleteBtn.tag = indexPath.row
+            
+            cell.recipeTitleLbl.text = receipe?.recipeName
+            cell.vitaminLbl.text = "\(receipe?.calorificValue ?? "0") CALS. \(receipe?.proteinsValue ?? 0)). \(receipe?.carbsValue ?? 0)C \(receipe?.fatValue ?? 0)F."
+            
             if indexPath.row == brakfastArr.count{
                 cell.separatorView.isHidden = true
             }
@@ -524,8 +695,8 @@ extension LoadWeeklyPlanTemplateVC
                                 savePdf(urlString: self.downloadWeeklyPlanObj.pdf_path, fileName: "\(StartDate)to\(EndDate)")
                             }
                         }
-                        catch
-                        {
+                        catch( let error ){
+                            print(error)
                             Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                             
                         }
@@ -551,9 +722,8 @@ extension LoadWeeklyPlanTemplateVC
         }
     }
     
-    func updateOrCreate_WeeklyPlanTemplate_Api()
-    {
-        let param:[String:String] = ["name":"2021-11-22",                                         "plan_data":"2021-11-28",                                "save_as_new_weekly_plan_template":"",                        "weekly_plan_template_id":""]
+    func updateOrCreate_WeeklyPlanTemplate_Api() {
+        let param:[String: String] = ["name":"2021-11-22",                                         "plan_data":"2021-11-28",                                "save_as_new_weekly_plan_template":"",                        "weekly_plan_template_id":""]
         
         Loader.sharedInstance.showIndicator()
         Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.updateOrCreateWeeklyPlanTemplate, params: param , method: .post) { (result) in
@@ -598,9 +768,12 @@ extension LoadWeeklyPlanTemplateVC
         }
     }
     
-    func clearWeeklyPlanRecipeApi()
-    {
-        let param:[String:String] = ["start_date":"2021-11-22", "end_date":"2021-11-28"]
+    func clearWeeklyPlanRecipeApi() {
+        
+        let strFrom = DateToStringYYMMDD(date: fromDate)
+        let strTo = DateToStringYYMMDD(date: toDate)
+        
+        let param:[String:String] = ["start_date":strFrom, "end_date":strTo]
         
         Loader.sharedInstance.showIndicator()
         
@@ -646,9 +819,11 @@ extension LoadWeeklyPlanTemplateVC
         }
     }
     
-    func getDateWiseWeeklyPlanDetailsApi()
-    {
-        let param:[String:String] = ["start_date":"2021-12-27",                                    "end_date":"2022-01-02"]
+    func getDateWiseWeeklyPlanDetailsApi() {
+        let strFrom = DateToStringYYMMDD(date: fromDate)
+        let strTo = DateToStringYYMMDD(date: toDate)
+        
+        let param:[String:String] = ["start_date":strFrom, "end_date":strTo]
         Loader.sharedInstance.showIndicator()
         Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.getDateWiseWeeklyPlanDetails, params: param , method: .post) { (result) in
             switch result
@@ -662,10 +837,17 @@ extension LoadWeeklyPlanTemplateVC
                         Loader.sharedInstance.hideIndicator()
                         do {
                             self.dateWiseWeeklyPlanObj = try JSONDecoder().decode(DateWiseWeeklyPlan_Struct.self, from: data)
+                            let mondayMealList = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Monday" })?.mealList
+                            
+                            self.filteredMealList = mondayMealList?.map({ (meal) -> (meal: MealListData?, isExpandable: Bool) in
+                                 (meal: meal, isExpandable: false)
+                            })
+                            
                             self.tableView.reloadData()
+                            self.setupDaysData()
                         }
-                        catch
-                        {
+                        catch (let error) {
+                            print(error)
                             Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                             
                         }

@@ -14,8 +14,8 @@
             filePath = "PrepSmart_EndUser_iOS/Screens/Recipe_Module/ViewRecipeVC/ViewRecipeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
             landmarkName = "sectionButtonTapped(sender:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -388,10 +388,7 @@ extension UIViewController
     
     func showSpecifyDaysVC(customDelegate : CustomSpecifyDaysVCDelegate?) {
         let vc = UIStoryboard.AuxiliaryStoryboard.instantiateViewController(withIdentifier: "SpecificDaysVC") as! SpecificDaysVC
-        
         vc.customDelegate = customDelegate
-        
-
         vc.view.frame = self.view.bounds;
         vc.willMove(toParent: self)
         self.view.addSubview(vc.view)
@@ -1065,15 +1062,14 @@ extension Date {
 }
 
 extension UIViewController {
-    func DateToString(date:Date) -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let myString = formatter.string(from: date)
-        let yourDate = formatter.date(from: myString)
-        formatter.dateFormat = "dd-MM-yyyy"
-        let myStringDate = formatter.string(from: yourDate!)
-        return myStringDate
-    }
+    func DateToString(date:Date, formate: String = "dd-MM-yyyy") -> String {   let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let myString = formatter.string(from: date)
+            let yourDate = formatter.date(from: myString)
+            formatter.dateFormat = formate
+            let myStringDate = formatter.string(from: yourDate!)
+            return myStringDate
+        }
     func DateToStringYYMMDD(date:Date) -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

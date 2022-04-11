@@ -9,6 +9,8 @@
 import UIKit
 import Popover
 
+
+
 class FilterVC: BaseViewController {
 
     @IBOutlet weak var topView: UIView!
@@ -18,9 +20,12 @@ class FilterVC: BaseViewController {
     @IBOutlet weak var applyButton: UIButton!
     
     let filterTableCell = "FilterTableCell"
-    
+    var FilterDelegate : CustomSpecifyDaysVCDelegate!
     var dataArray : [String] = []
-    
+    var filterType : String = ""
+    var startDate : String = ""
+    var endDate : String = ""
+    var specificDayString : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,9 +37,19 @@ class FilterVC: BaseViewController {
         
         self.navigationItem.titleView = UtilityManager.getTitleLabel("Filter")
         
-   
+        let lastMondayDate = DateToString(date: Date.today().previous(.monday, considerToday: true))
+        let nextSundayDate = DateToString(date: Date.today().next(.sunday, considerToday: true))
         
-        dataArray = ["Today","Tomorrow","Next 3 days","Next 5 days","Current Week (Mon 2/4 - Sun 2/10)","Next Week (Mon 2/11 - Sun )","Specific Date Range","Specific Days"]
+        let nextMondayDate = DateToString(date: Date.today().next(.monday, considerToday: true))
+        let nexttonextSundayDate = DateToString(date: Date.today().next(.monday, considerToday: false).next(.sunday, considerToday: false))
+        dataArray = ["Today",
+                     "Tomorrow",
+                     "Next 3 days",
+                     "Next 5 days",
+                     "Current Week (Mon \(lastMondayDate) - Sun \(nextSundayDate))",
+                     "Next Week (Mon \(nextMondayDate) - Sun \(nexttonextSundayDate)",
+                     "Specific Date Range",
+                     "Specific Days"]
         
         tableView.register(UINib.init(nibName: filterTableCell, bundle: nil), forCellReuseIdentifier: filterTableCell)
         
@@ -48,7 +63,11 @@ class FilterVC: BaseViewController {
     
    
     @IBAction func onClickApplyButton(_ sender: UIButton) {
-        
+        print(filterType)
+        if filterType != ""{
+        FilterDelegate.onClickApplyButton(filterType: filterType, startdate: startDate, endDate: endDate, specificDays: specificDayString)
+        self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func onClickInfoButton(_ sender: UIButton) {
@@ -103,7 +122,7 @@ extension FilterVC : UITableViewDelegate,UITableViewDataSource {
         
         let cell = tableView.cellForRow(at: indexPath) as! FilterTableCell
         cell.leftImage.image = #imageLiteral(resourceName: "radio_active")
-        
+        filterType = "\(indexPath.row+1)"
         if indexPath.row == 6{
             self.showSelectDateRangeVC(btn_text: "Select", customDelegate: self)
         }else if indexPath.row == 7{
@@ -124,15 +143,15 @@ extension FilterVC : UITableViewDelegate,UITableViewDataSource {
 }
 
 extension FilterVC : CustomSelectDateRangeVCDelegate, CustomSpecifyDaysVCDelegate{
+    func onClickApplyButton(filterType: String, startdate: String, endDate: String, specificDays: String) {
+    print("\(filterType),\(startdate), \(endDate) , \(specificDays)")
+        self.filterType = filterType
+        startDate = startdate
+        startDate = endDate
+        specificDayString = specificDays
+    }
+    
     func onClickSelectButtonAction(startDate: String?, endDate: String?, startDay: String?, endDay: String?) {
-        
+        print ("startDate\(startDate) endDate\(endDate)")
     }
-    
-    
-    
-    
-    func onClickApplyButton() {
-       
-    }
-    
 }
