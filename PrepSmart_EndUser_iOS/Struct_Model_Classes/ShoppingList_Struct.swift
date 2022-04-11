@@ -43,6 +43,7 @@ struct Shopping_list : Codable {
 }
 struct Grocery_list : Codable {
     var ingredient_id : Int?
+    var grocery_id : Int?
     var name : String?
     var quantity : String?
     var unit : String?
@@ -52,7 +53,7 @@ struct Grocery_list : Codable {
     var recipes_names : String?
     
     enum CodingKeys: String, CodingKey {
-        
+        case grocery_id =  "grocery_id"
         case ingredient_id = "ingredient_id"
         case name = "name"
         case quantity = "quantity"

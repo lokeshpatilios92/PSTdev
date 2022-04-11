@@ -85,3 +85,15 @@ struct AppRating_Struct : Codable {
        
     }
 }
+
+struct DeleteItemsFromalreadyHaveShopListStruct: Codable {
+    var status: Bool?
+    var statusCode: Int?
+    var message: String?
+
+    enum CodingKeys: String, CodingKey {
+        case status
+        case statusCode = "status_code"
+        case message
+    }
+}

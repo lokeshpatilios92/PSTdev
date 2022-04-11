@@ -176,7 +176,7 @@
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmu-mp-SWj" customClass="CosmosView" customModule="Cosmos">
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmu-mp-SWj" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="70" y="201" width="195" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1291,7 +1291,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                             <outlet property="delegate" destination="ygq-W3-ybF" id="meH-A7-zeC"/>
                                         </connections>
                                     </textView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-29-5e1" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-29-5e1" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="50" y="74" width="195" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3534,6 +3534,44 @@ Please be sure to select the quantity of each ingredient to match the quantities
                                                     <action selector="onClickButton:" destination="VAZ-Hl-SmH" eventType="touchUpInside" id="HKm-cz-3KB"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIX-Bw-wjT">
+                                                <rect key="frame" x="25" y="98" width="285" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Plan" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiM-fW-GbO">
+                                                        <rect key="frame" x="4" y="0.0" width="265" height="40"/>
+                                                        <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0K-gw-3Ga">
+                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="40"/>
+                                                        <connections>
+                                                            <action selector="onClickButton:" destination="VAZ-Hl-SmH" eventType="touchUpInside" id="Bv5-3Z-ZQk"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="tKp-CC-n6F">
+                                                        <rect key="frame" x="273" y="16.5" width="7" height="7"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="7" id="UPC-zX-Crm"/>
+                                                            <constraint firstAttribute="width" constant="7" id="hKQ-ND-8gL"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="tKp-CC-n6F" secondAttribute="trailing" constant="5" id="19y-Mx-K6L"/>
+                                                    <constraint firstAttribute="bottom" secondItem="W0K-gw-3Ga" secondAttribute="bottom" id="6JX-tB-tcO"/>
+                                                    <constraint firstItem="uiM-fW-GbO" firstAttribute="top" secondItem="nIX-Bw-wjT" secondAttribute="top" id="7HE-lz-XUr"/>
+                                                    <constraint firstItem="tKp-CC-n6F" firstAttribute="centerY" secondItem="nIX-Bw-wjT" secondAttribute="centerY" id="7iZ-iA-Zlj"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uiM-fW-GbO" secondAttribute="bottom" id="9Sb-r6-fIt"/>
+                                                    <constraint firstItem="W0K-gw-3Ga" firstAttribute="top" secondItem="nIX-Bw-wjT" secondAttribute="top" id="EdT-Q0-zO8"/>
+                                                    <constraint firstItem="tKp-CC-n6F" firstAttribute="leading" secondItem="uiM-fW-GbO" secondAttribute="trailing" constant="4" id="Jhb-K1-jbK"/>
+                                                    <constraint firstItem="uiM-fW-GbO" firstAttribute="leading" secondItem="nIX-Bw-wjT" secondAttribute="leading" constant="4" id="Tgu-G2-ttr"/>
+                                                    <constraint firstItem="W0K-gw-3Ga" firstAttribute="leading" secondItem="nIX-Bw-wjT" secondAttribute="leading" id="eG2-6L-K9L"/>
+                                                    <constraint firstAttribute="height" constant="40" id="eek-NW-1ih"/>
+                                                    <constraint firstAttribute="trailing" secondItem="W0K-gw-3Ga" secondAttribute="trailing" id="v5O-OV-yCW"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3546,10 +3584,14 @@ Please be sure to select the quantity of each ingredient to match the quantities
                                             <constraint firstItem="v93-mb-rnX" firstAttribute="centerX" secondItem="7JL-Fa-B6z" secondAttribute="centerX" id="B91-zH-AI4"/>
                                             <constraint firstItem="hh5-xG-Zdq" firstAttribute="centerX" secondItem="7JL-Fa-B6z" secondAttribute="centerX" id="Bj8-7J-FfY"/>
                                             <constraint firstItem="8qc-tG-l5i" firstAttribute="top" secondItem="42e-rM-XOv" secondAttribute="bottom" constant="10" id="Cru-EQ-pSG"/>
+                                            <constraint firstAttribute="trailing" secondItem="nIX-Bw-wjT" secondAttribute="trailing" constant="25" id="DxV-TT-bhH"/>
+                                            <constraint firstItem="v93-mb-rnX" firstAttribute="top" secondItem="nIX-Bw-wjT" secondAttribute="bottom" constant="22" id="Ieq-Ua-q3u"/>
                                             <constraint firstAttribute="height" constant="250" id="Q3y-Il-dYU"/>
+                                            <constraint firstItem="nIX-Bw-wjT" firstAttribute="leading" secondItem="7JL-Fa-B6z" secondAttribute="leading" constant="25" id="TaF-25-DYg"/>
                                             <constraint firstItem="42e-rM-XOv" firstAttribute="leading" secondItem="7JL-Fa-B6z" secondAttribute="leading" constant="25" id="TnS-jq-sty"/>
                                             <constraint firstItem="hh5-xG-Zdq" firstAttribute="top" secondItem="v93-mb-rnX" secondAttribute="bottom" constant="10" id="XX1-Qo-Elx"/>
                                             <constraint firstItem="vkA-nw-UAe" firstAttribute="bottom" secondItem="hh5-xG-Zdq" secondAttribute="bottom" id="Xls-7f-hpl"/>
+                                            <constraint firstItem="nIX-Bw-wjT" firstAttribute="top" secondItem="42e-rM-XOv" secondAttribute="bottom" constant="8" symbolic="YES" id="d8g-Gs-7VZ"/>
                                             <constraint firstItem="vkA-nw-UAe" firstAttribute="leading" secondItem="hh5-xG-Zdq" secondAttribute="leading" id="eeQ-8H-fnT"/>
                                             <constraint firstItem="42e-rM-XOv" firstAttribute="top" secondItem="z5a-RN-Fbq" secondAttribute="bottom" constant="10" id="ijm-65-8GF"/>
                                             <constraint firstItem="hh5-xG-Zdq" firstAttribute="height" secondItem="v93-mb-rnX" secondAttribute="height" id="jWB-GX-2ym"/>
@@ -3584,14 +3626,15 @@ Please be sure to select the quantity of each ingredient to match the quantities
                     </view>
                     <connections>
                         <outlet property="backView" destination="7JL-Fa-B6z" id="bbe-rA-HnY"/>
+                        <outlet property="btn_DropDown" destination="W0K-gw-3Ga" id="jgX-By-DSF"/>
                         <outlet property="btn_Load" destination="v93-mb-rnX" id="MHM-Hl-Rqo"/>
                         <outlet property="btn_Template" destination="hh5-xG-Zdq" id="Tet-ui-r33"/>
-                        <outlet property="searchBar" destination="8qc-tG-l5i" id="GRx-LT-gfW"/>
+                        <outlet property="lbl_SelectedPlan" destination="uiM-fW-GbO" id="jm8-6a-CMp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4r7-XJ-qZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5318" y="858"/>
+            <point key="canvasLocation" x="5317.6000000000004" y="857.72113943028489"/>
         </scene>
         <!--Alert Add Weekly PlanVC-->
         <scene sceneID="ooa-gX-fb6">
@@ -3968,10 +4011,10 @@ What's on the menu?</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-hY-6R9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKf-Np-kgj">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKf-Np-kgj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwr-bm-uEG">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwr-bm-uEG">
                                                 <rect key="frame" x="20" y="210.5" width="335" height="246"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8f-PJ-ZRt">
@@ -3985,7 +4028,7 @@ What's on the menu?</string>
                                                             <action selector="onClickCloseButton:" destination="vfg-Pj-fbR" eventType="touchUpInside" id="PKr-4V-6Sr"/>
                                                         </connections>
                                                     </button>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVG-cj-tfn" userLabel="ViewCancelSave">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVG-cj-tfn" userLabel="ViewCancelSave">
                                                         <rect key="frame" x="0.0" y="191" width="335" height="45"/>
                                                         <subviews>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVC-uF-9L8">
@@ -4012,7 +4055,7 @@ What's on the menu?</string>
                                                             <constraint firstItem="VVC-uF-9L8" firstAttribute="top" secondItem="ZVG-cj-tfn" secondAttribute="top" constant="5" id="w52-66-Xw2"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-MJ-MLC" customClass="TagsView" customModule="Tags">
+                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-MJ-MLC" customClass="TagsView" customModule="Tags">
                                                         <rect key="frame" x="20" y="111" width="295" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -4309,15 +4352,11 @@ What's on the menu?</string>
         <designable name="JDK-Ye-KP1">
             <size key="intrinsicContentSize" width="100.5" height="20.5"/>
         </designable>
-        <designable name="MGb-MJ-MLC"/>
         <designable name="Srn-Dz-65F">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
         </designable>
         <designable name="Vrm-Cy-GLX">
             <size key="intrinsicContentSize" width="168.5" height="20.5"/>
-        </designable>
-        <designable name="dmu-mp-SWj">
-            <size key="intrinsicContentSize" width="195" height="35"/>
         </designable>
         <designable name="ehF-hA-Uz6">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
@@ -4328,17 +4367,11 @@ What's on the menu?</string>
         <designable name="kbQ-vU-lg7">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
         </designable>
-        <designable name="rLr-29-5e1">
-            <size key="intrinsicContentSize" width="195" height="35"/>
-        </designable>
         <designable name="u1C-57-6du">
             <size key="intrinsicContentSize" width="77" height="20.5"/>
         </designable>
         <designable name="uKU-bL-epH">
             <size key="intrinsicContentSize" width="170.5" height="20.5"/>
-        </designable>
-        <designable name="wwW-Cz-hUF">
-            <size key="intrinsicContentSize" width="195" height="35"/>
         </designable>
         <designable name="x7l-pw-ECb">
             <size key="intrinsicContentSize" width="5" height="20.5"/>

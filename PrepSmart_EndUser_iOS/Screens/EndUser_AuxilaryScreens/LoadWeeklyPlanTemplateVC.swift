@@ -92,7 +92,7 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
         doneBtn.layer.cornerRadius = doneBtn.frame.height/2
         loadWeeklyPlanTemplateBtn.layer.cornerRadius = loadWeeklyPlanTemplateBtn.frame.height/2
         okBtn.layer.cornerRadius = okBtn.frame.height/2
-        
+       
         let longpress = UILongPressGestureRecognizer(target: self, action: #selector(LoadWeeklyPlanTemplateVC.longPressGestureRecognized(_:)))
         tableView.addGestureRecognizer(longpress)
         
@@ -132,6 +132,9 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
         }
     }
     
+    @IBAction func onClickloadWeeklyPlanTemplate(_ sender: UIButton) {
+        self.showAlertLoadPlanTempletVC()
+    }
     
     func sendFlag(info: Int) {
         dateBackView.constant = 160
