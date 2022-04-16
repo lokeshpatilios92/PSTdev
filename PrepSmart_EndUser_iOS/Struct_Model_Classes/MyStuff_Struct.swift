@@ -109,3 +109,16 @@ enum Ratting: Codable {
         }
     }
 }
+
+
+struct Recipes : Codable {
+    let item_id : Int?
+    let recipe_id : Int?
+    let recipe_name : String?
+    let recipe_image : String?
+//    let calories : Int?
+    let protein : Int?
+    let carbohydrates :  Int?
+    let recipe_type : Int?
+    var totalQuantity : Int? = 0
+}

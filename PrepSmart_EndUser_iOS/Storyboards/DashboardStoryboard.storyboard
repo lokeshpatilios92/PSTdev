@@ -2615,7 +2615,7 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk1-RX-rxh">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk1-RX-rxh" customClass="CellDeleteButton" customModule="PrepSmart" customModuleProvider="target">
                                                                     <rect key="frame" x="295" y="-1" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="5RJ-W0-z6s"/>
@@ -2659,8 +2659,8 @@
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="checkBoxView" destination="IqO-Ja-I7c" id="Kjv-Sh-C4R"/>
-                                                    <outlet property="deleteButton" destination="Bk1-RX-rxh" id="CIq-jB-EpH"/>
                                                     <outlet property="dicLabel" destination="kVe-Wy-H5t" id="cQ3-rg-h0F"/>
+                                                    <outlet property="removeButton" destination="Bk1-RX-rxh" id="xTW-nM-zDI"/>
                                                     <outlet property="titleLabel" destination="5zG-1r-rqb" id="DwX-tk-2Kl"/>
                                                 </connections>
                                             </tableViewCell>
@@ -4467,6 +4467,9 @@
                                         <state key="normal" title="Load Weekly Plan Template">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onClickloadWeeklyPlanTemplate:" destination="jAz-c7-1Zj" eventType="touchUpInside" id="XOA-kA-13D"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="tTd-Pc-wUj"/>

@@ -27,14 +27,16 @@ class ShoppingListToBuyViewController: BaseViewController {
     
     var sortByDropDown = DropDown()
     @IBOutlet weak var viewTopFilters: UIView!
-    
+    var grocryForRemoveSecton:Int = -1
+    var grocryForRemoveRow:Int = -1
+
     var isExpanded : [Bool]! = []
     var selectedButton : UIButton!
     var selectedSectionButton = 0
-    var deleteItem : Int?
     var global_Var = GlobalClass.sharedManager
     var shoppingListObj: ShoppingList_Struct?
     var DownloadShopListObj: DownloadShopListStruct?
+    var deleteIOngridentFromAlreadyObj:DeleteItemsFromalreadyHaveShopListStruct?
     let shoppingListToBuyTableCell = "ShoppingListToBuyTableCell"
     let shoppingListToBuyTableHeaderCell = "ShoppingListToBuyTableHeaderCell"
     
@@ -193,15 +195,16 @@ extension ShoppingListToBuyViewController : UITableViewDelegate, UITableViewData
         let dic = selectedSectionButton == 0 ? self.shoppingListObj?.shopping_list?[indexPath.section].grocery_list?[indexPath.row] : self.shoppingListObj?.alreadyHaveList?[indexPath.section].grocery_list?[indexPath.row]
         cell.titleLabel.text = dic?.name
         cell.dicLabel.text = dic?.recipes_names
-        cell.deleteButton.tag = indexPath.row
-        cell.deleteButton.addTarget(self, action: #selector(onClickDeleteButton(_:)), for: .touchUpInside)
+        cell.removeButton.indexPath = indexPath
+       // cell.deleteButton.tag = indexPath.row
+        cell.removeButton.addTarget(self, action: #selector(onClickDeleteButton(_:)), for: .touchUpInside)
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerViewCell = tableView.dequeueReusableCell(withIdentifier: shoppingListToBuyTableHeaderCell) as! ShoppingListToBuyTableHeaderCell
         if self.shoppingListObj?.shopping_list?.count ?? 0 > 0{
-            let dict = self.shoppingListObj?.shopping_list?[section]
+            let dict = selectedSectionButton == 0 ? self.shoppingListObj?.shopping_list?[section]: self.shoppingListObj?.alreadyHaveList?[section]
             if isExpanded[section] {
                 headerViewCell.sideImage.image = #imageLiteral(resourceName: "up_arrow_white")
             }
@@ -229,16 +232,23 @@ extension ShoppingListToBuyViewController : UITableViewDelegate, UITableViewData
         return view
     }
     
-    @objc func onClickDeleteButton(_ sender : UIButton){
-       deleteItem = sender.tag
+    @objc func onClickDeleteButton(_ sender : CellDeleteButton){
+        print( sender.indexPath?.section)
+        print(  sender.indexPath?.row)
+        grocryForRemoveRow =  sender.indexPath!.row ?? 0
+        grocryForRemoveSecton = sender.indexPath?.section ?? 0
         self.TwoButtonAndNoteDelegate(title: "Deleting this ingredient removes it from this shopping list all togather.Do you want to procceed?", note: "Note: Use the check box feature as you purchase ingredients which moves them to the Already Have list for later viewing ", customDelegate: self)
     }
 }
 
 extension ShoppingListToBuyViewController : TwoButtonAndNotePopUpDelegate {
     func onClcikDeleteButton() {
-        //self.removeAnimation()
-        print("delete all pressed")
+        if  selectedSectionButton == 1 {
+        deleteFromalreadyHaveAPI(grocery_id: self.shoppingListObj?.alreadyHaveList?[grocryForRemoveSecton].grocery_list?[grocryForRemoveRow].grocery_id ?? -1)
+        }
+        else {
+            print("delete all \(selectedSectionButton)")
+        }
     }
 }
 
@@ -315,6 +325,9 @@ extension ShoppingListToBuyViewController
                         do {
                             self.shoppingListObj = try JSONDecoder().decode(ShoppingList_Struct.self, from: data)
                             let count = self.shoppingListObj?.alreadyHaveList?.count ?? 0
+                            if count == 0 {
+                                self.shoppingListObj?.alreadyHaveList?.removeAll()
+                            }
                             self.topRightButton.setTitle("Alread Have (\(count))", for: .normal)
                             self.tableView.reloadData()
                         }
@@ -487,6 +500,53 @@ extension ShoppingListToBuyViewController
             }
         }
     }
+    func deleteFromalreadyHaveAPI(grocery_id:Int)
+    {
+        let param:[String:String] = ["grocery_id": String(grocery_id)]
+        
+        Loader.sharedInstance.showIndicator()
+        
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.deleteItemsFromalreadyHaveShopList, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.deleteIOngridentFromAlreadyObj = try JSONDecoder().decode(DeleteItemsFromalreadyHaveShopListStruct.self, from: data)
+                            self.alreadyHaveShopListApi()
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.deleteIOngridentFromAlreadyObj?.message ?? "")
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                            
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
 }
 
 extension ShoppingListToBuyViewController : CustomSpecifyDaysVCDelegate {
@@ -515,6 +575,7 @@ class ShoppingListToBuyTableCell : UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dicLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var removeButton: CellDeleteButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -524,3 +585,6 @@ class ShoppingListToBuyTableCell : UITableViewCell {
 }
 
 
+class CellDeleteButton: UIButton {
+    var indexPath: IndexPath?
+}

@@ -246,7 +246,7 @@ class BaseViewController: UIViewController {
 //                    vc.completionHandler = { (status) in
 //                        if status {
 //                            // positive
-//                            let vc = UIStoryboard.EndUser_AuxilaryStoryboard.instantiateViewController(withIdentifier: "WeekPlannerVC") as! WeekPlannerVC
+//let vc = UIStoryboard.EndUser_AuxilaryStoryboard.instantiateViewController(withIdentifier: "WeekPlannerVC") as! WeekPlannerVC
 ////                             self.removeAnimation()
 //                            self.navigationController?.pushViewController(vc, animated: true)
 //
@@ -299,10 +299,11 @@ class BaseViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         else if sender.tag == 18
-        {
-            let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "EditWeeklyPlanTemplateVC") as! EditWeeklyPlanTemplateVC
-            vc.isForAddWeeklyPlanTemplate = true
+        {let vc = UIStoryboard.Alert_Module.instantiateViewController(withIdentifier: "AddToPopUpVC") as! AddToPopUpVC
             self.navigationController?.pushViewController(vc, animated: true)
+//            let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "EditWeeklyPlanTemplateVC") as! EditWeeklyPlanTemplateVC
+//            vc.isForAddWeeklyPlanTemplate = true
+//            self.navigationController?.pushViewController(vc, animated: true)
         } else if sender.tag == 21
         {
            // SaveOptionsPopUpVC(customDelegate : self)
