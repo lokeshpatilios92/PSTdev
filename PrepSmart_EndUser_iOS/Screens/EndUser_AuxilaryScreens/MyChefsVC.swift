@@ -112,7 +112,14 @@ extension MyChefsVC : UITableViewDataSource,UITableViewDelegate{
             cell.subscribersCountLbl.text = String(dic?.total_subscribers ?? 0)
             cell.viewProfileBtn.tag = indexPath.row
             cell.viewProfileBtn.addTarget(self, action: #selector(self.onClickviewProfileBtn(_:)), for: .touchUpInside)
-            cell.ratingView.rating = Double(dic?.avg_ratings ?? 0)
+            if let rating = dic?.avg_ratings! {
+                switch rating {
+                case .integer(let int):
+                    cell.ratingView.rating  = Double(int)
+                case .string(let string):
+                    cell.ratingView.rating = Double(string) ?? 0.0
+                }
+            }
             cell.ratingCount.text = "( " + String(dic?.total_ratings ?? 0) + " )"
             return cell
         }

@@ -37,6 +37,8 @@ struct RecipeBoxViewTypeList : Codable {
 
 
 }
+
+
 struct RecipeList : Codable {
     let item_id : Int?
     let item_title : String?
@@ -108,4 +110,17 @@ enum Ratting: Codable {
             try container.encode(x)
         }
     }
+}
+
+
+struct Recipes : Codable {
+    let item_id : Int?
+    let recipe_id : Int?
+    let recipe_name : String?
+    let recipe_image : String?
+//    let calories : Int?
+    let protein : Int?
+    let carbohydrates :  Int?
+    let recipe_type : Int?
+    var totalQuantity : Int? = 0
 }

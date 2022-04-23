@@ -3455,7 +3455,7 @@
 				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = 1;
@@ -3592,7 +3592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prepsmartUser.app-";
 				PRODUCT_NAME = PrepSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/applepc/Documents/LokeshDocs/Douments/PrepSmart_iOS/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3608,7 +3608,7 @@
 				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = K3693FUS2S;
 				ENABLE_BITCODE = NO;
 				GCC_OPTIMIZATION_LEVEL = 1;
@@ -3747,7 +3747,7 @@
 				PRODUCT_NAME = PrepSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "PST User Appstore";
 				SWIFT_COMPILATION_MODE = singlefile;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/applepc/Documents/LokeshDocs/Douments/PrepSmart_iOS/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -18,7 +18,7 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     var weeklyPlanArr = [""]
     
     var filteredMealList: [(meal: MealListData?, isExpandable: Bool)]?
-
+    private var selectedDay: Daydata?
     
     var isExpandable : [Bool] = [false,false,false,false,false]
     
@@ -121,7 +121,6 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     
     
     override func viewWillAppear(_ animated: Bool) {
-        initializer()
         if let mode = UserDefaults.standard.value(forKey: "mode") as? Int{
             if mode == 1{
                 let vc = UIStoryboard.DashboardStoryboard.instantiateViewController(withIdentifier : "AdvancedModeWeeklyPlanVC") as! AdvancedModeWeeklyPlanVC
@@ -139,6 +138,20 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     func sendFlag(info: Int) {
         dateBackView.constant = 160
         useAddRecipeBtnCell = 1
+    }
+    
+    func didDataAddedToList(at indexPath: IndexPath?, receipes: [Recipes]) {
+        guard let indexPath = indexPath else { return }
+        for receipe in receipes {
+            var receipeList = RecipeListWeeklyPlan()
+            receipeList.recipeID = receipe.recipe_id
+            receipeList.recipeImg = receipe.recipe_image
+            receipeList.recipeName = receipe.recipe_name
+            receipeList.proteinsValue = receipe.protein
+            filteredMealList?[indexPath.section].meal?.recipeList?.append(receipeList)
+        }
+        
+        tableView.reloadData()
     }
     
     
@@ -251,6 +264,7 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     
     func fiterDataAccordingToDay(_ day: String) {
         filteredMealList?.removeAll()
+        self.selectedDay = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })
         let mondayMealList = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })?.mealList
         
         self.filteredMealList = mondayMealList?.map({ (meal) -> (meal: MealListData?, isExpandable: Bool) in
@@ -278,20 +292,22 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     }
     
     @objc func addTapped(sender: UIButton){
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        let cell = tableView.cellForRow(at: indexPath) as! LoadWeeklyPlanCell
-        let totalCount = Int(cell.servingsCountLbl.text!)! + 1
-        cell.servingsCountLbl.text = "\(totalCount)"
+        let cell = sender.superview?.superview?.superview as? LoadWeeklyPlanCell
+//        let indexPath = IndexPath(row: sender.tag, section: 0)
+//        let cell = tableView.cellForRow(at: indexPath) as! LoadWeeklyPlanCell
+        let totalCount = Int(cell?.servingsCountLbl.text! ?? "0")! + 1
+        cell?.servingsCountLbl.text = "\(totalCount)"
     }
     
     @objc func subtractTapped(sender: UIButton){
-        let indexPath = IndexPath(row: sender.tag, section: 0)
-        let cell = tableView.cellForRow(at: indexPath) as! LoadWeeklyPlanCell
-        let totalCount = Int(cell.servingsCountLbl.text!)! - 1
+        let cell = sender.superview?.superview?.superview as? LoadWeeklyPlanCell
+//        let indexPath = IndexPath(row: sender.tag, section: 0)
+//        let cell = tableView.cellForRow(at: indexPath) as! LoadWeeklyPlanCell
+        let totalCount = Int(cell?.servingsCountLbl.text! ?? "0")! - 1
         if totalCount <= 0{
             print("don't subtract it.")
         }else{
-            cell.servingsCountLbl.text = "\(totalCount)"
+            cell?.servingsCountLbl.text = "\(totalCount)"
         }
         
     }
@@ -307,10 +323,13 @@ class LoadWeeklyPlanTemplateVC: BaseViewController,DataEnteredDelegate{
     }
     
     //addRecipeTapped
-    @objc func addRecipeTapped(sender: UIButton){
+    @objc func addRecipeTapped(sender: UIButton) {
+        guard let cell = sender.superview?.superview?.superview?.superview as? AddRecipeAdvanceUserBtnCell else { return }
         let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "AddRecipesToRecipePackViewController") as! AddRecipesToRecipePackViewController
         //        let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "AddRecipeViewController") as! AddRecipeViewController
+        vc.indexPath = tableView.indexPath(for: cell)
         vc.delegate = self
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -425,7 +444,7 @@ extension LoadWeeklyPlanTemplateVC : UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let filteredData = filteredMealList?[section], filteredData.isExpandable else { return 0 }
-        return filteredData.meal?.recipeList?.count ?? 0
+        return (filteredData.meal?.recipeList?.count ?? 0) + 1
         
 //        switch section {
 //        case 0:
@@ -458,20 +477,26 @@ extension LoadWeeklyPlanTemplateVC : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("indexpath = \(indexPath)")
         print("indexpath.section = \(indexPath.section)")
-        if indexPath.row == brakfastArr.count + 1  {
+        let receipeCount = filteredMealList?[indexPath.section].meal?.recipeList?.count ?? 0
+        if indexPath.row == receipeCount  {
+            let cell = tableView.dequeueReusableCell(withIdentifier: addRecipeAdvanceUserBtnCell, for: indexPath) as! AddRecipeAdvanceUserBtnCell
+            cell.btn_AddRecipes.tag = indexPath.row
+            cell.btn_AddRecipes.addTarget(self, action: #selector(addRecipeTapped), for: .touchUpInside)
+            cell.btn_showNutritionDetails.addTarget(self, action: #selector(showNutritionInfo), for: .touchUpInside)
+            return cell
             
-            if useAddRecipeBtnCell == 0{
-                let cell = tableView.dequeueReusableCell(withIdentifier: addRecipeBtnCell, for: indexPath) as! AddRecipeBtnCell
-                cell.addRecipeBtn.tag = indexPath.row
-                cell.addRecipeBtn.addTarget(self, action: #selector(addRecipeTapped), for: .touchUpInside)
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: addRecipeAdvanceUserBtnCell, for: indexPath) as! AddRecipeAdvanceUserBtnCell
-                cell.btn_AddRecipes.tag = indexPath.row
-                cell.btn_AddRecipes.addTarget(self, action: #selector(addRecipeTapped), for: .touchUpInside)
-                cell.btn_showNutritionDetails.addTarget(self, action: #selector(showNutritionInfo), for: .touchUpInside)
-                return cell
-            }
+//            if useAddRecipeBtnCell == 0{
+//                let cell = tableView.dequeueReusableCell(withIdentifier: addRecipeBtnCell, for: indexPath) as! AddRecipeBtnCell
+//                cell.addRecipeBtn.tag = indexPath.row
+//                cell.addRecipeBtn.addTarget(self, action: #selector(addRecipeTapped), for: .touchUpInside)
+//                return cell
+//            } else {
+//                let cell = tableView.dequeueReusableCell(withIdentifier: addRecipeAdvanceUserBtnCell, for: indexPath) as! AddRecipeAdvanceUserBtnCell
+//                cell.btn_AddRecipes.tag = indexPath.row
+//                cell.btn_AddRecipes.addTarget(self, action: #selector(addRecipeTapped), for: .touchUpInside)
+//                cell.btn_showNutritionDetails.addTarget(self, action: #selector(showNutritionInfo), for: .touchUpInside)
+//                return cell
+//            }
             
         } else if indexPath.row == brakfastArr.count + 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: progressContainerCell, for: indexPath) as! ProgressContainerCell
@@ -588,7 +613,7 @@ extension LoadWeeklyPlanTemplateVC : UnsubscribeRecipePopUpVCDelegate {
         }
         else
         {
-            
+            self.addReceipeAPI()
         }
         
     }
@@ -669,6 +694,74 @@ extension LoadWeeklyPlanTemplateVC
                 break
             }
         }
+    }
+    
+    func addReceipeAPI() {
+        let strFrom = DateToStringYYMMDD(date: fromDate)
+        let strTo = DateToStringYYMMDD(date: toDate)
+        
+        let planData = [["dayId": selectedDay?.dayID ?? 0, "meals": mealsData]] as [[String : Any]]
+        let param = ["weekly_plan_id": self.dateWiseWeeklyPlanObj?.weeklyPlanID ?? 0 , "plan_data": planData, "start_date": strFrom,                                         "end_date":strTo] as [String : Any]
+        
+        Loader.sharedInstance.showIndicator()
+        
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.addWeekPlanStep2, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.downloadWeeklyPlanObj = try JSONDecoder().decode(GetWeeklyPlan_Struct.self, from: data)
+//                         DispatchQueue.main.async { [self] in
+//                         savePdf(urlString: self.downloadWeeklyPlanObj.pdf_path, fileName:                        "\(StartDate)to\(EndDate)")
+//                            }
+                        }
+                        catch( let error ){
+                            print(error)
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                            
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+        
+    }
+    
+    var mealsData: [[String: Any]] {
+        guard let mealList = selectedDay?.mealList else {  return [[:]] }
+        var mealData = [[String: Any]]()
+        for meal in mealList {
+            let recipes = meal.recipeList?.map({ (recipe) -> [String : Any] in
+                 ["recipe_id": recipe.recipeID ?? 0, "servings": 1]
+            })
+            let dict = ["meal_id": meal.mealID ?? 0, "recipe_list": recipes!] as [String : Any]
+            mealData.append(dict)
+        }
+        
+        return mealData
     }
     
     func downloadWeeklyPlanApi(StartDate:String , EndDate:String)
@@ -837,6 +930,9 @@ extension LoadWeeklyPlanTemplateVC
                         Loader.sharedInstance.hideIndicator()
                         do {
                             self.dateWiseWeeklyPlanObj = try JSONDecoder().decode(DateWiseWeeklyPlan_Struct.self, from: data)
+                            
+                            self.selectedDay = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Monday" })
+                            
                             let mondayMealList = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Monday" })?.mealList
                             
                             self.filteredMealList = mondayMealList?.map({ (meal) -> (meal: MealListData?, isExpandable: Bool) in
