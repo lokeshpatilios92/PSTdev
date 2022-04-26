@@ -10,6 +10,8 @@ import UIKit
 import IQKeyboardManagerSwift
 import SVProgressHUD
 import FBSDKCoreKit
+import GoogleSignIn
+
 var app_delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
 @UIApplicationMain
@@ -43,7 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        let handled = GIDSignIn.sharedInstance.handle(url)
+          if handled {
+            return true
+          }
+        return ApplicationDelegate.shared.application(app, open: url, sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: options[UIApplication.OpenURLOptionsKey.annotation])
       }
 
     func applicationWillResignActive(_ application: UIApplication) {
