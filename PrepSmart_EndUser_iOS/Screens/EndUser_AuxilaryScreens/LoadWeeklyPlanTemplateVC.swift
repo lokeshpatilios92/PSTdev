@@ -718,6 +718,7 @@ extension LoadWeeklyPlanTemplateVC
                         Loader.sharedInstance.hideIndicator()
                         do {
                             self.downloadWeeklyPlanObj = try JSONDecoder().decode(GetWeeklyPlan_Struct.self, from: data)
+
 //                            DispatchQueue.main.async { [self] in
 //                                savePdf(urlString: self.downloadWeeklyPlanObj.pdf_path, fileName: "\(StartDate)to\(EndDate)")
 //                            }

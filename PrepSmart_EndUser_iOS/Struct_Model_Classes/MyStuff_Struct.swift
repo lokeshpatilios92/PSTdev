@@ -37,6 +37,8 @@ struct RecipeBoxViewTypeList : Codable {
 
 
 }
+
+
 struct RecipeList : Codable {
     let item_id : Int?
     let item_title : String?

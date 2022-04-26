@@ -26,7 +26,7 @@ struct Chef_list : Codable {
     var chef_id : Int?
     var name : String?
     var chef_pic : String?
-    var avg_ratings : Int?
+    var avg_ratings : Ratting?
     var total_ratings : Int?
     var total_recipes : Int?
     var total_blog : Int?
