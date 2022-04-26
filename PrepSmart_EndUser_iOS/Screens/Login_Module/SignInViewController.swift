@@ -7,6 +7,7 @@
 // Screen Id : PSTMOBSTD002
 
 import UIKit
+import FBSDKLoginKit
 
 class SignInViewController: BaseViewController {
     @IBOutlet weak var scrollView : UIScrollView!
@@ -98,7 +99,7 @@ class SignInViewController: BaseViewController {
     
     @IBAction func onClickSignInButton(_ sender: Any) {
         if self.isUserInputValid() {
-            loginApi()
+            loginApi(with: userNameTextFiled.text ?? "", password: passwordTextFiled.text ?? "", loginMedia: "1")
         }
     }
     
@@ -115,7 +116,28 @@ class SignInViewController: BaseViewController {
     }
     
     @IBAction func onClickFBButton(_ sender: Any) {
-        self.showAlertWithErrorMessage("Cooming Soon")
+        LoginManager.init().logIn(permissions: ["public_profile", "email"], viewController: self) { (loginResult) in
+            switch loginResult {
+            case .success(let granted, let declined, let token):
+                let requestedFields = "email, first_name"
+
+                GraphRequest.init(graphPath: "me", parameters: ["fields":requestedFields]).start { (connection, result, error) -> Void in
+                    
+                    if error == nil {
+                        if let resultDict = result as? [String: Any],
+                          let email = resultDict["email"] as? String,
+                           let firstName = resultDict["first_name"] as? String {
+                            self.loginApi(with: email, password: firstName, loginMedia: "2")
+                        }
+                    }
+                }
+                print("granted: \(granted), declined: \(declined), token: \(token)")
+            case .cancelled:
+                print("Login: cancelled.")
+            case .failed(let error):
+                print("Login with error: \(error.localizedDescription)")
+            }
+        }
     }
     
     @IBAction func onClickGoogleButton(_ sender: Any) {
@@ -241,14 +263,13 @@ extension SignInViewController : UITextFieldDelegate {
 extension SignInViewController
 {
     
-   func loginApi()
-    {
+    func loginApi(with email: String, password: String, loginMedia: String){
     
-    let param:[String:String] = ["email":userNameTextFiled.text ?? "" ,                            "password": passwordTextFiled.text ?? "",
+    let param:[String:String] = ["email": email/* userNameTextFiled.text ?? "" */,                            "password": password /* passwordTextFiled.text ?? "" */,
                                  "device_type":"1",
                                  "device_token":"dEDiKUy7R3i2Ph4IkS5bCr:APA91bGFP-wEIA6rf7FzNHJbNe1xgR6hWvP2nBHlGjDbVDT3ZAD6rX0ua-w8gfS7McWwkxqCfWudOQ15TOyzCho0efRfgGFgjUOR7AiTtTlFRVQBUdjj7PrUuiH3Ud1Thol03vBSDmdO",
                                  "app_version": "1",
-                                 "login_media":"1",
+                                 "login_media": loginMedia /*"1"*/,
                                  "media_token":"abc"]
         
                 Loader.sharedInstance.showIndicator()

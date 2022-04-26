@@ -51,5 +51,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb1274303426301508</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1274303426301508</string>
+    <key>FacebookClientToken</key>
+    <string>3e78a880e8df775ebd8f1e15e600d9b4</string>
+    <key>FacebookDisplayName</key>
+    <string>PST</string>
 </dict>
 </plist>
