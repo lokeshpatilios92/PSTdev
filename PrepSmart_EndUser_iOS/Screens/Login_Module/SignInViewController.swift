@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKLoginKit
+import GoogleSignIn
 
 class SignInViewController: BaseViewController {
     @IBOutlet weak var scrollView : UIScrollView!
@@ -141,7 +142,14 @@ class SignInViewController: BaseViewController {
     }
     
     @IBAction func onClickGoogleButton(_ sender: Any) {
-        self.showAlertWithErrorMessage("Cooming Soon")
+        let signInConfig = GIDConfiguration.init(clientID: Constants.GoogleClientID)
+        
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+            guard error == nil else { return }
+            if let email = user?.profile?.email, let name = user?.profile?.name {
+                self.loginApi(with: email, password: name, loginMedia: "3")
+            }
+          }
     }
     
     @IBAction func onClickTermsOfService(_ sender: UIButton) {
@@ -175,8 +183,6 @@ class SignInViewController: BaseViewController {
         vc.naviTag = 2
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
 }
 
 extension SignInViewController : UITextFieldDelegate {

@@ -90,6 +90,7 @@ class Constants: NSObject
     static let addToFav = "addToFavorite"
     static let getRecipeList = "getRecipeList"
     static let addWeekPlanStep2 = "addWeekPlanStep2"
+    
     static let marginConstant:CGFloat = UtilityManager.isIphone() ? 15:20
     static let labelHeightConstant:CGFloat = UtilityManager.isIphone() ? 35:45
     static let BUTTON_HEIGHT:CGFloat = UtilityManager.isIphone() ? 50:60
@@ -105,6 +106,9 @@ class Constants: NSObject
     
     static let PCButtonWidth:CGFloat = UtilityManager.isIphone() ? 49:59
     static let spacing:CGFloat = UtilityManager.isIphone() ? 10:20
+    
+    
+    static let GoogleClientID = "424347979370-667mhqkscqa5cq14r874srro0g5lms92.apps.googleusercontent.com"
     
     // APP CONSTANTS
     static let PHONE_NUMER_PREFIX_COUNT = 4
