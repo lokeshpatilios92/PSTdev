@@ -84,6 +84,12 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="rate_star"/>
                                             <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="rate_star_emty"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cH0-3A-saM">
@@ -179,6 +185,11 @@
             <point key="canvasLocation" x="-42.028985507246382" y="119.19642857142857"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="BYg-rG-gMe">
+            <size key="intrinsicContentSize" width="70" height="10"/>
+        </designable>
+    </designables>
     <resources>
         <image name="forward_arrow" width="28" height="28"/>
         <image name="rate_star" width="28" height="28"/>

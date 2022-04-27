@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qDL-Kp-U4e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qDL-Kp-U4e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
         <!--View Blog View Controller-->
         <scene sceneID="Gze-Fr-RCY">
             <objects>
-                <viewController storyboardIdentifier="ViewBlogViewController" id="qDL-Kp-U4e" customClass="ViewBlogViewController" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewBlogViewController" id="qDL-Kp-U4e" customClass="ViewBlogViewController" customModule="PrepSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qw9-gg-ep9"/>
                         <viewControllerLayoutGuide type="bottom" id="K5x-YC-djp"/>
@@ -34,7 +34,7 @@
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HH6-GC-CrK">
                                 <rect key="frame" x="0.0" y="44" width="414" height="1422"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="H17-RI-Iw4">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="710"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -54,10 +54,10 @@
                                             <cells/>
                                         </collectionView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP0-vc-z6w">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
                                             <subviews>
                                                 <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4S-uz-hmh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="101.5"/>
                                                     <color key="backgroundColor" name="App_Orange_Color"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mini Lasagana Roll-ups" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpa-k6-A7s">
@@ -70,7 +70,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="11 June 2019 05.30 AM" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kv-NC-fpQ">
-                                                    <rect key="frame" x="227" y="51" width="110" height="28"/>
+                                                    <rect key="frame" x="227" y="49" width="110" height="32.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" id="kB3-gR-K0q"/>
                                                     </constraints>
@@ -79,7 +79,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Sarah A. Thompson" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTG-K3-bpX">
-                                                    <rect key="frame" x="80" y="57" width="137" height="16.5"/>
+                                                    <rect key="frame" x="80" y="46" width="137" height="38"/>
                                                     <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -135,7 +135,7 @@
                                             </constraints>
                                         </view>
                                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="inL-UI-oKl">
-                                            <rect key="frame" x="179.5" y="245" width="55" height="25"/>
+                                            <rect key="frame" x="141" y="245" width="132.5" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="l3g-qh-vJN"/>
                                             </constraints>
@@ -143,40 +143,45 @@
                                             <color key="currentPageIndicatorTintColor" name="App_Orange_Color"/>
                                         </pageControl>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Bite Mini Lasagana Roll Ups Recipe" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyr-v5-PQd">
-                                            <rect key="frame" x="20" y="280" width="374" height="16.5"/>
+                                            <rect key="frame" x="20" y="280" width="374" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="3UU-x9-KsQ"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxE-Ns-LyX">
-                                            <rect key="frame" x="20" y="301.5" width="374" height="0.5"/>
+                                            <rect key="frame" x="20" y="325" width="374" height="0.5"/>
                                             <color key="backgroundColor" name="Light_Gray_Text_Color"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="0.5" id="Qq4-hN-bub"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9x-0o-j1R">
-                                            <rect key="frame" x="20" y="312" width="374" height="238"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.  Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jkgk" lineBreakMode="tailTruncation" numberOfLines="50" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9x-0o-j1R">
+                                            <rect key="frame" x="20" y="335.5" width="374" height="16.5"/>
                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-FL-LPH">
-                                            <rect key="frame" x="20" y="560" width="60" height="103"/>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gQ-FL-LPH">
+                                            <rect key="frame" x="20" y="362" width="69" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="yWu-JW-lox"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                             <state key="normal" title="Read More">
                                                 <color key="titleColor" name="App_Orange_Color"/>
                                             </state>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="soJ-wR-pio">
-                                            <rect key="frame" x="20" y="678" width="69" height="16.5"/>
+                                            <rect key="frame" x="20" y="397" width="74" height="19"/>
                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                             <color key="textColor" name="Dark_Text_Color"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72x-m8-nOH">
-                                            <rect key="frame" x="20" y="699.5" width="374" height="0.5"/>
+                                            <rect key="frame" x="20" y="421" width="374" height="0.5"/>
                                             <color key="backgroundColor" name="Light_Gray_Text_Color"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="0.5" id="pxf-jY-wCq"/>
@@ -208,7 +213,7 @@
                                         <constraint firstItem="iyr-v5-PQd" firstAttribute="top" secondItem="bN4-Nn-LKw" secondAttribute="bottom" constant="10" id="rpe-f8-sco"/>
                                         <constraint firstItem="72x-m8-nOH" firstAttribute="leading" secondItem="H17-RI-Iw4" secondAttribute="leading" constant="20" id="tj4-hf-Mjz"/>
                                         <constraint firstItem="72x-m8-nOH" firstAttribute="top" secondItem="soJ-wR-pio" secondAttribute="bottom" constant="5" id="tsP-kN-1ib"/>
-                                        <constraint firstAttribute="bottom" secondItem="72x-m8-nOH" secondAttribute="bottom" constant="10" id="x3G-Us-Hx9"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="72x-m8-nOH" secondAttribute="bottom" constant="10" id="x3G-Us-Hx9"/>
                                         <constraint firstItem="2gQ-FL-LPH" firstAttribute="top" secondItem="z9x-0o-j1R" secondAttribute="bottom" constant="10" id="xkg-Ow-hVe"/>
                                     </constraints>
                                 </view>
@@ -220,7 +225,7 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbd-MM-RAs" userLabel="ShareView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1466"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxt-Qe-92N" customClass="TransparentCircleView" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zxt-Qe-92N" customClass="TransparentCircleView" customModule="PrepSmart" customModuleProvider="target">
                                         <rect key="frame" x="15" y="1316" width="384" height="125"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="omo-8g-gY2">
@@ -241,7 +246,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQX-La-2Yx">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQX-La-2Yx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                             </button>
                                                         </subviews>
@@ -276,7 +281,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWb-44-pws">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWb-44-pws">
                                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                             </button>
                                                         </subviews>
@@ -310,7 +315,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mh-B1-Nr7">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mh-B1-Nr7">
                                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                             </button>
                                                         </subviews>
@@ -344,7 +349,7 @@
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHk-tY-8jJ">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHk-tY-8jJ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                             </button>
                                                         </subviews>
@@ -409,6 +414,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="msf-fn-N1Z"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HH6-GC-CrK" firstAttribute="leading" secondItem="ErT-0n-hu6" secondAttribute="leading" id="6vV-wK-TYD"/>
@@ -426,7 +432,6 @@
                             <constraint firstItem="Nbd-MM-RAs" firstAttribute="leading" secondItem="msf-fn-N1Z" secondAttribute="leading" id="icp-F9-Nhl"/>
                             <constraint firstItem="dPA-QP-ziy" firstAttribute="leading" secondItem="ErT-0n-hu6" secondAttribute="leading" id="m7Y-UE-OQM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="msf-fn-N1Z"/>
                     </view>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
@@ -458,7 +463,7 @@
         <!--Custom Ok Cancel Pop Up View Controller-->
         <scene sceneID="147-Ml-Gro">
             <objects>
-                <viewController storyboardIdentifier="CustomOkCancelPopUpViewController" id="7yf-9r-mYH" customClass="CustomOkCancelPopUpViewController" customModule="PrepSmart_EndUser_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomOkCancelPopUpViewController" id="7yf-9r-mYH" customClass="CustomOkCancelPopUpViewController" customModule="PrepSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s43-dY-FHh"/>
                         <viewControllerLayoutGuide type="bottom" id="YO8-rd-Blk"/>
@@ -468,7 +473,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBo-XF-Y1U">
-                                <rect key="frame" x="40" y="363" width="334" height="170.5"/>
+                                <rect key="frame" x="40" y="351" width="334" height="194.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mixVag_image4" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-qC-qmo">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
@@ -491,15 +496,15 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure, you want to delete this blog?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSX-go-fJF">
-                                        <rect key="frame" x="20" y="79" width="294" height="16.5"/>
+                                        <rect key="frame" x="20" y="81.5" width="294" height="38"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LCM-ti-ydE">
-                                        <rect key="frame" x="10" y="115.5" width="314" height="35"/>
+                                        <rect key="frame" x="10" y="139.5" width="314" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMh-i5-3hQ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMh-i5-3hQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="152" height="35"/>
                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                 <constraints>
@@ -513,7 +518,7 @@
                                                     <action selector="onClickCancelButton:" destination="7yf-9r-mYH" eventType="touchUpInside" id="Eht-2x-UBG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqR-ru-IHh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqR-ru-IHh">
                                                 <rect key="frame" x="162" y="0.0" width="152" height="35"/>
                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
@@ -527,7 +532,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Blog" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hd-T5-YQ1">
-                                        <rect key="frame" x="20" y="40" width="294" height="19"/>
+                                        <rect key="frame" x="20" y="40" width="294" height="21.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
@@ -552,6 +557,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="csJ-0n-5ds"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rBo-XF-Y1U" firstAttribute="centerY" secondItem="oFN-dT-ed7" secondAttribute="centerY" id="7gA-du-ODl"/>
@@ -559,7 +565,6 @@
                             <constraint firstItem="rBo-XF-Y1U" firstAttribute="leading" secondItem="oFN-dT-ed7" secondAttribute="leading" constant="40" id="izZ-PC-dRa"/>
                             <constraint firstAttribute="trailing" secondItem="rBo-XF-Y1U" secondAttribute="trailing" constant="40" id="vhg-Qd-tX0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="csJ-0n-5ds"/>
                     </view>
                     <connections>
                         <outlet property="bgView" destination="rBo-XF-Y1U" id="xpM-n4-Xha"/>
@@ -596,5 +601,8 @@
         <namedColor name="Light_Gray_Text_Color">
             <color red="0.64313725490196083" green="0.64313725490196083" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
