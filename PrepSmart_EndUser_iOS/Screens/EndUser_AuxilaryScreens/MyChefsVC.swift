@@ -61,13 +61,13 @@ class MyChefsVC: BaseViewController {
             feedViewBtn.setTitle("Feed View", for: .normal)
             whichCellToShow = 0
             searchBar.text = nil
-            myChefApi()
+            getAllChefApi()
             
         } else {
             whichCellToShow = 1
             feedViewBtn.setTitle("Profile View", for: .normal)
             searchBar.text = nil
-            getAllChefApi()
+            myChefApi()
         }
     }
     
@@ -93,7 +93,7 @@ extension MyChefsVC : UITableViewDataSource,UITableViewDelegate{
         }
         else
         {
-            return self.myChefObj?.recipeList?.count ?? 0
+            return self.myChefObj?.blogList?.count ?? 0
         }
         
     }
@@ -125,20 +125,23 @@ extension MyChefsVC : UITableViewDataSource,UITableViewDelegate{
         }
         else{
             let cell = tableView.dequeueReusableCell(withIdentifier: feedCell, for: indexPath) as! FeedCell
-            let dic = self.myChefObj?.recipeList?[indexPath.row]
+            let dic = self.myChefObj?.blogList?[indexPath.row]
             
-            cell.titleLbl.text = dic?.item_title
-            cell.dateLbl.text = convertDateFormater(date: dic?.added_date ?? "")
-            cell.profilePic.sd_setImage(with: URL(string: dic?.item_image ?? ""), placeholderImage: UIImage(named: "dinner"))
-            //   cell.cosmosView.rating = Double(dic?.ratting! )
-            if let rating = dic?.ratting! {
-                switch rating {
-                case .integer(let int):
-                    cell.cosmosView.rating = Double(int)
-                case .string(let string):
-                    cell.cosmosView.rating = Double(string) ?? 0.0
-                }
+            cell.titleLbl.text = "Blog - \(dic?.blogTitle ?? "")"
+            cell.dateLbl.text = convertDateFormater(date: dic?.addedDate ?? "")
+            if dic?.imageURL?.count ?? 0 > 0{
+                cell.profilePic.sd_setImage(with: URL(string: dic?.imageURL?[0].url ?? ""), placeholderImage: UIImage(named: "dinner"))
             }
+         
+            //   cell.cosmosView.rating = Double(dic?.ratting! )
+//            if let rating = dic?.ratting! {
+//                switch rating {
+//                case .integer(let int):
+//                    cell.cosmosView.rating = Double(int)
+//                case .string(let string):
+//                    cell.cosmosView.rating = Double(string) ?? 0.0
+//                }
+//            }
             return cell
         }
         
@@ -146,11 +149,16 @@ extension MyChefsVC : UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if whichCellToShow == 1{
-            let dic = self.myChefObj?.recipeList?[indexPath.row]
+            let dic = self.myChefObj?.blogList?[indexPath.row]
+            let vc = UIStoryboard.Blogs_Module.instantiateViewController(withIdentifier: "ViewBlogViewController") as! ViewBlogViewController
+            vc.blogListData = dic
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+           /* let dic = self.myChefObj?.recipeList?[indexPath.row]
             let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "ViewRecipeViewController") as! ViewRecipeViewController
             vc.recipeId = String(dic?.item_id ?? 0)
             vc.recipeOwnerId = String(dic?.chef_id ?? 0)
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)*/
         }
     }
     
@@ -186,7 +194,6 @@ extension MyChefsVC
                     if let status = dict["status"] as? Bool, status == true
                     {
                         // SVProgressHUD.dismiss()
-                        Loader.sharedInstance.hideIndicator()
                         Loader.sharedInstance.hideIndicator()
                         
                         do {

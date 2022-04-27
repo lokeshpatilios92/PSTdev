@@ -11,11 +11,8 @@ import JJFloatingActionButton
 
 class ViewBlogViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var headerView: UIView!
-    
     @IBOutlet weak var blogTitleHeaderLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var commentCountLabel: UILabel!
@@ -46,6 +43,11 @@ class ViewBlogViewController: BaseViewController {
     var sectionArray : [String] = ["Section0","Section1","Section2","Section3","Section4"]
     var sectionToggleArray:[Bool] = [false,false,false,false,false]
     
+    
+    var blogListData: BlogList?
+    var blogCommentObj: CommentedUserList?
+    var global_Var = GlobalClass.sharedManager
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initalize()
@@ -108,6 +110,15 @@ class ViewBlogViewController: BaseViewController {
         
         view_facebook.clipsToBounds = true
         view_facebook.layer.cornerRadius = 4.0
+        self.pageController.numberOfPages = blogListData?.imageURL?.count ?? 0
+        blogTitleHeaderLabel.text = blogListData?.blogTitle
+        recipeTitleLabel.text = blogListData?.blogTitle
+        recipeDetailsLabel.text = blogListData?.blogBody
+        dateTimeLabel.text = blogListData?.addedDate
+        commentCountLabel.text =  "\(blogListData?.commentsCount ?? 0)"
+        chifeNameLabel.text = blogListData?.userData?.userName
+        chifeProfileImageView.sd_setImage(with: URL(string: blogListData?.userData?.userName ?? ""), placeholderImage: UIImage(named: "Emty-profile"))
+        getBlogComments()
     }
     
 //    // nav button added
@@ -200,7 +211,7 @@ class ViewBlogViewController: BaseViewController {
         }
         shareFloatingButton.addItem(title: "", image: #imageLiteral(resourceName: "googleplus")) { item in
         }
-        
+    
         shareFloatingButton.display(inViewController: self)
     }
 }
@@ -217,11 +228,13 @@ extension ViewBlogViewController : CustomOkCancelPopUpViewControllerDelegate, UI
     
     //    MARK: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return blogListData?.imageURL?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: previewBlogCollectionCell, for: indexPath) as! PreviewBlogCollectionCell
+        let dict = blogListData?.imageURL?[indexPath.row]
+        cell.itemImageView.sd_setImage(with: URL(string: dict?.url ?? ""), placeholderImage: UIImage(named: "dinner"))
         return cell
     }
     
@@ -301,5 +314,55 @@ extension ViewBlogViewController : UITableViewDataSource, UITableViewDelegate {
         cell.commentButton.addTarget(self, action: #selector(self.toggle(_:)), for: .touchUpInside)
         
         return cell.contentView
+    }
+}
+
+
+extension ViewBlogViewController {
+    func getBlogComments(){
+        let param:[String:Any] = ["start_index":"1",
+                                  "total_count":"100",
+                                  "blog_id": blogListData?.blogID ?? ""]
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.blogComment, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.blogCommentObj = try JSONDecoder().decode(CommentedUserList.self, from: data)
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
     }
 }
