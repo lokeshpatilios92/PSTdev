@@ -67,8 +67,10 @@ class ParentHomeScreenVC : ButtonBarPagerTabStripViewController, UnsubscribeReci
     @objc func onClickNavigationBarButton(sender:UIBarButtonItem) {
         
         if sender.tag == 2{
-            let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "AddNewViewController") as! AddNewViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+//            let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "AddNewViewController") as! AddNewViewController
+//            self.navigationController?.pushViewController(vc, animated: true)
+            let vc = UIStoryboard.EndUser_AuxilaryStoryboard.instantiateViewController(withIdentifier: "MyProfileVC") as! MyProfileVC
+             self.navigationController?.pushViewController(vc, animated: true)
         }else if sender.tag == 3{
             let vc = UIStoryboard.EndUser_AuxilaryStoryboard.instantiateViewController(withIdentifier: "NotificationVC") as! NotificationVC
             self.navigationController?.pushViewController(vc, animated: true)

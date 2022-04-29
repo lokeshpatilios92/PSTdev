@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="397-ve-O3j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="397-ve-O3j">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -203,20 +203,20 @@
                                                         <rect key="frame" x="10" y="10" width="355" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mode : Basic / Advanced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vai-0K-Nlu">
-                                                                <rect key="frame" x="8" y="15.666666666666671" width="179.33333333333334" height="19"/>
+                                                                <rect key="frame" x="8" y="17" width="158" height="16.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOT-he-q0t">
-                                                                <rect key="frame" x="225.66666666666666" y="18.333333333333329" width="53.333333333333343" height="13.666666666666664"/>
+                                                                <rect key="frame" x="233.66666666666666" y="19.333333333333329" width="45.333333333333343" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aDO-Kc-Eve">
                                                                 <rect key="frame" x="286" y="9.6666666666666643" width="51" height="31"/>
-                                                                <color key="onTintColor" name="Background_Dark_Gray_Color"/>
+                                                                <color key="onTintColor" name="App_Orange_Color"/>
                                                                 <connections>
                                                                     <action selector="onClickSwitchMode:" destination="EUF-dh-4qO" eventType="valueChanged" id="zmo-wf-rgi"/>
                                                                 </connections>
@@ -237,7 +237,7 @@
                                                         <rect key="frame" x="10" y="70" width="355" height="160"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receipes in plan : 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omT-Xe-yVv">
-                                                                <rect key="frame" x="110.33333333333333" y="5" width="134.66666666666669" height="0.0"/>
+                                                                <rect key="frame" x="116" y="5" width="123" height="0.0"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -275,19 +275,19 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zA9-YL-Qvg">
-                                                                        <rect key="frame" x="128.66666666666666" y="5.6666666666666572" width="30.333333333333343" height="19"/>
+                                                                        <rect key="frame" x="129.66666666666666" y="7" width="30" height="16.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foW-Mg-ZVn">
-                                                                        <rect key="frame" x="196.33333333333334" y="5.6666666666666572" width="30.333333333333343" height="19"/>
+                                                                        <rect key="frame" x="195.33333333333334" y="7" width="30" height="16.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWe-jh-aSD">
-                                                                        <rect key="frame" x="174" y="5.6666666666666572" width="7.3333333333333428" height="19"/>
+                                                                        <rect key="frame" x="174.66666666666666" y="7" width="5.6666666666666572" height="16.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                         <nil key="highlightedColor"/>
@@ -332,7 +332,7 @@
                                                                                 <rect key="frame" x="14.333333333333332" y="43" width="17.999999999999996" height="18"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdz-eI-yzy">
-                                                                                        <rect key="frame" x="5.6666666666666679" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                                        <rect key="frame" x="6" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -382,7 +382,7 @@
                                                                                 <rect key="frame" x="14.333333333333336" y="43" width="18" height="18"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3H-5S-yYb">
-                                                                                        <rect key="frame" x="5.6666666666666572" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                                        <rect key="frame" x="6" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -432,7 +432,7 @@
                                                                                 <rect key="frame" x="14" y="43" width="18" height="18"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fw-Uh-ERg">
-                                                                                        <rect key="frame" x="5.6666666666666572" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                                        <rect key="frame" x="6.3333333333333428" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -482,7 +482,7 @@
                                                                                 <rect key="frame" x="14.333333333333314" y="43" width="18" height="18"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-i5-c89">
-                                                                                        <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                                        <rect key="frame" x="6" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -532,7 +532,7 @@
                                                                                 <rect key="frame" x="14.333333333333343" y="43" width="18" height="18"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwI-CJ-Ciw">
-                                                                                        <rect key="frame" x="5.6666666666666572" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                                        <rect key="frame" x="6" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -582,7 +582,7 @@
                                                                                 <rect key="frame" x="14.333333333333314" y="43" width="18" height="18"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXH-GF-EXa">
-                                                                                        <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                                        <rect key="frame" x="6.3333333333333712" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -632,7 +632,7 @@
                                                                                 <rect key="frame" x="14" y="43" width="18" height="18"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ab-4r-E0N">
-                                                                                        <rect key="frame" x="5.6666666666666288" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                                        <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                         <color key="textColor" name="App_Gray_Color"/>
                                                                                         <nil key="highlightedColor"/>
@@ -687,7 +687,7 @@
                                                         <rect key="frame" x="10" y="230" width="355" height="140"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Receipes have been assigned to the selected week yet - head on over to the plan screen to get started." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iks-gG-MFx">
-                                                                <rect key="frame" x="20" y="41.666666666666686" width="315" height="56.666666666666657"/>
+                                                                <rect key="frame" x="20" y="45.666666666666686" width="315" height="49"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -705,13 +705,13 @@
                                                         <rect key="frame" x="10" y="230" width="355" height="140"/>
                                                         <subviews>
                                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Receipes have been assigned to the selected week yet - head on over to the plan screen to get started." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyA-CS-Lbj">
-                                                                <rect key="frame" x="20" y="14.999999999999996" width="315" height="56.666666666666657"/>
+                                                                <rect key="frame" x="20" y="15" width="315" height="49"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZs-xc-3xt">
-                                                                <rect key="frame" x="117.66666666666669" y="86.666666666666686" width="120" height="35"/>
+                                                                <rect key="frame" x="117.66666666666669" y="79" width="120" height="35"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="bV1-fC-5Bz"/>
                                                                     <constraint firstAttribute="height" constant="35" id="ftD-py-i42"/>
@@ -766,7 +766,7 @@
                                                                                     <rect key="frame" x="19" y="8.6666666666666714" width="355" height="132"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Recipes (5)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaT-0e-cSn">
-                                                                                            <rect key="frame" x="100.33333333333333" y="10.000000000000002" width="154.66666666666669" height="18.666666666666671"/>
+                                                                                            <rect key="frame" x="108" y="10.000000000000002" width="139" height="18.666666666666671"/>
                                                                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                                                             <color key="textColor" name="App_Gray_Color"/>
                                                                                             <nil key="highlightedColor"/>
@@ -785,7 +785,7 @@
                                                                                                             </constraints>
                                                                                                         </imageView>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Receipes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cc-Mr-qY1">
-                                                                                                            <rect key="frame" x="54" y="35.333333333333336" width="61.666666666666657" height="27"/>
+                                                                                                            <rect key="frame" x="54" y="36.999999999999993" width="61.666666666666657" height="23.333333333333336"/>
                                                                                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                                             <color key="textColor" name="App_Gray_Color"/>
                                                                                                             <nil key="highlightedColor"/>
@@ -811,7 +811,7 @@
                                                                                                             </constraints>
                                                                                                         </imageView>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Recipes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv4-ix-LpP">
-                                                                                                            <rect key="frame" x="54" y="35.333333333333336" width="61.666666666666657" height="27"/>
+                                                                                                            <rect key="frame" x="54" y="36.999999999999993" width="61.666666666666657" height="23.333333333333336"/>
                                                                                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                                             <color key="textColor" name="App_Gray_Color"/>
                                                                                                             <nil key="highlightedColor"/>
@@ -837,7 +837,7 @@
                                                                                                             </constraints>
                                                                                                         </imageView>
                                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todays Receipes" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxb-Jd-0WU">
-                                                                                                            <rect key="frame" x="54" y="35.333333333333336" width="61.666666666666657" height="27"/>
+                                                                                                            <rect key="frame" x="54" y="36.999999999999993" width="61.666666666666657" height="23.333333333333336"/>
                                                                                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                                                             <color key="textColor" name="App_Gray_Color"/>
                                                                                                             <nil key="highlightedColor"/>
@@ -893,7 +893,7 @@
                                                                 </cells>
                                                             </collectionView>
                                                             <pageControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="1Sb-R6-gtA">
-                                                                <rect key="frame" x="121.33333333333334" y="127" width="112.66666666666666" height="25"/>
+                                                                <rect key="frame" x="117" y="124.66666666666667" width="121.33333333333331" height="27.333333333333329"/>
                                                                 <color key="currentPageIndicatorTintColor" name="App_Orange_Color"/>
                                                             </pageControl>
                                                         </subviews>
@@ -1020,19 +1020,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56U-PI-xnm" userLabel="MainView">
-                                                <rect key="frame" x="20" y="0.0" width="335" height="669"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="666.33333333333337"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAY-xY-0q1" userLabel="ViewTop">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zi-Kh-8wb">
-                                                                <rect key="frame" x="117.66666666666666" y="15.000000000000002" width="99.666666666666657" height="21.666666666666671"/>
+                                                                <rect key="frame" x="124" y="15.000000000000002" width="87" height="18.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                                 <color key="textColor" name="Background_Light_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday, May 16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dU-nS-1Dk">
-                                                                <rect key="frame" x="80.666666666666686" y="41.666666666666671" width="174" height="27"/>
+                                                                <rect key="frame" x="88.333333333333329" y="38.666666666666671" width="158.66666666666669" height="23.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="20"/>
                                                                 <color key="textColor" name="Background_Light_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -1066,19 +1066,19 @@
                                                         <rect key="frame" x="0.0" y="80" width="335" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOq-q7-eAJ">
-                                                                <rect key="frame" x="160" y="13" width="15" height="19"/>
+                                                                <rect key="frame" x="161.33333333333334" y="14.333333333333341" width="12.666666666666657" height="16.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-Wa-J89">
-                                                                <rect key="frame" x="100" y="13" width="55" height="19"/>
+                                                                <rect key="frame" x="109.99999999999999" y="14.333333333333341" width="46.333333333333329" height="16.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1o-dV-z5T">
-                                                                <rect key="frame" x="180" y="13" width="55" height="19"/>
+                                                                <rect key="frame" x="179" y="14.333333333333341" width="46.333333333333343" height="16.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -1167,31 +1167,31 @@
                                                         </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-Df-AkU" userLabel="ViewBottom">
-                                                        <rect key="frame" x="0.0" y="424" width="335" height="245"/>
+                                                        <rect key="frame" x="0.0" y="423.99999999999994" width="335" height="242.33333333333331"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe(s) scheduled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqa-jl-ikn">
-                                                                <rect key="frame" x="99" y="10" width="137" height="19"/>
+                                                                <rect key="frame" x="104.33333333333331" y="9.9999999999999982" width="126.66666666666669" height="16.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rF8-gF-6f0">
-                                                                <rect key="frame" x="20" y="49" width="295" height="110"/>
+                                                                <rect key="frame" x="20" y="46.333333333333371" width="295" height="110"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viewing your shopping list for &quot;Current Week 05/20/19 to 05/26/19&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SX0-la-WdN">
-                                                                        <rect key="frame" x="10" y="10" width="275" height="37.666666666666664"/>
+                                                                        <rect key="frame" x="10" y="10" width="275" height="32.666666666666664"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upate your view using the filter." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crP-wD-Mkx">
-                                                                        <rect key="frame" x="10" y="57.666666666666629" width="224.33333333333334" height="19"/>
+                                                                        <rect key="frame" x="10" y="52.666666666666629" width="196.33333333333334" height="16.333333333333329"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjs-Ns-L36">
-                                                                        <rect key="frame" x="260" y="54.666666666666629" width="25" height="25"/>
+                                                                        <rect key="frame" x="260" y="48.333333333333258" width="25" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="25" id="9j1-1E-G1A"/>
                                                                             <constraint firstAttribute="height" constant="25" id="xfW-L0-QmX"/>
@@ -1215,7 +1215,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ff0-01-lEK">
-                                                                <rect key="frame" x="102.66666666666669" y="179" width="130" height="50"/>
+                                                                <rect key="frame" x="102.66666666666669" y="176.33333333333337" width="130" height="50"/>
                                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="JGA-eC-ZK9"/>
@@ -1230,7 +1230,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aI-L3-7z0">
-                                                                <rect key="frame" x="87" y="15.666666666666686" width="8" height="8"/>
+                                                                <rect key="frame" x="92.333333333333329" y="14.333333333333314" width="8" height="8"/>
                                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="8" id="96U-bG-PfI"/>
@@ -1342,26 +1342,26 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="600"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rp6-ZH-Yl5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="600"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="595"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNS-Oi-0uL">
-                                                                <rect key="frame" x="105.66666666666669" y="15.000000000000002" width="124" height="21.666666666666671"/>
+                                                                <rect key="frame" x="115" y="15.000000000000002" width="105.33333333333331" height="18.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owb-mx-6uE">
-                                                                <rect key="frame" x="297" y="12" width="28" height="28"/>
+                                                                <rect key="frame" x="297" y="10.333333333333329" width="28" height="28"/>
                                                                 <state key="normal" image="close"/>
                                                                 <connections>
                                                                     <action selector="onClickBtnClose:" destination="rzW-2a-zBI" eventType="touchUpInside" id="fYH-QU-AwP"/>
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gaN-yD-8Ci">
-                                                                <rect key="frame" x="10" y="60" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="57" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zg-9h-zmL">
-                                                                        <rect key="frame" x="5" y="5" width="68.666666666666671" height="19"/>
+                                                                        <rect key="frame" x="5.0000000000000036" y="5" width="57.333333333333343" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="oh3-mQ-OEq"/>
                                                                         </constraints>
@@ -1406,10 +1406,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o29-Do-EC8">
-                                                                <rect key="frame" x="10" y="144" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="141" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb0-Fs-QMq">
-                                                                        <rect key="frame" x="5" y="5" width="73.333333333333329" height="19"/>
+                                                                        <rect key="frame" x="4.9999999999999964" y="5" width="62.666666666666657" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="br4-5a-UGg"/>
                                                                         </constraints>
@@ -1454,10 +1454,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygd-vR-xh4">
-                                                                <rect key="frame" x="10" y="228" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="225" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqc-mZ-3Dy">
-                                                                        <rect key="frame" x="5" y="5" width="60" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="52.666666666666664" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="5xX-Zh-hBL"/>
                                                                         </constraints>
@@ -1502,10 +1502,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mw7-eZ-b4Z">
-                                                                <rect key="frame" x="10" y="312" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="309" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Unit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVR-aO-Qka">
-                                                                        <rect key="frame" x="4.9999999999999982" y="5" width="26.333333333333329" height="19"/>
+                                                                        <rect key="frame" x="5.0000000000000018" y="5" width="25.666666666666671" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="SRp-Lf-wjV"/>
                                                                         </constraints>
@@ -1550,10 +1550,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVa-Fr-X2O">
-                                                                <rect key="frame" x="10" y="396" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="393" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Assign to step" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-1x-0ZQ">
-                                                                        <rect key="frame" x="5" y="5" width="99.333333333333329" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="89.666666666666671" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="iX7-Oc-ZRd"/>
                                                                         </constraints>
@@ -1598,7 +1598,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVs-xo-IpM" userLabel="ViewCancelSave">
-                                                                <rect key="frame" x="0.0" y="470" width="335" height="60"/>
+                                                                <rect key="frame" x="0.0" y="467" width="335" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKK-Sg-vGC">
                                                                         <rect key="frame" x="167" y="0.0" width="1" height="60"/>
@@ -1650,7 +1650,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-KV-bjw">
-                                                                <rect key="frame" x="76" y="533" width="183" height="31"/>
+                                                                <rect key="frame" x="86.666666666666686" y="530" width="162" height="29"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <state key="normal" title="My Ingredient is not listed">
                                                                     <color key="titleColor" name="App_Orange_Color"/>
@@ -1660,7 +1660,7 @@
                                                                 </connections>
                                                             </button>
                                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhB-2Q-2u6">
-                                                                <rect key="frame" x="76" y="558" width="183" height="1"/>
+                                                                <rect key="frame" x="86.666666666666686" y="553" width="162" height="1"/>
                                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="VpB-so-ICc"/>
@@ -2044,7 +2044,7 @@
                                                     <rect key="frame" x="0.0" y="10" width="285" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open Kitchen View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G6-PO-Vha">
-                                                            <rect key="frame" x="10" y="15.666666666666668" width="230" height="19.000000000000004"/>
+                                                            <rect key="frame" x="10" y="17" width="230" height="16.333333333333329"/>
                                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                             <color key="textColor" name="Dark_Text_Color"/>
                                                             <nil key="highlightedColor"/>
@@ -2422,7 +2422,6 @@
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e3o-Pl-LjV"/>
@@ -2510,7 +2509,7 @@
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListToBuyTableHeaderCell" rowHeight="60" id="7fO-Tp-hQO" customClass="ShoppingListToBuyTableHeaderCell" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.666666030883789" width="335" height="60"/>
+                                                <rect key="frame" x="0.0" y="28" width="335" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7fO-Tp-hQO" id="Awr-O3-R2y">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="60"/>
@@ -2565,7 +2564,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShoppingListToBuyTableCell" rowHeight="120" id="Brv-ut-awW" customClass="ShoppingListToBuyTableCell" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="104.66666603088379" width="335" height="120"/>
+                                                <rect key="frame" x="0.0" y="88" width="335" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Brv-ut-awW" id="oz6-bV-x5p">
                                                     <rect key="frame" x="0.0" y="0.0" width="335" height="120"/>
@@ -2575,7 +2574,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="120"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqO-Ja-I7c" customClass="BEMCheckBox">
-                                                                    <rect key="frame" x="10" y="22" width="25" height="25"/>
+                                                                    <rect key="frame" x="10" y="19.333333333333332" width="25" height="24.999999999999996"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="25" id="77c-lp-0e3"/>
@@ -2600,13 +2599,13 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVe-Wy-H5t">
-                                                                    <rect key="frame" x="45" y="40" width="280" height="70"/>
+                                                                    <rect key="frame" x="45" y="37.333333333333336" width="280" height="72.666666666666657"/>
                                                                     <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1e-Cw-95G">
-                                                                    <rect key="frame" x="45" y="34" width="280" height="1"/>
+                                                                    <rect key="frame" x="45" y="31.333333333333332" width="280" height="0.99999999999999645"/>
                                                                     <color key="backgroundColor" name="Dark_Text_Color"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="1" id="TFa-4l-epo"/>
@@ -2616,7 +2615,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk1-RX-rxh" customClass="CellDeleteButton" customModule="PrepSmart" customModuleProvider="target">
-                                                                    <rect key="frame" x="295" y="-1" width="30" height="30"/>
+                                                                    <rect key="frame" x="295" y="-3.6666666666666661" width="30" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="5RJ-W0-z6s"/>
                                                                         <constraint firstAttribute="width" constant="30" id="uz3-gK-iEw"/>
@@ -2625,7 +2624,7 @@
                                                                     <state key="normal" image="delete_red"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Milk-500 ml" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zG-1r-rqb">
-                                                                    <rect key="frame" x="45" y="10" width="240" height="19"/>
+                                                                    <rect key="frame" x="45" y="9.9999999999999982" width="240" height="16.333333333333329"/>
                                                                     <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                     <color key="textColor" name="App_Orange_Color"/>
                                                                     <nil key="highlightedColor"/>
@@ -2685,7 +2684,7 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </searchBar>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcF-qY-ql5">
-                                                        <rect key="frame" x="265" y="8.6666666666666572" width="100" height="31"/>
+                                                        <rect key="frame" x="265" y="9.6666666666666572" width="100" height="29"/>
                                                         <color key="backgroundColor" name="App_Orange_Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="tbe-cS-uUY"/>
@@ -2696,13 +2695,13 @@
                                                         </state>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Sort By :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OD7-dD-GlK">
-                                                        <rect key="frame" x="9.9999999999999964" y="63.000000000000007" width="49.666666666666657" height="16.333333333333336"/>
+                                                        <rect key="frame" x="10" y="63.000000000000007" width="47" height="16.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xno-ab-9dd">
-                                                        <rect key="frame" x="59.666666666666671" y="54.333333333333343" width="120.00000000000001" height="34"/>
+                                                        <rect key="frame" x="57" y="54.333333333333343" width="120" height="34"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="120" id="SCc-XX-A3Y"/>
                                                         </constraints>
@@ -2710,23 +2709,22 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncq-XN-Ypd">
-                                                        <rect key="frame" x="59.666666666666671" y="54.333333333333343" width="120.00000000000001" height="34"/>
+                                                        <rect key="frame" x="57" y="54.333333333333343" width="120" height="34"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="sortByClicked:" destination="iJL-Yn-5lz" eventType="touchUpInside" id="YW3-OY-9gE"/>
                                                         </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="vzH-Th-hfV">
-                                                        <rect key="frame" x="166.66666666666666" y="67.333333333333343" width="8" height="8"/>
+                                                        <rect key="frame" x="164" y="67.333333333333343" width="8" height="8"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="8" id="LIP-cv-dgl"/>
                                                             <constraint firstAttribute="width" constant="8" id="MOG-ls-hRm"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Range : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUE-K4-VpW">
-                                                        <rect key="frame" x="196" y="63.000000000000007" width="84" height="16.333333333333336"/>
+                                                        <rect key="frame" x="206.66666666666666" y="64.333333333333343" width="73.333333333333343" height="14"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -2830,7 +2828,7 @@
                                                         </state>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Delete All" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFo-YN-IfS">
-                                                        <rect key="frame" x="117.66666666666666" y="13" width="100" height="19"/>
+                                                        <rect key="frame" x="117.66666666666666" y="14.333333333333369" width="100" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -2968,14 +2966,14 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZl-GS-3s6">
-                                                            <rect key="frame" x="8" y="8" width="319" height="63"/>
+                                                            <rect key="frame" x="8" y="8" width="319" height="49"/>
                                                             <string key="text">Add the recipes you'd like to make here. Note that reording them on this screen updates the order that they appear on the cook list.</string>
                                                             <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                             <color key="textColor" name="Dark_Text_Color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pag-aj-WEu">
-                                                            <rect key="frame" x="112.66666666666669" y="81" width="110" height="40"/>
+                                                            <rect key="frame" x="112.66666666666669" y="67" width="110" height="40"/>
                                                             <color key="backgroundColor" name="App_Orange_Color"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="5Dk-iG-Boc"/>
@@ -2987,7 +2985,7 @@
                                                             </state>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xO0-oU-Obh">
-                                                            <rect key="frame" x="0.0" y="133" width="335" height="0.0"/>
+                                                            <rect key="frame" x="0.0" y="119" width="335" height="14"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                     </subviews>
@@ -3082,19 +3080,19 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tu-32-tJa">
-                                                <rect key="frame" x="137" y="5.6666666666666714" width="30.333333333333343" height="19"/>
+                                                <rect key="frame" x="138.33333333333334" y="7" width="30" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feA-9p-COI">
-                                                <rect key="frame" x="204.66666666666666" y="5.6666666666666714" width="30.333333333333343" height="19"/>
+                                                <rect key="frame" x="204" y="7" width="30" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUW-Vo-uag">
-                                                <rect key="frame" x="182.33333333333334" y="5.6666666666666714" width="7.3333333333333428" height="19"/>
+                                                <rect key="frame" x="183.33333333333334" y="7" width="5.6666666666666572" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
@@ -3139,7 +3137,7 @@
                                                         <rect key="frame" x="15.333333333333336" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIQ-ND-1zx">
-                                                                <rect key="frame" x="5.6666666666666661" y="2.3333333333333419" width="6.6666666666666661" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333339" y="3.3333333333333419" width="5.6666666666666661" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -3189,7 +3187,7 @@
                                                         <rect key="frame" x="15.333333333333329" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfS-aH-e18">
-                                                                <rect key="frame" x="5.6666666666666714" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -3239,7 +3237,7 @@
                                                         <rect key="frame" x="15.333333333333329" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hS-bX-ecc">
-                                                                <rect key="frame" x="5.6666666666666572" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333428" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -3289,7 +3287,7 @@
                                                         <rect key="frame" x="15.333333333333343" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMS-4f-EZP">
-                                                                <rect key="frame" x="5.6666666666666572" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333428" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -3339,7 +3337,7 @@
                                                         <rect key="frame" x="15.666666666666657" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJn-QV-HKS">
-                                                                <rect key="frame" x="5.6666666666666572" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -3389,7 +3387,7 @@
                                                         <rect key="frame" x="15.333333333333371" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwC-3z-FFz">
-                                                                <rect key="frame" x="5.6666666666666288" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -3439,7 +3437,7 @@
                                                         <rect key="frame" x="15.666666666666686" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqR-ua-tQc">
-                                                                <rect key="frame" x="5.6666666666666288" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -3532,7 +3530,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receipes in plan : 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmJ-sm-Kb3">
-                                        <rect key="frame" x="120.33333333333333" y="5" width="134.66666666666669" height="14"/>
+                                        <rect key="frame" x="126" y="5" width="123" height="14"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="App_Gray_Color"/>
                                         <nil key="highlightedColor"/>
@@ -3570,19 +3568,19 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ago-v0-bLc">
-                                                <rect key="frame" x="138.66666666666666" y="5.6666666666666572" width="30.333333333333343" height="19"/>
+                                                <rect key="frame" x="139.66666666666666" y="7" width="30" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF5-9g-dy1">
-                                                <rect key="frame" x="206.33333333333334" y="5.6666666666666572" width="30.333333333333343" height="19"/>
+                                                <rect key="frame" x="205.33333333333334" y="7" width="30" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfm-bw-XQL">
-                                                <rect key="frame" x="184" y="5.6666666666666572" width="7.3333333333333428" height="19"/>
+                                                <rect key="frame" x="184.66666666666666" y="7" width="5.6666666666666572" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
@@ -4086,7 +4084,7 @@
                                                         <rect key="frame" x="-9" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB7-rH-ugr">
-                                                                <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -4133,7 +4131,7 @@
                                                         <rect key="frame" x="-9" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9HL-Yu-Swg">
-                                                                <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -4180,7 +4178,7 @@
                                                         <rect key="frame" x="-9" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NLX-z7-2wb">
-                                                                <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -4227,7 +4225,7 @@
                                                         <rect key="frame" x="-9" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeI-Wu-cfC">
-                                                                <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -4274,7 +4272,7 @@
                                                         <rect key="frame" x="-9" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT5-wL-SJd">
-                                                                <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -4321,7 +4319,7 @@
                                                         <rect key="frame" x="-9" y="43" width="18" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-qR-aYz">
-                                                                <rect key="frame" x="5.6666666666666856" y="2.3333333333333419" width="6.6666666666666679" height="13.666666666666664"/>
+                                                                <rect key="frame" x="6.3333333333333144" y="3.3333333333333419" width="5.6666666666666679" height="11.666666666666664"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                                 <color key="textColor" name="App_Gray_Color"/>
                                                                 <nil key="highlightedColor"/>
@@ -4383,14 +4381,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-Wm-soe">
-                                                    <rect key="frame" x="8" y="8" width="319" height="75.333333333333329"/>
+                                                    <rect key="frame" x="8" y="8" width="319" height="49"/>
                                                     <string key="text">Add the recipes you'd like to make here. Note that reording them on this screen updates the order that they appear on the cook list.</string>
                                                     <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                     <color key="textColor" name="Dark_Text_Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwu-fz-f8U">
-                                                    <rect key="frame" x="112.66666666666669" y="93.333333333333329" width="110" height="39.999999999999986"/>
+                                                    <rect key="frame" x="112.66666666666669" y="67" width="110" height="40"/>
                                                     <color key="backgroundColor" name="App_Orange_Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="CMA-t3-Tz6"/>
@@ -4405,7 +4403,7 @@
                                                     </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otr-GB-Tix">
-                                                    <rect key="frame" x="0.0" y="145.33333333333334" width="335" height="6.6666666666666572"/>
+                                                    <rect key="frame" x="0.0" y="119" width="335" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
@@ -4537,19 +4535,19 @@
     </scenes>
     <designables>
         <designable name="1Yn-9u-Ib7">
-            <size key="intrinsicContentSize" width="5" height="20.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="BSi-2G-ZTw">
-            <size key="intrinsicContentSize" width="5" height="20.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="dnN-4J-bWN">
-            <size key="intrinsicContentSize" width="5" height="20.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="nS2-cN-ngl">
-            <size key="intrinsicContentSize" width="5" height="20.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="u4j-Zw-fQd">
-            <size key="intrinsicContentSize" width="5" height="20.666666666666668"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
     </designables>
     <resources>

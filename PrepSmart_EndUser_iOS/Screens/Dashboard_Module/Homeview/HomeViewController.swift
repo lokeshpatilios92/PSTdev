@@ -59,6 +59,9 @@ class HomeViewController: BaseViewController {
     var global_Var = GlobalClass.sharedManager
     var homeDataObj: HomeStruct?
     
+    var fromDate =  Date()
+    var toDate =  Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializer()
@@ -100,6 +103,31 @@ class HomeViewController: BaseViewController {
         }
         showViewWelcome()
         homeApi()
+        
+        let fromDate = Date.today().previous(.monday, considerToday: true)
+        let toDate = Date.today().next(.sunday, considerToday: true)
+        
+        lbl_startDate.text = DateToString(date: fromDate, formate: "MMM d")
+        lbl_endDate.text = DateToString(date: toDate, formate: "MMM d")
+        
+        Api_Http_Class.shareinstance.get_Data_NsUser_Default(vc: self) { (isComplete) in
+            if isComplete {
+                if let membershipId = self.global_Var.logindicObj?.userData?.membership_id,
+                   let membershipName = self.global_Var.logindicObj?.userData?.membership_name,
+                   membershipId == 1, membershipName == "Basic Plan"{
+                    self.switch_mode.isOn = false
+                    self.lbl_mode.text = "Basic"
+                    self.height_viewCalendar.constant = 0.0
+                    self.switch_mode.isUserInteractionEnabled = true
+                } else {
+                    self.switch_mode.isOn = true
+                    self.lbl_mode.text = "Advance"
+                    self.height_viewCalendar.constant = 160
+                    self.switch_mode.isUserInteractionEnabled = false
+                }
+            }
+        }
+        
     }
     func setWelcomeText()
     {
@@ -130,11 +158,23 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func onClickBtn_backCalendar(_ sender: UIButton) {
-        showViewNoRecipe()
+        fromDate = fromDate.previous(.monday, considerToday: false)
+        toDate = fromDate.next(.sunday, considerToday: false)
+        
+        lbl_startDate.text = DateToString(date: fromDate, formate: "MMM d")
+        lbl_endDate.text = DateToString(date: toDate, formate: "MMM d")
+        homeApi()
+//        showViewNoRecipe()
     }
     
     @IBAction func onClickBtn_forwardCalendar(_ sender: UIButton) {
-        self.showCalendarViewController(setTopLabel: "", customDelegate: self)
+        fromDate = fromDate.next(.monday, considerToday: false)
+        toDate = fromDate.next(.sunday, considerToday: false)
+        
+        lbl_startDate.text = DateToString(date: fromDate, formate: "MMM d")
+        lbl_endDate.text = DateToString(date: toDate, formate: "MMM d")
+        homeApi()
+//        self.showCalendarViewController(setTopLabel: "", customDelegate: self)
     }
     
     @IBAction func onClickBtnGotIt(_ sender: UIButton) {
@@ -237,7 +277,7 @@ class HomeViewController: BaseViewController {
         setDaysButtonsColor()
         sender.backgroundColor = UIColor.appOrangeColor()
         showViewCollection()
-        
+              
         //Switch case for specific action to buttons
         /* switch sender.tag {
          case 1:
@@ -380,8 +420,8 @@ extension HomeViewController
 {
     func homeApi()
     {
-        let lastMondayDate = DateToString(date: Date.today().previous(.monday, considerToday: true))
-        let nextSundayDate = DateToString(date: Date.today().next(.sunday, considerToday: true))
+        let lastMondayDate = DateToString(date: fromDate)
+        let nextSundayDate = DateToString(date: toDate)
         print("lastMondayDate ==> \(lastMondayDate)")
         print("nextSundayDate ==> \(nextSundayDate)")
         let param:[String:String] = ["userType":"2",                                                                   "start_date":lastMondayDate,
