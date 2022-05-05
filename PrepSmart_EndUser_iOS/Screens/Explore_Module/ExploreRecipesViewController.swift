@@ -7,8 +7,9 @@
 //  Screen ID : PSTMOBSTD025
 
 import UIKit
+import Popover
 
-class ExploreRecipesViewController: BaseViewController {
+class ExploreRecipesViewController: BaseViewController, filterDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewByBgView: UIView!
@@ -69,7 +70,7 @@ class ExploreRecipesViewController: BaseViewController {
         default:
             self.navigationItem.titleView = UtilityManager.getTitleLabel("Explore Recipes")
         }
-        self.navigationItem.rightBarButtonItems = [addSortNavButton(),addFilterNavButton()]
+        self.navigationItem.rightBarButtonItems = [addSortNavigationButton(),addFilterNavigationButton()]
         searchBar.searchBarStyle = UISearchBar.Style.prominent
         searchBar.delegate = self
         searchBar.isTranslucent = false
@@ -102,6 +103,30 @@ class ExploreRecipesViewController: BaseViewController {
     
     //    MARK: On Click Func
     @IBAction func onClickViewByButton(_ sender: Any) {
+    }
+    
+    
+    func addFilterNavigationButton() -> UIBarButtonItem {
+        let addFilterNavButton = UIBarButtonItem(image: #imageLiteral(resourceName: "filter_white"), style: .done, target: self, action: #selector(self.filterButtonClicked(button:)))
+        return addFilterNavButton
+    }
+    func addSortNavigationButton() -> UIBarButtonItem {
+        let addSortNavButton = UIBarButtonItem(image: #imageLiteral(resourceName: "shortlist"), style: .done, target: self, action: #selector(self.sortButtonClicked(button:)))
+        return addSortNavButton
+    }
+    
+    @objc func filterButtonClicked(button: UIButton) {
+        let vc = UIStoryboard.AuxiliaryStoryboard.instantiateViewController(withIdentifier: "FilterViewViewController") as! FilterViewViewController
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func sortButtonClicked(button: UIButton) {
+        let shortFilter = self.instanceFromShortListFilterNib()//BlogFilter(frame: CGRect(x: 0, y: 0, width: self.view.frame.width / 2, height: 300))
+        shortFilter.frame = CGRect(x: 0, y: 0, width: 200, height: 450)
+        
+        let popover = Popover(options: self.popoverOptions)
+        popover.show(shortFilter, fromView: button.plainView)
     }
     
 }
@@ -168,6 +193,10 @@ extension ExploreRecipesViewController : UICollectionViewDelegate, UICollectionV
         //        let vc =  UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "ExploreRecipeDetailsViewController") as! ExploreRecipeDetailsViewController
         //        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func filterDelegateMethod(start_index: Int, type: Int, display_type: Int, record_count: Int, category_id: String, diet_type_ids: String, courses: String, tags: String, seasons: String, ingredient_ids: String) {
+        self.filteredRecipesListApi(start_index: start_index, type: type, display_type: display_type, record_count: record_count, category_id: category_id, diet_type_ids: diet_type_ids, courses: courses, tags: tags, seasons: seasons, ingredient_ids: ingredient_ids)
+    }
 }
 
 extension ExploreRecipesViewController
@@ -217,6 +246,61 @@ extension ExploreRecipesViewController
                 
                 Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                                 Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    
+    func filteredRecipesListApi(start_index: Int, type: Int, display_type: Int, record_count: Int, category_id: String, diet_type_ids: String, courses: String, tags: String, seasons: String, ingredient_ids: String)
+    {
+        let param:[String:Any] = ["start_index":start_index,
+                                  "type": type,
+                                  "display_type":display_type ,
+                                  "record_count":record_count,
+                                  "category_ids":category_id,
+                                  "diet_type_ids":diet_type_ids,
+                                  "courses":courses,
+                                  "tags":tags,
+                                  "seasons":seasons,
+                                  "ingredient_ids":ingredient_ids]
+        Loader.sharedInstance.showIndicator()
+        
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.filteredRecipesList, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.findNewRecipeObj = try JSONDecoder().decode(FindNewRecipe_Struct.self, from: data)
+                            //self.dataParse()
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
                 break
             }
         }

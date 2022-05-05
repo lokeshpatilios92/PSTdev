@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -71,7 +71,6 @@
                                                         </constraints>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="imagePicker:" destination="Oay-VG-hrp" eventType="touchUpInside" id="wHn-RW-pt9"/>
                                                         </connections>
@@ -105,7 +104,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Name*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBF-TA-Osl">
-                                                                <rect key="frame" x="20" y="10" width="49" height="19"/>
+                                                                <rect key="frame" x="20" y="10" width="42.5" height="19"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="19" id="iFS-Vk-Qhs"/>
                                                                 </constraints>
@@ -139,7 +138,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4a-4Z-xUT">
-                                                                <rect key="frame" x="20" y="87" width="38.5" height="19"/>
+                                                                <rect key="frame" x="20" y="87" width="34.5" height="19"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="19" id="WsX-HN-Uhy"/>
                                                                 </constraints>
@@ -173,7 +172,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZC-O5-2zk">
-                                                                <rect key="frame" x="20" y="161" width="66" height="19"/>
+                                                                <rect key="frame" x="20" y="161" width="58" height="19"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="19" id="vt5-aQ-LOL"/>
                                                                 </constraints>
@@ -182,7 +181,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5F-4D-hnb">
-                                                                <rect key="frame" x="91" y="160.5" width="20" height="20"/>
+                                                                <rect key="frame" x="83" y="160.5" width="20" height="20"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="1d7-f1-3uC"/>
@@ -220,7 +219,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSf-k0-GET">
-                                                                <rect key="frame" x="20" y="235" width="58" height="19"/>
+                                                                <rect key="frame" x="20" y="235" width="52.5" height="19"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="19" id="xeE-YY-yzH"/>
                                                                 </constraints>
@@ -311,7 +310,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pL7-in-Od7">
-                                                <rect key="frame" x="150" y="42" width="100" height="31"/>
+                                                <rect key="frame" x="150" y="44" width="100" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="kM0-0w-oai"/>
                                                 </constraints>
@@ -399,7 +398,7 @@
                                                 <rect key="frame" x="20" y="20" width="280" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Consultation Fee" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uK-9G-Fbl">
-                                                        <rect key="frame" x="5" y="5" width="120" height="19"/>
+                                                        <rect key="frame" x="5" y="5" width="106.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="e5X-A7-IjU"/>
                                                         </constraints>
@@ -447,7 +446,7 @@
                                                 <rect key="frame" x="20" y="104" width="280" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Consultation Duration" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6O-6I-sf3">
-                                                        <rect key="frame" x="5" y="5" width="149.5" height="19"/>
+                                                        <rect key="frame" x="5" y="5" width="136.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="Zo6-zL-f3M"/>
                                                         </constraints>
@@ -495,7 +494,7 @@
                                                 <rect key="frame" x="20" y="188" width="280" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Notes*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w04-xD-N1o">
-                                                        <rect key="frame" x="5" y="5" width="48" height="19"/>
+                                                        <rect key="frame" x="5" y="5" width="42" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="Dql-ti-cCx"/>
                                                         </constraints>
@@ -547,7 +546,7 @@
                                                 <rect key="frame" x="20" y="272" width="280" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Phone*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x23-Gc-BXb">
-                                                        <rect key="frame" x="5" y="5" width="49" height="19"/>
+                                                        <rect key="frame" x="5" y="5" width="45.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="avs-z6-hmi"/>
                                                         </constraints>
@@ -595,7 +594,7 @@
                                                 <rect key="frame" x="20" y="356" width="280" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Email*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbm-oT-xwF">
-                                                        <rect key="frame" x="5" y="5" width="44.5" height="19"/>
+                                                        <rect key="frame" x="5" y="5" width="39.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="tRh-Bv-dd1"/>
                                                         </constraints>
@@ -640,7 +639,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-uF-uNL">
-                                                <rect key="frame" x="20" y="450" width="115" height="20"/>
+                                                <rect key="frame" x="20" y="450" width="97" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="Tui-1h-Mlc"/>
                                                 </constraints>
@@ -1053,7 +1052,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Z4-EI-6CX">
-                                <rect key="frame" x="0.0" y="135.5" width="320" height="432.5"/>
+                                <rect key="frame" x="0.0" y="133" width="320" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="PGd-dz-jlA" id="0HW-QG-1Ko"/>
@@ -1061,7 +1060,7 @@
                                 </connections>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rQS-bH-1DY">
-                                <rect key="frame" x="0.0" y="135.5" width="320" height="432.5"/>
+                                <rect key="frame" x="0.0" y="133" width="320" height="435"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S3s-xR-00n">
                                     <size key="itemSize" width="50" height="50"/>
@@ -1076,7 +1075,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 results found" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRq-IS-dFX">
-                                <rect key="frame" x="20" y="109" width="280" height="16.5"/>
+                                <rect key="frame" x="20" y="109" width="280" height="14"/>
                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                 <color key="textColor" name="Dark_Text_Color"/>
                                 <nil key="highlightedColor"/>
@@ -1346,7 +1345,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdZ-8W-jtO">
-                                <rect key="frame" x="162" y="25.5" width="100" height="29"/>
+                                <rect key="frame" x="162" y="27" width="100" height="26"/>
                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="1mb-JA-CuI"/>
@@ -1436,7 +1435,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chd-qJ-k3g">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="514"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSk-YX-Vn7">
                                                 <rect key="frame" x="20" y="20" width="280" height="138"/>
@@ -1538,29 +1537,29 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybd-AT-jPR" customClass="CardView" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="178" width="280" height="257"/>
+                                                <rect key="frame" x="20" y="178" width="280" height="245"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="PrepSmart - Subscription " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-nY-jVG">
-                                                        <rect key="frame" x="10" y="10" width="260" height="16.5"/>
+                                                        <rect key="frame" x="10" y="10" width="260" height="14"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-fR-isV">
-                                                        <rect key="frame" x="40" y="36.5" width="200" height="54"/>
+                                                        <rect key="frame" x="40" y="34" width="200" height="47"/>
                                                         <string key="text">The subscription cost for the exclusive recipe has been updated by Luke Skywalker on Aug 15, 2018. Which will be in effect from the next biling cycle.</string>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Updated Subscription Cost:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhX-sy-XqA">
-                                                        <rect key="frame" x="10" y="110.5" width="260" height="16.5"/>
+                                                        <rect key="frame" x="10" y="101" width="260" height="14"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ys-qq-egK">
-                                                        <rect key="frame" x="85" y="137" width="110" height="50"/>
+                                                        <rect key="frame" x="85" y="125" width="110" height="50"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="$10/month" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaB-JM-viI">
                                                                 <rect key="frame" x="5" y="5" width="100" height="40"/>
@@ -1580,7 +1579,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-hy-waf">
-                                                        <rect key="frame" x="70" y="207" width="140" height="30"/>
+                                                        <rect key="frame" x="70" y="195" width="140" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkX-fp-fvZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
@@ -1849,7 +1848,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bo4-vV-k51">
-                                                <rect key="frame" x="0.0" y="62.5" width="320" height="552.5"/>
+                                                <rect key="frame" x="0.0" y="58" width="320" height="552.5"/>
                                                 <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="552.5" id="RTT-Pl-WhF"/>
@@ -1860,35 +1859,35 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvp-vj-XTF">
-                                                <rect key="frame" x="0.0" y="625" width="320" height="214"/>
+                                                <rect key="frame" x="0.0" y="620.5" width="320" height="202.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="What would you like to do?" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22P-CR-iQH">
-                                                        <rect key="frame" x="20" y="2" width="280" height="19"/>
+                                                        <rect key="frame" x="20" y="2" width="280" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S30-Ej-bbx">
-                                                        <rect key="frame" x="20" y="31" width="280" height="113"/>
+                                                        <rect key="frame" x="20" y="28.5" width="280" height="104"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-jV-pU0">
-                                                                <rect key="frame" x="8" y="8" width="264" height="42.5"/>
+                                                                <rect key="frame" x="8" y="8" width="264" height="38"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_active" translatesAutoresizingMaskIntoConstraints="NO" id="13L-xM-ZDb">
-                                                                        <rect key="frame" x="5" y="9" width="25" height="25"/>
+                                                                        <rect key="frame" x="5" y="6.5" width="25" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="25" id="JP2-O5-rI5"/>
                                                                             <constraint firstAttribute="width" constant="25" id="ZnL-mU-14g"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Keep the existing recipes and add the weekly pla template." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjI-sH-f0z">
-                                                                        <rect key="frame" x="40" y="5" width="219" height="32.5"/>
+                                                                        <rect key="frame" x="40" y="5" width="219" height="28"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ru-ib-ldh">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="264" height="42.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="264" height="38"/>
                                                                         <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                                                         <connections>
                                                                             <action selector="radioBtnTapped:" destination="faO-eB-44q" eventType="touchUpInside" id="Z4O-Ae-1WD"/>
@@ -1911,23 +1910,23 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYM-mc-oh7">
-                                                                <rect key="frame" x="8" y="60.5" width="264" height="42.5"/>
+                                                                <rect key="frame" x="8" y="56" width="264" height="38"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_normal" translatesAutoresizingMaskIntoConstraints="NO" id="tJq-G0-sRX">
-                                                                        <rect key="frame" x="5" y="9" width="25" height="25"/>
+                                                                        <rect key="frame" x="5" y="6.5" width="25" height="25"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="25" id="BMh-sH-Pky"/>
                                                                             <constraint firstAttribute="height" constant="25" id="I2O-X5-PaA"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Discard the existing recipes and add the weekly pla template." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFp-5Y-dce">
-                                                                        <rect key="frame" x="40" y="5" width="219" height="32.5"/>
+                                                                        <rect key="frame" x="40" y="5" width="219" height="28"/>
                                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFn-uj-mlq">
-                                                                        <rect key="frame" x="0.0" y="-0.5" width="264" height="42.5"/>
+                                                                        <rect key="frame" x="0.0" y="-0.5" width="264" height="38"/>
                                                                         <inset key="imageEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                                                                         <connections>
                                                                             <action selector="radioBtnTapped:" destination="faO-eB-44q" eventType="touchUpInside" id="68r-0y-xVk"/>
@@ -1961,7 +1960,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCH-a6-I7H">
-                                                        <rect key="frame" x="100" y="154" width="120" height="40"/>
+                                                        <rect key="frame" x="100" y="142.5" width="120" height="40"/>
                                                         <color key="backgroundColor" name="App_Orange_Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="7zI-4H-e6o"/>
@@ -1991,7 +1990,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="The following recipes are already assigned for the selected week" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsJ-Ra-6Tg">
-                                                <rect key="frame" x="40" y="20" width="240" height="32.5"/>
+                                                <rect key="frame" x="40" y="20" width="240" height="28"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
@@ -2533,16 +2532,16 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Osu-Bi-naC">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="983"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="978"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Send as Fax" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAt-9e-Fju">
-                                                <rect key="frame" x="20" y="20" width="280" height="21.5"/>
+                                                <rect key="frame" x="20" y="20" width="280" height="19"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ov-Xx-Iuy" customClass="CardView" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="61.5" width="280" height="312"/>
+                                                <rect key="frame" x="20" y="59" width="280" height="312"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOU-Zj-uNJ">
                                                         <rect key="frame" x="10" y="5" width="260" height="30"/>
@@ -2749,7 +2748,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zL-RD-Sqk" customClass="CardView" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="393.5" width="280" height="338"/>
+                                                <rect key="frame" x="20" y="391" width="280" height="338"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Skt-YU-YNy">
                                                         <rect key="frame" x="10" y="5" width="260" height="30"/>
@@ -3000,16 +2999,16 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trE-g7-SOb" customClass="CardView" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="751.5" width="280" height="121.5"/>
+                                                <rect key="frame" x="20" y="749" width="280" height="119"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Cover Page Memo" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E20-ju-uP3">
-                                                        <rect key="frame" x="10" y="10" width="260" height="21.5"/>
+                                                        <rect key="frame" x="10" y="10" width="260" height="19"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-zP-xaE" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
-                                                        <rect key="frame" x="10" y="41.5" width="260" height="70"/>
+                                                        <rect key="frame" x="10" y="39" width="260" height="70"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="YHd-2k-v0J"/>
@@ -3041,7 +3040,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVN-CH-OlN">
-                                                <rect key="frame" x="85" y="913" width="150" height="40"/>
+                                                <rect key="frame" x="85" y="908" width="150" height="40"/>
                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="1Ky-Ro-5uS"/>
@@ -3151,19 +3150,19 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 <state key="normal" image="white_forward_arrow"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY1-15-jSg">
-                                                <rect key="frame" x="111.5" y="5.5" width="30" height="19"/>
+                                                <rect key="frame" x="112.5" y="7" width="30" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-hh-Pvo">
-                                                <rect key="frame" x="179" y="5.5" width="30" height="19"/>
+                                                <rect key="frame" x="178" y="7" width="30" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au8-Yg-Gz6">
-                                                <rect key="frame" x="156.5" y="5.5" width="7.5" height="19"/>
+                                                <rect key="frame" x="157.5" y="7" width="5.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Gray_Color"/>
                                                 <nil key="highlightedColor"/>
@@ -3197,20 +3196,20 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                 <rect key="frame" x="0.0" y="90" width="320" height="478"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-qA-D4f">
-                                        <rect key="frame" x="20" y="240" width="280" height="120"/>
+                                        <rect key="frame" x="20" y="249" width="280" height="111"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNU-GN-Fll">
-                                                <rect key="frame" x="8" y="8" width="264" height="42.5"/>
+                                                <rect key="frame" x="8" y="8" width="264" height="38"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_active" translatesAutoresizingMaskIntoConstraints="NO" id="BBM-7T-b7B">
-                                                        <rect key="frame" x="5" y="9" width="25" height="25"/>
+                                                        <rect key="frame" x="5" y="6.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="DTb-sg-W4q"/>
                                                             <constraint firstAttribute="width" constant="25" id="cLA-ES-hTT"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Keep the existing recipes and add the weekly plan template." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aki-zj-9ju">
-                                                        <rect key="frame" x="40" y="5" width="219" height="32.5"/>
+                                                        <rect key="frame" x="40" y="5" width="219" height="28"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                         <nil key="highlightedColor"/>
@@ -3227,23 +3226,23 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W85-LB-g1Z">
-                                                <rect key="frame" x="8" y="8" width="264" height="42.5"/>
+                                                <rect key="frame" x="8" y="8" width="264" height="38"/>
                                                 <connections>
                                                     <action selector="radioBtnTapped:" destination="7ET-nR-wj4" eventType="touchUpInside" id="rWB-z7-MB2"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBf-ou-Qfw">
-                                                <rect key="frame" x="8" y="67.5" width="264" height="42.5"/>
+                                                <rect key="frame" x="8" y="63" width="264" height="38"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio_normal" translatesAutoresizingMaskIntoConstraints="NO" id="ayS-oP-psR">
-                                                        <rect key="frame" x="5" y="9" width="25" height="25"/>
+                                                        <rect key="frame" x="5" y="6.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="25" id="L2h-n9-uvU"/>
                                                             <constraint firstAttribute="height" constant="25" id="yQi-iL-mpq"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Discard the existing recipes and add the weekly plan template." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iy-5v-qgH">
-                                                        <rect key="frame" x="40" y="5" width="219" height="32.5"/>
+                                                        <rect key="frame" x="40" y="5" width="219" height="28"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                         <nil key="highlightedColor"/>
@@ -3260,13 +3259,13 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gp8-Gb-fNl">
-                                                <rect key="frame" x="8" y="67.5" width="264" height="42.5"/>
+                                                <rect key="frame" x="8" y="63" width="264" height="38"/>
                                                 <connections>
                                                     <action selector="radioBtnTapped:" destination="7ET-nR-wj4" eventType="touchUpInside" id="6Gj-c6-7Ka"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3L-l9-wCO">
-                                                <rect key="frame" x="0.0" y="58.5" width="280" height="1"/>
+                                                <rect key="frame" x="0.0" y="54" width="280" height="1"/>
                                                 <color key="backgroundColor" red="0.64313725490196083" green="0.64313725490196083" blue="0.64313725490196083" alpha="0.25511023116438358" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="ESo-aR-Zjs"/>
@@ -3299,7 +3298,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Follwing Recipes are assigned already" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BB2-m2-bb9">
-                                        <rect key="frame" x="20" y="47" width="280" height="17"/>
+                                        <rect key="frame" x="20" y="44.5" width="280" height="17"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="osM-BD-jDG"/>
                                         </constraints>
@@ -3308,7 +3307,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="06F-Hc-B8o">
-                                        <rect key="frame" x="0.0" y="74" width="320" height="151"/>
+                                        <rect key="frame" x="0.0" y="71.5" width="320" height="162.5"/>
                                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="7ET-nR-wj4" id="0wx-v0-jy0"/>
@@ -3316,7 +3315,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbI-65-eBX">
-                                        <rect key="frame" x="89" y="430" width="142" height="31"/>
+                                        <rect key="frame" x="98" y="430" width="124" height="29"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <state key="normal" title="Manage Meal Plans">
                                             <color key="titleColor" name="App_Orange_Color"/>
@@ -3326,7 +3325,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Select Weekly Plan Template" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nD-2J-n91">
-                                        <rect key="frame" x="20" y="20" width="280" height="19"/>
+                                        <rect key="frame" x="20" y="20" width="280" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
@@ -3416,7 +3415,7 @@ Temporarily expand your filters or edit your profile diet type preferences to se
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="740"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaU-QP-kEi">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="651"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="643.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Db-7E-wn8">
                                                 <rect key="frame" x="125" y="10" width="195" height="85"/>
@@ -3559,13 +3558,13 @@ Following</string>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. Strange" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhh-q4-cj3">
-                                                <rect key="frame" x="20" y="120" width="100" height="19"/>
+                                                <rect key="frame" x="20" y="120" width="100" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVR-m2-VM5">
-                                                <rect key="frame" x="20" y="179" width="280" height="74"/>
+                                                <rect key="frame" x="20" y="176.5" width="280" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Email" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAe-Lr-ybz">
                                                         <rect key="frame" x="5" y="5" width="270" height="19"/>
@@ -3614,7 +3613,7 @@ Following</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y26-Vb-iU0">
-                                                <rect key="frame" x="20" y="303" width="280" height="64"/>
+                                                <rect key="frame" x="20" y="300.5" width="280" height="64"/>
                                                 <subviews>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gii-La-ESg" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="24" width="280" height="40"/>
@@ -3642,7 +3641,7 @@ Following</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Zip Code" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVe-Fi-onT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="bdd-Fj-uPK"/>
                                                         </constraints>
@@ -3651,7 +3650,7 @@ Following</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Naw-Ri-hC3">
-                                                        <rect key="frame" x="66" y="-0.5" width="20" height="20"/>
+                                                        <rect key="frame" x="58" y="-0.5" width="20" height="20"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="fxB-7K-QX0"/>
@@ -3677,7 +3676,7 @@ Following</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSv-qc-JnW">
-                                                <rect key="frame" x="20" y="392" width="280" height="74"/>
+                                                <rect key="frame" x="20" y="389.5" width="280" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Account" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewl-sy-Wae">
                                                         <rect key="frame" x="5" y="5" width="270" height="19"/>
@@ -3726,7 +3725,7 @@ Following</string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMK-lS-VdO">
-                                                <rect key="frame" x="180" y="486" width="120" height="40"/>
+                                                <rect key="frame" x="180" y="483.5" width="120" height="40"/>
                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="UW6-9g-GFt"/>
@@ -3742,16 +3741,16 @@ Following</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a6-Yo-2xw">
-                                                <rect key="frame" x="20" y="551" width="280" height="35"/>
+                                                <rect key="frame" x="20" y="548.5" width="280" height="32.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diet Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geC-Kx-shb">
-                                                        <rect key="frame" x="8" y="8" width="244" height="19"/>
+                                                        <rect key="frame" x="8" y="8" width="244" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white_forward_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="MCf-65-3ed">
-                                                        <rect key="frame" x="257" y="10" width="15" height="15"/>
+                                                        <rect key="frame" x="257" y="9" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="Qh0-IJ-P2I"/>
                                                             <constraint firstAttribute="width" constant="15" id="mkK-ec-7XD"/>
@@ -3769,30 +3768,30 @@ Following</string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-Wp-oWN">
-                                                <rect key="frame" x="20" y="551" width="280" height="35"/>
+                                                <rect key="frame" x="20" y="548.5" width="280" height="32.5"/>
                                                 <connections>
                                                     <action selector="bottomButtonAction:" destination="D4m-N0-7Xh" eventType="touchUpInside" id="Vbe-Fg-3GK"/>
                                                     <action selector="dietTypeButtonAction:" destination="D4m-N0-7Xh" eventType="touchUpInside" id="M4O-a6-WZ4"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m8K-pF-3v3">
-                                                <rect key="frame" x="20" y="596" width="280" height="35"/>
+                                                <rect key="frame" x="20" y="591" width="280" height="32.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4H-dk-GER">
-                                                        <rect key="frame" x="8" y="8" width="244" height="19"/>
+                                                        <rect key="frame" x="8" y="8" width="244" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward_arrow_black" translatesAutoresizingMaskIntoConstraints="NO" id="QZu-mS-nPb">
-                                                        <rect key="frame" x="257" y="10" width="15" height="15"/>
+                                                        <rect key="frame" x="257" y="9" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="F2l-4p-Llk"/>
                                                             <constraint firstAttribute="height" constant="15" id="eLK-ZO-Sut"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrC-Xo-upW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="32.5"/>
                                                         <connections>
                                                             <action selector="bottomButtonAction:" destination="D4m-N0-7Xh" eventType="touchUpInside" id="8qX-BZ-S6f"/>
                                                         </connections>
@@ -4001,7 +4000,7 @@ Following</string>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wxF-to-GD3">
-                                <rect key="frame" x="0.0" y="89.5" width="320" height="478.5"/>
+                                <rect key="frame" x="0.0" y="87" width="320" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jb3-7E-Ykc">
                                     <size key="itemSize" width="50" height="50"/>
@@ -4016,7 +4015,7 @@ Following</string>
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 result found" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-PS-fd8">
-                                <rect key="frame" x="20" y="63" width="280" height="16.5"/>
+                                <rect key="frame" x="20" y="63" width="280" height="14"/>
                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                 <color key="textColor" name="Dark_Text_Color"/>
                                 <nil key="highlightedColor"/>
@@ -4276,20 +4275,20 @@ Following</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How are we doing ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-FD-MdB">
-                                        <rect key="frame" x="20" y="20" width="280" height="24.5"/>
+                                        <rect key="frame" x="20" y="20" width="280" height="21"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="18"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyc-f8-7Yt">
-                                        <rect key="frame" x="20" y="119" width="280" height="59.5"/>
+                                        <rect key="frame" x="20" y="109.5" width="280" height="38.5"/>
                                         <string key="text">This isn't a way to contact us. though and we can't respond to you on this channel. If you have a question or need help resolving a problem head on over to Get Help.</string>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="11"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmQ-Am-SpV">
-                                        <rect key="frame" x="0.0" y="188.5" width="320" height="173.5"/>
+                                        <rect key="frame" x="0.0" y="158" width="320" height="172"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-Pg-zX2">
                                                 <rect key="frame" x="40" y="8" width="240" height="47.5"/>
@@ -4314,7 +4313,6 @@ Following</string>
                                                         <rect key="frame" x="0.0" y="8" width="240" height="35"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain"/>
                                                         <connections>
                                                             <action selector="SubjectDropDownClick:" destination="68D-8N-ps5" eventType="touchUpInside" id="tfn-np-V5d"/>
                                                         </connections>
@@ -4367,13 +4365,13 @@ Following</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oae-al-bLt">
-                                                <rect key="frame" x="20" y="105" width="260" height="13.5"/>
+                                                <rect key="frame" x="20" y="105" width="260" height="12"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bOC-oe-phl">
-                                                <rect key="frame" x="150" y="128.5" width="150" height="35"/>
+                                                <rect key="frame" x="150" y="127" width="150" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mth-zm-9Cy">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
@@ -4429,13 +4427,13 @@ Following</string>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We're always working to improve the PrepSmart experience. So we'd love to hear what's working and how we can do better." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sq0-fv-GHc">
-                                        <rect key="frame" x="20" y="64.5" width="280" height="44.5"/>
+                                        <rect key="frame" x="20" y="61" width="280" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="11"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop_arrow_dark" translatesAutoresizingMaskIntoConstraints="NO" id="8cR-qy-7zP">
-                                        <rect key="frame" x="265" y="214.5" width="15" height="15"/>
+                                        <rect key="frame" x="265" y="184" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="a3i-vJ-hX0"/>
                                             <constraint firstAttribute="width" constant="15" id="uhC-Tn-JuT"/>
@@ -4602,76 +4600,76 @@ Following</string>
     </scenes>
     <designables>
         <designable name="1KO-M7-lH5">
-            <size key="intrinsicContentSize" width="87" height="20.5"/>
+            <size key="intrinsicContentSize" width="74" height="18"/>
         </designable>
         <designable name="2Fs-Lw-ARh">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="9Xc-oY-jn3">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="AZ6-Om-U75">
-            <size key="intrinsicContentSize" width="78" height="20.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="18"/>
         </designable>
         <designable name="AeG-tZ-DrB">
-            <size key="intrinsicContentSize" width="100.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="90" height="18"/>
         </designable>
         <designable name="Cj9-f7-H1u">
-            <size key="intrinsicContentSize" width="192.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="166.5" height="18"/>
         </designable>
         <designable name="Hv9-jc-UWG">
-            <size key="intrinsicContentSize" width="125.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="110.5" height="18"/>
         </designable>
         <designable name="MMg-fz-SfF">
-            <size key="intrinsicContentSize" width="102.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="94.5" height="18"/>
         </designable>
         <designable name="NWn-fC-wzK">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="OU1-jq-cV5">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="Pbq-sK-c1G">
-            <size key="intrinsicContentSize" width="81" height="20.5"/>
+            <size key="intrinsicContentSize" width="66" height="18"/>
         </designable>
         <designable name="WqD-p2-yXn">
-            <size key="intrinsicContentSize" width="96.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="94.5" height="18"/>
         </designable>
         <designable name="XFw-LE-DOB">
-            <size key="intrinsicContentSize" width="117" height="20.5"/>
+            <size key="intrinsicContentSize" width="100.5" height="18"/>
         </designable>
         <designable name="ZZW-Cf-Q59">
-            <size key="intrinsicContentSize" width="98.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="90.5" height="18"/>
         </designable>
         <designable name="eqi-tu-gBd">
-            <size key="intrinsicContentSize" width="176.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="157" height="18"/>
         </designable>
         <designable name="f84-X6-7rf">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="fPB-VK-e1A">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="gii-La-ESg">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="h3g-kY-bz5">
-            <size key="intrinsicContentSize" width="10" height="35"/>
+            <size key="intrinsicContentSize" width="10" height="33"/>
         </designable>
         <designable name="jdz-4g-aFD">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
         <designable name="kEo-X8-tTg">
-            <size key="intrinsicContentSize" width="119" height="20.5"/>
+            <size key="intrinsicContentSize" width="101.5" height="18"/>
         </designable>
         <designable name="n7L-LY-xYp">
-            <size key="intrinsicContentSize" width="82.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="18"/>
         </designable>
         <designable name="sfk-Ne-9Y8">
-            <size key="intrinsicContentSize" width="82.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="18"/>
         </designable>
         <designable name="uqZ-t6-NKc">
-            <size key="intrinsicContentSize" width="5" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="18"/>
         </designable>
     </designables>
     <resources>
