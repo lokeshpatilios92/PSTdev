@@ -121,6 +121,12 @@ class MyRecipesVC: BaseViewController , filterDelegate{
         self.showAddToPopUpVC(customDelegate: self)
     }
     
+    @objc func favraitButtonClicked(button: UIButton) {
+        let receipe = self.myStuffObj?.recipeList?[button.tag]
+        
+        self.addTOFavAPI(with: "\(receipe?.recipe_type ?? 0)", recipeId: "\(receipe?.item_id ?? 0)", chefId: "\(receipe?.chef_id ?? 0)", favStatus: 1)
+    }
+    
     func applyBorderToView(view:UIView){
         view.layer.cornerRadius = favView.frame.height/2
         view.layer.borderWidth = 1
@@ -271,13 +277,15 @@ extension MyRecipesVC : UICollectionViewDelegate, UICollectionViewDataSource {
             }
         }
         cell.btn_favorit.tag = indexPath.row
+        cell.btn_favorit.addTarget(self, action: #selector(favraitButtonClicked(button:)), for: .touchUpInside)
         cell.btn_addTo.addTarget(self, action: #selector(showAddToPopUp), for: .touchUpInside)
+        cell.img_favorit.image = (dic?.fav_status == 2) ? UIImage.init(named: "favorite") : UIImage.init(named: "heart")
         cell.labelImageView0.isHidden = true
         cell.labelImageView1.isHidden = true
         cell.labelImageView2.isHidden = true
         cell.labelImageView3.isHidden = true
         cell.labelImageView4.isHidden = true
-        cell.view_favorit.isHidden = true
+        cell.view_favorit.isHidden = false
         return cell
     }
     
@@ -411,6 +419,44 @@ extension MyRecipesVC
                 {
                     Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
                 }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    func addTOFavAPI(with receipeType: String, recipeId: String, chefId: String, favStatus: Int) {
+        let param:[String:Any] = ["recipe_type": receipeType ,"recipe_id": recipeId,
+                                  "chef_id": chefId, "flag": favStatus]
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.addToFav, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                }
+                // SVProgressHUD.dismiss()
                 Loader.sharedInstance.hideIndicator()
                 break
                 

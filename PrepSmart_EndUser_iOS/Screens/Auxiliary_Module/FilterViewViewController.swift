@@ -126,6 +126,7 @@ class FilterViewViewController: BaseViewController {
         self.selectedMainIngredientId = "0"
         }
         tableView_subcategory.reloadData()
+        self.navigationController?.popViewController(animated: true)
 
     }
     
@@ -141,6 +142,7 @@ class FilterViewViewController: BaseViewController {
                                        tags: selectedTagId,
                                        seasons: selectedSeasonId,
                                        ingredient_ids: selectedMainIngredientId)
+        self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
 }
