@@ -90,7 +90,8 @@ class Constants: NSObject
     static let addToFav = "addToFavorite"
     static let getRecipeList = "getRecipeList"
     static let addWeekPlanStep2 = "addWeekPlanStep2"
-    static let blogComment = "blogComment"
+    static let blogComment = "blogComment"  
+    static let keepOrDiscardExistingRecipeFromPlan = "keepOrDiscardExistingRecipeFromPlan"
     static let marginConstant:CGFloat = UtilityManager.isIphone() ? 15:20
     static let labelHeightConstant:CGFloat = UtilityManager.isIphone() ? 35:45
     static let BUTTON_HEIGHT:CGFloat = UtilityManager.isIphone() ? 50:60
