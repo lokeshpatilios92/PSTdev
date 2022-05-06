@@ -127,6 +127,7 @@ class ExploreRecipesViewController: BaseViewController, filterDelegate {
         
         let popover = Popover(options: self.popoverOptions)
         popover.show(shortFilter, fromView: button.plainView)
+        
     }
     
 }
