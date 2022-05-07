@@ -4,21 +4,13 @@
 //
 //  Created by Kaustubh Kulkarni on 31/07/19.
 //  Copyright © 2019 Exceptionaire.co. All rights reserved.
-//PSTMOBSTD121
+//
 
 import UIKit
 
 class ExploreWeeklyPlanDetailsViewController: BaseViewController {
     
     @IBOutlet weak var view_container: UIView!
-    @IBOutlet weak var view_MON: UIView!
-    @IBOutlet weak var view_TUE: UIView!
-    @IBOutlet weak var view_WED: UIView!
-    @IBOutlet weak var view_THU: UIView!
-    @IBOutlet weak var view_FRI: UIView!
-    @IBOutlet weak var view_SAT: UIView!
-    @IBOutlet weak var view_SUN: UIView!
-    
     @IBOutlet weak var btn_MON: UIButton!
     @IBOutlet weak var btn_TUE: UIButton!
     @IBOutlet weak var btn_WED: UIButton!
@@ -26,15 +18,30 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
     @IBOutlet weak var btn_FRI: UIButton!
     @IBOutlet weak var btn_SAT: UIButton!
     @IBOutlet weak var btn_SUN: UIButton!
-
+    @IBOutlet weak var weekDatesLbl: UILabel!
+    
     var weeksBGViewArray : [UIView] = []
     var weeksButtonArray : [UIButton] = []
     var recipyPlanId = 0
     var recipyChefId = 0
     var weeklyPlandata : GetWeeklyPlanTemplateDetailsStruct?
+    var filteredMealList: [(meal: Day?, isExpandable: Bool)]?
+    
     var global_Var = GlobalClass.sharedManager
     var weeklyPlanVC : WeeklyPlanContainerViewController! = nil
+    var fromDate = Date()
+    var toDate = Date()
     
+    @IBAction func nextWeekAction(_ sender: Any) {
+        fromDate = fromDate.next(.monday, considerToday: false)
+        toDate = fromDate.next(.sunday, considerToday: false)
+        weekDatesLbl.text = "\(DateToString(date: fromDate, formate: "MMM d")) - \( DateToString(date: toDate, formate: "MMM d"))"
+    }
+    @IBAction func priviousWeekAction(_ sender: Any) {
+        fromDate = fromDate.previous(.monday, considerToday: false)
+        toDate = fromDate.next(.sunday, considerToday: false)
+        weekDatesLbl.text = "\(DateToString(date: fromDate, formate: "MMM d")) - \( DateToString(date: toDate, formate: "MMM d"))"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
@@ -46,7 +53,7 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
         self.navigationItem.titleView = UtilityManager.getTitleLabel("View Weekly Plan")
         self.navigationItem.rightBarButtonItems = [editWeeklyPlanNavButton(),addWeeklyPlanNavButton()]
         
-        weeksBGViewArray = [view_MON, view_TUE, view_WED, view_THU, view_FRI, view_SAT, view_SUN]
+       // weeksBGViewArray = [view_MON, view_TUE, view_WED, view_THU, view_FRI, view_SAT, view_SUN]
         weeksButtonArray = [btn_MON, btn_TUE, btn_WED, btn_THU, btn_FRI, btn_SAT, btn_SUN]
         for (i, btn) in weeksButtonArray.enumerated()
         {
@@ -65,6 +72,7 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
             ])
         
         weeklyPlanVC.didMove(toParent: self)
+        weekDatesLbl.text = "\(DateToString(date: fromDate, formate: "MMM d")) - \( DateToString(date: toDate, formate: "MMM d"))"
         
         addFirstVC(senderTag: 0)
     }
@@ -112,6 +120,18 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
 
         weeklyPlanVC.tblview_mealTimings.reloadData()
     }
+    
+//    func fiterDataAccordingToDay(_ day: String) {
+//        filteredMealList?.removeAll()
+//        self.selectedDay = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })
+//        let mondayMealList = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })?.mealList
+//
+//        self.filteredMealList = mondayMealList?.map({ (meal) -> (meal: MealListData?, isExpandable: Bool) in
+//             (meal: meal, isExpandable: false)
+//        })
+//
+//        self.tableView.reloadData()
+//    }
 }
 
 
@@ -132,7 +152,7 @@ extension ExploreWeeklyPlanDetailsViewController
                  {
                      if let status = dict["status"] as? Bool, status == true
                      {
-                                         Loader.sharedInstance.hideIndicator()
+                            Loader.sharedInstance.hideIndicator()
                          do {
                              self.weeklyPlandata = try JSONDecoder().decode(GetWeeklyPlanTemplateDetailsStruct.self, from: data)
                             // self.collectionView.reloadData()
