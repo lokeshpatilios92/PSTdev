@@ -23,6 +23,7 @@ class WeekPlannerVC: BaseViewController {
     var weeaklyPlanId:Int = -1
     var weeklyPlandata : GetWeeklyPlanTemplateDetailsStruct?
     var global_Var = GlobalClass.sharedManager
+    var isKeepPlan = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,21 +43,23 @@ class WeekPlannerVC: BaseViewController {
     }
     
     @IBAction func manageMealPlansBtnTapped(_ sender: UIButton) {
-        
+        print("Meals")
     }
     
     @IBAction func okBtnTapped(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        self.KeepDiscartExcistingRecipePlan(isKeepPlan ? 1 : 2)
     }
     
     @IBAction func radioBtnTapped(_ sender: UIButton)
     {
         if sender == keeptRadioBtn
         {
+            isKeepPlan = true
             self.keeptRadioImageVIew.image = #imageLiteral(resourceName: "radio_active")
             self.discardRadioImageView.image = #imageLiteral(resourceName: "radio_normal")
         }
         else{
+            isKeepPlan = false
             self.keeptRadioImageVIew.image = #imageLiteral(resourceName: "radio_normal")
             self.discardRadioImageView.image = #imageLiteral(resourceName: "radio_active")
         }
@@ -105,6 +108,57 @@ extension WeekPlannerVC {
                         {
                             Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                         }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    
+    //http://54.156.242.195/public/api/standard/keepOrDiscardExistingRecipeFromPlan
+    
+    func KeepDiscartExcistingRecipePlan(_ keepExcistingPlan: Int)
+    {
+        let fromDate = Date.today().previous(.monday, considerToday: true)
+        let toDate = Date.today().next(.sunday, considerToday: true)
+        
+        let startDate = DateToString(date: fromDate, formate: "MMM d")
+        let endDate = DateToString(date: toDate, formate: "MMM d")
+        
+      let param:[String:Any] = ["weekly_plan_id": weeaklyPlanId,
+                                "start_date": startDate,
+                                "end_date": endDate,
+                                "keep_or_discard_existing_recipe": keepExcistingPlan
+        ]
+        Loader.sharedInstance.showIndicator()
+        
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.keepOrDiscardExistingRecipeFromPlan, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        self.navigationController?.popViewController(animated: true)
                     }
                     else
                     {
