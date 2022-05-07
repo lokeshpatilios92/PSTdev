@@ -55,7 +55,7 @@ class ExploreRecipesViewController: BaseViewController, filterDelegate {
             label.textAlignment = .center
             label.textColor = .white
             label.font = UIFont.FONT_BUTTON()
-            label.text = "Explore Weely Plan Templates"
+            label.text = "Explore Weekly Plan Templates"
             self.navigationItem.titleView = label
         case "3":
             self.navigationItem.titleView = UtilityManager.getTitleLabel("Explore Recipes Pack")
