@@ -25,13 +25,14 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
     var recipyPlanId = 0
     var recipyChefId = 0
     var weeklyPlandata : GetWeeklyPlanTemplateDetailsStruct?
-    var filteredMealList: [(meal: Day?, isExpandable: Bool)]?
-    
+    var filteredMealList: [(meal: MealListData?, isExpandable: Bool)]?
+
     var global_Var = GlobalClass.sharedManager
     var weeklyPlanVC : WeeklyPlanContainerViewController! = nil
     var fromDate = Date()
     var toDate = Date()
-    
+    private var selectedDay: Day?
+
     @IBAction func nextWeekAction(_ sender: Any) {
         fromDate = fromDate.next(.monday, considerToday: false)
         toDate = fromDate.next(.sunday, considerToday: false)
@@ -92,46 +93,49 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
         {
             btn_MON.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "MON"
+            self.fiterDataAccordingToDay("Monday")
         }
         else if senderTag == 1 {
             btn_TUE.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "TUE"
+            self.fiterDataAccordingToDay("Tuesday")
         }
         else if senderTag == 2 {
             btn_WED.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "WED"
+            self.fiterDataAccordingToDay("Wednesday")
         }
         else if senderTag == 3 {
             btn_THU.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "THU"
+            self.fiterDataAccordingToDay("Thursday")
         }
         else if senderTag == 4 {
             btn_FRI.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "FRI"
+            self.fiterDataAccordingToDay("Friday")
         }
         else if senderTag == 5 {
             btn_SAT.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "SAT"
+            self.fiterDataAccordingToDay("Saturday")
         }
         else if senderTag == 6 {
             btn_SUN.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "SUN"
+            self.fiterDataAccordingToDay("Sunday")
         }
 
-        weeklyPlanVC.tblview_mealTimings.reloadData()
+        //weeklyPlanVC.tblview_mealTimings.reloadData()
     }
-    
-//    func fiterDataAccordingToDay(_ day: String) {
-//        filteredMealList?.removeAll()
-//        self.selectedDay = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })
-//        let mondayMealList = self.dateWiseWeeklyPlanObj?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })?.mealList
-//
-//        self.filteredMealList = mondayMealList?.map({ (meal) -> (meal: MealListData?, isExpandable: Bool) in
-//             (meal: meal, isExpandable: false)
-//        })
-//
-//        self.tableView.reloadData()
-//    }
+
+        func fiterDataAccordingToDay(_ day: String) {
+            filteredMealList?.removeAll()
+            self.selectedDay = self.weeklyPlandata?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })
+            let mondayMealList = self.weeklyPlandata?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })?.mealList
+            self.weeklyPlanVC.mealAsperday = mondayMealList
+            self.weeklyPlanVC.initialize()
+        }
 }
 
 
@@ -155,7 +159,13 @@ extension ExploreWeeklyPlanDetailsViewController
                             Loader.sharedInstance.hideIndicator()
                          do {
                              self.weeklyPlandata = try JSONDecoder().decode(GetWeeklyPlanTemplateDetailsStruct.self, from: data)
-                            // self.collectionView.reloadData()
+                             
+                             self.selectedDay = self.weeklyPlandata?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Monday" })
+                    
+                             let mondayMealList = self.weeklyPlandata?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Monday" })?.mealList
+                             self.weeklyPlanVC.mealAsperday = mondayMealList
+                             self.weeklyPlanVC.initialize()
+                            
                          }
                          catch
                          {

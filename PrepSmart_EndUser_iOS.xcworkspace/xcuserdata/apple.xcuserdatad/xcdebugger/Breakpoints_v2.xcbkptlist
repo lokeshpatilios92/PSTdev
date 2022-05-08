@@ -163,22 +163,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0584209D-ED68-40DD-91B9-22DBEE656767"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/ExploreWeeklyPlanDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "addFirstVC(senderTag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "48D53FB1-979E-441C-B3E5-364D88222184"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -186,8 +170,8 @@
             filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/ExploreWeeklyPlanDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "addFirstVC(senderTag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,8 +186,8 @@
             filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/ExploreWeeklyPlanDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "onClickChangeTab(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -211,15 +195,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "84052072-F146-4F2E-9CBF-46D39A1AAC88"
+            uuid = "3686BEB0-70E1-4114-B6B2-608D060ED32F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/ExploreWeeklyPlanDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "addFirstVC(senderTag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCC5837E-01AC-49BC-8766-BA45C9D71D35"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/ExploreWeeklyPlanDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "addFirstVC(senderTag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE7952E5-28EF-47B9-80C5-787579810026"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/ExploreWeeklyPlanDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "getWeeklyPlanTemplateDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -227,16 +243,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D20BFE2C-5512-4349-ADA5-D50ADEF2F1E5"
+            uuid = "E0ABCF1B-60C4-4153-A295-F2BB0AE9B01F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/ExploreWeeklyPlanDetailsViewController.swift"
+            filePath = "PrepSmart_EndUser_iOS/Screens/Explore_Module/WeeklyPlanContainerViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "getWeeklyPlanTemplateDetails()"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
