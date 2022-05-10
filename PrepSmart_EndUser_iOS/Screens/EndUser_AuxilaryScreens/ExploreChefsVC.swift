@@ -96,19 +96,29 @@ extension ExploreChefsVC : UITableViewDataSource,UITableViewDelegate{
         cell.viewProfileBtn.backgroundColor = .clear
         cell.viewProfileBtn.layer.borderColor = UIColor.appOrangeColor().cgColor
         cell.viewProfileBtn.layer.borderWidth = 0.5
+        let value = "Subscribe for $\(dic?.monthly_subscription_cost ?? "0")/Mo"
         cell.subscribeBtn.isHidden = false
-        
+        cell.subscribeBtn.setTitle(value, for: .normal)
+        cell.profilePic.roundCorners(.allCorners, radius: 35)
         cell.profilePic.sd_setImage(with: URL(string: dic?.chef_pic ?? ""), placeholderImage: UIImage(named: "dinner"))
         cell.Lbl_name.text = dic?.name
         cell.ratingCount.text = String(dic?.total_ratings ?? 0)
         cell.recipesCountLbl.text = String(dic?.total_recipes ?? 0)
         cell.blogsCountLbl.text = String(dic?.total_blog ?? 0)
         cell.subscribersCountLbl.text = String(dic?.total_subscribers ?? 0)
-        //  cell.ratingView.rating = dic?.avg_ratings
         
+        var rattingvalue:Double = 0.0
+        if let rating = dic?.avg_ratings {
+            switch rating {
+            case .integer(let int):
+                rattingvalue = Double(int)
+            case .string(let string):
+                 rattingvalue  = Double(string) ?? 0.0
+            }
+        }
+        cell.ratingView.rating = rattingvalue / 20
         cell.viewProfileBtn.setTitleColor(UIColor.appOrangeColor(), for: .normal)
         cell.viewProfileBtn.addTarget(self, action: #selector(self.viewProfileTapped(_:)), for: .touchUpInside)
-        
         return cell
     }
     
@@ -122,8 +132,7 @@ extension ExploreChefsVC
                                   "type": "8",
                                   "expand_filter":"0",
                                   "record_count":"100"]
-        //Loader.sharedInstance.showIndicator()
-        
+      Loader.sharedInstance.showIndicator()
         Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.findNewRecipes, params: param , method: .post) { (result) in
             switch result
             {
@@ -133,12 +142,10 @@ extension ExploreChefsVC
                 {
                     if let status = dict["status"] as? Bool, status == true
                     {
-                                        Loader.sharedInstance.hideIndicator()
                         Loader.sharedInstance.hideIndicator()
                         do {
                             self.findNewRecipeObj = try JSONDecoder().decode(FindNewRecipe_Struct.self, from: data)
                             self.tableView.reloadData()
-                            
                         }
                         catch
                         {
@@ -156,9 +163,7 @@ extension ExploreChefsVC
                 }
                 Loader.sharedInstance.hideIndicator()
                 break
-                
             case .failer(let error):
-                
                 Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                 Loader.sharedInstance.hideIndicator()
                 break

@@ -93,36 +93,43 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
         {
             btn_MON.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "MON"
+            self.weeklyPlanVC.dayId = 1
             self.fiterDataAccordingToDay("Monday")
         }
         else if senderTag == 1 {
             btn_TUE.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "TUE"
+            self.weeklyPlanVC.dayId = 2
             self.fiterDataAccordingToDay("Tuesday")
         }
         else if senderTag == 2 {
             btn_WED.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "WED"
+            self.weeklyPlanVC.dayId = 3
             self.fiterDataAccordingToDay("Wednesday")
         }
         else if senderTag == 3 {
             btn_THU.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "THU"
+            self.weeklyPlanVC.dayId = 4
             self.fiterDataAccordingToDay("Thursday")
         }
         else if senderTag == 4 {
             btn_FRI.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "FRI"
+            self.weeklyPlanVC.dayId = 5
             self.fiterDataAccordingToDay("Friday")
         }
         else if senderTag == 5 {
             btn_SAT.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "SAT"
+            self.weeklyPlanVC.dayId = 6
             self.fiterDataAccordingToDay("Saturday")
         }
         else if senderTag == 6 {
             btn_SUN.backgroundColor = UIColor.appOrangeColor()
             weeklyPlanVC.weekDay = "SUN"
+            self.weeklyPlanVC.dayId = 7
             self.fiterDataAccordingToDay("Sunday")
         }
 
@@ -134,6 +141,7 @@ class ExploreWeeklyPlanDetailsViewController: BaseViewController {
             self.selectedDay = self.weeklyPlandata?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })
             let mondayMealList = self.weeklyPlandata?.weeklyPlanDetails?.days?.first(where: { $0.dayName == day })?.mealList
             self.weeklyPlanVC.mealAsperday = mondayMealList
+            self.weeklyPlanVC.weeklyPlanData = weeklyPlandata
             self.weeklyPlanVC.initialize()
         }
 }
@@ -164,6 +172,8 @@ extension ExploreWeeklyPlanDetailsViewController
                     
                              let mondayMealList = self.weeklyPlandata?.weeklyPlanDetails?.days?.first(where: { $0.dayName == "Monday" })?.mealList
                              self.weeklyPlanVC.mealAsperday = mondayMealList
+                             self.weeklyPlanVC.weeklyPlanData = self.weeklyPlandata
+                             self.weeklyPlanVC.dayId = 1
                              self.weeklyPlanVC.initialize()
                             
                          }

@@ -14,9 +14,14 @@ class WeeklyPlanContainerViewController: BaseViewController {
     @IBOutlet weak var constraintTblViewHT: NSLayoutConstraint!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
+    @IBOutlet weak var lblpdfName: UILabel!
     
     var mealAsperday : [MealList]?
     var weeklyPlanData : GetWeeklyPlanTemplateDetailsStruct?
+    var dayId : Int = 1
+    var global_Var = GlobalClass.sharedManager
+    var PlanNutritionixDetailData : DayWiseWeeklyPlanNutritionixDetailsStruct?
+
     
     let addRecipeTableViewCell = "AddRecipeTableViewCell"
     let weeklyPlanTitleTableViewCell = "WeeklyPlanTitleTableViewCell"
@@ -37,6 +42,10 @@ class WeeklyPlanContainerViewController: BaseViewController {
         initialize()
     }
     
+    @IBAction func onPdfCkick(_sender: UIButton){
+      print("Download pdf")
+    }
+    
     func initialize()
     {
         tblview_mealTimings.dataSource = self
@@ -50,10 +59,15 @@ class WeeklyPlanContainerViewController: BaseViewController {
         tblview_mealTimings.register(UINib.init(nibName: weeklyPlanInfoTableViewCell, bundle: nil), forCellReuseIdentifier: weeklyPlanInfoTableViewCell)
         tblview_mealTimings.register(UINib.init(nibName: notesTableViewCell, bundle: nil), forCellReuseIdentifier: notesTableViewCell)
         tblview_mealTimings.register(UINib(nibName: addRecipeAdvanceUserBtnCell, bundle: .none), forCellReuseIdentifier: addRecipeAdvanceUserBtnCell)
-        tblview_mealTimings.reloadData()
+        let id = weeklyPlanData?.weeklyPlanDetails?.id ?? 0
+       if id != 0{
+       getNutritionixDetails(dayId:String(dayId), planId:String(id))
+        }
+        self.tblview_mealTimings.reloadData()
         self.tblview_mealTimings.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
-        lblTitle.text = weeklyPlanData?.weeklyPlanDetails?.name
-        lblDesc.text = weeklyPlanData?.weeklyPlanDetails?.weeklyPlanDetailsDescription
+        self.lblTitle.text = self.weeklyPlanData?.weeklyPlanDetails?.name?.capitalized
+        self.lblDesc.text = self.weeklyPlanData?.weeklyPlanDetails?.weeklyPlanDetailsDescription
+        self.lblpdfName.text = self.weeklyPlanData?.weeklyPlanDetails?.pdfFile
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -129,6 +143,7 @@ extension WeeklyPlanContainerViewController : UITableViewDataSource, UITableView
         if indexPath.section == (mealAsperday?.count ?? 0) + 2
         {
             let cell = tableView.dequeueReusableCell(withIdentifier: notesTableViewCell) as! NotesTableViewCell
+            cell.txtView_notes.text = weeklyPlanData?.weeklyPlanDetails?.planNote
             return cell
         }
         else
@@ -146,15 +161,11 @@ extension WeeklyPlanContainerViewController : UITableViewDataSource, UITableView
             else
             {
                 let cell = tableView.dequeueReusableCell(withIdentifier: addRecipeTableViewCell) as! AddRecipeTableViewCell
-                //
-                //                if indexPath.row == 3
-                //                {
-                //                    cell.lbl_bottomSeparator.isHidden = true
-                //                }
-                //                else
-                //                {
-                //                    cell.lbl_bottomSeparator.isHidden = false
-                //                }
+                let dict = mealAsperday?[indexPath.section].recipeList?[indexPath.row]
+                cell.lbl_recipeName.text = dict?.recipeName
+                cell.itemCountLabel.text = dict?.totalServings
+                cell.itemCount = Int(dict?.totalServings ?? "0") ?? 0
+                cell.imgView_recipe.sd_setImage(with: URL(string: dict?.recipeImg ?? ""), placeholderImage: UIImage(named: "dinner"))
                 return cell
             }
         }
@@ -250,5 +261,54 @@ extension WeeklyPlanContainerViewController : UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100.0, height: 140.0)
+    }
+}
+
+
+extension WeeklyPlanContainerViewController {
+    func getNutritionixDetails(dayId:String, planId:String)
+    {
+        let param:[String:Any] = ["weekly_plan_id": planId,
+                                  "day_id": dayId]
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.getWeeklyPlanTemplateNutritionixDetails, params: param , method: .post) {  (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.PlanNutritionixDetailData = try JSONDecoder().decode(DayWiseWeeklyPlanNutritionixDetailsStruct.self, from: data)
+                            self.tblview_mealTimings.reloadData()
+                            self.tblview_mealTimings.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
     }
 }

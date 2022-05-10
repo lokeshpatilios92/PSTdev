@@ -16,7 +16,8 @@ class Constants: NSObject
     //MARK:- Api Constantsc100
     //static let baseUrl = "http://68.183.84.245:3000/api/" //- Testing
     static let baseUrl = "http://54.156.242.195/public/api/standard/" //- Production
-    
+    static let PUBLISHABLE_KEY = "pk_test_uZFqDfMq7lgVM66gyUVBChRO00bZq6PMCW"
+    static let STRIPE_SECRET_KEY = "sk_test_tXlTzGNzX5OVHYNhjptona3U00OA049tix"
     
     static let about_Url = "https://fannanadmin.com/web/about_us/"
     static let terms_Url = "https://fannanadmin.com/web/terms_condition/"
@@ -24,6 +25,8 @@ class Constants: NSObject
     static let faq_Url = "https://fannanadmin.com/web/faq/"
     static let refund_Url = " https://fannanadmin.com/web/refund_policy/"
     static let code_Conduct = "https://fannanadmin.com/web/code_of_conduct/"
+    
+    
     
     static let login_Api = "login"
     static let signUp_Api = "register"
@@ -46,7 +49,8 @@ class Constants: NSObject
     static let findNewRecipes = "findNewRecipes"
     static let recipeFilterData = "recipeFilterData"
     static let getWeeklyPlanTemplateDetails = "getWeeklyPlanTemplateDetails"
-    static let  getRecipePackDetails = "getRecipePackDetails"
+    static let getWeeklyPlanTemplateNutritionixDetails = "getWeeklyPlanTemplateNutritionixDetails"
+    static let getRecipePackDetails = "getRecipePackDetails"
     static let updateProfile = "updateProfile"
     static let downloadWeeklyPlan = "downloadWeeklyPlan"
     static let updateOrCreateWeeklyPlanTemplate = "updateOrCreateWeeklyPlanTemplate"

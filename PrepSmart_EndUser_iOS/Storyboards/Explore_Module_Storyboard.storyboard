@@ -1029,6 +1029,9 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEX-eO-GyR" userLabel="TopButton">
                                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="35"/>
+                                                                <connections>
+                                                                    <action selector="onPdfCkickWith_sender:" destination="cAG-mu-BhO" eventType="touchUpInside" id="IBQ-MG-vyz"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.92549019610000005" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1103,12 +1106,13 @@
                         <outlet property="constraintTblViewHT" destination="hbV-dn-QW1" id="voR-bl-QZk"/>
                         <outlet property="lblDesc" destination="fW6-TP-AgO" id="TED-eF-Ah7"/>
                         <outlet property="lblTitle" destination="AVx-Bt-Pon" id="yP5-Jq-c4g"/>
+                        <outlet property="lblpdfName" destination="byj-Oj-N02" id="JOt-Ah-m1Z"/>
                         <outlet property="tblview_mealTimings" destination="3HN-a2-rTf" id="PZx-yS-8aD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fax-em-z97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3330" y="56"/>
+            <point key="canvasLocation" x="3328.985507246377" y="55.580357142857139"/>
         </scene>
         <!--Kitchen View Controller-->
         <scene sceneID="Cvj-Da-qm9">
