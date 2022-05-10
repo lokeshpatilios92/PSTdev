@@ -12,7 +12,6 @@ class ExploreWeeklyPlanViewController : BaseViewController {
     @IBOutlet weak var searchBar        : UISearchBar!
     @IBOutlet weak var collectionView   : UICollectionView!
     @IBOutlet weak var viewByBgView     : UIView!
-    
     @IBOutlet weak var viewByLabel: UILabel!
     @IBOutlet weak var totalItemsCountLabel: UILabel!
 
@@ -51,7 +50,7 @@ class ExploreWeeklyPlanViewController : BaseViewController {
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.FONT_BUTTON()
-        label.text = "Explore Weely Plan Templates"
+        label.text = "Explore Weekly Plan Templates"
         self.navigationItem.titleView = label
         //        self.navigationItem.leftBarButtonItem = addNewRecipeNavButton()
         self.navigationItem.rightBarButtonItems = [addSortNavButton(),addFilterNavButton()]

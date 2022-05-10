@@ -266,6 +266,11 @@
             <point key="canvasLocation" x="72.463768115942031" y="84.375"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="kTt-EK-qxr">
+            <size key="intrinsicContentSize" width="60" height="8"/>
+        </designable>
+    </designables>
     <resources>
         <image name="add_icon_white" width="28" height="28"/>
         <image name="favorite" width="28" height="28"/>

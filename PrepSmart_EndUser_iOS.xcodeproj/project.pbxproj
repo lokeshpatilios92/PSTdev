@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		181DEE0E27DFB2A0002A297D /* GetWeeklyPlanTemplateDetailsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181DEE0D27DFB2A0002A297D /* GetWeeklyPlanTemplateDetailsStruct.swift */; };
 		18E5853927E2682C00726447 /* HomeWeeklyRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E5853827E2682C00726447 /* HomeWeeklyRecipeCell.swift */; };
+		18FF7EBE2828CD82008D67B0 /* DayWiseWeeklyPlanNutritionixDetailsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF7EBD2828CD82008D67B0 /* DayWiseWeeklyPlanNutritionixDetailsStruct.swift */; };
 		19405C4323E40793009B4E86 /* GiveUsFeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19405C4223E40793009B4E86 /* GiveUsFeedbackVC.swift */; };
 		1945510423EABF8A0007761E /* AdvancedModeWeeklyPlanVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1945510323EABF8A0007761E /* AdvancedModeWeeklyPlanVC.swift */; };
 		261956FE22F47BA9007EFEBE /* ExploreChefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261956FC22F47BA9007EFEBE /* ExploreChefsVC.swift */; };
@@ -486,6 +487,7 @@
 /* Begin PBXFileReference section */
 		181DEE0D27DFB2A0002A297D /* GetWeeklyPlanTemplateDetailsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeeklyPlanTemplateDetailsStruct.swift; sourceTree = "<group>"; };
 		18E5853827E2682C00726447 /* HomeWeeklyRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeeklyRecipeCell.swift; sourceTree = "<group>"; };
+		18FF7EBD2828CD82008D67B0 /* DayWiseWeeklyPlanNutritionixDetailsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWiseWeeklyPlanNutritionixDetailsStruct.swift; sourceTree = "<group>"; };
 		19405C4223E40793009B4E86 /* GiveUsFeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveUsFeedbackVC.swift; sourceTree = "<group>"; };
 		1945510323EABF8A0007761E /* AdvancedModeWeeklyPlanVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedModeWeeklyPlanVC.swift; sourceTree = "<group>"; };
 		261956FC22F47BA9007EFEBE /* ExploreChefsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreChefsVC.swift; sourceTree = "<group>"; };
@@ -2353,6 +2355,7 @@
 			isa = PBXGroup;
 			children = (
 				853B48DC273A4F9200C300D4 /* Get_Status.swift */,
+				18FF7EBD2828CD82008D67B0 /* DayWiseWeeklyPlanNutritionixDetailsStruct.swift */,
 				865BEAF527F236D300B89DCA /* NutritionDetailsStruct.swift */,
 				853B48DD273A4F9200C300D4 /* UserLogin_Struct.swift */,
 				855BBB66279C04710009358D /* Profile_Struct.swift */,
@@ -3128,6 +3131,7 @@
 				850B84E827463768007B5D9C /* RecipeFilterData_Struct.swift in Sources */,
 				850B84E62746368F007B5D9C /* FindNewRecipes_Struct.swift in Sources */,
 				D604235823292B6000A3BB0E /* EditPairItViewController.swift in Sources */,
+				18FF7EBE2828CD82008D67B0 /* DayWiseWeeklyPlanNutritionixDetailsStruct.swift in Sources */,
 				26E4837722FE94C5001CF465 /* AddRecipePackVC.swift in Sources */,
 				853B48DA273A493800C300D4 /* UserDefaults.swift in Sources */,
 				6CA800D12330BBFD0031D0A1 /* UnsubscribeRecipePopUpVC.swift in Sources */,
@@ -3592,7 +3596,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prepsmartUser.app-";
 				PRODUCT_NAME = PrepSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shubhammayankgupta/Documents/Freelancing/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3747,7 +3751,7 @@
 				PRODUCT_NAME = PrepSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "PST User Appstore";
 				SWIFT_COMPILATION_MODE = singlefile;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shubhammayankgupta/Documents/Freelancing/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

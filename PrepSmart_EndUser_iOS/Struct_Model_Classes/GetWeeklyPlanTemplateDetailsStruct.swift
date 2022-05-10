@@ -71,7 +71,7 @@ struct MealList: Codable {
     var mealName: String?
     var calorificValue, carbsValue, proteinsValue, fatValue: Int?
     var recipeList: [RecipeListData]?
-
+    var isExpandable:Bool = false
     enum CodingKeys: String, CodingKey {
         case mealID = "meal_id"
         case mealName = "meal_name"
