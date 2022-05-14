@@ -147,6 +147,20 @@ PODS:
   - SDWebImage (5.12.1):
     - SDWebImage/Core (= 5.12.1)
   - SDWebImage/Core (5.12.1)
+  - Stripe (22.3.0):
+    - Stripe/Stripe3DS2 (= 22.3.0)
+    - StripeApplePay (= 22.3.0)
+    - StripeCore (= 22.3.0)
+    - StripeUICore (= 22.3.0)
+  - Stripe/Stripe3DS2 (22.3.0):
+    - StripeApplePay (= 22.3.0)
+    - StripeCore (= 22.3.0)
+    - StripeUICore (= 22.3.0)
+  - StripeApplePay (22.3.0):
+    - StripeCore (= 22.3.0)
+  - StripeCore (22.3.0)
+  - StripeUICore (22.3.0):
+    - StripeCore (= 22.3.0)
   - SVProgressHUD (2.2.5)
   - SwiftMessages (8.0.3):
     - SwiftMessages/App (= 8.0.3)
@@ -176,6 +190,7 @@ DEPENDENCIES:
   - JJFloatingActionButton
   - Popover
   - SDWebImage
+  - Stripe
   - SVProgressHUD
   - SwiftMessages
   - SwiftyJSON
@@ -219,6 +234,10 @@ SPEC REPOS:
     - Popover
     - PromisesObjC
     - SDWebImage
+    - Stripe
+    - StripeApplePay
+    - StripeCore
+    - StripeUICore
     - SVProgressHUD
     - SwiftMessages
     - SwiftyJSON
@@ -261,6 +280,10 @@ SPEC CHECKSUMS:
   Popover: 10e1d9528f81d9504df984b7b3f491292bc1822d
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  Stripe: b2426ce648aa240a812b6749c09d3839111a9cbb
+  StripeApplePay: 0b0b744805d36940fd58d0a928c54beb04f1136c
+  StripeCore: 88a3b50b3237b8e1661e48905f2813dedf200540
+  StripeUICore: 5e5abb79e87b86b54919ed7c9d14446254d012a0
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
@@ -272,6 +295,6 @@ SPEC CHECKSUMS:
   UICircularProgressRing: 738b48db0ec1fbbd8482d727979392bb8c272e8d
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 6a5b33eb1d826f1d7c8f17e61cc400b3836fc0f5
+PODFILE CHECKSUM: a7db27248d5474cd0372c21564686bf9e20826b3
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

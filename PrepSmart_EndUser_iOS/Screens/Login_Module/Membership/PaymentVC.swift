@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import Stripe
 class PaymentVC: UIViewController {
     
     @IBOutlet weak var lblAmount:UILabel!
     @IBOutlet weak var viewBack:UIView!
     @IBOutlet weak var viewPopUp:UIView!
+  //  @IBOutlet weak var tfPayment:STPInputTextField!
 
     var amount:Int = 0
     var duration:Int = 0

@@ -11,6 +11,7 @@ import IQKeyboardManagerSwift
 import SVProgressHUD
 import FBSDKCoreKit
 import GoogleSignIn
+import Stripe
 
 var app_delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
@@ -33,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navi_gationController = UINavigationController(rootViewController: profileViewController)
         let window = UIApplication.shared.delegate!.window!!
         window.rootViewController = navi_gationController
+        // Stripe
+        StripeAPI.defaultPublishableKey = Constants.PUBLISHABLE_KEY
         
         // Override point for customization after application launch.
         SetUpIQKeyboardManager()

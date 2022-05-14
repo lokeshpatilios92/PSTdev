@@ -37,4 +37,5 @@ target 'PrepSmart_EndUser_iOS' do
     pod 'SVProgressHUD'
     pod 'Toaster'
     pod 'DropDown'
+    pod 'Stripe'
 end
