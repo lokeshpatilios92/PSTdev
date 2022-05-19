@@ -1704,7 +1704,6 @@
 				3295A7CD22E70E01009F96D8 /* Extension */,
 				3295A7D722E70E01009F96D8 /* HelperView */,
 				3295A7C522E70E00009F96D8 /* Utility Manager */,
-				85B0983D273A6C99005835FC /* Font */,
 				3295A7F622E70E01009F96D8 /* Services */,
 				853B48DB273A4F9200C300D4 /* Struct_Model_Classes */,
 				3295A7B422E707FD009F96D8 /* Assets.xcassets */,
@@ -2501,13 +2500,6 @@
 				8597E673279AEC4600F1AF54 /* pkc_crop_top_left.png */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		85B0983D273A6C99005835FC /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		85B666B527A5377F0096E6EA /* WeekDateCollectionCell */ = {
@@ -3600,7 +3592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prepsmartUser.app-";
 				PRODUCT_NAME = PrepSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shubhammayankgupta/Downloads/PSTdev-dev_Lokesh/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3755,7 +3747,7 @@
 				PRODUCT_NAME = PrepSmart;
 				PROVISIONING_PROFILE_SPECIFIER = "PST User Appstore";
 				SWIFT_COMPILATION_MODE = singlefile;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shubhammayankgupta/Downloads/PSTdev-dev_Lokesh/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/PrepSmart_EndUser_iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

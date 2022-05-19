@@ -1472,7 +1472,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="385"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How It Works" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k60-wv-Unk">
-                                                <rect key="frame" x="139.5" y="60" width="96" height="25"/>
+                                                <rect key="frame" x="132.5" y="60" width="110.5" height="25"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="CF3-8k-zfw"/>
@@ -1604,20 +1604,20 @@
                                 <rect key="frame" x="0.0" y="467" width="375" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idi-QH-mq4">
-                                        <rect key="frame" x="15" y="15" width="345" height="23.5"/>
+                                        <rect key="frame" x="15" y="15" width="345" height="27"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Dw-Q3-31r">
-                                        <rect key="frame" x="10" y="48.5" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="52" width="355" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jr0-uF-D2X"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32e-uc-CEk">
-                                        <rect key="frame" x="147.5" y="128.5" width="80" height="31"/>
+                                        <rect key="frame" x="147.5" y="132" width="80" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="Xmp-0f-Mpc"/>
                                             <constraint firstAttribute="width" constant="80" id="g47-Zc-VR3"/>
