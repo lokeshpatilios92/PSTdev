@@ -328,6 +328,7 @@
 		6CEBB65D2302D4DB00DD897C /* CookScreenPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEBB65C2302D4DB00DD897C /* CookScreenPopUpVC.swift */; };
 		6CEBB65F2302EDB600DD897C /* RateThisRecipePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEBB65E2302EDB600DD897C /* RateThisRecipePopUpVC.swift */; };
 		6CFDDBFC23DF028A0021001E /* OneImageOneLabelAndOneButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFDDBFB23DF028A0021001E /* OneImageOneLabelAndOneButtonVC.swift */; };
+		76F39B682833451900EEC965 /* MainIngredientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F39B672833451900EEC965 /* MainIngredientList.swift */; };
 		7A99185D257D3BC891999510 /* Pods_PrepSmart_EndUser_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0890ED430C3AED45E3654F /* Pods_PrepSmart_EndUser_iOS.framework */; };
 		850656BB275E06DA006A6489 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850656BA275E06DA006A6489 /* SettingsVC.swift */; };
 		850656BD275E0B5B006A6489 /* SettingsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850656BC275E0B5B006A6489 /* SettingsStruct.swift */; };
@@ -818,6 +819,7 @@
 		6CEBB65C2302D4DB00DD897C /* CookScreenPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookScreenPopUpVC.swift; sourceTree = "<group>"; };
 		6CEBB65E2302EDB600DD897C /* RateThisRecipePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateThisRecipePopUpVC.swift; sourceTree = "<group>"; };
 		6CFDDBFB23DF028A0021001E /* OneImageOneLabelAndOneButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneImageOneLabelAndOneButtonVC.swift; sourceTree = "<group>"; };
+		76F39B672833451900EEC965 /* MainIngredientList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIngredientList.swift; sourceTree = "<group>"; };
 		850656BA275E06DA006A6489 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		850656BC275E0B5B006A6489 /* SettingsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStruct.swift; sourceTree = "<group>"; };
 		850656BE275E36BD006A6489 /* DietType_Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietType_Struct.swift; sourceTree = "<group>"; };
@@ -1702,7 +1704,6 @@
 				3295A7CD22E70E01009F96D8 /* Extension */,
 				3295A7D722E70E01009F96D8 /* HelperView */,
 				3295A7C522E70E00009F96D8 /* Utility Manager */,
-				85B0983D273A6C99005835FC /* Font */,
 				3295A7F622E70E01009F96D8 /* Services */,
 				853B48DB273A4F9200C300D4 /* Struct_Model_Classes */,
 				3295A7B422E707FD009F96D8 /* Assets.xcassets */,
@@ -2391,6 +2392,7 @@
 				852BD0AB277B1387001A7CC0 /* DateWiseWeeklyPlan_Struct.swift */,
 				8551C139278C091D008DCA15 /* RecipeDetails_Struct.swift */,
 				8597E62F279ABAEF00F1AF54 /* AppData_Struct.swift */,
+				76F39B672833451900EEC965 /* MainIngredientList.swift */,
 			);
 			path = Struct_Model_Classes;
 			sourceTree = "<group>";
@@ -2498,13 +2500,6 @@
 				8597E673279AEC4600F1AF54 /* pkc_crop_top_left.png */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		85B0983D273A6C99005835FC /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		85B666B527A5377F0096E6EA /* WeekDateCollectionCell */ = {
@@ -3125,6 +3120,7 @@
 				3295A80522E70E01009F96D8 /* CardView.swift in Sources */,
 				86CFC84927DE2D8D000455E2 /* GetRecipePackDetailsStruct.swift in Sources */,
 				261956FE22F47BA9007EFEBE /* ExploreChefsVC.swift in Sources */,
+				76F39B682833451900EEC965 /* MainIngredientList.swift in Sources */,
 				D6DE61612328C90C00D9EE1D /* KitchenViewController.swift in Sources */,
 				5B9E4E3C2328BC80008A00D5 /* HelpVCTableCell.swift in Sources */,
 				D652DE09237431FE00B3F58F /* ShortListTableCell.swift in Sources */,

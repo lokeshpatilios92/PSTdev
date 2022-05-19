@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7vX-v8-Bzd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7vX-v8-Bzd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1852,7 +1852,7 @@
                                                         </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stepCell" rowHeight="60" id="iAJ-0f-gRo" customClass="StepCell" customModule="PrepSmart" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="44.5" width="374" height="60"/>
+                                                                <rect key="frame" x="0.0" y="28" width="374" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iAJ-0f-gRo" id="GFO-Go-ZbU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -1979,7 +1979,7 @@
                                                         </constraints>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="instructionsCell" rowHeight="60" id="0Ve-ut-YAu" customClass="InstructionsCell" customModule="PrepSmart" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="44.5" width="374" height="60"/>
+                                                                <rect key="frame" x="0.0" y="28" width="374" height="60"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ve-ut-YAu" id="TqX-EF-Gae">
                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -3465,9 +3465,6 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="MON">
-                                                                    <fontDescription key="titleFontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
-                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="onClickChangeTab:" destination="jdb-bh-G4C" eventType="touchUpInside" id="wiy-NV-ToQ"/>
                                                                 </connections>
@@ -3491,9 +3488,6 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="TUE">
-                                                                    <fontDescription key="titleFontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
-                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="onClickChangeTab:" destination="jdb-bh-G4C" eventType="touchUpInside" id="4B5-0c-MLA"/>
                                                                 </connections>
@@ -3518,9 +3512,6 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="WED">
-                                                                    <fontDescription key="titleFontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
-                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="onClickChangeTab:" destination="jdb-bh-G4C" eventType="touchUpInside" id="H58-s7-Cu3"/>
                                                                 </connections>
@@ -3545,9 +3536,6 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="THU">
-                                                                    <fontDescription key="titleFontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
-                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="onClickChangeTab:" destination="jdb-bh-G4C" eventType="touchUpInside" id="yvv-X0-tkZ"/>
                                                                 </connections>
@@ -3572,9 +3560,6 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="FRI">
-                                                                    <fontDescription key="titleFontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
-                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="onClickChangeTab:" destination="jdb-bh-G4C" eventType="touchUpInside" id="too-k0-eUb"/>
                                                                 </connections>
@@ -3597,9 +3582,6 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="SAT">
-                                                                    <fontDescription key="titleFontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
-                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="onClickChangeTab:" destination="jdb-bh-G4C" eventType="touchUpInside" id="mLc-aS-1db"/>
                                                                 </connections>
@@ -3622,9 +3604,6 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="SUN">
-                                                                    <fontDescription key="titleFontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
-                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="onClickChangeTab:" destination="jdb-bh-G4C" eventType="touchUpInside" id="7Ho-4A-qIJ"/>
                                                                 </connections>

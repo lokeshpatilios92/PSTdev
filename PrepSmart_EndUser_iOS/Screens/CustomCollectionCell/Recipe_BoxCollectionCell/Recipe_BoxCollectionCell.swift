@@ -105,7 +105,8 @@ class Recipe_BoxCollectionCell: UICollectionViewCell {
      // amountLabel.setFont(.REGULAR_FONT(), string: amountString)
     }
     
-    func config(dict: RecipeList?){
+    func
+    config(dict: RecipeList?){
         itemTitleLabel.text = dict?.item_title?.capitalized
         if let rating = dict?.ratting {
                     switch rating {

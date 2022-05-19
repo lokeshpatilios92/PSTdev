@@ -76,7 +76,7 @@
                                     <constraint firstAttribute="width" constant="85" id="8gv-Ai-ECy"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-sE-lij">
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-sE-lij">
                                 <rect key="frame" x="84" y="10" width="70" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipe-img-9" translatesAutoresizingMaskIntoConstraints="NO" id="C62-Sw-Wpy">
