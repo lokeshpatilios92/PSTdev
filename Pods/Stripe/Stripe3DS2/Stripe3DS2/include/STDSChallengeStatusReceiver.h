@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 @class STDSTransaction, STDSCompletionEvent, STDSRuntimeErrorEvent, STDSProtocolErrorEvent;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -57,10 +55,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)transactionDidPresentChallengeScreen:(STDSTransaction *)transaction;
 
-/**
- Optional method for custom dismissal of the challenge view controller. Meant only for internal use by Stripe SDK.
- */
-- (void)dismissChallengeViewController:(UIViewController *)challengeViewController forTransaction:(STDSTransaction *)transaction;
 
 @end
 

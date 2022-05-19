@@ -25,7 +25,6 @@
     self = [super initWithNibName:nil bundle:nil];
     
     if (self) {
-        _directoryServer = directoryServer;
         _uiCustomization = uiCustomization;
         _didCancel = didCancel;
     }

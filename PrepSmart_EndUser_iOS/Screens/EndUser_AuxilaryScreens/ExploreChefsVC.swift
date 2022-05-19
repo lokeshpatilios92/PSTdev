@@ -81,8 +81,21 @@ class ExploreChefsVC: BaseViewController {
         vc.chefId = dic?.chef_id ?? 0
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    @objc func subscribeTapped(_ sender:UIButton){
+        let dic = self.findNewRecipeObj?.chefList?[sender.tag]
+        let vc = UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
+        vc.amount = dic?.monthly_subscription_cost ?? "0"
+        vc.delegete = self
+        vc.chefId = dic?.chef_id ?? 0
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
 }
 
+extension ExploreChefsVC : paymentSucesscallBack {
+    func paymentSuccess(TransectionID: String) {
+        print(TransectionID)
+    }
+}
 
 extension ExploreChefsVC : UITableViewDataSource,UITableViewDelegate{
     
@@ -118,7 +131,10 @@ extension ExploreChefsVC : UITableViewDataSource,UITableViewDelegate{
         }
         cell.ratingView.rating = rattingvalue / 20
         cell.viewProfileBtn.setTitleColor(UIColor.appOrangeColor(), for: .normal)
+        cell.viewProfileBtn.tag = indexPath.row
         cell.viewProfileBtn.addTarget(self, action: #selector(self.viewProfileTapped(_:)), for: .touchUpInside)
+        cell.subscribeBtn.tag = indexPath.row
+        cell.subscribeBtn.addTarget(self, action: #selector(self.subscribeTapped(_:)), for: .touchUpInside)
         return cell
     }
     

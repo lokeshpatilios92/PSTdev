@@ -176,7 +176,7 @@
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmu-mp-SWj" customClass="CosmosView" customModule="Cosmos">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmu-mp-SWj" customClass="CosmosView" customModule="Cosmos">
                                                 <rect key="frame" x="70" y="201" width="195" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -432,7 +432,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-Ri-ZCz">
-                                <rect key="frame" x="20" y="136" width="335" height="395"/>
+                                <rect key="frame" x="20" y="141" width="335" height="385"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3e0-1z-RK3">
                                         <rect key="frame" x="307" y="8" width="20" height="20"/>
@@ -450,22 +450,22 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Change Password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fv-dl-5S3">
-                                        <rect key="frame" x="8" y="28" width="319" height="19"/>
+                                        <rect key="frame" x="8" y="28" width="319" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLQ-82-bdO">
-                                        <rect key="frame" x="8" y="67" width="319" height="74"/>
+                                        <rect key="frame" x="8" y="64.5" width="319" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Current Password" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3M-aD-llu">
-                                                <rect key="frame" x="5" y="5" width="124.5" height="19"/>
+                                                <rect key="frame" x="5" y="5" width="113" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Current Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrm-Cy-GLX" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="29" width="309" height="40"/>
+                                                <rect key="frame" x="5" y="26.5" width="309" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="b3H-lW-bwc"/>
@@ -501,16 +501,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWO-3N-gJm">
-                                        <rect key="frame" x="8" y="149" width="319" height="74"/>
+                                        <rect key="frame" x="8" y="144" width="319" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lep-IT-DIt">
-                                                <rect key="frame" x="5" y="5" width="105" height="19"/>
+                                                <rect key="frame" x="5" y="5" width="94.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETU-HR-tMv" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="29" width="309" height="40"/>
+                                                <rect key="frame" x="5" y="26.5" width="309" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="rde-Aj-BJd"/>
@@ -546,16 +546,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKS-oX-gFw">
-                                        <rect key="frame" x="8" y="231" width="319" height="74"/>
+                                        <rect key="frame" x="8" y="223.5" width="319" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Confirm New Password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UD8-E8-xCd">
-                                                <rect key="frame" x="5" y="5" width="163" height="19"/>
+                                                <rect key="frame" x="5" y="5" width="148" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Confirm PAssword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uKU-bL-epH" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="29" width="309" height="40"/>
+                                                <rect key="frame" x="5" y="26.5" width="309" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="DiC-5v-gJL"/>
@@ -591,7 +591,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yg5-YV-rqJ">
-                                        <rect key="frame" x="50" y="325" width="235" height="50"/>
+                                        <rect key="frame" x="50" y="315" width="235" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL1-nb-49D">
                                                 <rect key="frame" x="0.0" y="0.0" width="112.5" height="50"/>
@@ -682,22 +682,22 @@
                                 <rect key="frame" x="20" y="64" width="280" height="672"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-Yp-Pls">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="580"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Cook Screen" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bC4-6g-VZW">
-                                                <rect key="frame" x="25" y="30" width="230" height="43"/>
+                                                <rect key="frame" x="25" y="30" width="230" height="19"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a list of everything you need to cook today. Let's get started." textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iWo-WL-EbX">
-                                                <rect key="frame" x="20" y="88" width="240" height="56.5"/>
+                                                <rect key="frame" x="20" y="64" width="240" height="33"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFv-ci-JpP">
-                                                <rect key="frame" x="20" y="159.5" width="240" height="184"/>
+                                                <rect key="frame" x="20" y="112" width="240" height="184"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="1. Get Ready -">
                                                         <attributes>
@@ -755,14 +755,14 @@ Just simply check off the boxes and enjoy cooking.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93G-qB-Uy5">
-                                                <rect key="frame" x="10" y="358.5" width="260" height="94.5"/>
+                                                <rect key="frame" x="10" y="311" width="260" height="82"/>
                                                 <string key="text">Need to change your Cook List or move a recipe to another day? No problem! Make your changes to your Meal Plan from the home screen and this list will be updated.</string>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdf-mB-GWy">
-                                                <rect key="frame" x="10" y="468" width="260" height="113"/>
+                                                <rect key="frame" x="10" y="408" width="260" height="82"/>
                                                 <string key="text">PrepSmart Tip:
 Cooking with someone else or a team? Log in to the same account to see a synced version of your Cook List updated in real time for ultimate productivity.</string>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
@@ -770,7 +770,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGG-Sd-2RG">
-                                                <rect key="frame" x="90" y="601" width="100" height="50"/>
+                                                <rect key="frame" x="90" y="510" width="100" height="50"/>
                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Z97-AV-cY2"/>
@@ -868,7 +868,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GU0-gt-Pin">
-                                <rect key="frame" x="40" y="223" width="295" height="221.5"/>
+                                <rect key="frame" x="40" y="224" width="295" height="219"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27E-Ns-HfY">
                                         <rect key="frame" x="265" y="5" width="25" height="25"/>
@@ -884,13 +884,13 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kg7-4S-RJI">
-                                        <rect key="frame" x="20" y="35" width="255" height="21.5"/>
+                                        <rect key="frame" x="20" y="35" width="255" height="19"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSE-Tg-rp2">
-                                        <rect key="frame" x="20" y="66.5" width="255" height="35"/>
+                                        <rect key="frame" x="20" y="64" width="255" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="2Kq-Zd-1ih"/>
                                         </constraints>
@@ -899,14 +899,14 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="img-2" translatesAutoresizingMaskIntoConstraints="NO" id="11Q-H9-cFr">
-                                        <rect key="frame" x="145" y="141.5" width="150" height="80"/>
+                                        <rect key="frame" x="145" y="139" width="150" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="3cO-Jz-LYg"/>
                                             <constraint firstAttribute="width" constant="150" id="R1U-gW-1bz"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="evt-sB-pYo">
-                                        <rect key="frame" x="108.5" y="111.5" width="78" height="30"/>
+                                        <rect key="frame" x="108.5" y="109" width="78" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
@@ -977,7 +977,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                 <rect key="frame" x="20" y="64" width="335" height="539"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrB-8N-F2u">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="408"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="403"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GsS-Ne-udR">
                                                 <rect key="frame" x="302" y="8" width="25" height="25"/>
@@ -993,13 +993,13 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unlock Advanced Mode when you upgrade to PrepSmart Pro. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HZ-Xu-03P">
-                                                <rect key="frame" x="20" y="30" width="280" height="38"/>
+                                                <rect key="frame" x="20" y="30" width="280" height="33"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6wE-yF-y2I">
-                                                <rect key="frame" x="0.0" y="68" width="335" height="250"/>
+                                                <rect key="frame" x="0.0" y="63" width="335" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="rBI-XS-y8S"/>
@@ -1010,7 +1010,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0v-GF-BJk">
-                                                <rect key="frame" x="40" y="338" width="255" height="50"/>
+                                                <rect key="frame" x="40" y="333" width="255" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xQq-9y-mqA">
                                                         <rect key="frame" x="0.0" y="0.0" width="255" height="50"/>
@@ -1114,7 +1114,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FP6-Cc-jET">
-                                <rect key="frame" x="40" y="242.5" width="295" height="182"/>
+                                <rect key="frame" x="40" y="246.5" width="295" height="174"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGk-Yf-842">
                                         <rect key="frame" x="265" y="5" width="25" height="25"/>
@@ -1130,25 +1130,25 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to reset all settings to default ?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbS-I5-IG6">
-                                        <rect key="frame" x="20" y="35" width="255" height="43"/>
+                                        <rect key="frame" x="20" y="35" width="255" height="37.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8t-RY-nTN">
-                                        <rect key="frame" x="20" y="88" width="255" height="0.0"/>
+                                        <rect key="frame" x="20" y="82.5" width="255" height="0.0"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Your data will not be affected)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVC-TZ-KNJ">
-                                        <rect key="frame" x="20" y="83" width="255" height="19"/>
+                                        <rect key="frame" x="20" y="77.5" width="255" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kOK-dB-3lZ">
-                                        <rect key="frame" x="20" y="122" width="255" height="40"/>
+                                        <rect key="frame" x="20" y="114" width="255" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhH-0B-19f">
                                                 <rect key="frame" x="0.0" y="0.0" width="122.5" height="40"/>
@@ -1291,7 +1291,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                             <outlet property="delegate" destination="ygq-W3-ybF" id="meH-A7-zeC"/>
                                         </connections>
                                     </textView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-29-5e1" customClass="CosmosView" customModule="Cosmos">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLr-29-5e1" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="50" y="74" width="195" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1372,16 +1372,16 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="647"/>
                                                 <subviews>
                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02n-eY-xKc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="646"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="641.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yV-zv-sCX">
-                                                                <rect key="frame" x="105.5" y="15" width="124" height="21.5"/>
+                                                                <rect key="frame" x="115" y="15" width="105.5" height="19"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-9i-8F8">
-                                                                <rect key="frame" x="305" y="16" width="20" height="20"/>
+                                                                <rect key="frame" x="305" y="14.5" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="cd8-YR-LcR"/>
                                                                     <constraint firstAttribute="height" constant="20" id="suK-ZR-xsy"/>
@@ -1392,10 +1392,10 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xlg-ia-SeG">
-                                                                <rect key="frame" x="10" y="60" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="57.5" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo9-Ky-GHL">
-                                                                        <rect key="frame" x="5" y="5" width="68.5" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="57.5" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="atn-ME-iLw"/>
                                                                         </constraints>
@@ -1449,10 +1449,10 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </constraints>
                                                             </view>
                                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hn7-YO-ShL">
-                                                                <rect key="frame" x="10" y="144" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="141.5" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWb-zO-mEL">
-                                                                        <rect key="frame" x="5" y="5" width="73.5" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="62.5" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="AeI-dw-XhS"/>
                                                                         </constraints>
@@ -1506,10 +1506,10 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQS-0R-JYe">
-                                                                <rect key="frame" x="10" y="228" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="225.5" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeO-Wa-dI9">
-                                                                        <rect key="frame" x="5" y="5" width="60" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="53" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="TBD-KG-hY8"/>
                                                                         </constraints>
@@ -1554,10 +1554,10 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2S9-Kf-bcQ">
-                                                                <rect key="frame" x="10" y="312" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="309.5" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Unit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ2-8v-sM0">
-                                                                        <rect key="frame" x="5" y="5" width="26.5" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="25.5" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="OCQ-EQ-fFd"/>
                                                                         </constraints>
@@ -1611,10 +1611,10 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nl8-jN-rpI">
-                                                                <rect key="frame" x="10" y="396" width="315" height="74"/>
+                                                                <rect key="frame" x="10" y="393.5" width="315" height="74"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Assign to step" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ox2-Ja-aaY">
-                                                                        <rect key="frame" x="5" y="5" width="99.5" height="19"/>
+                                                                        <rect key="frame" x="5" y="5" width="89.5" height="19"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="19" id="5nJ-Ck-eqi"/>
                                                                         </constraints>
@@ -1668,7 +1668,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kIP-vA-E1A" userLabel="ViewCancelSave">
-                                                                <rect key="frame" x="0.0" y="470" width="335" height="60"/>
+                                                                <rect key="frame" x="0.0" y="467.5" width="335" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1L-ie-DVb">
                                                                         <rect key="frame" x="167" y="0.0" width="1" height="60"/>
@@ -1720,7 +1720,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLL-dk-fEb">
-                                                                <rect key="frame" x="10" y="545" width="315" height="40"/>
+                                                                <rect key="frame" x="10" y="542.5" width="315" height="40"/>
                                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="1dG-xa-fXZ"/>
@@ -1731,7 +1731,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </state>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed4-hd-Bot">
-                                                                <rect key="frame" x="76" y="600" width="183" height="31"/>
+                                                                <rect key="frame" x="86.5" y="597.5" width="162" height="29"/>
                                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                                 <state key="normal" title="My Ingredient is not listed">
                                                                     <color key="titleColor" name="App_Orange_Color"/>
@@ -1741,7 +1741,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                                 </connections>
                                                             </button>
                                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFq-BQ-nmo">
-                                                                <rect key="frame" x="76" y="625" width="183" height="1"/>
+                                                                <rect key="frame" x="86.5" y="620.5" width="162" height="1"/>
                                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="FKa-63-Egu"/>
@@ -1860,7 +1860,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         <rect key="frame" x="20" y="25" width="335" height="150"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete this recipe ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrx-hE-cGl">
-                                                <rect key="frame" x="10" y="41" width="315" height="38"/>
+                                                <rect key="frame" x="10" y="52" width="315" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
@@ -1987,16 +1987,16 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         <rect key="frame" x="20" y="30" width="335" height="400"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Instruction" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbH-KZ-UJw">
-                                                <rect key="frame" x="95.5" y="30" width="144.5" height="19"/>
+                                                <rect key="frame" x="103.5" y="30" width="128" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvp-T4-mlZ">
-                                                <rect key="frame" x="10" y="59" width="315" height="74"/>
+                                                <rect key="frame" x="10" y="56.5" width="315" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Step" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlW-0K-ZUf">
-                                                        <rect key="frame" x="5" y="5" width="28" height="19"/>
+                                                        <rect key="frame" x="5" y="5" width="25.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="QgH-gJ-Kgm"/>
                                                         </constraints>
@@ -2052,10 +2052,10 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHu-iQ-0Fd">
-                                                <rect key="frame" x="8" y="143" width="315" height="74"/>
+                                                <rect key="frame" x="8" y="140.5" width="315" height="74"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkl-cG-yoh">
-                                                        <rect key="frame" x="5" y="5" width="66" height="19"/>
+                                                        <rect key="frame" x="5" y="5" width="61.5" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="Z9v-cr-zfj"/>
                                                         </constraints>
@@ -2100,7 +2100,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0HX-OX-BdL" userLabel="ViewCancelSave">
-                                                <rect key="frame" x="0.0" y="237" width="335" height="45"/>
+                                                <rect key="frame" x="0.0" y="234.5" width="335" height="45"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="942-Rf-P2x">
                                                         <rect key="frame" x="167" y="0.0" width="1" height="45"/>
@@ -2152,7 +2152,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNb-zx-gGt">
-                                                <rect key="frame" x="20" y="302" width="295" height="35"/>
+                                                <rect key="frame" x="20" y="299.5" width="295" height="35"/>
                                                 <color key="backgroundColor" name="App_Orange_Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="siG-jl-dyY"/>
@@ -2240,7 +2240,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdz-T2-iU7">
-                                                        <rect key="frame" x="142.5" y="25.5" width="50" height="19"/>
+                                                        <rect key="frame" x="146.5" y="27" width="42.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                         <nil key="highlightedColor"/>
@@ -2377,7 +2377,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aL4-mR-cne">
-                                <rect key="frame" x="40" y="175.5" width="295" height="316"/>
+                                <rect key="frame" x="40" y="184" width="295" height="299.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxD-5d-j7Z">
                                         <rect key="frame" x="265" y="5" width="25" height="25"/>
@@ -2393,27 +2393,27 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTp-Yt-PST">
-                                        <rect key="frame" x="20" y="35" width="255" height="21.5"/>
+                                        <rect key="frame" x="20" y="35" width="255" height="19"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="img-2" translatesAutoresizingMaskIntoConstraints="NO" id="blc-1u-0SB">
-                                        <rect key="frame" x="145" y="236" width="150" height="80"/>
+                                        <rect key="frame" x="145" y="219.5" width="150" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="ZYa-Ct-yT5"/>
                                             <constraint firstAttribute="width" constant="150" id="apR-kZ-tLv"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W80-AR-p0z">
-                                        <rect key="frame" x="20" y="64.5" width="255" height="107.5"/>
+                                        <rect key="frame" x="20" y="62" width="255" height="93.5"/>
                                         <string key="text">Adding additional servings may require the purchase of additional supplies. review your shopping list to review the updated quantities required.</string>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Q9-yf-sfq">
-                                        <rect key="frame" x="40" y="188" width="215" height="40"/>
+                                        <rect key="frame" x="40" y="171.5" width="215" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-LS-m2Y">
                                                 <rect key="frame" x="0.0" y="0.0" width="102.5" height="40"/>
@@ -2494,7 +2494,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9k-0G-gJ3">
-                                <rect key="frame" x="40" y="220" width="295" height="227"/>
+                                <rect key="frame" x="40" y="236.5" width="295" height="194.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REX-fQ-NW6">
                                         <rect key="frame" x="265" y="5" width="25" height="25"/>
@@ -2510,13 +2510,13 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to remove all items from this shopping List?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uve-Li-pm7">
-                                        <rect key="frame" x="20" y="30" width="255" height="64.5"/>
+                                        <rect key="frame" x="20" y="30" width="255" height="37.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7zG-Te-y9a">
-                                        <rect key="frame" x="40" y="167" width="215" height="40"/>
+                                        <rect key="frame" x="40" y="134.5" width="215" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7k-AZ-eNX">
                                                 <rect key="frame" x="0.0" y="0.0" width="102.5" height="40"/>
@@ -2546,7 +2546,7 @@ Cooking with someone else or a team? Log in to the same account to see a synced 
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP5-P0-VCI">
-                                        <rect key="frame" x="20" y="110.5" width="255" height="40.5"/>
+                                        <rect key="frame" x="20" y="83.5" width="255" height="35"/>
                                         <string key="text">Note:
 You can also uncheck items to move them back onto the To Buy list if they are still needed.</string>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
@@ -2604,7 +2604,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bz7-Ha-gMD">
-                                        <rect key="frame" x="20" y="20" width="335" height="304.5"/>
+                                        <rect key="frame" x="20" y="20" width="335" height="302"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1Z-IM-4mH">
                                                 <rect key="frame" x="305" y="5" width="25" height="25"/>
@@ -2619,13 +2619,13 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                     <action selector="closeBtnTapped:" destination="zof-9O-a2C" eventType="touchUpInside" id="ttr-IZ-VY6"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report this Recipe" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMo-re-QBC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Report this Recipe" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMo-re-QBC">
                                                 <rect key="frame" x="20" y="35" width="295" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0W-VM-wRl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0W-VM-wRl">
                                                 <rect key="frame" x="20" y="66.5" width="295" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
@@ -2635,13 +2635,13 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                 <rect key="frame" x="20" y="82.5" width="295" height="69"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Select a Reason" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xct-yj-T5W">
-                                                        <rect key="frame" x="0.0" y="5" width="115.5" height="19"/>
+                                                        <rect key="frame" x="0.0" y="5" width="102" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Reason" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JDK-Ye-KP1" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                        <rect key="frame" x="5" y="29" width="285" height="40"/>
+                                                        <rect key="frame" x="5" y="26.5" width="285" height="42.5"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
@@ -2664,7 +2664,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-dk-iWe">
-                                                        <rect key="frame" x="272" y="41.5" width="15" height="15"/>
+                                                        <rect key="frame" x="272" y="40.5" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="6l8-Dy-dIJ"/>
                                                             <constraint firstAttribute="width" constant="15" id="wBh-12-ccX"/>
@@ -2685,7 +2685,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eiT-J6-rPU">
-                                                <rect key="frame" x="20" y="244.5" width="295" height="40"/>
+                                                <rect key="frame" x="20" y="242" width="295" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqn-bu-Tvz">
                                                         <rect key="frame" x="0.0" y="0.0" width="142.5" height="40"/>
@@ -2715,13 +2715,13 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Enter Reason" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaW-wO-VcW">
-                                                <rect key="frame" x="20" y="161.5" width="96" height="19"/>
+                                                <rect key="frame" x="20" y="161.5" width="84.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-9A-yrI" customClass="IQTextView" customModule="IQKeyboardManagerSwift">
-                                                <rect key="frame" x="20" y="185.5" width="295" height="40"/>
+                                                <rect key="frame" x="20" y="183" width="295" height="40"/>
                                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="0.60999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="T5j-Ax-fQE"/>
@@ -2737,7 +2737,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROD-nt-KXb">
-                                                <rect key="frame" x="20" y="227.5" width="295" height="1"/>
+                                                <rect key="frame" x="20" y="225" width="295" height="1"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="Cc1-fo-rRl"/>
@@ -2817,7 +2817,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGU-aP-JLK">
-                                        <rect key="frame" x="20" y="20" width="335" height="446"/>
+                                        <rect key="frame" x="20" y="20" width="335" height="393"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fv-wm-Xu2">
                                                 <rect key="frame" x="305" y="5" width="25" height="25"/>
@@ -2833,22 +2833,22 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save Options" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr3-RO-8yc">
-                                                <rect key="frame" x="113.5" y="35" width="108" height="21.5"/>
+                                                <rect key="frame" x="119.5" y="35" width="96.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="16"/>
                                                 <color key="textColor" name="App_Orange_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IV-G9-Ob8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IV-G9-Ob8">
                                                 <rect key="frame" x="20" y="66.5" width="295" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJI-2S-46e">
-                                                <rect key="frame" x="20" y="82.5" width="295" height="115"/>
+                                                <rect key="frame" x="20" y="82.5" width="295" height="91"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Create a new weekly plan" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Kg-ly-TxP" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="70" width="287" height="40"/>
+                                                        <rect key="frame" x="0.0" y="46" width="287" height="40"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="spj-Ah-y7u"/>
@@ -2873,7 +2873,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Save as a new weekly plan template" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dl-W8-j4P">
-                                                        <rect key="frame" x="33" y="0.0" width="257" height="38"/>
+                                                        <rect key="frame" x="33" y="0.0" width="257" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                         <nil key="highlightedColor"/>
@@ -2890,7 +2890,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Create a new weekly plan" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNn-0K-7LW">
-                                                        <rect key="frame" x="0.0" y="46" width="290" height="19"/>
+                                                        <rect key="frame" x="0.0" y="24.5" width="290" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
@@ -2913,7 +2913,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8e9-LG-BIm">
-                                                <rect key="frame" x="20" y="386" width="295" height="40"/>
+                                                <rect key="frame" x="20" y="333" width="295" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvs-CH-5al">
                                                         <rect key="frame" x="0.0" y="0.0" width="142.5" height="40"/>
@@ -2943,10 +2943,10 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bLM-DZ-kfo">
-                                                <rect key="frame" x="20" y="217.5" width="295" height="152.5"/>
+                                                <rect key="frame" x="20" y="193.5" width="295" height="123.5"/>
                                                 <subviews>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Meal Plan A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACm-Kc-kGb" customClass="KKNEWTextFiled" customModule="PrepSmart" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="107.5" width="287" height="40"/>
+                                                        <rect key="frame" x="0.0" y="78.5" width="287" height="40"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.5104417067" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -2972,7 +2972,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Save over existing weekly plan template" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oii-U7-SsQ">
-                                                        <rect key="frame" x="33" y="0.0" width="257" height="38"/>
+                                                        <rect key="frame" x="33" y="0.0" width="257" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="Dark_Text_Color"/>
                                                         <nil key="highlightedColor"/>
@@ -2989,20 +2989,20 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Replaces the recipes in an existing Weekly Plan Template with recipes from the selected Week (cannot be undone)" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXE-6T-g7z">
-                                                        <rect key="frame" x="0.0" y="46" width="290" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="24.5" width="290" height="49"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <color key="textColor" name="App_Orange_Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downarrow" translatesAutoresizingMaskIntoConstraints="NO" id="G8t-sP-fQP">
-                                                        <rect key="frame" x="272" y="120" width="15" height="15"/>
+                                                        <rect key="frame" x="272" y="91" width="15" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="15" id="obN-Ps-Ule"/>
                                                             <constraint firstAttribute="height" constant="15" id="xru-UJ-xaX"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UG-Pa-5mA">
-                                                        <rect key="frame" x="2" y="104.5" width="291" height="46"/>
+                                                        <rect key="frame" x="2" y="75.5" width="291" height="46"/>
                                                         <connections>
                                                             <action selector="mealPlanPopUpClicked:" destination="sWb-BG-v3Q" eventType="touchUpInside" id="wnc-Wt-751"/>
                                                         </connections>
@@ -3030,8 +3030,8 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                                     <constraint firstAttribute="trailing" secondItem="PXE-6T-g7z" secondAttribute="trailing" constant="5" id="vGU-T0-S4X"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdz-K9-7je">
-                                                <rect key="frame" x="226.5" y="36" width="20" height="20"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdz-K9-7je">
+                                                <rect key="frame" x="221" y="36" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="rBe-rr-lQU"/>
                                                     <constraint firstAttribute="width" constant="20" id="sgW-hd-OZz"/>
@@ -3120,7 +3120,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                         <rect key="frame" x="20" y="233.5" width="335" height="200"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to unsubscribe to this recipe? You may not be able subscribe to this recipe again if gets sold out" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYa-eu-l7y">
-                                                <rect key="frame" x="10" y="57" width="315" height="56.5"/>
+                                                <rect key="frame" x="10" y="60.5" width="315" height="49"/>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
                                                 <nil key="highlightedColor"/>
@@ -3253,7 +3253,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                         <rect key="frame" x="20" y="25" width="335" height="220"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCW-RX-3Sr">
-                                                <rect key="frame" x="10" y="57.5" width="315" height="75.5"/>
+                                                <rect key="frame" x="10" y="62.5" width="315" height="65.5"/>
                                                 <string key="text">Thanks for marking this consultation as complete! This will finalize this consultation request and will complete the paayment transaction (cannot be undone).</string>
                                                 <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                 <color key="textColor" name="Dark_Text_Color"/>
@@ -3364,7 +3364,7 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CE-va-V7e">
-                                <rect key="frame" x="20" y="210" width="335" height="247"/>
+                                <rect key="frame" x="20" y="219" width="335" height="229.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acv-qM-elm">
                                         <rect key="frame" x="305" y="5" width="25" height="25"/>
@@ -3380,13 +3380,13 @@ You can also uncheck items to move them back onto the To Buy list if they are st
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prepsmart Tip" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gj-YD-BlX">
-                                        <rect key="frame" x="20" y="30" width="295" height="19"/>
+                                        <rect key="frame" x="20" y="30" width="295" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97P-KS-P1l">
-                                        <rect key="frame" x="20" y="59" width="295" height="113"/>
+                                        <rect key="frame" x="20" y="56.5" width="295" height="98"/>
                                         <string key="text">You are just a couple step away from an Instacart grocery delivery!
 Please be sure to select the quantity of each ingredient to match the quantities displayed beneath the ingredient name before checking out.</string>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
@@ -3394,7 +3394,7 @@ Please be sure to select the quantity of each ingredient to match the quantities
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lUh-GI-BK0">
-                                        <rect key="frame" x="117.5" y="192" width="100" height="35"/>
+                                        <rect key="frame" x="117.5" y="174.5" width="100" height="35"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xen-dF-gsO">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="35"/>
@@ -3648,7 +3648,7 @@ Please be sure to select the quantity of each ingredient to match the quantities
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1s-eG-8dW">
-                                        <rect key="frame" x="20" y="197" width="335" height="273"/>
+                                        <rect key="frame" x="20" y="204.5" width="335" height="258"/>
                                         <subviews>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEH-4r-SjC">
                                                 <rect key="frame" x="305" y="10" width="20" height="20"/>
@@ -3662,10 +3662,10 @@ Please be sure to select the quantity of each ingredient to match the quantities
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hrb-wV-maX">
-                                                <rect key="frame" x="20" y="30" width="295" height="233"/>
+                                                <rect key="frame" x="20" y="30" width="295" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcg-uc-7rY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="295" height="49"/>
                                                         <string key="text">Plan Your Week
 
 What's on the menu?</string>
@@ -3674,13 +3674,13 @@ What's on the menu?</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Either load a previously created Weekly Plan Template or Add Recipes to create a custom week's worth of meals." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc2-se-E15">
-                                                        <rect key="frame" x="0.0" y="66.5" width="295" height="56.5"/>
+                                                        <rect key="frame" x="0.0" y="59" width="295" height="49"/>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-pL-M1R">
-                                                        <rect key="frame" x="0.0" y="133" width="295" height="45"/>
+                                                        <rect key="frame" x="0.0" y="118" width="295" height="45"/>
                                                         <color key="backgroundColor" name="App_Orange_Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="IG9-Q7-v8p"/>
@@ -3694,7 +3694,7 @@ What's on the menu?</string>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3g-be-KmQ">
-                                                        <rect key="frame" x="0.0" y="188" width="295" height="45"/>
+                                                        <rect key="frame" x="0.0" y="173" width="295" height="45"/>
                                                         <color key="backgroundColor" name="App_Orange_Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="45" id="zE4-BW-PjJ"/>
@@ -3767,10 +3767,10 @@ What's on the menu?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="942-vq-9T3">
-                                <rect key="frame" x="61.5" y="233.5" width="252.5" height="200.5"/>
+                                <rect key="frame" x="72" y="235.5" width="231.5" height="196"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnI-mm-EPe">
-                                        <rect key="frame" x="222.5" y="5" width="25" height="25"/>
+                                        <rect key="frame" x="201.5" y="5" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="7qw-Hp-niu"/>
                                             <constraint firstAttribute="width" constant="25" id="VXU-Bk-AjM"/>
@@ -3783,7 +3783,7 @@ What's on the menu?</string>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hy0-g7-53a">
-                                        <rect key="frame" x="86" y="140.5" width="80" height="40"/>
+                                        <rect key="frame" x="75.5" y="136" width="80" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoU-NJ-7Vx">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
@@ -3803,14 +3803,14 @@ What's on the menu?</string>
                                         </constraints>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-1h-yfi">
-                                        <rect key="frame" x="106" y="30" width="40" height="40"/>
+                                        <rect key="frame" x="95.5" y="30" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8G3-De-9KB"/>
                                             <constraint firstAttribute="width" constant="40" id="rxT-ku-Jm4"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password changed successfully. Please log in using new credentials." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1f-Ku-NIe">
-                                        <rect key="frame" x="20" y="88" width="212.5" height="32.5"/>
+                                        <rect key="frame" x="20" y="88" width="191.5" height="28"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="12"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
@@ -3861,7 +3861,7 @@ What's on the menu?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYF-Gt-Dun">
-                                <rect key="frame" x="40" y="199" width="295" height="269"/>
+                                <rect key="frame" x="40" y="200.5" width="295" height="266.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIP-bW-5o0">
                                         <rect key="frame" x="265" y="5" width="25" height="25"/>
@@ -3874,13 +3874,13 @@ What's on the menu?</string>
                                         <state key="normal" image="close"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate this Recipe" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlJ-nX-0JC">
-                                        <rect key="frame" x="20" y="110" width="255" height="19"/>
+                                        <rect key="frame" x="20" y="110" width="255" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Luj-Ji-zqg">
-                                        <rect key="frame" x="10" y="209" width="275" height="40"/>
+                                        <rect key="frame" x="10" y="206.5" width="275" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afK-Z7-d8A">
                                                 <rect key="frame" x="0.0" y="0.0" width="132.5" height="40"/>
@@ -3917,14 +3917,14 @@ What's on the menu?</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now that you've made this recipe, tell the world how you did it!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mus-Xg-LK3">
-                                        <rect key="frame" x="20" y="139" width="255" height="45"/>
+                                        <rect key="frame" x="20" y="136.5" width="255" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DGl-GO-KZ0">
-                                        <rect key="frame" x="10" y="129" width="275" height="65"/>
+                                        <rect key="frame" x="10" y="126.5" width="275" height="65"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -4011,10 +4011,10 @@ What's on the menu?</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-hY-6R9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKf-Np-kgj">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKf-Np-kgj">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cwr-bm-uEG">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwr-bm-uEG">
                                                 <rect key="frame" x="20" y="210.5" width="335" height="246"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8f-PJ-ZRt">
@@ -4028,7 +4028,7 @@ What's on the menu?</string>
                                                             <action selector="onClickCloseButton:" destination="vfg-Pj-fbR" eventType="touchUpInside" id="PKr-4V-6Sr"/>
                                                         </connections>
                                                     </button>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVG-cj-tfn" userLabel="ViewCancelSave">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZVG-cj-tfn" userLabel="ViewCancelSave">
                                                         <rect key="frame" x="0.0" y="191" width="335" height="45"/>
                                                         <subviews>
                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVC-uF-9L8">
@@ -4055,7 +4055,7 @@ What's on the menu?</string>
                                                             <constraint firstItem="VVC-uF-9L8" firstAttribute="top" secondItem="ZVG-cj-tfn" secondAttribute="top" constant="5" id="w52-66-Xw2"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-MJ-MLC" customClass="TagsView" customModule="Tags">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGb-MJ-MLC" customClass="TagsView" customModule="Tags">
                                                         <rect key="frame" x="20" y="111" width="295" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -4195,7 +4195,7 @@ What's on the menu?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTw-jl-ZCd">
-                                <rect key="frame" x="40" y="199" width="295" height="269"/>
+                                <rect key="frame" x="40" y="200.5" width="295" height="266.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD4-DX-Huz">
                                         <rect key="frame" x="265" y="5" width="25" height="25"/>
@@ -4211,13 +4211,13 @@ What's on the menu?</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Completed" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPp-fI-eAR">
-                                        <rect key="frame" x="20" y="110" width="255" height="19"/>
+                                        <rect key="frame" x="20" y="110" width="255" height="16.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                         <color key="textColor" name="App_Orange_Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YpO-sm-5dr">
-                                        <rect key="frame" x="10" y="209" width="275" height="40"/>
+                                        <rect key="frame" x="10" y="206.5" width="275" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20b-NL-0n7">
                                                 <rect key="frame" x="0.0" y="0.0" width="132.5" height="40"/>
@@ -4254,7 +4254,7 @@ What's on the menu?</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All done! Would you like to mark this recipe as complete?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyS-yg-Qg5">
-                                        <rect key="frame" x="20" y="139" width="255" height="27"/>
+                                        <rect key="frame" x="20" y="136.5" width="255" height="23.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="10"/>
                                         <color key="textColor" name="Dark_Text_Color"/>
@@ -4352,11 +4352,15 @@ What's on the menu?</string>
         <designable name="JDK-Ye-KP1">
             <size key="intrinsicContentSize" width="100.5" height="20.5"/>
         </designable>
+        <designable name="MGb-MJ-MLC"/>
         <designable name="Srn-Dz-65F">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
         </designable>
         <designable name="Vrm-Cy-GLX">
             <size key="intrinsicContentSize" width="168.5" height="20.5"/>
+        </designable>
+        <designable name="dmu-mp-SWj">
+            <size key="intrinsicContentSize" width="195" height="35"/>
         </designable>
         <designable name="ehF-hA-Uz6">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
@@ -4367,11 +4371,17 @@ What's on the menu?</string>
         <designable name="kbQ-vU-lg7">
             <size key="intrinsicContentSize" width="5" height="20.5"/>
         </designable>
+        <designable name="rLr-29-5e1">
+            <size key="intrinsicContentSize" width="195" height="35"/>
+        </designable>
         <designable name="u1C-57-6du">
             <size key="intrinsicContentSize" width="77" height="20.5"/>
         </designable>
         <designable name="uKU-bL-epH">
             <size key="intrinsicContentSize" width="170.5" height="20.5"/>
+        </designable>
+        <designable name="wwW-Cz-hUF">
+            <size key="intrinsicContentSize" width="195" height="35"/>
         </designable>
         <designable name="x7l-pw-ECb">
             <size key="intrinsicContentSize" width="5" height="20.5"/>

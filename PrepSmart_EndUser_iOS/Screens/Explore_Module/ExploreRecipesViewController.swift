@@ -143,21 +143,35 @@ extension ExploreRecipesViewController : UICollectionViewDelegate, UICollectionV
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: recipe_BoxCollectionCell, for: indexPath) as! Recipe_BoxCollectionCell
         let dic = findNewRecipeObj?.recipeList?[indexPath.row]
         
-        if indexPath.row == 0 {
-            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "prepsmarts-choice"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-        }
-        else if indexPath.row == 1 {
-            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-        }
-        else if indexPath.row == 2 {
+//        if indexPath.row == 0 {
+//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "prepsmarts-choice"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+//        }
+//        else if indexPath.row == 1 {
+//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+//        }
+//        else if indexPath.row == 2 {
+//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "free"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+//        }
+//        else if indexPath.row == 3 {
+//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: #imageLiteral(resourceName: "prepsmarts-choice"), label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+//        }
+//        else {
+//            cell.setCellImages(itemImage: "", label0Image: nil, label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+//        }
+//        if dic?.item_title == "jehe" {
+//            print( "value ==>\(dic?.item_label)")
+ //       }
+        switch dic?.item_label{
+        case "Free":
             cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "free"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-        }
-        else if indexPath.row == 3 {
-            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: #imageLiteral(resourceName: "prepsmarts-choice"), label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-        }
-        else {
+            
+        case "Premium":
+            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+        default :
             cell.setCellImages(itemImage: "", label0Image: nil, label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+            
         }
+       
         
         cell.config(dict: dic)
         return cell
@@ -167,7 +181,11 @@ extension ExploreRecipesViewController : UICollectionViewDelegate, UICollectionV
         let dic = findNewRecipeObj?.recipeList?[indexPath.row]
         switch exploreType {
         case "1" :
-            print("Explore Recipes")
+           let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "ViewRecipeViewController") as! ViewRecipeViewController
+            vc.recipeId = String(dic?.item_id ?? 0)
+            vc.recipeOwnerId = String(dic?.chef_id ?? 0)
+            self.navigationController?.pushViewController(vc, animated: true)
+
         case "2" :
             let vc = UIStoryboard.Explore_Module.instantiateViewController(withIdentifier: "ExploreWeeklyPlanDetailsViewController") as! ExploreWeeklyPlanDetailsViewController
             vc.recipyPlanId = dic?.item_id ?? 0

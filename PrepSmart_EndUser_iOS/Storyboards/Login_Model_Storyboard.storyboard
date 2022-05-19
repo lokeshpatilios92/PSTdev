@@ -1472,7 +1472,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="385"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How It Works" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k60-wv-Unk">
-                                                <rect key="frame" x="132.5" y="60" width="110.5" height="25"/>
+                                                <rect key="frame" x="139.5" y="60" width="96" height="25"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="CF3-8k-zfw"/>
@@ -1604,30 +1604,43 @@
                                 <rect key="frame" x="0.0" y="467" width="375" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idi-QH-mq4">
-                                        <rect key="frame" x="15" y="15" width="345" height="27"/>
+                                        <rect key="frame" x="15" y="15" width="345" height="23.5"/>
                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpW-ZF-QYt" customClass="STPFormTextField" customModule="Stripe">
-                                        <rect key="frame" x="15" y="60" width="345" height="40"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Dw-Q3-31r">
+                                        <rect key="frame" x="10" y="48.5" width="355" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="dLB-Kf-sFZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="jr0-uF-D2X"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32e-uc-CEk">
+                                        <rect key="frame" x="147.5" y="128.5" width="80" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="Xmp-0f-Mpc"/>
+                                            <constraint firstAttribute="width" constant="80" id="g47-Zc-VR3"/>
+                                        </constraints>
+                                        <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="PAY"/>
+                                        <connections>
+                                            <action selector="payAction:" destination="Af1-Rd-bDk" eventType="touchUpInside" id="fas-vc-LX5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="idi-QH-mq4" secondAttribute="trailing" constant="15" id="Cly-oJ-wtr"/>
                                     <constraint firstAttribute="height" constant="200" id="M7e-Tj-Fya"/>
+                                    <constraint firstItem="32e-uc-CEk" firstAttribute="centerX" secondItem="8pI-BR-o0C" secondAttribute="centerX" id="MsI-RG-xCM"/>
                                     <constraint firstItem="idi-QH-mq4" firstAttribute="leading" secondItem="8pI-BR-o0C" secondAttribute="leading" constant="15" id="dsT-Yf-1qZ"/>
+                                    <constraint firstItem="32e-uc-CEk" firstAttribute="top" secondItem="1Dw-Q3-31r" secondAttribute="bottom" constant="30" id="gIh-nt-ZHs"/>
                                     <constraint firstItem="idi-QH-mq4" firstAttribute="top" secondItem="8pI-BR-o0C" secondAttribute="top" constant="15" id="gtO-B9-4ca"/>
-                                    <constraint firstItem="cpW-ZF-QYt" firstAttribute="centerX" secondItem="idi-QH-mq4" secondAttribute="centerX" id="pBQ-n5-uY4"/>
-                                    <constraint firstAttribute="trailing" secondItem="cpW-ZF-QYt" secondAttribute="trailing" constant="15" id="rHd-oY-Hxo"/>
-                                    <constraint firstItem="cpW-ZF-QYt" firstAttribute="top" secondItem="idi-QH-mq4" secondAttribute="bottom" constant="18" id="sTa-EL-U3X"/>
-                                    <constraint firstItem="cpW-ZF-QYt" firstAttribute="leading" secondItem="8pI-BR-o0C" secondAttribute="leading" constant="15" id="xLV-1i-3rV"/>
+                                    <constraint firstItem="1Dw-Q3-31r" firstAttribute="top" secondItem="idi-QH-mq4" secondAttribute="bottom" constant="10" id="ikU-yB-Bf8"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Dw-Q3-31r" secondAttribute="trailing" constant="10" id="l4L-bZ-9Ey"/>
+                                    <constraint firstItem="1Dw-Q3-31r" firstAttribute="leading" secondItem="8pI-BR-o0C" secondAttribute="leading" constant="10" id="nkv-dl-7ew"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1645,7 +1658,9 @@
                     </view>
                     <connections>
                         <outlet property="lblAmount" destination="idi-QH-mq4" id="Lwq-LC-64Y"/>
+                        <outlet property="payButton" destination="32e-uc-CEk" id="IpA-YU-0kc"/>
                         <outlet property="viewBack" destination="8dH-yc-toT" id="MbW-DM-VAT"/>
+                        <outlet property="viewContainer" destination="1Dw-Q3-31r" id="WkQ-vZ-QtB"/>
                         <outlet property="viewPopUp" destination="8pI-BR-o0C" id="FdK-Iv-m2o"/>
                     </connections>
                 </viewController>

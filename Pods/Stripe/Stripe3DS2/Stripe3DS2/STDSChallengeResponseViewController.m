@@ -49,8 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 // User input views
 @property (nonatomic, strong) STDSChallengeSelectionView *challengeSelectionView;
 @property (nonatomic, strong) STDSTextChallengeView *textChallengeView;
-@property (nonatomic, strong) STDSWhitelistView *whitelistView;
-@property (nonatomic, strong) UIStackView *buttonStackView;
 @end
 
 @implementation STDSChallengeResponseViewController
@@ -102,7 +100,7 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return self.uiCustomization.preferredStatusBarStyle;
 }
-    
+
 #pragma mark - Public APIs
 
 - (void)setLoading {
@@ -131,14 +129,6 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
     }
 }
 
-- (void)dismiss {
-    if (self.presentationDelegate) {
-        [self.presentationDelegate dismissChallengeResponseViewController:self];
-    } else {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-}
-
 #pragma mark - Private Helpers
 
 - (void)_setLoading:(BOOL)isLoading {
@@ -161,8 +151,7 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
      */
     self.processingView.shouldDisplayDSLogo = self.response == nil;
     // If there's no response, the blur view has nothing to blur and looks better visually if it's just the background color
-    // EDIT Jan 2021: The challenge contents is hidden so this never looks good https://jira.corp.stripe.com/browse/MOBILESDK-153
-    self.processingView.shouldDisplayBlurView = NO; // self.response != nil;
+    self.processingView.shouldDisplayBlurView = self.response != nil;
 
     if (isLoading) {
         [self.view bringSubviewToFront:self.processingView];
@@ -211,7 +200,7 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
     self.textChallengeView = textChallengeView;
     STDSChallengeSelectionView *challengeSelectionView = [self _newConfiguredChallengeSelectionView];
     self.challengeSelectionView = challengeSelectionView;
-    self.whitelistView = [self _newConfiguredWhitelistView];
+    STDSWhitelistView *whitelistView = [self _newConfiguredWhitelistView];
     
     UIView *expandableContentView = [UIView new];
     expandableContentView.layoutMargins = UIEdgeInsetsMake(kExpandableContentViewTopPadding, kExpandableContentHorizontalInset, 0, kExpandableContentHorizontalInset);
@@ -228,20 +217,12 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
     [contentStackView addArrangedSubview:challengeInformationView];
     [contentStackView addArrangedSubview:textChallengeView];
     [contentStackView addArrangedSubview:challengeSelectionView];
-    
-    self.buttonStackView = [self _newSubmitButtonStackView];
-    
-    [self.buttonStackView addArrangedSubview:actionButton];
-    
-    [contentStackView addArrangedSubview:self.buttonStackView];
-    
-    if (_response.acsUIType != STDSACSUITypeOOB && _response.acsUIType != STDSACSUITypeMultiSelect && _response.acsUIType != STDSACSUITypeSingleSelect) {
-        [self.buttonStackView addArrangedSubview:resendButton];
-    }
-    if (!self.whitelistView.isHidden) {
+    [contentStackView addArrangedSubview:actionButton];
+    [contentStackView addArrangedSubview:resendButton];
+    if (!whitelistView.isHidden) {
         [contentStackView addSpacer:10];
     }
-    [contentStackView addArrangedSubview:self.whitelistView];
+    [contentStackView addArrangedSubview:whitelistView];
     [expandableContentStackView addArrangedSubview:whyInformationView];
     [expandableContentStackView addArrangedSubview:expandableInformationView];
     
@@ -415,8 +396,7 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
     whitelistView.labelCustomization = self.uiCustomization.labelCustomization;
     whitelistView.selectionCustomization = self.uiCustomization.selectionCustomization;
     whitelistView.hidden = whitelistView.whitelistText == nil;
-    whitelistView.accessibilityIdentifier = @"STDSWhitelistView";
-    
+
     return whitelistView;
 }
 
@@ -449,23 +429,6 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
     };
 
     return expandableInformationView;
-}
-
-- (UIStackView *)_newSubmitButtonStackView {
-    UIStackView *stackView = [[UIStackView alloc] init];
-    stackView.axis = UILayoutConstraintAxisVertical;
-    stackView.distribution = UIStackViewDistributionFillEqually;
-    stackView.alignment = UIStackViewAlignmentFill;
-    stackView.spacing = 5;
-    stackView.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    CGSize size = [UIScreen mainScreen].bounds.size;
-    if (size.width > size.height) {
-        // hack to detect landscape
-        stackView.axis = UILayoutConstraintAxisHorizontal;
-        stackView.alignment = UIStackViewAlignmentCenter;
-    }
-    return stackView;
 }
 
 - (void)_keyboardDidShow:(NSNotification *)notification {
@@ -515,21 +478,16 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
         case STDSACSUITypeNone:
             break;
         case STDSACSUITypeText: {
-            [self.delegate challengeResponseViewController:self
-                                            didSubmitInput:self.textChallengeView.inputText
-                                        whitelistSelection:self.whitelistView.selectedResponse];
+            [self.delegate challengeResponseViewController:self didSubmitInput:self.textChallengeView.inputText];
             break;
         }
         case STDSACSUITypeSingleSelect:
         case STDSACSUITypeMultiSelect: {
-            [self.delegate challengeResponseViewController:self
-                                        didSubmitSelection:self.challengeSelectionView.currentlySelectedChallengeInfo
-                                        whitelistSelection:self.whitelistView.selectedResponse];
+            [self.delegate challengeResponseViewController:self didSubmitSelection:self.challengeSelectionView.currentlySelectedChallengeInfo];
             break;
         }
         case STDSACSUITypeOOB:
-            [self.delegate challengeResponseViewControllerDidOOBContinue:self
-                                                      whitelistSelection:self.whitelistView.selectedResponse];
+            [self.delegate challengeResponseViewControllerDidOOBContinue:self];
             break;
         case STDSACSUITypeHTML:
             // No action button in this case, see WKNavigationDelegate.
@@ -552,17 +510,6 @@ static NSString * const kHTMLStringLoadingURL = @"about:blank";
         }
 
         return decisionHandler(WKNavigationActionPolicyCancel);
-    }
-}
-
-- (void) viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    if (size.width > size.height) {
-        // hack to detect landscape
-        self.buttonStackView.axis = UILayoutConstraintAxisHorizontal;
-        self.buttonStackView.alignment = UIStackViewAlignmentCenter;
-    } else {
-        self.buttonStackView.axis = UILayoutConstraintAxisVertical;
-        self.buttonStackView.alignment = UIStackViewAlignmentFill;
     }
 }
 

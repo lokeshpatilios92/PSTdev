@@ -16,6 +16,7 @@ import DropDown
 class ViewRecipeViewController: BaseViewController {
     
     @IBOutlet var btn_subscribedToPremiumUser: UIButton!
+    @IBOutlet var btn_addtomystuff: UIButton!
     @IBOutlet var btn_subscribedToChef: UIButton!
     @IBOutlet var btn_reportThisRecipe: UIButton!
     @IBOutlet var scroll_main: UIScrollView!
@@ -39,6 +40,7 @@ class ViewRecipeViewController: BaseViewController {
     var recipeOwnerId:String = ""
     var recipeDtails = RecipeDetailsStruct()
     var addCommentStatus = AppRating_Struct()
+    var addtToMyStuffStatus = AppRating_Struct()
     var recipeCommentList = RecipeCommentStruct()
     
     var reviewsAndRatingsCell  = "ReviewsandRatingCell"
@@ -46,7 +48,7 @@ class ViewRecipeViewController: BaseViewController {
     var ratingCustomHeaderCell = "RatingCustomHeaderCell"
     var commentsCell           = "CommentsCell"
     var CommenttypeDropDown = DropDown()
-
+    
     var startArray = ["5 Star","4 Star","3 Star","2 Star","1 Star"]
     var startPercentage = ["71 %","13 %","6 %","5 %","5 %"]
     var progressArray = [0.80,0.60,0.40,0.25,0.25]
@@ -84,6 +86,7 @@ class ViewRecipeViewController: BaseViewController {
         btn_reportThisRecipe.layer.cornerRadius = btn_reportThisRecipe.frame.size.height / 2
         
         btn_subscribedToChef.layer.cornerRadius = btn_subscribedToChef.frame.height / 2
+        btn_addtomystuff.layer.cornerRadius = btn_addtomystuff.frame.height / 2
         btn_subscribedToPremiumUser.layer.cornerRadius = btn_subscribedToPremiumUser.frame.height / 2
     }
     
@@ -129,6 +132,8 @@ class ViewRecipeViewController: BaseViewController {
         tbl_recipeDetails.register(UINib.init(nibName: "NutritionalInformationTableCell", bundle: nil), forCellReuseIdentifier: "NutritionalInformationTableCell")
         
         tbl_recipeDetails.register(UINib.init(nibName: "RateRecipeTableCell", bundle: nil), forCellReuseIdentifier: "RateRecipeTableCell")
+        
+        tbl_recipeDetails.register(UINib.init(nibName: "NotesTableViewCell", bundle: nil), forCellReuseIdentifier: "NotesTableViewCell")
         
         tbl_recipeDetails.register(UINib.init(nibName: "ViewRecipeNotesTableCell", bundle: nil), forCellReuseIdentifier: "ViewRecipeNotesTableCell")
         
@@ -222,12 +227,22 @@ class ViewRecipeViewController: BaseViewController {
         }
     }
     
-    @IBAction func onClickBtnSubscribedToChef(_ sender: UIButton) {
-        print("subscribe")
+    @IBAction func onClickBtnSubscribedToChef(_ sender: UIButton)
+    {
+        let vc = UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
+        vc.amount = "\(recipeDtails.recipeInfo?.monthlyCost ?? 0)"
+        vc.delegete = self
+        self.navigationController?.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func onClickBtnSubscribedToPremiumUser(_ sender: UIButton) {
         print("SubscribedToPremiumUser")
+    }
+    
+    @IBAction func onClickBtnAddToMyStuff(_ sender: UIButton) {
+        if recipeDtails.recipeInfo?.myStuffRecipeStatus == 2 {
+            addRecipeToMyStuffapi()
+        }
     }
     
     @IBAction func onClickBtnReportThisRecipe(_ sender: UIButton) {
@@ -240,12 +255,12 @@ class ViewRecipeViewController: BaseViewController {
         let vc = UIStoryboard.RecipeStoryboard.instantiateViewController(withIdentifier: "DetailedNutritionalInfoViewController") as! DetailedNutritionalInfoViewController
         vc.recipeID = recipeId
         self.navigationController?.pushViewController(vc, animated: true)
-//        if(currentNutritionCollectionCell != 3)
-//        {
-//            
-//            let indexPathForCollection = IndexPath(item: currentNutritionCollectionCell + 1, section: 0)
-//            tableCell.collection_nutritionalInfo.scrollToItem(at: indexPathForCollection, at: .left, animated: true)
-//        }
+        //        if(currentNutritionCollectionCell != 3)
+        //        {
+        //
+        //            let indexPathForCollection = IndexPath(item: currentNutritionCollectionCell + 1, section: 0)
+        //            tableCell.collection_nutritionalInfo.scrollToItem(at: indexPathForCollection, at: .left, animated: true)
+        //        }
     }
     
     @IBAction func onClickBtnPrevious(_ sender: UIButton) {
@@ -274,11 +289,11 @@ class ViewRecipeViewController: BaseViewController {
         let indexPathOfCollection = IndexPath(row: 0, section: 2)
         let tableCell = tbl_recipeDetails.cellForRow(at: indexPathOfCollection) as! NutritionalInformationTableCell
         
-//        if(currentRecipeCollectionCell != 3)
-//        {
-//            let indexPathForCollection = IndexPath(item: currentRecipeCollectionCell + 1, section: 0)
-//            tableCell.collection_recipe.scrollToItem(at: indexPathForCollection, at: .left, animated: true)
-//        }
+        //        if(currentRecipeCollectionCell != 3)
+        //        {
+        //            let indexPathForCollection = IndexPath(item: currentRecipeCollectionCell + 1, section: 0)
+        //            tableCell.collection_recipe.scrollToItem(at: indexPathForCollection, at: .left, animated: true)
+        //        }
     }
     
     @IBAction func onClickBtnDropDown(_ sender: UIButton) {
@@ -296,13 +311,19 @@ class ViewRecipeViewController: BaseViewController {
         
         self.tbl_recipeDetails.reloadData()
         self.tbl_recipeDetails.layoutIfNeeded()
-       self.height_tableView.constant = self.tbl_recipeDetails.contentSize.height
+        self.height_tableView.constant = self.tbl_recipeDetails.contentSize.height
     }
     
     @IBAction func onClickBtnViewFullText(_ sender: UIButton) {
         // txtView_description.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
         height_viewButton.constant = 0.0
         initialize()
+    }
+}
+
+extension ViewRecipeViewController : paymentSucesscallBack {
+    func paymentSuccess(TransectionID: String) {
+        print(TransectionID)
     }
 }
 
@@ -395,15 +416,15 @@ extension ViewRecipeViewController : UITableViewDelegate,UITableViewDataSource
         let cell = self.tbl_recipeDetails.cellForRow(at: indexPath1) as! ViewRecipeReviewsAndCommentsTableCell
         cell.tbl_ratingsAndComments.reloadSections(IndexSet.init(integer: sender.tag), with: .automatic)
         self.tbl_recipeDetails.reloadData()
-       // self.height_tableView.constant = self.tbl_recipeDetails.contentSize.height
+        // self.height_tableView.constant = self.tbl_recipeDetails.contentSize.height
     }
     
     @objc func commentFilterTapped(sender: UIButton){
-     print("Select Filter")
-       CommenttypeDropDown.show()
-       CommenttypeDropDown.anchorView = sender.superview
-       CommenttypeDropDown.textFont = UIFont.REGULAR_FONT()
-       CommenttypeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+        print("Select Filter")
+        CommenttypeDropDown.show()
+        CommenttypeDropDown.anchorView = sender.superview
+        CommenttypeDropDown.textFont = UIFont.REGULAR_FONT()
+        CommenttypeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             switch item {
             case "Most Helpful" :
                 commentFillerString = "Most Helpful"
@@ -425,10 +446,10 @@ extension ViewRecipeViewController : UITableViewDelegate,UITableViewDataSource
             default:
                 print("1")
             }
-           print("commentFillerType \(commentFillerType)")
+            print("commentFillerType \(commentFillerType)")
             getRecipecommentsApi(CommentType: commentFillerType)
             CommenttypeDropDown.resignFirstResponder()
-           
+            
         }
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -544,15 +565,15 @@ extension ViewRecipeViewController : UITableViewDelegate,UITableViewDataSource
                 let cell = tableView.dequeueReusableCell(withIdentifier: "NutritionalInformationTableCell", for: indexPath) as! NutritionalInformationTableCell
                 isCellCreated = true
                 
-//                let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//                layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//                layout.itemSize = CGSize(width: cell.collection_recipe.frame.width, height: 110)
-//                layout.scrollDirection = .horizontal
-//                layout.minimumLineSpacing = 0
-//                layout.minimumInteritemSpacing = 0
-//
+                //                let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+                //                layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                //                layout.itemSize = CGSize(width: cell.collection_recipe.frame.width, height: 110)
+                //                layout.scrollDirection = .horizontal
+                //                layout.minimumLineSpacing = 0
+                //                layout.minimumInteritemSpacing = 0
+                //
                 cell.collection_nutritionalInfo.isPagingEnabled = true
-               // cell.collection_nutritionalInfo.collectionViewLayout = layout
+                // cell.collection_nutritionalInfo.collectionViewLayout = layout
                 cell.collection_nutritionalInfo.register(UINib(nibName: "NutritionProgressCollectionCell", bundle: nil), forCellWithReuseIdentifier: "NutritionProgressCollectionCell")
                 cell.collection_nutritionalInfo.showsVerticalScrollIndicator = false
                 cell.collection_nutritionalInfo.backgroundColor = .white
@@ -588,19 +609,18 @@ extension ViewRecipeViewController : UITableViewDelegate,UITableViewDataSource
                 cell.height_innerTableView.constant = cell.tbl_ratingsAndComments.contentSize.height// + 50.0
                 return cell
             }
-            //            else if(indexPath.section == 5)
-            //            {
-            //                let cell = tableView.dequeueReusableCell(withIdentifier: "ViewRecipeNotesTableCell", for: indexPath) as! ViewRecipeNotesTableCell
-            ////                cell.lbl_myNotes.text =
-            //                cell.lbl_recipeNotes.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
-            //
-            //                return cell
-            //            }
-            else
+            else if(indexPath.section == 3)
             {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RateRecipeTableCell", for: indexPath) as! RateRecipeTableCell
                 cell.setUp()
                 cell.del = self
+                return cell
+            }
+            else
+            {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "NotesTableViewCell", for: indexPath) as! NotesTableViewCell
+                cell.lbl_title.text = "Recipe Notes"
+                cell.txtView_notes.text = recipeDtails.recipeInfo?.recipeNotes ?? ""
                 return cell
             }
         }
@@ -696,8 +716,10 @@ extension ViewRecipeViewController {
     }
     
     func addTOFavAPI(){
-        let param:[String:Any] = ["recipe_type": "1" ,"recipe_id": recipeId,
-                                  "chef_id": self.recipeDtails.recipeInfo?.chefID ?? 0, "flag": 1]
+        let param:[String:Any] = ["recipe_type": "1" ,
+                                  "recipe_id": recipeId,
+                                  "chef_id": self.recipeDtails.recipeInfo?.chefID ?? 0,
+                                  "flag": 1]
         Loader.sharedInstance.showIndicator()
         Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.addToFav, params: param , method: .post) { (result) in
             switch result
@@ -756,7 +778,7 @@ extension ViewRecipeViewController {
                             self.recipeCommentList = try JSONDecoder().decode(RecipeCommentStruct.self, from: data)
                             self.tbl_recipeDetails.reloadData()
                             self.tbl_recipeDetails.layoutIfNeeded()
-                           self.height_tableView.constant = self.tbl_recipeDetails.contentSize.height
+                            self.height_tableView.constant = self.tbl_recipeDetails.contentSize.height
                             
                             //  DispatchQueue.main.async {
                             //     self.tableView.reloadData()
@@ -771,7 +793,7 @@ extension ViewRecipeViewController {
                     else
                     {
                         Alert.showToast(message: GlobalClass.sharedManager.get_status.message, view_VC: self)
-                    
+                        
                     }
                 }
                 else
@@ -799,6 +821,32 @@ extension ViewRecipeViewController {
         page_recipe.numberOfPages = recipeDtails.imageList?.count ?? 0
         let arrayCommenttype: [String] = self.recipeDtails.recipeInfo?.commentedUserFilterType?.map{String($0.name ?? "")} ?? []
         CommenttypeDropDown.dataSource = arrayCommenttype
+        
+        
+        
+        if recipeDtails.recipeInfo?.myStuffRecipeStatus == 1 {
+            btn_addtomystuff.setTitle("Added to  My Stuff", for: .normal)
+        }
+        else {
+            btn_addtomystuff.setTitle("Add to My Stuff", for: .normal)
+        }
+        
+        if recipeDtails.recipeInfo?.audienceType == "Premium" {
+            btn_addtomystuff.isHidden = true
+            if recipeDtails.recipeInfo?.chefSubscriptionStatus == 2 {
+                btn_subscribedToChef.isHidden = false
+                btn_subscribedToPremiumUser.isHidden = true
+            }
+            else {
+                btn_subscribedToChef.isHidden = true
+                btn_subscribedToPremiumUser.isHidden = false
+            }
+        }
+        else {
+            btn_addtomystuff.isHidden = false
+            btn_subscribedToChef.isHidden = true
+            btn_subscribedToPremiumUser.isHidden = true
+        }
     }
 }
 
@@ -806,7 +854,7 @@ extension ViewRecipeViewController:addCommentProtocol {
     func addComment(comment: String, ratting: Double) {
         Addcommentapi(comment: comment, ratting: ratting)
     }
-
+    
     func Addcommentapi(comment: String, ratting: Double){
         let param:[String:Any] = ["recipe_id": recipeId,
                                   "recipe_type":1,
@@ -828,6 +876,51 @@ extension ViewRecipeViewController:addCommentProtocol {
                             Alert.show(vc: self, titleStr: Alert.kTitle, messageStr: self.addCommentStatus.message)
                             self.getRecipeDetailsApi()
                             self.getRecipecommentsApi(CommentType: self.commentFillerType)
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    func addRecipeToMyStuffapi(){
+        let param:[String:Any] = ["recipe_id": recipeId,
+                                  "status":1]
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.addRecipeToMyStuff, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.addtToMyStuffStatus = try JSONDecoder().decode(AppRating_Struct.self, from: data)
+                            Alert.show(vc: self, titleStr: Alert.kTitle, messageStr: self.addtToMyStuffStatus.message)
+                            self.getRecipeDetailsApi()
                         }
                         catch
                         {

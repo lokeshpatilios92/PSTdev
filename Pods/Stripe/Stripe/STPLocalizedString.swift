@@ -6,8 +6,8 @@
 //  Copyright © 2020 Stripe, Inc. All rights reserved.
 //
 
-@_spi(STP) import StripeCore
+import Foundation
 
 @inline(__always) func STPLocalizedString(_ key: String, _ comment: String?) -> String {
-    return STPLocalizationUtils.localizedStripeString(forKey: key, bundleLocator: StripeBundleLocator.self)
+  return STPLocalizationUtils.localizedStripeString(forKey: key)
 }

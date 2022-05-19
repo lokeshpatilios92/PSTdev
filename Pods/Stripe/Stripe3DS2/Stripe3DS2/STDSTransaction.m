@@ -35,7 +35,6 @@
 #import "STDSRuntimeException.h"
 #import "STDSSecTypeUtilities.h"
 #import "STDSStripe3DS2Error.h"
-#import "STDSDeviceInformationParameter.h"
 
 static const NSTimeInterval kMinimumTimeout = 5 * 60;
 static NSString * const kStripeLOA = @"3DS_LOA_SDK_STIN_020100_00162";
@@ -46,6 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface STDSTransaction() <STDSChallengeResponseViewControllerDelegate>
 
 @property (nonatomic, weak) id<STDSChallengeStatusReceiver> challengeStatusReceiver;
+@property (nonatomic, weak) UIViewController *presentingViewController;
 @property (nonatomic, strong, nullable) STDSChallengeResponseViewController *challengeResponseViewController;
 /// Stores the most recent parameters used to make a CReq
 @property (nonatomic, nullable) STDSChallengeRequestParameters *challengeRequestParameters;
@@ -169,7 +169,7 @@ NS_ASSUME_NONNULL_BEGIN
     return [[STDSAuthenticationRequestParameters alloc] initWithSDKTransactionIdentifier:_identifier
                                                                               deviceData:encryptedDeviceData
                                                                    sdkEphemeralPublicKey:_ephemeralKeyPair.publicKeyJWK
-                                                                        sdkAppIdentifier:[STDSDeviceInformationParameter sdkAppIdentifier]
+                                                                        sdkAppIdentifier:[self _sdkAppIdentifier]
                                                                       sdkReferenceNumber:self.useULTestLOA ? kULTestLOA : kStripeLOA
                                                                           messageVersion:[self _messageVersion]];
 }
@@ -182,33 +182,12 @@ NS_ASSUME_NONNULL_BEGIN
                   challengeParameters:(STDSChallengeParameters *)challengeParameters
               challengeStatusReceiver:(id)challengeStatusReceiver
                               timeout:(NSTimeInterval)timeout {
-    
-    [self doChallengeWithChallengeParameters:challengeParameters
-                     challengeStatusReceiver:challengeStatusReceiver
-                                     timeout:timeout
-                           presentationBlock:^(UIViewController * _Nonnull challengeVC, void (^completion)(void)) {
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:challengeVC];
-        
-        // Disable "swipe to dismiss" behavior in iOS 13
-        if ([navigationController respondsToSelector:NSSelectorFromString(@"isModalInPresentation")]) {
-            [navigationController setValue:@YES forKey:@"modalInPresentation"];
-        }
-        
-        [presentingViewController presentViewController:navigationController animated:YES completion:^{
-            completion();
-        }];
-    }];
-}
-
-- (void)doChallengeWithChallengeParameters:(STDSChallengeParameters *)challengeParameters
-                   challengeStatusReceiver:(id)challengeStatusReceiver
-                                   timeout:(NSTimeInterval)timeout
-                         presentationBlock:(void (^)(UIViewController *, void(^)(void)))presentationBlock {
     if (self.isCompleted) {
         @throw [STDSRuntimeException exceptionWithMessage:@"The transaction has already completed."];
     } else if (timeout < kMinimumTimeout) {
         @throw [STDSInvalidInputException exceptionWithMessage:@"Timeout value of %lf seconds is less than 5 minutes", timeout];
     }
+    self.presentingViewController = presentingViewController;
     self.challengeStatusReceiver = challengeStatusReceiver;
     self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:(timeout) target:self selector:@selector(_didTimeout) userInfo:nil repeats:NO];
 
@@ -278,16 +257,21 @@ NS_ASSUME_NONNULL_BEGIN
     STDSImageLoader *imageLoader = [[STDSImageLoader alloc] initWithURLSession:NSURLSession.sharedSession];
     self.challengeResponseViewController = [[STDSChallengeResponseViewController alloc] initWithUICustomization:_uiCustomization imageLoader:imageLoader directoryServer:[self _directoryServerForUI]];
     self.challengeResponseViewController.delegate = self;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.challengeResponseViewController];
     
-    presentationBlock(self.challengeResponseViewController, ^{ [self _makeChallengeRequest:self.challengeRequestParameters didCancel:NO]; });
+    // Disable "swipe to dismiss" behavior in iOS 13
+    if ([navigationController respondsToSelector:NSSelectorFromString(@"isModalInPresentation")]) {
+        [navigationController setValue:@YES forKey:@"modalInPresentation"];
+    }
+    
+    [self.presentingViewController presentViewController:navigationController animated:YES completion:^{
+        [self _makeChallengeRequest:self.challengeRequestParameters didCancel:NO];
+    }];
+    
 }
 
 - (void)close {
     [self _cleanUp];
-}
-
-- (void)cancelChallengeFlow {
-    [self challengeResponseViewControllerDidCancel:self.challengeResponseViewController];
 }
 
 - (void)dealloc {
@@ -338,8 +322,6 @@ NS_ASSUME_NONNULL_BEGIN
     } else if (![challengeResponse.messageVersion isEqualToString:self.challengeRequestParameters.messageVersion]) {
         error = [NSError _stds_invalidJSONFieldError:@"messageVersion"];
     } else if (!self.bypassTestModeVerification && ![challengeResponse.acsCounterACStoSDK isEqualToString:self.challengeRequestParameters.sdkCounterStoA]) {
-        error = [NSError errorWithDomain:STDSStripe3DS2ErrorDomain code:STDSErrorCodeDecryptionVerification userInfo:nil];
-    } else if (challengeResponse.acsUIType == STDSACSUITypeHTML && !challengeResponse.acsHTML) {
         error = [NSError errorWithDomain:STDSStripe3DS2ErrorDomain code:STDSErrorCodeDecryptionVerification userInfo:nil];
     }
     
@@ -413,7 +395,7 @@ NS_ASSUME_NONNULL_BEGIN
         [self.challengeStatusReceiver transaction:self didErrorWithRuntimeErrorEvent:runtimeErrorEvent];
     }
     
-    [self _dismissChallengeResponseViewController];
+    [self.challengeResponseViewController dismissViewControllerAnimated:YES completion:nil];
     [self _cleanUp];
 }
 
@@ -427,7 +409,7 @@ NS_ASSUME_NONNULL_BEGIN
             [self.challengeStatusReceiver transactionDidCancel:self];
             [self _cleanUp];
         } else {
-            [self _dismissChallengeResponseViewController];
+            [self.challengeResponseViewController dismissViewControllerAnimated:YES completion:nil];
             STDSCompletionEvent *completionEvent = [[STDSCompletionEvent alloc] initWithSDKTransactionIdentifier:_identifier
                                                                                                transactionStatus:challengeResponse.transactionStatus];
             [self.challengeStatusReceiver transaction:self didCompleteChallengeWithCompletionEvent:completionEvent];
@@ -451,18 +433,10 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (void)_didTimeout {
-    [self _dismissChallengeResponseViewController];
+    [self.challengeResponseViewController dismissViewControllerAnimated:YES completion:nil];
     [_networkingManager sendErrorMessage:[STDSErrorMessage errorForTimeoutWithACSTransactionID:self.challengeRequestParameters.acsTransactionIdentifier messageVersion:[self _messageVersion]]];
     [self.challengeStatusReceiver transactionDidTimeOut:self];
     [self _cleanUp];
-}
-
-- (void)_dismissChallengeResponseViewController {
-    if ([self.challengeStatusReceiver respondsToSelector:@selector(dismissChallengeViewController:forTransaction:)]) {
-        [self.challengeStatusReceiver dismissChallengeViewController:self.challengeResponseViewController forTransaction:self];
-    } else {
-        [self.challengeResponseViewController dismissViewControllerAnimated:YES completion:nil];
-    }
 }
 
 #pragma mark Helpers
@@ -484,33 +458,50 @@ NS_ASSUME_NONNULL_BEGIN
     return [selectionInfoNames componentsJoinedByString:@","];
 }
 
+/// Returns a UUID unique to the app version
+- (NSString *)_sdkAppIdentifier {
+    static NSString * const appIdentifierKeyPrefix = @"STDSStripe3DS2AppIdentifierKey";
+    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] ?: @"";
+    NSString *appIdentifierUserDefaultsKey = [appIdentifierKeyPrefix stringByAppendingString:appVersion];
+    NSString *appIdentifier = [[NSUserDefaults standardUserDefaults] stringForKey:appIdentifierUserDefaultsKey];
+    if (appIdentifier == nil) {
+        appIdentifier = [[NSUUID UUID] UUIDString].lowercaseString;
+        // Clean up any previous app identifiers
+        NSSet *previousKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] keysOfEntriesPassingTest:^BOOL (NSString *key, id obj, BOOL *stop) {
+            return [key hasPrefix:appIdentifierKeyPrefix] && ![key isEqualToString:appIdentifierUserDefaultsKey];
+        }];
+        for (NSString *key in previousKeys) {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+        }
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:appIdentifier forKey:appIdentifierUserDefaultsKey];
+    return appIdentifier;
+}
+
 #pragma mark - STDSChallengeResponseViewController
 
-- (void)challengeResponseViewController:(nonnull STDSChallengeResponseViewController *)viewController didSubmitInput:(nonnull NSString *)userInput whitelistSelection:(nonnull id<STDSChallengeResponseSelectionInfo>)whitelistSelection {
+- (void)challengeResponseViewController:(nonnull STDSChallengeResponseViewController *)viewController didSubmitInput:(nonnull NSString *)userInput {
     self.challengeRequestParameters = [self.challengeRequestParameters nextChallengeRequestParametersByIncrementCounter];
     self.challengeRequestParameters.challengeDataEntry = userInput;
-    self.challengeRequestParameters.whitelistingDataEntry = whitelistSelection.name;
     [self _makeChallengeRequest:self.challengeRequestParameters didCancel:NO];
 }
 
-- (void)challengeResponseViewController:(nonnull STDSChallengeResponseViewController *)viewController didSubmitSelection:(nonnull NSArray<id<STDSChallengeResponseSelectionInfo>> *)selection whitelistSelection:(nonnull id<STDSChallengeResponseSelectionInfo>)whitelistSelection {
+- (void)challengeResponseViewController:(nonnull STDSChallengeResponseViewController *)viewController didSubmitSelection:(nonnull NSArray<id<STDSChallengeResponseSelectionInfo>> *)selection {
     self.challengeRequestParameters = [self.challengeRequestParameters nextChallengeRequestParametersByIncrementCounter];
     self.challengeRequestParameters.challengeDataEntry = [self _csvForChallengeResponseSelectionInfo:selection];
-    self.challengeRequestParameters.whitelistingDataEntry = whitelistSelection.name;
     [self _makeChallengeRequest:self.challengeRequestParameters didCancel:NO];
 }
 
-- (void)challengeResponseViewControllerDidOOBContinue:(nonnull STDSChallengeResponseViewController *)viewController whitelistSelection:(nonnull id<STDSChallengeResponseSelectionInfo>)whitelistSelection {
+- (void)challengeResponseViewControllerDidOOBContinue:(nonnull STDSChallengeResponseViewController *)viewController {
     self.challengeRequestParameters = [self.challengeRequestParameters nextChallengeRequestParametersByIncrementCounter];
     self.challengeRequestParameters.oobContinue = @(YES);
-    self.challengeRequestParameters.whitelistingDataEntry = whitelistSelection.name;
     [self _makeChallengeRequest:self.challengeRequestParameters didCancel:NO];
 }
 
 - (void)challengeResponseViewControllerDidCancel:(STDSChallengeResponseViewController *)viewController {
     self.challengeRequestParameters = [self.challengeRequestParameters nextChallengeRequestParametersByIncrementCounter];
     self.challengeRequestParameters.challengeCancel = @(STDSChallengeCancelTypeCardholderSelectedCancel);
-    [self _dismissChallengeResponseViewController];
+    [viewController dismissViewControllerAnimated:YES completion:nil];
     [self _makeChallengeRequest:self.challengeRequestParameters didCancel:YES];
 }
 
