@@ -292,7 +292,7 @@ extension ChefProfileViewController
                  {
                      if let status = dict["status"] as? Bool, status == true
                      {
-                                         Loader.sharedInstance.hideIndicator()
+                            Loader.sharedInstance.hideIndicator()
                          do {
                              self.chefProfileObj = try JSONDecoder().decode(ChefProfile_Struct.self, from: data)
                              self.profileData()

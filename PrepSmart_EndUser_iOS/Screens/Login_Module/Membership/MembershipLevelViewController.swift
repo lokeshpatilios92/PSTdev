@@ -73,8 +73,15 @@ class MembershipLevelViewController: BaseViewController {
         
         
         let vc = UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
-        vc.amount = amount
+        vc.amount = String(amount)
+        vc.delegete = self
         self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension MembershipLevelViewController : paymentSucesscallBack {
+    func paymentSuccess(TransectionID: String) {
+        print(TransectionID)
     }
 }
 
