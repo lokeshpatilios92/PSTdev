@@ -66,7 +66,7 @@ class ViewRecipeViewController: BaseViewController {
         getRecipecommentsApi(CommentType: commentFillerType)
         
         // TODO: Manage Add Action
-        self.navigationItem.rightBarButtonItems = [ addWeeklyPlanNavButton(), addFavButton(with: UIImage(named: "heart")!), editRecipeNavButton()]
+        self.navigationItem.rightBarButtonItems = [ addWeeklyPlanNavButton(), addFavButton(with: UIImage(named: "heart")!), navButtonEditReceipe()]
         
     }
     
@@ -76,8 +76,19 @@ class ViewRecipeViewController: BaseViewController {
         return favNavButton
     }
     
+    func navButtonEditReceipe() -> UIBarButtonItem {
+        let editRecipeNavButton = UIBarButtonItem(image: #imageLiteral(resourceName: "edit_icon"), style: .done, target: self, action: #selector(self.editReceipeButton(sender:)))
+        return editRecipeNavButton
+    }
+    
     @objc func addTOFav(sender: UIButton) {
         self.addTOFavAPI()
+    }
+    
+    @objc func editReceipeButton(sender: UIButton) {
+        let vc = UIStoryboard.Explore_Module.instantiateViewController(withIdentifier: "EditCreatedRecipeViewController") as! EditCreatedRecipeViewController
+        vc.recipeDtails = self.recipeDtails
+         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func initialize(){

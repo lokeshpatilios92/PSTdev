@@ -23,6 +23,9 @@ class EditRecipeInfoViewController: UIViewController, UITextFieldDelegate {
     var dietTypeDropDown = DropDown()
     var CourcesDropDown = DropDown()
     
+    var recipeDtails = RecipeDetailsStruct()
+    
+    
     var parentVC : EditCreatedRecipeViewController?
     var mainIngredients: MainIngredientList?
     var cource: Cources?
@@ -40,19 +43,32 @@ class EditRecipeInfoViewController: UIViewController, UITextFieldDelegate {
         getMainIngredients()
         getDietTypes()
         getCources()
+        populateData()
     }
     
     
+    func populateData() {
+        self.descriptionTextView.text = recipeDtails.recipeInfo?.recipeDescription
+        let mainIngredients = recipeDtails.recipeInfo?.mainIngredients?.map { $0.mainIngredientName } as! [String]
+        self.mainIngredientTextFiled.text = mainIngredients.joined(separator: ",")
+        let cources = recipeDtails.recipeInfo?.course?.map { $0.courseTypeName } as! [String]
+        self.courseTextFiled.text = cources.joined(separator: ",")
+        
+        let dietType = recipeDtails.recipeInfo?.dietType?.map { $0.dietTypeName } as! [String]
+        self.dietTypeTextFiled.text = dietType.joined(separator: ",")
+        tagViews.removeAll()
+        let tags = recipeDtails.recipeInfo?.recipeTags?.map { $0.name } as! [String]        
+        tagViews.append(contentsOf: tags)
+        
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.mainIngredientTextFiled {
-            mainIngredientDropDown.anchorView = self.mainIngredientTextFiled
-            mainIngredientDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-                print("Selected item: \(item) at index: \(index)")
-                self.mainIngredientTextFiled.text = item
-                
-            }
-            
-            mainIngredientDropDown.show()
+            let vc = self.storyboard?.instantiateViewController(identifier: "MultiPickerController") as! MultiPickerController
+            let mainIngredients = recipeDtails.recipeInfo?.mainIngredients?.map { $0.mainIngredientName } as! [String]
+            vc.items = mainIngredients
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
             self.mainIngredientTextFiled.resignFirstResponder()
         } else if textField == self.dietTypeTextFiled {
             dietTypeDropDown.anchorView = self.dietTypeTextFiled
