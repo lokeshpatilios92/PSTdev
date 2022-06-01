@@ -136,11 +136,13 @@ extension EditCreatedRecipeViewController: SwipeMenuViewDataSource {
             return ingredientsVC
         } else if index == 2{
             self.nutritionVC.parentVC = self
+            self.nutritionVC.recipeDtails = self.recipeDtails
             self.nutritionVC.didMove(toParent: self)
             return nutritionVC
             
         } else if index == 3 {
             self.pairItWith.parentVC = self
+            self.pairItWith.recipeDtails = recipeDtails
             self.pairItWith.didMove(toParent: self)
             return pairItWith
         } else {

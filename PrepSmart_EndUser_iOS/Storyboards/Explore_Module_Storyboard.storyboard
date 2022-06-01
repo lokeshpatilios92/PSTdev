@@ -2295,6 +2295,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="ENGCARNATION" family="ENGCARNATION" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="jTV-5W-Fnh" id="GeU-Sp-sxG"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVF-dz-esJ">
                                                         <rect key="frame" x="10" y="74.5" width="374" height="1"/>
@@ -2384,6 +2387,7 @@
                     <connections>
                         <outlet property="collectionView" destination="APq-qT-qaU" id="WSs-dk-tg8"/>
                         <outlet property="scrollView" destination="e1C-Ix-UQA" id="8Sl-4L-uwK"/>
+                        <outlet property="txtFieldReceipes" destination="3Nt-Nu-asc" id="2GY-zN-nCd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhd-Q5-TOE" userLabel="First Responder" sceneMemberID="firstResponder"/>

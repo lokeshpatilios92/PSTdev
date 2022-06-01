@@ -19,6 +19,9 @@ class MultiPickerController: UIViewController, UITableViewDelegate, UITableViewD
     var items = [String]()
     var selectedItems = [String]()
     
+    var allItems: (([String]) -> Void)?
+
+
     var delegate: MultiPickerControllerDelegate?
     
     override func viewDidLoad() {
@@ -28,7 +31,7 @@ class MultiPickerController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func btnOKAction(_ sender: Any) {
-        self.delegate?.didPickItems(selectedItems)
+        self.allItems!(self.selectedItems)
         self.dismiss(animated: true, completion: nil)
     }
     
