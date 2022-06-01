@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class SignUpViewController : BaseViewController {
     @IBOutlet weak var scrollView : UIScrollView!
@@ -128,7 +129,28 @@ class SignUpViewController : BaseViewController {
     }
 
     @IBAction func onClickFBButton(_ sender: Any) {
-        self.showAlertWithErrorMessage("Cooming Soon")
+        LoginManager.init().logIn(permissions: ["public_profile", "email"], viewController: self) { (loginResult) in
+            switch loginResult {
+            case .success(let granted, let declined, let token):
+                let requestedFields = "email, first_name"
+
+                GraphRequest.init(graphPath: "me", parameters: ["fields":requestedFields]).start { (connection, result, error) -> Void in
+                    
+                    if error == nil {
+                        if let resultDict = result as? [String: Any],
+                          let email = resultDict["email"] as? String,
+                           let firstName = resultDict["first_name"] as? String {
+                            self.loginApi(with: email, password: firstName, loginMedia: "2")
+                        }
+                    }
+                }
+                print("granted: \(granted), declined: \(declined), token: \(token)")
+            case .cancelled:
+                print("Login: cancelled.")
+            case .failed(let error):
+                print("Login with error: \(error.localizedDescription)")
+            }
+        }
     }
     
     @IBAction func onClickGoogleButton(_ sender: Any) {
@@ -302,6 +324,61 @@ extension SignUpViewController
 
             case .failer(let error):
 
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    func loginApi(with email: String, password: String, loginMedia: String){
+    
+    let param:[String:String] = ["email": email/* userNameTextFiled.text ?? "" */,                            "password": password /* passwordTextFiled.text ?? "" */,
+                                 "device_type":"1",
+                                 "device_token":"dEDiKUy7R3i2Ph4IkS5bCr:APA91bGFP-wEIA6rf7FzNHJbNe1xgR6hWvP2nBHlGjDbVDT3ZAD6rX0ua-w8gfS7McWwkxqCfWudOQ15TOyzCho0efRfgGFgjUOR7AiTtTlFRVQBUdjj7PrUuiH3Ud1Thol03vBSDmdO",
+                                 "app_version": "1",
+                                 "login_media": loginMedia /*"1"*/,
+                                 "media_token":"abc"]
+        
+                Loader.sharedInstance.showIndicator()
+        
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.login_Api, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            
+                            UtilityManager.isLogedIn(value: true)
+                            let vc = UIStoryboard.DashboardStoryboard.instantiateViewController(withIdentifier: "TabBarViewController")as! TabBarViewController
+                            self.navigationController?.pushViewController(vc, animated: true)
+                            
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                            
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: self.global_Var.get_status.message)
+                }
+                                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
                 Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                                 Loader.sharedInstance.hideIndicator()
                 break
