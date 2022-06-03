@@ -20,5 +20,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA21D3CB-0998-4119-A706-4DB12886B88A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PrepSmart_EndUser_iOS/Screens/Login_Module/Membership/PaymentVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "stipeconnection()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D76E8EEF-6599-477F-A2F1-6A0D26F7B50A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PrepSmart_EndUser_iOS/Screens/Login_Module/Membership/PaymentVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "stipeconnection()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BD74F37-99CF-432E-9164-609FF55560DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PrepSmart_EndUser_iOS/Screens/Login_Module/Membership/PaymentVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "stipeconnection()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BD74F37-99CF-432E-9164-609FF55560DA - c912b51e528fe5f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Stripe.STPSource&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PrepSmart.PaymentVC.stipeconnection() -&gt; ()"
+                  moduleName = "PrepSmart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/Screens/Login_Module/Membership/PaymentVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "3BD74F37-99CF-432E-9164-609FF55560DA - c912b51e528fe5f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Stripe.STPSource&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PrepSmart.PaymentVC.stipeconnection() -&gt; ()"
+                  moduleName = "PrepSmart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/apple/Documents/PSTdev/PrepSmart_EndUser_iOS/Screens/Login_Module/Membership/PaymentVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "111">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

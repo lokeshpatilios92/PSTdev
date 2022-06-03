@@ -21,7 +21,6 @@ class PaymentVC: UIViewController {
     @IBOutlet weak var viewContainer:UIView!
     @IBOutlet weak var payButton:UIButton!
     
-    
     lazy var cardTextField: STPPaymentCardTextField = {
         let cardTextField = STPPaymentCardTextField()
         return cardTextField
@@ -43,7 +42,8 @@ class PaymentVC: UIViewController {
         print(cardTextField.cvc)
         print(cardTextField.expirationYear)
         print(cardTextField.expirationMonth)
-        cratePaymentIntent()
+        stipeconnection()
+       // cratePaymentIntent()
         //        delegete?.paymentSuccess(TransectionID: "afadadssadd")
         //        self.dismiss(animated: true, completion: nil)
     }
@@ -82,6 +82,25 @@ extension PaymentVC {
 }
 
 extension PaymentVC {
+    func stipeconnection() {
+        let cardParams = STPCardParams()
+        cardParams.name = "Jenny Rosen"
+        cardParams.number = "4242424242424242"
+        cardParams.expMonth = 12
+        cardParams.expYear = 22
+        cardParams.cvc = "424"
+
+        let sourceParams = STPSourceParams.cardParams(withCard: cardParams)
+        STPAPIClient.shared.createSource(with: sourceParams) { (source, error) in
+            if let s = source, s.flow == .none && s.status == .chargeable {
+                //print(s)
+              //  self.createBackendChargeWithSourceID(s.stripeID)
+            }
+        }
+    }
+    
+    
+    
     func cratePaymentIntent() {
         let param:[String:Any] = ["payment_method_type" : 2,
                                   "amount": amount,
