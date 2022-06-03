@@ -18,7 +18,8 @@ class MembershipLevelViewController: BaseViewController {
     var planObj : Membership_Struct?
     var global_Var = GlobalClass.sharedManager
     let flowLayout = ZoomAndSnapFlowLayout()
-    
+    var subscribeStatus = AppRating_Struct()
+    var planId:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initiolize()
@@ -61,27 +62,40 @@ class MembershipLevelViewController: BaseViewController {
         switch sender.tag {
         case 0:
           amount = billedMonthlyClicked == 0 ? self.planObj?.membership_list?.basic_plan?.monthly?.price ?? 0 : self.planObj?.membership_list?.basic_plan?.annually?.price ?? 0
+            self.planId = self.planObj?.membership_list?.basic_plan?.annually?.id ?? 0
         case 1:
             amount = billedMonthlyClicked == 0 ? self.planObj?.membership_list?.pro?.monthly?.price ?? 0 : self.planObj?.membership_list?.pro?.annually?.price ?? 0
+            self.planId = self.planObj?.membership_list?.pro?.annually?.id ?? 0
         case 2:
             amount = billedMonthlyClicked == 0 ? self.planObj?.membership_list?.pro_plus?.monthly?.price ?? 0 : self.planObj?.membership_list?.pro_plus?.annually?.price ?? 0
+            self.planId = self.planObj?.membership_list?.pro_plus?.annually?.id ?? 0
         case 3:
             amount = billedMonthlyClicked == 0 ? self.planObj?.membership_list?.basic_plan_new?.monthly?.price ?? 0 : self.planObj?.membership_list?.basic_plan_new?.annually?.price ?? 0
+            self.planId = self.planObj?.membership_list?.basic_plan_new?.annually?.id ?? 0
         default:
             print("")
         }
-        
-        
+
         let vc = UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
         vc.amount = String(amount)
+        vc.paymentType = 3
+        vc.chefId = planId
+        if billedMonthlyClicked == 0 {
+            vc.duration = 1
+        }
+        else {
+            vc.duration = 2
+        }
         vc.delegete = self
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
 }
 
 extension MembershipLevelViewController : paymentSucesscallBack {
-    func paymentSuccess(TransectionID: String) {
-        print(TransectionID)
+    func paymentSuccess(TransectionID: String, Amount: String, Type: Int, id: Int, duration: Int) {
+        membershipSubscribePayement(TransectionID: TransectionID,
+                                    Duration: duration,
+                                    id: id)
     }
 }
 
@@ -173,6 +187,53 @@ extension MembershipLevelViewController
 
                 Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                     Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    func membershipSubscribePayement(TransectionID: String, Duration: Int, id: Int) {
+        let param:[String:Any] = ["planId":id,
+                                  "duration":Duration,
+                                  "transactionId":TransectionID]
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.updateMembership, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.subscribeStatus = try JSONDecoder().decode(AppRating_Struct.self, from: data)
+                            //Alert.show(vc: self, titleStr: Alert.kTitle, messageStr: self.subscribeStatus.message)
+                            let vc = UIStoryboard.EndUser_AuxilaryStoryboard.instantiateViewController(withIdentifier: "SubscriptionViewController") as! SubscriptionViewController
+                            self.navigationController?.pushViewController(vc, animated: false)
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
                 break
             }
         }

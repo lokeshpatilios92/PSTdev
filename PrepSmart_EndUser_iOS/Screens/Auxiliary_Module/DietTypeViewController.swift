@@ -12,14 +12,10 @@ import Toaster
 class DietTypeViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var tableTitleView: UIView!
     @IBOutlet weak var tableBottomView: UIView!
-    
-    
     @IBOutlet weak var tableTitleLabel: UILabel!
     @IBOutlet weak var tableBottomLabel: UILabel!
-    
     @IBOutlet weak var nextButton: UIButton!
     
     var diteArray : [String] = []

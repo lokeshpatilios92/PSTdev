@@ -100,8 +100,10 @@ class Constants: NSObject
     static let getMainIngredients = "getMainIngredientList"
     static let getCourse = "getCourse"
     
-    static let chefSubscribePaymentIntent = "chefSubscribePaymentIntent"
-    
+    static let subscribeChef = "subscribeChef"
+    static let updateMembership = "updateMembership"
+    static let subscribeRecipe = "subscribeRecipe"
+
     static let marginConstant:CGFloat = UtilityManager.isIphone() ? 15:20
     static let labelHeightConstant:CGFloat = UtilityManager.isIphone() ? 35:45
     static let BUTTON_HEIGHT:CGFloat = UtilityManager.isIphone() ? 50:60

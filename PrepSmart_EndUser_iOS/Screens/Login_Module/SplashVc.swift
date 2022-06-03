@@ -23,7 +23,8 @@ class SplashVc: UIViewController {
         //crash_Check()
         app_delegate.story_obj    = self.storyboard
         app_delegate.navi_obj = self.navigationController
-    
+        self.navigationController?.navigationBar.isHidden = true
+
        
         self.auto_Login()
     }
