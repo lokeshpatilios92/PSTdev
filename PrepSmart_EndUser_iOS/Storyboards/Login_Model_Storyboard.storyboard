@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GjE-bg-B9x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GjE-bg-B9x">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1588,20 +1588,20 @@
             </objects>
             <point key="canvasLocation" x="2557.5999999999999" y="2377.9610194902552"/>
         </scene>
-        <!--PaymentVC-->
+        <!--Enter name here...-->
         <scene sceneID="r5s-JR-ma0">
             <objects>
-                <viewController storyboardIdentifier="PaymentVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Af1-Rd-bDk" customClass="PaymentVC" customModule="PrepSmart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentVC" title="Enter name here..." modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="Af1-Rd-bDk" customClass="PaymentVC" customModule="PrepSmart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nNb-GW-JEx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dH-yc-toT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="477.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8pI-BR-o0C">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="457.5" width="375" height="209.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idi-QH-mq4">
                                         <rect key="frame" x="15" y="15" width="345" height="23.5"/>
@@ -1609,21 +1609,29 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name here.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFq-8F-9Ub">
+                                        <rect key="frame" x="10" y="48.5" width="355" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="sVM-B0-0JS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Dw-Q3-31r">
-                                        <rect key="frame" x="10" y="48.5" width="355" height="50"/>
+                                        <rect key="frame" x="10" y="98.5" width="355" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jr0-uF-D2X"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32e-uc-CEk">
-                                        <rect key="frame" x="147.5" y="128.5" width="80" height="31"/>
+                                        <rect key="frame" x="147.5" y="168.5" width="80" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="Xmp-0f-Mpc"/>
                                             <constraint firstAttribute="width" constant="80" id="g47-Zc-VR3"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="PAY"/>
                                         <connections>
                                             <action selector="payAction:" destination="Af1-Rd-bDk" eventType="touchUpInside" id="fas-vc-LX5"/>
                                         </connections>
@@ -1631,15 +1639,18 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="hFq-8F-9Ub" firstAttribute="top" secondItem="idi-QH-mq4" secondAttribute="bottom" constant="10" id="6Mt-2Z-qP7"/>
+                                    <constraint firstItem="hFq-8F-9Ub" firstAttribute="leading" secondItem="8pI-BR-o0C" secondAttribute="leading" constant="10" id="C5I-Ph-Jnt"/>
                                     <constraint firstAttribute="trailing" secondItem="idi-QH-mq4" secondAttribute="trailing" constant="15" id="Cly-oJ-wtr"/>
-                                    <constraint firstAttribute="height" constant="200" id="M7e-Tj-Fya"/>
+                                    <constraint firstAttribute="trailing" secondItem="hFq-8F-9Ub" secondAttribute="trailing" constant="10" id="IAz-dL-Yfw"/>
                                     <constraint firstItem="32e-uc-CEk" firstAttribute="centerX" secondItem="8pI-BR-o0C" secondAttribute="centerX" id="MsI-RG-xCM"/>
+                                    <constraint firstAttribute="bottom" secondItem="32e-uc-CEk" secondAttribute="bottom" constant="10" id="ZpQ-aZ-bGK"/>
                                     <constraint firstItem="idi-QH-mq4" firstAttribute="leading" secondItem="8pI-BR-o0C" secondAttribute="leading" constant="15" id="dsT-Yf-1qZ"/>
-                                    <constraint firstItem="32e-uc-CEk" firstAttribute="top" secondItem="1Dw-Q3-31r" secondAttribute="bottom" constant="30" id="gIh-nt-ZHs"/>
+                                    <constraint firstItem="32e-uc-CEk" firstAttribute="top" secondItem="1Dw-Q3-31r" secondAttribute="bottom" constant="20" id="gIh-nt-ZHs"/>
                                     <constraint firstItem="idi-QH-mq4" firstAttribute="top" secondItem="8pI-BR-o0C" secondAttribute="top" constant="15" id="gtO-B9-4ca"/>
-                                    <constraint firstItem="1Dw-Q3-31r" firstAttribute="top" secondItem="idi-QH-mq4" secondAttribute="bottom" constant="10" id="ikU-yB-Bf8"/>
                                     <constraint firstAttribute="trailing" secondItem="1Dw-Q3-31r" secondAttribute="trailing" constant="10" id="l4L-bZ-9Ey"/>
                                     <constraint firstItem="1Dw-Q3-31r" firstAttribute="leading" secondItem="8pI-BR-o0C" secondAttribute="leading" constant="10" id="nkv-dl-7ew"/>
+                                    <constraint firstItem="1Dw-Q3-31r" firstAttribute="top" secondItem="hFq-8F-9Ub" secondAttribute="bottom" constant="10" id="xDs-UK-n2u"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1657,6 +1668,7 @@
                     </view>
                     <connections>
                         <outlet property="lblAmount" destination="idi-QH-mq4" id="Lwq-LC-64Y"/>
+                        <outlet property="nameOnCard" destination="hFq-8F-9Ub" id="KSj-DX-hwa"/>
                         <outlet property="payButton" destination="32e-uc-CEk" id="IpA-YU-0kc"/>
                         <outlet property="viewBack" destination="8dH-yc-toT" id="MbW-DM-VAT"/>
                         <outlet property="viewContainer" destination="1Dw-Q3-31r" id="WkQ-vZ-QtB"/>

@@ -142,37 +142,19 @@ extension ExploreRecipesViewController : UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: recipe_BoxCollectionCell, for: indexPath) as! Recipe_BoxCollectionCell
         let dic = findNewRecipeObj?.recipeList?[indexPath.row]
-        
-//        if indexPath.row == 0 {
-//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "prepsmarts-choice"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-//        }
-//        else if indexPath.row == 1 {
-//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-//        }
-//        else if indexPath.row == 2 {
-//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "free"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-//        }
-//        else if indexPath.row == 3 {
-//            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: #imageLiteral(resourceName: "prepsmarts-choice"), label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-//        }
-//        else {
-//            cell.setCellImages(itemImage: "", label0Image: nil, label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-//        }
-//        if dic?.item_title == "jehe" {
-//            print( "value ==>\(dic?.item_label)")
- //       }
-        switch dic?.item_label{
-        case "Free":
-            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "free"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-            
-        case "Premium":
+        if (dic?.prepsmart_flag == 1 && dic?.item_label == "Prepsmart Choice") {
+                           // view.prepsmart_choice_img.visibility = View.VISIBLE
+            cell.setCellImages(itemImage: "", label0Image: nil, label1Image: nil, label2Image: #imageLiteral(resourceName: "prepsmarts-choice"), label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+        } else if (dic?.prepsmart_flag == 0 && dic?.item_label == "Premium") {
+                            //view.upper_premi_type_img.visibility = View.VISIBLE
             cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "premium"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-        default :
-            cell.setCellImages(itemImage: "", label0Image: nil, label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
-            
+        } else if (dic?.prepsmart_flag == 0 && dic?.item_label == "Free") {
+                          //  view.lower_premi_type_img.visibility = View.VISIBLE
+            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "free"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
         }
-       
-        
+        else{
+            cell.setCellImages(itemImage: "", label0Image: #imageLiteral(resourceName: "free"), label1Image: nil, label2Image: nil, label3Image: nil, label4Image: nil, recipe0Image: nil, recipe1Image: nil, recipe2Image: nil)
+        }
         cell.config(dict: dic)
         return cell
     }

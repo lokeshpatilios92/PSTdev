@@ -164,7 +164,7 @@ class HomeViewController: BaseViewController {
         lbl_startDate.text = DateToString(date: fromDate, formate: "MMM d")
         lbl_endDate.text = DateToString(date: toDate, formate: "MMM d")
         homeApi()
-//        showViewNoRecipe()
+        //        showViewNoRecipe()
     }
     
     @IBAction func onClickBtn_forwardCalendar(_ sender: UIButton) {
@@ -174,7 +174,7 @@ class HomeViewController: BaseViewController {
         lbl_startDate.text = DateToString(date: fromDate, formate: "MMM d")
         lbl_endDate.text = DateToString(date: toDate, formate: "MMM d")
         homeApi()
-//        self.showCalendarViewController(setTopLabel: "", customDelegate: self)
+        //        self.showCalendarViewController(setTopLabel: "", customDelegate: self)
     }
     
     @IBAction func onClickBtnGotIt(_ sender: UIButton) {
@@ -277,43 +277,6 @@ class HomeViewController: BaseViewController {
         setDaysButtonsColor()
         sender.backgroundColor = UIColor.appOrangeColor()
         showViewCollection()
-              
-        //Switch case for specific action to buttons
-        /* switch sender.tag {
-         case 1:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         case 2:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         case 3:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         case 4:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         case 5:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         case 6:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         case 7:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         default:
-         setDaysButtonsColor()
-         sender.backgroundColor = UIColor.appOrangeColor()
-         break
-         }*/
-        
     }
     
     func setDaysButtonsColor()
@@ -388,16 +351,10 @@ extension HomeViewController : CustomKeyFeaturePopUpDelegate{
     func onClcikCancelButton() {
         switch_mode.isOn = false
     }
+    
     func onClcikUpgradeButton() {
-        print("Upgrade")
-    let vc =  UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "MembershipLevelViewController") as! MembershipLevelViewController
-       // self.updateFoodInterestAPI()
+        let vc =  UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "MembershipLevelViewController") as! MembershipLevelViewController
         self.navigationController?.pushViewController(vc, animated: true)
-//        lbl_mode.text = "Advanced"
-//        UserDefaults.standard.set(1, forKey: "mode")
-//        UserDefaults.standard.synchronize()
-//        height_viewCalendar.constant = 160.0
-//        basicModeSetup()
     }
 }
 
@@ -464,7 +421,7 @@ extension HomeViewController
                 
             case .failer(let error):
                 Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
-                                Loader.sharedInstance.hideIndicator()
+                Loader.sharedInstance.hideIndicator()
                 break
             }
         }

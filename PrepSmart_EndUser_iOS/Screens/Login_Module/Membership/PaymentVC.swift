@@ -10,7 +10,7 @@ import UIKit
 import Stripe
 
 protocol paymentSucesscallBack {
-    func paymentSuccess(TransectionID:String)
+    func paymentSuccess(TransectionID:String, Amount:String, Type:Int, id:Int, duration:Int)
 }
 
 class PaymentVC: UIViewController {
@@ -20,6 +20,8 @@ class PaymentVC: UIViewController {
     @IBOutlet weak var viewPopUp:UIView!
     @IBOutlet weak var viewContainer:UIView!
     @IBOutlet weak var payButton:UIButton!
+    @IBOutlet weak var nameOnCard:UITextField!
+    
     
     lazy var cardTextField: STPPaymentCardTextField = {
         let cardTextField = STPPaymentCardTextField()
@@ -27,25 +29,25 @@ class PaymentVC: UIViewController {
     }()
     
     var amount:String = "0"
+    var paymentType:Int = 0 // 0 for recipe , 1 for chef , 2 plan
     var duration:Int = 0
     var delegete:paymentSucesscallBack?
-    var paymentIntentStatus = AppRating_Struct()
     var chefId = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetUp()
     }
     
     @IBAction func payAction(_ Sender : UIButton){
-        print(cardTextField.cardNumber)
-        print(cardTextField.cvc)
-        print(cardTextField.expirationYear)
-        print(cardTextField.expirationMonth)
-        stipeconnection()
-       // cratePaymentIntent()
-        //        delegete?.paymentSuccess(TransectionID: "afadadssadd")
-        //        self.dismiss(animated: true, completion: nil)
+        if nameOnCard.text == "" {
+            Alert.show(vc: self, titleStr: "Message", messageStr: "Please enter name")
+        }
+        else if cardTextField.isValid == false {
+            Alert.show(vc: self, titleStr: "Message", messageStr: "Please valid card details")
+        }
+        else {
+            createPaymentToken()
+        }
     }
 }
 
@@ -56,8 +58,9 @@ extension PaymentVC {
         viewPopUp.layer.cornerRadius = 20
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         viewBack.addGestureRecognizer(tap)
-        
-        
+        payButton.layer.cornerRadius =  payButton.frame.height/2
+        payButton.layer.borderWidth = 1
+        payButton.layer.borderColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
     }
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         self.dismiss(animated: true, completion: nil)
@@ -82,70 +85,26 @@ extension PaymentVC {
 }
 
 extension PaymentVC {
-    func stipeconnection() {
+    func createPaymentToken() {
         let cardParams = STPCardParams()
-        cardParams.name = "Jenny Rosen"
-        cardParams.number = "4242424242424242"
-        cardParams.expMonth = 12
-        cardParams.expYear = 22
-        cardParams.cvc = "424"
-
-        let sourceParams = STPSourceParams.cardParams(withCard: cardParams)
-        STPAPIClient.shared.createSource(with: sourceParams) { (source, error) in
-            if let s = source, s.flow == .none && s.status == .chargeable {
-                //print(s)
-              //  self.createBackendChargeWithSourceID(s.stripeID)
-            }
-        }
-    }
-    
-    
-    
-    func cratePaymentIntent() {
-        let param:[String:Any] = ["payment_method_type" : 2,
-                                  "amount": amount,
-                                  "chef_id":chefId,
-                                  "card_number": Int(cardTextField.cardNumber ?? ""),
-                                  "card_exp_month":cardTextField.expirationMonth,
-                                  "card_exp_year":cardTextField.expirationYear,
-                                  "card_cvc":Int(cardTextField.cvc ?? "")]
+        cardParams.name = nameOnCard.text ?? ""
+        cardParams.number = cardTextField.cardNumber
+        cardParams.expMonth = UInt(cardTextField.expirationMonth)
+        cardParams.expYear =  UInt(cardTextField.expirationYear)
+        cardParams.cvc = cardTextField.cvc
         Loader.sharedInstance.showIndicator()
-        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.chefSubscribePaymentIntent, params: param , method: .post) { (result) in
-            switch result
-            {
-            case .success(let data, let dictionary):
-                
-                if let dict : NSDictionary = dictionary as? NSDictionary
-                {
-                    if let status = dict["status"] as? Bool, status == true
-                    {
-                        Loader.sharedInstance.hideIndicator()
-                        do {
-                            self.paymentIntentStatus = try JSONDecoder().decode(AppRating_Struct.self, from: data)
-                            Alert.show(vc: self, titleStr: Alert.kTitle, messageStr: self.paymentIntentStatus.message)
-                        }
-                        catch
-                        {
-                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
-                        }
-                    }
-                    else
-                    {
-                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
-                    }
-                }
-                else
-                {
-                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
-                }
+        STPAPIClient.shared.createToken(withCard: cardParams) { (token: STPToken?, error: Error?) in
+            print("Printing Strip response:\(String(describing: token?.allResponseFields))\n\n")
+            print("Printing Strip Token:\(String(describing: token?.tokenId))")
+            if error != nil {
                 Loader.sharedInstance.hideIndicator()
-                break
-                
-            case .failer(let error):
-                
-                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error?.localizedDescription ?? "")
+            }
+            
+            if token != nil{
                 Loader.sharedInstance.hideIndicator()
-                break
+                self.delegete?.paymentSuccess(TransectionID: token!.tokenId, Amount: self.amount, Type: self.paymentType, id: self.chefId ,duration: self.duration)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

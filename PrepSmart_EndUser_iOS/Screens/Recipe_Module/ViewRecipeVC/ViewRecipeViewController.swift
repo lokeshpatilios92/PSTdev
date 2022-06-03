@@ -42,7 +42,8 @@ class ViewRecipeViewController: BaseViewController {
     var addCommentStatus = AppRating_Struct()
     var addtToMyStuffStatus = AppRating_Struct()
     var recipeCommentList = RecipeCommentStruct()
-    
+    var subscribeRecipeStatus = AppRating_Struct()
+
     var reviewsAndRatingsCell  = "ReviewsandRatingCell"
     var commentsSectionHeader  = "CommentsSectionHeader"
     var ratingCustomHeaderCell = "RatingCustomHeaderCell"
@@ -243,11 +244,18 @@ class ViewRecipeViewController: BaseViewController {
         let vc = UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
         vc.amount = "\(recipeDtails.recipeInfo?.monthlyCost ?? 0)"
         vc.delegete = self
+        vc.chefId = recipeDtails.recipeInfo?.chefID ?? 0
+        vc.paymentType = 2
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func onClickBtnSubscribedToPremiumUser(_ sender: UIButton) {
-        print("SubscribedToPremiumUser")
+        let vc = UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
+        vc.amount = "\(recipeDtails.recipeInfo?.monthlyCost ?? 0)"
+        vc.delegete = self
+        vc.chefId = recipeDtails.recipeInfo?.recipeID ?? 0
+        vc.paymentType = 0
+        self.navigationController?.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func onClickBtnAddToMyStuff(_ sender: UIButton) {
@@ -333,8 +341,8 @@ class ViewRecipeViewController: BaseViewController {
 }
 
 extension ViewRecipeViewController : paymentSucesscallBack {
-    func paymentSuccess(TransectionID: String) {
-        print(TransectionID)
+    func paymentSuccess(TransectionID: String, Amount: String, Type: Int, id:Int, duration: Int) {
+        SubscribeRecipePayementAPI(TransectionID: TransectionID, amount: Amount, id: id ,Type: Type)
     }
 }
 
@@ -834,7 +842,7 @@ extension ViewRecipeViewController {
         CommenttypeDropDown.dataSource = arrayCommenttype
         
         
-        
+        btn_subscribedToPremiumUser.setTitle("Subscribe to recipe", for: .normal)
         if recipeDtails.recipeInfo?.myStuffRecipeStatus == 1 {
             btn_addtomystuff.setTitle("Added to  My Stuff", for: .normal)
         }
@@ -932,6 +940,66 @@ extension ViewRecipeViewController:addCommentProtocol {
                             self.addtToMyStuffStatus = try JSONDecoder().decode(AppRating_Struct.self, from: data)
                             Alert.show(vc: self, titleStr: Alert.kTitle, messageStr: self.addtToMyStuffStatus.message)
                             self.getRecipeDetailsApi()
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    func SubscribeRecipePayementAPI(TransectionID: String, amount: String, id: Int, Type : Int) {
+        var param:[String:Any] = ["":""]
+        var MethodName:String = ""
+        if Type == 0 {
+            param = ["recipe_id":id,
+                     "amount":amount,
+                     "payment_status":1,
+                     "transaction_id":TransectionID]
+            MethodName = Constants.subscribeRecipe
+        }
+        else {
+            param = ["chef_id":id,
+                    "amount":amount,
+                    "payment_status":1,
+                    "transaction_id":TransectionID]
+            MethodName = Constants.subscribeChef
+        }
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: MethodName, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.subscribeRecipeStatus = try JSONDecoder().decode(AppRating_Struct.self, from: data)
+                            self.getRecipeDetailsApi()
+                            Alert.show(vc: self, titleStr: Alert.kTitle, messageStr: self.subscribeRecipeStatus.message)
+                            
                         }
                         catch
                         {

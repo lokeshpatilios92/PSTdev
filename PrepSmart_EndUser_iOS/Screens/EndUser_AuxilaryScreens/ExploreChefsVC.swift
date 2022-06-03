@@ -18,7 +18,8 @@ class ExploreChefsVC: BaseViewController {
     @IBOutlet weak var expandFilterBtn: UIButton!
     @IBOutlet weak var editProfileBtn: UIButton!
     @IBOutlet weak var searchBarView: UIView!
-    
+    var subscribeChefStatus = AppRating_Struct()
+
     var exploreChefCell = "ExploreChefCell"
     var global_Var = GlobalClass.sharedManager
     var findNewRecipeObj : FindNewRecipe_Struct?
@@ -86,14 +87,15 @@ class ExploreChefsVC: BaseViewController {
         let vc = UIStoryboard.Login_Model_Storyboard.instantiateViewController(withIdentifier: "PaymentVC") as! PaymentVC
         vc.amount = dic?.monthly_subscription_cost ?? "0"
         vc.delegete = self
+        vc.paymentType = 2
         vc.chefId = dic?.chef_id ?? 0
         self.navigationController?.present(vc, animated: true, completion: nil)
     }
 }
 
 extension ExploreChefsVC : paymentSucesscallBack {
-    func paymentSuccess(TransectionID: String) {
-        print(TransectionID)
+    func paymentSuccess(TransectionID: String, Amount: String, Type: Int, id: Int, duration: Int) {
+        chefSubscribePayement(TransectionID: TransectionID, Amount: Amount, Type: Type, id: id)
     }
 }
 
@@ -180,6 +182,52 @@ extension ExploreChefsVC
                 Loader.sharedInstance.hideIndicator()
                 break
             case .failer(let error):
+                Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                Loader.sharedInstance.hideIndicator()
+                break
+            }
+        }
+    }
+    
+    func chefSubscribePayement(TransectionID: String, Amount: String, Type: Int, id: Int) {
+        let param:[String:Any] = ["chef_id":id,
+                                  "amount":Amount,
+                                  "payment_status":1,
+                                  "transaction_id":TransectionID]
+        Loader.sharedInstance.showIndicator()
+        Api_Http_Class.shareinstance.AlemfFireRowAPICall(methodName: Constants.subscribeChef, params: param , method: .post) { (result) in
+            switch result
+            {
+            case .success(let data, let dictionary):
+                
+                if let dict : NSDictionary = dictionary as? NSDictionary
+                {
+                    if let status = dict["status"] as? Bool, status == true
+                    {
+                        Loader.sharedInstance.hideIndicator()
+                        do {
+                            self.subscribeChefStatus = try JSONDecoder().decode(AppRating_Struct.self, from: data)
+                            Alert.show(vc: self, titleStr: Alert.kTitle, messageStr: self.subscribeChefStatus.message)
+                        }
+                        catch
+                        {
+                            Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
+                        }
+                    }
+                    else
+                    {
+                        Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                    }
+                }
+                else
+                {
+                    Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: GlobalClass.sharedManager.get_status.message)
+                }
+                Loader.sharedInstance.hideIndicator()
+                break
+                
+            case .failer(let error):
+                
                 Alert.show(vc: self, titleStr: AMPLocalizeUtils.defaultLocalizer.stringForKey(key: Alert.kTitle), messageStr: error.localizedDescription)
                 Loader.sharedInstance.hideIndicator()
                 break
