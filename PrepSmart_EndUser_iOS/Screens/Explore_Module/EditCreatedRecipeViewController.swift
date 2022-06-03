@@ -14,9 +14,15 @@ class EditCreatedRecipeViewController: BaseViewController {
     @IBOutlet weak var swipeMenuView: SwipeMenuView!
     @IBOutlet weak var constraintSwipeViewHt: NSLayoutConstraint!
     
+    var recipeDtails = RecipeDetailsStruct()
+    
     let arrTitles = ["Recipe Info", "Ingredients and Instructions", "Nutrition Info", "Pair it with", "Save Option"]
     
+    
+    
     let recipeInfoVC = UIStoryboard.Explore_Module.instantiateViewController(withIdentifier: "EditRecipeInfoViewController") as! EditRecipeInfoViewController
+
+    
     let ingredientsVC = UIStoryboard.Explore_Module.instantiateViewController(withIdentifier: "EditIngredientsAndInstructionsViewController") as! EditIngredientsAndInstructionsViewController
     let nutritionVC = UIStoryboard.Explore_Module.instantiateViewController(withIdentifier: "EditNutritionalInfoViewController") as! EditNutritionalInfoViewController
     let pairItWith = UIStoryboard.Explore_Module.instantiateViewController(withIdentifier: "EditPairItViewController") as! EditPairItViewController
@@ -121,6 +127,7 @@ extension EditCreatedRecipeViewController: SwipeMenuViewDataSource {
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
         if index == 0 {
             self.recipeInfoVC.parentVC = self
+            self.recipeInfoVC.recipeDtails = self.recipeDtails
             self.recipeInfoVC.didMove(toParent: self)
             return recipeInfoVC
         } else if index == 1 {
@@ -129,16 +136,21 @@ extension EditCreatedRecipeViewController: SwipeMenuViewDataSource {
             return ingredientsVC
         } else if index == 2{
             self.nutritionVC.parentVC = self
+            self.nutritionVC.recipeDtails = self.recipeDtails
             self.nutritionVC.didMove(toParent: self)
             return nutritionVC
             
         } else if index == 3 {
             self.pairItWith.parentVC = self
+            self.pairItWith.recipeDtails = recipeDtails
             self.pairItWith.didMove(toParent: self)
             return pairItWith
         } else {
             
             self.saveOptionVc.parentVC = self
+            self.saveOptionVc.cancelTap = { 
+                self.navigationController?.popViewController(animated: true)
+            }
             self.saveOptionVc.didMove(toParent: self)
             return saveOptionVc
         }

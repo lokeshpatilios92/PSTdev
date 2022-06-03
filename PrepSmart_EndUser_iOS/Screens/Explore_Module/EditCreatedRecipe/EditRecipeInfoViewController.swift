@@ -23,6 +23,9 @@ class EditRecipeInfoViewController: UIViewController, UITextFieldDelegate {
     var dietTypeDropDown = DropDown()
     var CourcesDropDown = DropDown()
     
+    var recipeDtails = RecipeDetailsStruct()
+    
+    
     var parentVC : EditCreatedRecipeViewController?
     var mainIngredients: MainIngredientList?
     var cource: Cources?
@@ -40,39 +43,56 @@ class EditRecipeInfoViewController: UIViewController, UITextFieldDelegate {
         getMainIngredients()
         getDietTypes()
         getCources()
+        populateData()
     }
     
     
+    func populateData() {
+        self.descriptionTextView.text = recipeDtails.recipeInfo?.recipeDescription
+        let mainIngredients = recipeDtails.recipeInfo?.mainIngredients?.map { $0.mainIngredientName } as! [String]
+        self.mainIngredientTextFiled.text = mainIngredients.joined(separator: ",")
+        let cources = recipeDtails.recipeInfo?.course?.map { $0.courseTypeName } as! [String]
+        self.courseTextFiled.text = cources.joined(separator: ",")
+        
+        let dietType = recipeDtails.recipeInfo?.dietType?.map { $0.dietTypeName } as! [String]
+        self.dietTypeTextFiled.text = dietType.joined(separator: ",")
+        tagViews.removeAll()
+        let tags = recipeDtails.recipeInfo?.recipeTags?.map { $0.name } as! [String]        
+        tagViews.append(contentsOf: tags)
+        
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.mainIngredientTextFiled {
-            mainIngredientDropDown.anchorView = self.mainIngredientTextFiled
-            mainIngredientDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-                print("Selected item: \(item) at index: \(index)")
-                self.mainIngredientTextFiled.text = item
-                
+            let vc = self.storyboard?.instantiateViewController(identifier: "MultiPickerController") as! MultiPickerController
+            let mainIngredients = recipeDtails.recipeInfo?.mainIngredients?.map { $0.mainIngredientName } as! [String]
+            vc.items = mainIngredients
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.allItems = { item in
+                self.mainIngredientTextFiled.text = item.joined(separator: ",")
             }
-            
-            mainIngredientDropDown.show()
+            self.present(vc, animated: true, completion: nil)
             self.mainIngredientTextFiled.resignFirstResponder()
         } else if textField == self.dietTypeTextFiled {
-            dietTypeDropDown.anchorView = self.dietTypeTextFiled
-            dietTypeDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-                print("Selected item: \(item) at index: \(index)")
-                self.dietTypeTextFiled.text = item
-                
+            let vc = self.storyboard?.instantiateViewController(identifier: "MultiPickerController") as! MultiPickerController
+            let diets = self.dietType?.dietTypeList?.map { $0.dietName } as! [String]
+            vc.items = diets
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.allItems = { item in
+                self.dietTypeTextFiled.text = item.joined(separator: ",")
             }
-            
-            dietTypeDropDown.show()
+            self.present(vc, animated: true, completion: nil)
             self.dietTypeTextFiled.resignFirstResponder()
         } else if textField == self.courseTextFiled {
-            CourcesDropDown.anchorView = self.courseTextFiled
-            CourcesDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
-                print("Selected item: \(item) at index: \(index)")
-                self.courseTextFiled.text = item
-                
+            let vc = self.storyboard?.instantiateViewController(identifier: "MultiPickerController") as! MultiPickerController
+            let cources = self.cource?.courceList?.map { $0.name } as! [String]
+            vc.items = cources
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.allItems = { item in
+                self.courseTextFiled.text = item.joined(separator: ",")
             }
+            self.present(vc, animated: true, completion: nil)
             
-            CourcesDropDown.show()
             self.courseTextFiled.resignFirstResponder()
         }
     }
