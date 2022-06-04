@@ -148,6 +148,9 @@ extension EditCreatedRecipeViewController: SwipeMenuViewDataSource {
         } else {
             
             self.saveOptionVc.parentVC = self
+            self.saveOptionVc.cancelTap = {
+                self.navigationController?.popViewController(animated: true)
+            }
             self.saveOptionVc.didMove(toParent: self)
             return saveOptionVc
         }

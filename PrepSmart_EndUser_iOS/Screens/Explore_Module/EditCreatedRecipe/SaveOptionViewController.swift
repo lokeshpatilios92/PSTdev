@@ -14,6 +14,10 @@ class SaveOptionViewController: BaseViewController {
     
     @IBOutlet var btn_save: UIButton!
     @IBOutlet var btn_cancel: UIButton!
+    
+    var cancelTap: (() -> Void)?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +32,10 @@ class SaveOptionViewController: BaseViewController {
         btn_cancel.layer.cornerRadius = btn_cancel.frame.height / 2
         btn_cancel.layer.borderWidth = 1.0
         btn_cancel.layer.borderColor = UIColor.appOrangeColor().cgColor
+    }
+    
+    @IBAction func btnCancelAction(_ sender: Any) {
+        self.cancelTap!()
     }
     /*
     // MARK: - Navigation
