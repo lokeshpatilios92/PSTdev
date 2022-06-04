@@ -45,7 +45,7 @@ class EditPairItViewController: UIViewController, UITextFieldDelegate {
         vc.allItems = { item in
             self.txtFieldReceipes.text = item.joined(separator: ",")
         }
-        self.present(vc, animated: true, completion: nil)
+        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(vc, animated: true, completion: nil)
         self.txtFieldReceipes.resignFirstResponder()
     }
 }
@@ -53,19 +53,22 @@ class EditPairItViewController: UIViewController, UITextFieldDelegate {
 extension EditPairItViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return self.recipeDtails?.recipeInfo?.pairWithList?.count ?? 0
     }
 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: nutritionalInfoCollectionCell, for: indexPath) as! NutritionalInfoCollectionCell
+        let pairItWith = self.recipeDtails?.recipeInfo?.pairWithList?[indexPath.row]
+        cell.lblTitle.text = pairItWith?.recipeName
+        cell.imgTitle.sd_setImage(with: URL(string: pairItWith?.image ?? ""), placeholderImage: UIImage(named: "dinner"))
         
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 100.0, height: 140.0)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100.0, height: 140.0)
+    }
     
     
     
