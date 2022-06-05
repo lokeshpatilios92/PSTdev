@@ -701,7 +701,7 @@ extension LoadWeeklyPlanTemplateVC
         let strTo = DateToStringYYMMDD(date: toDate)
         
         let planData = [["dayId": selectedDay?.dayID ?? 0, "meals": mealsData]] as [[String : Any]]
-        let param = ["weekly_plan_id": self.dateWiseWeeklyPlanObj?.weeklyPlanID ?? 0 , "plan_data": planData, "start_date": strFrom,                                         "end_date":strTo] as [String : Any]
+        let param = ["weekly_plan_id": self.dateWiseWeeklyPlanObj?.weeklyPlanID ?? 0 , "plan_data": planData, "start_date": strFrom, "end_date":strTo] as [String : Any]
         
         Loader.sharedInstance.showIndicator()
         

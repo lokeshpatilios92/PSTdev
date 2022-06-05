@@ -93,6 +93,8 @@ class Api_Http_Class
             if methodName == Constants.login_Api || methodName == Constants.signUp_Api || methodName == Constants.forgetPass_Api || methodName == Constants.changePass_Api
             {
                 self.headers = ["lang":lang,"Content-Type":"Application/Json"]
+            } else if methodName ==  Constants.addWeekPlanStep2 {
+                self.headers = ["lang":lang, "token":login_token ?? "", "Content-Type":"text/html; charset=UTF-8"]
             }
             else
             {
@@ -393,6 +395,8 @@ class Api_Http_Class
             if methodName == Constants.login_Api || methodName == Constants.signUp_Api || methodName == Constants.forgetPass_Api || methodName == Constants.changePass_Api
             {
                 self.headers = ["lang":lang,"Authorization":login_token,"Content-Type":"application/x-www-form-urlencoded"]
+            } else if methodName == Constants.addWeekPlanStep2 {
+                self.headers = ["lang":lang, "Authorization":login_token ?? "", "Content-Type":"text/html; charset=UTF-8"]
             }
             else
             {
